@@ -130,3 +130,27 @@ If lint reports zero files, inspect glob/ignore rules and effective config befor
 success. If a file is outside its tsconfig, fix project ownership or a narrowly intended
 scope rather than enabling an unbounded fallback project. [Dependency support](https://typescript-eslint.io/users/dependency-versions/)
 and the installed lockfile determine compatibility, not a broad “latest TS works” claim.
+
+## E8. Choosing Oxlint without losing coverage
+
+Oxlint is an alternative lint engine, not a style authority. Its
+[configuration](https://oxc.rs/docs/guide/usage/linter/config.html) supports rules,
+plugins and overrides. A basic invocation does not establish type-aware coverage.
+For [type-aware linting](https://oxc.rs/docs/guide/usage/linter/type-aware.html),
+install oxlint-tsgolint and enable typeAware or pass --type-aware.
+
+A concrete migration sequence:
+
+1. Inventory existing rules, options, framework plugins, file ownership and ignores.
+2. Configure the corresponding Oxlint rules; promise rules use the typescript/
+   namespace, such as typescript/no-floating-promises with ignoreVoid:false when
+   that matches the project's policy.
+3. Run bad and corrected inputs through both engines. Compare rule IDs, locations
+   and actual included files; a successful empty run proves nothing.
+4. Keep ESLint checks without verified equivalents. Remove duplicated checks only
+   after their replacement is demonstrated.
+5. Retain the project's compiler/build checks: tsgolint uses a separate type engine.
+
+This project tests Oxlint 1.89.0 with oxlint-tsgolint 7.0.2005 (2026-10-27).
+The two explicit async rules match our fixtures; this is not full preset parity.
+Use the project's chosen linter rather than adding a second one automatically.

@@ -112,3 +112,14 @@ openSession(7);
 This example checks a signature in isolation; a real package test must import its emitted
 declaration through the supported resolution path. Report which of those checks actually
 ran, including the exact environment and what remains unverified.
+
+## Oxlint verification
+
+For an Oxlint setup, record whether the run is basic or type-aware.
+[Type-aware mode](https://oxc.rs/docs/guide/usage/linter/type-aware.html) needs
+oxlint-tsgolint and explicit enablement. Assert an intended diagnostic on a broken
+fixture and zero diagnostics on its correction; also confirm nonzero file coverage.
+A basic Oxlint pass does not prove promise checks ran. During migration, compare
+existing rule options and framework coverage before removing ESLint checks.
+Keep the project's compiler and production build checks while validating the
+separate type engine against the actual project.

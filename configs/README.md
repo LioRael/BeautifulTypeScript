@@ -30,4 +30,51 @@ preset or a replacement for framework-generated config. Merge only the applicabl
 
 Run typecheck and lint after merging. Build and execute imports using the actual host.
 TS lib declarations do not install polyfills. Bun and Deno need their own host validation;
-no untested universal runtime preset or Oxlint parity claim is supplied.
+no untested universal runtime preset is supplied.
+
+## Oxlint: basic or type-aware
+
+Tested on 2026-10-27 with Oxlint 1.89.0 and oxlint-tsgolint 7.0.2005.
+Choose the recipe that fits your existing tooling. Both are optional for skill users.
+
+For a basic pass alongside existing typed ESLint, copy [oxlint.json](oxlint.json)
+to your project's configs directory:
+
+```sh
+npm install --save-dev --save-exact oxlint@1.89.0
+npx oxlint -c configs/oxlint.json src --max-warnings 0
+```
+
+The recipe enables correctness checks and strict equality. It does not enable
+type-aware promise checks. Replace src with your owned source directories; keep
+generated code and intentionally broken evaluation fixtures outside that scope.
+If moving the JSON to the project root as .oxlintrc.json, adjust its schema path
+to ./node_modules/oxlint/configuration_schema.json. Explicit -c disables nested
+config lookup; omit it and use discovered configs when your monorepo needs that.
+
+For type-aware checks, copy **both** JSON files into configs/ and run:
+
+```sh
+npm install --save-dev --save-exact oxlint@1.89.0 oxlint-tsgolint@7.0.2005
+npx oxlint -c configs/oxlint.typed.json src --max-warnings 0
+```
+
+[oxlint.typed.json](oxlint.typed.json) enables typeAware and explicitly configures
+no-floating-promises (ignoreVoid:false) and no-misused-promises. Ensure files
+belong to their intended tsconfig and build dependent declarations first.
+The separate tsgolint engine is not the project's installed TypeScript compiler:
+keep your existing typecheck/build command until compatibility is established.
+
+In this repository, npm run lint runs basic Oxlint then typed ESLint;
+npm run lint:oxlint:typed independently verifies the alternative typed recipe.
+npm run check exercises both recipes, including bad/clean fixtures with asserted
+diagnostic IDs, lines and nonempty file coverage. This proves the selected rules,
+not equality with every recommendedTypeChecked rule or framework plugin.
+
+When migrating, inventory existing rules/options, overrides, plugins and ignores.
+Verify equivalent diagnostics before disabling any ESLint rule. Running both
+temporarily can duplicate reports; retaining ESLint for remaining rules is valid.
+Do not remove framework or custom checks merely because Oxlint exits successfully.
+
+Sources: [configuration](https://oxc.rs/docs/guide/usage/linter/config.html),
+[type-aware setup](https://oxc.rs/docs/guide/usage/linter/type-aware.html).

@@ -147,7 +147,7 @@ unrelated code. An unavailable runtime is an unverified target, not a pass.
 | Module organization, inference, naming or assertions | [Google TypeScript Style Guide](references/google-typescript-style-guide.md) |
 | Narrowing, state models, generics or mutation | [TypeScript Handbook](references/typescript-handbook.md) |
 | Public callbacks, overloads or declaration files | [Declaration Do’s and Don’ts](references/typescript-declaration-dos-and-donts.md) |
-| Promise diagnostics or lint setup | [typescript-eslint](references/typescript-eslint.md) |
+| Promise diagnostics, ESLint or Oxlint setup | [Lint setup and migration](references/typescript-eslint.md) |
 | Host globals, strictness, modules or emitted output | [Compiler configuration](references/typescript-compiler-configuration.md) |
 | JavaScript readability and local style | [Airbnb JavaScript Style Guide](references/airbnb-javascript-style-guide.md) |
 | Guides disagree, or a rule ID needs explanation | [Style decisions and rule map](references/style-decisions.md) |

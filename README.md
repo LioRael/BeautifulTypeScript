@@ -187,7 +187,9 @@ basis. These are summaries and original examples, not redistributed copies of th
 
 Review, port and verify carry their own focused evidence/checklist references and direct
 source links. They do not depend on the writing skill being installed. [Optional configs](configs/README.md) use a tested toolchain;
-existing framework and workspace settings take precedence.
+existing framework and workspace settings take precedence. Recipes include ESLint /
+typescript-eslint and Oxlint, with basic and type-aware Oxlint installation commands
+and fixture-tested async rules.
 
 ## Evaluation cases belong to their skills
 

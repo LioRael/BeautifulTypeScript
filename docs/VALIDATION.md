@@ -137,3 +137,13 @@ Fresh skills 1.7.4 installation for Codex/Claude Code preserved all **56 files**
 each local evaluation case. Four format checks passed. A simulated-transport runner test
 also confirmed that a successful process exit retains failed runtime-grader results; it
 does not call a model or claim task success.
+
+## Oxlint recipes (2026-10-27)
+
+Added Oxlint 1.89.0 and optional typed-engine recipe using oxlint-tsgolint 7.0.2005,
+with exact dependencies and platform packages in the lockfile. npm run check passes:
+27 tests, 47 compiled documentation examples and 18 executed examples. Basic and
+typed lint both pass on the port examples. New tests assert strict-equality and
+promise-rule diagnostic IDs/locations, nonzero coverage, failure status and clean
+counterparts. Existing ESLint checks remain. No performance or full rule-parity
+claim is made; no model efficacy rerun was needed for this configuration addition.

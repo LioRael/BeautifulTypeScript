@@ -10,15 +10,20 @@
   "scripts": {
     "check:skills": "node scripts/check-skills.mjs",
     "typecheck": "tsc --noEmit && tsc -p configs/tsconfig.browser.json",
-    "lint": "eslint examples/port/*.ts --max-warnings 0",
+    "lint": "npm run lint:oxlint && npm run lint:eslint",
     "build": "tsc",
     "test": "npm run build && node --test tests/*.test.mjs",
-    "check": "npm run check:skills && npm run typecheck && npm run lint && npm test",
-    "benchmark": "npm run build && node scripts/benchmark.mjs"
+    "check": "npm run check:skills && npm run typecheck && npm run lint && npm run lint:oxlint:typed && npm test",
+    "benchmark": "npm run build && node scripts/benchmark.mjs",
+    "lint:eslint": "eslint examples/port/*.ts --max-warnings 0",
+    "lint:oxlint": "oxlint -c configs/oxlint.json examples/port --max-warnings 0",
+    "lint:oxlint:typed": "oxlint -c configs/oxlint.typed.json examples/port --max-warnings 0"
   },
   "devDependencies": {
-    "typescript": "5.9.3",
     "eslint": "10.13.0",
+    "oxlint": "1.89.0",
+    "oxlint-tsgolint": "7.0.2005",
+    "typescript": "5.9.3",
     "typescript-eslint": "8.72.1"
   },
   "repository": {
