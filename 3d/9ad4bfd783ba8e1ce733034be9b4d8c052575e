@@ -1,0 +1,111 @@
+.github/workflows/check.yml
+  s_78bc682a302090::t_b4859db87a1b43 1-21
+.gitignore
+  s_78bc682a302090::t_ee28fedc56796f 1-6
+CONTRIBUTING.md
+  s_78bc682a302090::t_e7d464f74f21ee 1-17
+LICENSE
+  s_78bc682a302090::t_1f8aed0b9deeb2 1-21
+README.md
+  s_78bc682a302090::t_51ebc6bb8e2509 1-162
+benchmark-results/exploratory.json
+  s_78bc682a302090::t_c7365af3159ea6 1-91
+benchmark-results/latest.json
+  s_78bc682a302090::t_1e53dde47139b1 1-92
+configs/README.md
+  s_78bc682a302090::t_fb9788b5147032 1-33
+configs/eslint.config.mjs
+  s_78bc682a302090::t_42a6f212d41ff0 1-14
+configs/tsconfig.base.json
+  s_78bc682a302090::t_5ea66d3d4061b6 1-14
+configs/tsconfig.browser.json
+  s_78bc682a302090::t_790357e4f789bf 1-16
+configs/tsconfig.node.json
+  s_78bc682a302090::t_9c6c38b567c6da 1-7
+docs/BENCHMARK.md
+  s_78bc682a302090::t_a679636b512a76 1-15
+docs/SOURCES.md
+  s_78bc682a302090::t_4e2743857f030d 1-49
+docs/UPSTREAM.md
+  s_78bc682a302090::t_f45139e31e8e7b 1-12
+docs/VALIDATION.md
+  s_78bc682a302090::t_4e19ce97920cde 1-59
+eslint.config.mjs
+  s_78bc682a302090::t_b48b8bebc4cbd7 1-2
+examples/port/PORTING.md
+  s_78bc682a302090::t_a7a79f6bbfc72d 1-29
+examples/port/cases.json
+  s_78bc682a302090::t_50ebffeb873983 1-186
+examples/port/inventory.ts
+  s_78bc682a302090::t_b15760c789b214 1-44
+examples/port/source.py
+  s_78bc682a302090::t_ccd1d0466f1c3b 1-32
+examples/port/test_source.py
+  s_78bc682a302090::t_72b38923e85951 1-13
+fixtures/consumer/index.ts
+  s_78bc682a302090::t_f572d36454e971 1-3
+fixtures/lint/bad.ts
+  s_78bc682a302090::t_fd5d541281559d 1-9
+fixtures/lint/good.ts
+  s_78bc682a302090::t_13d81a956f1da8 1-6
+fixtures/lint/tsconfig.json
+  s_78bc682a302090::t_43b7708a4c0be2 1-6
+fixtures/types/bad.ts
+  s_78bc682a302090::t_98dde430e16743 1-3
+fixtures/types/good.ts
+  s_78bc682a302090::t_12c9c69ce0189e 1-3
+package-lock.json
+  s_78bc682a302090::t_b7dffdda3381f8 1-1319
+package.json
+  s_78bc682a302090::t_a696d26293e5d5 1-28
+scripts/benchmark.mjs
+  s_78bc682a302090::t_f5d95ab3315e1d 1-27
+scripts/check-skills.mjs
+  s_78bc682a302090::t_1ab0e1bfab0122 1-32
+scripts/install.mjs
+  s_78bc682a302090::t_0ed0cb8f3271c2 1-11
+skills/typescript-best-practices/SKILL.md
+  s_78bc682a302090::t_a556451014c4da 1-54
+skills/typescript-best-practices/references/sources.md
+  s_78bc682a302090::t_10b97db392cfed 1-49
+skills/typescript-port/SKILL.md
+  s_78bc682a302090::t_ba24b66b2a839b 1-75
+skills/typescript-port/references/porting.md
+  s_78bc682a302090::t_a70bf32847f570 1-38
+skills/typescript-port/references/sources.md
+  s_78bc682a302090::t_3527a81d518fa3 1-49
+skills/typescript-review/SKILL.md
+  s_78bc682a302090::t_0582b6fa493c14 1-46
+skills/typescript-review/references/sources.md
+  s_78bc682a302090::t_63829716b205b2 1-49
+skills/typescript-verify/SKILL.md
+  s_78bc682a302090::t_fc13910234fd7a 1-37
+skills/typescript-verify/references/sources.md
+  s_78bc682a302090::t_29ce14fa536bce 1-49
+tests/install.test.mjs
+  s_78bc682a302090::t_be0bd0fa0cc9d2 1-17
+tests/lint.test.mjs
+  s_78bc682a302090::t_16d323c2241a00 1-15
+tests/port.test.mjs
+  s_78bc682a302090::t_e674408e43f720 1-46
+tests/types.test.mjs
+  s_78bc682a302090::t_1c28404c40203d 1-22
+tsconfig.json
+  s_78bc682a302090::t_3787f6351f924c 1-11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3d9ad4bfd783ba8e1ce733034be9b4d8c052575e",
+  "prompts": {},
+  "sessions": {
+    "s_78bc682a302090": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1793d-88d7-7700-a665-3f955a52da85",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    }
+  }
+}
