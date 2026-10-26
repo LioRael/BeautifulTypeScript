@@ -1,0 +1,28 @@
+README.md
+  h_9d56aba080c170 1-2,20-122,162
+assets/README.md
+  h_9d56aba080c170 1-5
+configs/README.md
+  h_9d56aba080c170 1-5,72-74
+docs/VALIDATION.md
+  h_9d56aba080c170 150-157
+package.json
+  h_9d56aba080c170 13,16
+skills/typescript-best-practices/SKILL.md
+  h_9d56aba080c170 29-30
+skills/typescript-best-practices/references/typescript-eslint.md
+  h_9d56aba080c170 1,7-40
+tests/reference-examples.test.mjs
+  h_9d56aba080c170 9-12,25,52
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "421400362ce9ba35c781d25a5c5b9283d164b759",
+  "prompts": {},
+  "humans": {
+    "h_9d56aba080c170": {
+      "author": "LioRael <leo@lenso.dev>"
+    }
+  }
+}
