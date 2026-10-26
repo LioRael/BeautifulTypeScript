@@ -13,6 +13,8 @@ Task definitions live with the skill they evaluate:
 
 | Case ID | Skill-local task |
 |---|---|
+| revision-a | [delivery failure isolation](../skills/typescript-best-practices/evals/revision-a/case.json) |
+| revision-b | [promotion eligibility](../skills/typescript-best-practices/evals/revision-b/case.json) |
 | effect-internal | [room workload feature](../skills/typescript-best-practices/evals/effect-internal/case.json) |
 | effect-async | [preview cache race](../skills/typescript-best-practices/evals/effect-async/case.json) |
 | effect-boundary | [sensor ingestion](../skills/typescript-best-practices/evals/effect-boundary/case.json) |
@@ -122,3 +124,12 @@ trace contains no sensitive material; review the public copy before sharing.
 
 For the new-task writing study, see the [frozen protocol](effect-study-protocol.md).
 The runner accepts --model, --effort and --repetitions to record an explicit setup.
+
+
+For a three-condition comparison, supply --old-skill-root (a directory containing frozen
+skill folders) and --old-skill-label (a public commit/version identifier). The runner hashes
+both revisions and supplies the same activation instruction to old/with. See the
+[revision protocol](revision-study-protocol.md). Use judge-effect-study.py --baselines
+without old to compare the current revision against both, with reversed A/B labels in a
+second review. verify-effect-study.py --node /absolute/path/to/node rechecks generated
+projects using that runtime and records its version; ordinary CI does not run model calls.

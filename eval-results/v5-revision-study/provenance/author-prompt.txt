@@ -1,0 +1,15 @@
+Design TWO realistic, moderately involved TypeScript coding tasks for a controlled assistant comparison. You are a task author, not a solver, and are not given the experimental conditions.
+Work only in this directory. Do not inspect parents, personal directories, existing skills or studies. No network, package installation, delegation or global changes. node_modules is preinstalled only for tooling.
+Create directories revision-a and revision-b. Choose distinct business domains and neutral feature/bug-fix requests on existing multi-module code. Each should require following callers and established helpers across 3-4 files (about 120-220 initial production lines), and be solvable within eight minutes. Avoid room workloads, sensor ingestion, preview caches, first-member lookup, settings parsers, ledger summaries and semver.
+Use everyday TypeScript; no external dependencies beyond TypeScript 5.9.3. Do not target a particular coding style or implementation.
+Each directory contains:
+- case.json: id matching directory, skill "typescript-best-practices", prompt "prompt.md", files "files", rubric "graders/rubric.md", criteria 6.
+- prompt.md: complete neutral user request with observable acceptance criteria. Do not mention the experiment, preferred implementation or simplicity.
+- files/PROJECT.md: runtime (Node 22 ESM), existing conventions, relevant trust/ownership/error contracts. All hidden checks must follow explicit requirements or existing caller behavior.
+- files/package.json with type module, private, scripts typecheck "tsc --noEmit", build "tsc", test "npm run build && node --test tests/*.test.mjs", devDependencies typescript 5.9.3.
+- files/tsconfig.json: strict, exactOptionalPropertyTypes, noUncheckedIndexedAccess, target ES2022, module/moduleResolution NodeNext, lib ES2022,DOM, types [], rootDir src, outDir dist, include src/**/*.ts.
+- files/src/: compiling initial production implementation, meaningful caller and supporting modules.
+- files/tests/: meaningful visible tests for existing behavior, may expose the requested bug.
+- graders/runtime.mjs: independent hidden Node checker receiving workspace path as argv[2], imports built dist via file URL. Emit a JSON array of {id,pass,evidence?} groups. Catch each group independently; test behavior, not code shape. Use deferred promises if needed, not sleeps.
+- graders/rubric.md: freeze six concrete criteria for correctness, public API/type accuracy, reuse of existing project policy, maintainability, failure/ownership semantics and evidence. Accept equivalent designs. Penalize invented requirements or unnecessary machinery only where a concrete maintenance cost exists. No required syntax/line count.
+Do not write reference solutions. Validate initial typecheck, build, visible tests and hidden checks. Temporary node_modules symlinks inside files may be used; REMOVE those and generated dist before finishing. Keep a brief AUTHOR.md with commands and actual initial outcomes. Leave original task implementations unchanged after validation.

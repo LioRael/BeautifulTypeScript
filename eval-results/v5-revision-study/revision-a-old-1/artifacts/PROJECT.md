@@ -1,0 +1,5 @@
+Runtime: Node 22 ESM. TypeScript 5.9.3; no runtime dependencies. Run npm run typecheck and npm test. Source imports use .js extensions. Monetary values are integer cents.
+
+Checkout is the public consumer of DeliveryQuotes. policy.ts owns parcel validation, rate eligibility, deterministic option ordering and display text. Carriers are injected adapters, configured with unique stable IDs. They may throw synchronously or reject asynchronously. A fulfilled quote returns an array of structurally valid CarrierRate objects, but field values may violate rate policy. Arbitrary malformed containers are outside the adapter contract. Configuration is stable during collection. Parcel input is caller-owned and adapter output remains adapter-owned. Each quote receives an isolated parcel copy. Do not freeze or mutate caller/adapter values. All collection results are fresh. There is no cross-request cache.
+
+Validation errors reject the async public operation. Existing validation messages and behavior are public. Carrier failures will be represented as data under the requested feature; unrelated validation must still reject. Tests import built dist modules.

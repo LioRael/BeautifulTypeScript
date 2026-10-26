@@ -1,0 +1,5 @@
+Implemented required `CartQuote.eligibleSubtotalCents`. Promotion minimums and discounts now use only eligible products, rounding once on the combined base. Full subtotal, line order, caps, validation, and ownership behavior remain intact.
+
+Validation: typecheck and build passed; all 7 tests passed, covering mixed baskets, rounding, unknown codes, ownership, and overflow errors.
+
+The `mise` launcher was blocked. Checks passed using installed Node v26.12.1; the documented Node 22 target remains unverified.

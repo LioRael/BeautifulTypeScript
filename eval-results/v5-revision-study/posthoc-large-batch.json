@@ -1,0 +1,58 @@
+{
+  "purpose": "Post-hoc diagnostic after one blind judge flagged spread-call argument limits. Not included in frozen primary group counts; no solution was edited or rerun through the model.",
+  "results": [
+    {
+      "id": "revision-a-old-1",
+      "exit_code": 0,
+      "node": "v22.13.0",
+      "inputRates": 200000,
+      "pass": true,
+      "returnedOptions": 200000,
+      "failedCarrierIds": []
+    },
+    {
+      "id": "revision-a-old-2",
+      "exit_code": 0,
+      "node": "v22.13.0",
+      "inputRates": 200000,
+      "pass": true,
+      "returnedOptions": 200000,
+      "failedCarrierIds": []
+    },
+    {
+      "id": "revision-a-with-1",
+      "exit_code": 0,
+      "node": "v22.13.0",
+      "inputRates": 200000,
+      "pass": true,
+      "returnedOptions": 200000,
+      "failedCarrierIds": []
+    },
+    {
+      "id": "revision-a-with-2",
+      "exit_code": 0,
+      "node": "v22.13.0",
+      "inputRates": 200000,
+      "pass": true,
+      "returnedOptions": 200000,
+      "failedCarrierIds": []
+    },
+    {
+      "id": "revision-a-without-1",
+      "exit_code": 0,
+      "node": "v22.13.0",
+      "inputRates": 200000,
+      "pass": false,
+      "error": "RangeError: Maximum call stack size exceeded"
+    },
+    {
+      "id": "revision-a-without-2",
+      "exit_code": 0,
+      "node": "v22.13.0",
+      "inputRates": 200000,
+      "pass": true,
+      "returnedOptions": 200000,
+      "failedCarrierIds": []
+    }
+  ]
+}

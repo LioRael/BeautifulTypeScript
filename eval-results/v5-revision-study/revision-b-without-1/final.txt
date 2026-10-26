@@ -1,0 +1,5 @@
+Implemented required `CartQuote.eligibleSubtotalCents`. Promotion minimums and discounts now use the combined eligible subtotal, preserving rounding, caps, line order, full subtotal, and zero-discount behavior.
+
+Validation: `npm run typecheck` passed; `npm test` passed all 8 tests, including regression coverage for mixed baskets, ownership, and overflow errors.
+
+No blockers. npm emitted an existing configuration warning about `home`.

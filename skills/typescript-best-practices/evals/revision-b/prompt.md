@@ -1,0 +1,7 @@
+Promotion eligibility in cart quotes is wrong for mixed baskets: ineligible products currently help meet the minimum and receive a discount. Correct cart pricing and expose the promotion base to consumers.
+
+Add a required `eligibleSubtotalCents: number` to `CartQuote`. It is the sum of line subtotals for products whose catalog `promotionEligible` flag is true, including quantities and repeated SKU lines. Report this value even with no promotion or an unknown promotion code. Keep all requested lines in their original order, and keep the ordinary subtotal unchanged.
+
+A known promotion meets its minimum only when the eligible subtotal reaches `minimumEligibleCents`. Compute its percentage discount on that eligible subtotal using the existing monetary rounding and cap policy. Round once on the combined eligible subtotal, not separately on each line. Preserve the existing convention that `appliedCode` is null when the computed discount is zero. Unknown codes remain a no-discount quote. The final total is the full subtotal minus the discount.
+
+Keep existing input validation, amount overflow errors, exported APIs, catalog ownership guarantees and synchronous error behavior. Inputs and catalog records must remain untouched, and each quote must have independent line objects and arrays. No new promotion types, code normalization, tax calculation, discount allocation or storage is requested.

@@ -1,0 +1,5 @@
+Implemented `eligibleSubtotalCents` on every quote. Promotion minimums and discounts now use only eligible products, including quantities and repeated lines, with rounding applied once to the combined base.
+
+Full subtotals, line order, caps, validation, and ownership behavior are preserved.
+
+Validation: `npm run typecheck` passed; `npm test` passed all 7 tests. No blockers. npm emitted an existing configuration warning about `home`.

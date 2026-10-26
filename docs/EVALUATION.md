@@ -15,6 +15,11 @@ issue in the review task was missed by both with-skill runs and one baseline run
 The original rubric did not score that issue. We retain those results, disclose the
 rubric limitation, and run a separate targeted regression after adding an ordering check.
 
+The [revision study](REVISION-STUDY.md) adds a prospective old/new/no-skill comparison on
+two further tasks. All three conditions pass the frozen checks; revised-versus-old pairs
+remain tied. Its post-hoc large-array diagnostic and review disagreement are reported
+separately. Historical results below are unchanged.
+
 ## Method
 
 Four small independent projects: settings validation, queue review, Python ledger port,

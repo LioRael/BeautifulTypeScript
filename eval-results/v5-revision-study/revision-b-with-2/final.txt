@@ -1,0 +1,5 @@
+Implemented required `CartQuote.eligibleSubtotalCents`. Promotion minimums and discounts now use only eligible products, with rounding once on the combined eligible subtotal and existing caps preserved.
+
+Added regression coverage for mixed baskets, repeated lines, unknown codes, zero discounts, ownership, and synchronous validation/overflow errors.
+
+Validation: `npm run typecheck` passed; `npm test` built successfully and all 6 tests passed. No blockers.

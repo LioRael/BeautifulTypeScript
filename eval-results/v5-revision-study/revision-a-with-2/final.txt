@@ -1,0 +1,5 @@
+Implemented resilient carrier collection and forwarded `failedCarrierIds` through checkout, including when filtering removes every option.
+
+All carriers start once and settle before completion. Failures preserve configured order; successful options, validation, ordering, and ownership remain intact.
+
+Validation: typecheck, build, and all 8 tests passed. The login-shell `mise` error was bypassed with a non-login shell. Checks ran on Node 26.12.1; Node 22 compatibility remains unverified.

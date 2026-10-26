@@ -1,0 +1,23 @@
+{
+  "id": "revision-b-old-1",
+  "case": "revision-b",
+  "condition": "old",
+  "repeat": 1,
+  "exit_code": 0,
+  "error": null,
+  "elapsed_seconds": 54.784,
+  "usage": {
+    "input_tokens": 99867,
+    "cached_input_tokens": 91392,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2628,
+    "reasoning_output_tokens": 82
+  },
+  "changed_inputs": [
+    "tests/cart.test.mjs",
+    "src/model.ts",
+    "src/cart.ts"
+  ],
+  "package_unchanged": true,
+  "tsconfig_unchanged": true
+}

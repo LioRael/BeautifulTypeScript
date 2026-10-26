@@ -175,3 +175,20 @@ See EFFECT-STUDY.md for original artifacts, actual code differences, setup/runti
 incidents and limits. No skill instruction was tuned from these results.
 Repository checks pass: 29 tests, 51 compiled documentation blocks and 18 marked
 executions. README examples are separated from measured evidence.
+
+
+## Concrete writing workflow and revision study (2026-10-27)
+
+The writing entrypoint is 118 lines (previously 176) and adds a bundled six-part
+simplification reference while preserving guide digests. Full checks pass under local
+Node 26.10.0 and a checksum-verified local Node 22.13.0: 29 tests, 58 compiled documentation
+blocks and 23 marked executions. The skill format validator passes. Packaging tests now
+cover the frozen old-skill condition and exclude its evals from model context.
+
+Two fresh task packages, three conditions and two repetitions produced 12 retained model
+outputs. Node 22.13.0 independent checks pass for all: 24/24 behavior groups per condition,
+plus compilation and visible tests. Both blind review orders tie all four new-versus-old
+pairs. New-versus-no-skill has three consistent ties and one review disagreement. A
+separate post-hoc 200,000-rate probe confirms a spread-call RangeError in one no-skill
+output; both old/new repetitions pass. It is not counted as a frozen primary check or
+claimed as a revision-specific gain. See REVISION-STUDY.md for artifacts and limits.

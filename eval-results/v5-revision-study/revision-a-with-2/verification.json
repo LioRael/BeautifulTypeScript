@@ -1,0 +1,51 @@
+{
+  "runtime": {
+    "node": "v22.13.0"
+  },
+  "compiler": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "hidden_process": {
+    "exit_code": 0,
+    "stdout": "[{\"id\":\"failure-isolation\",\"pass\":true},{\"id\":\"settlement-and-order\",\"pass\":true},{\"id\":\"policy-and-empty-success\",\"pass\":true},{\"id\":\"checkout-public-contract\",\"pass\":true},{\"id\":\"validation-before-side-effects\",\"pass\":true},{\"id\":\"result-and-parcel-ownership\",\"pass\":true}]\n",
+    "stderr": ""
+  },
+  "contract_groups": [
+    {
+      "id": "failure-isolation",
+      "pass": true
+    },
+    {
+      "id": "settlement-and-order",
+      "pass": true
+    },
+    {
+      "id": "policy-and-empty-success",
+      "pass": true
+    },
+    {
+      "id": "checkout-public-contract",
+      "pass": true
+    },
+    {
+      "id": "validation-before-side-effects",
+      "pass": true
+    },
+    {
+      "id": "result-and-parcel-ownership",
+      "pass": true
+    }
+  ],
+  "visible_tests": {
+    "exit_code": 0,
+    "stdout": "\n> test\n> npm run build && node --test tests/*.test.mjs\n\n\n> build\n> tsc\n\nTAP version 13\n# Subtest: filters invalid rates and recommends cheapest eligible delivery\nok 1 - filters invalid rates and recommends cheapest eligible delivery\n  ---\n  duration_ms: 0.785583\n  ...\n# Subtest: invalid parcel never calls adapters\nok 2 - invalid parcel never calls adapters\n  ---\n  duration_ms: 0.260125\n  ...\n# Subtest: starts every carrier once, waits for all, and reports failures in configuration order\nok 3 - starts every carrier once, waits for all, and reports failures in configuration order\n  ---\n  duration_ms: 2.607\n  ...\n# Subtest: empty and policy-rejected rates are successful, including empty configuration\nok 4 - empty and policy-rejected rates are successful, including empty configuration\n  ---\n  duration_ms: 0.235583\n  ...\n# Subtest: checkout preserves failures when maximum-days filtering removes every option\nok 5 - checkout preserves failures when maximum-days filtering removes every option\n  ---\n  duration_ms: 0.232792\n  ...\n# Subtest: invalid parcel and maximum-days input reject before any carrier runs\nok 6 - invalid parcel and maximum-days input reject before any carrier runs\n  ---\n  duration_ms: 0.424166\n  ...\n# Subtest: isolates parcel copies and owns options and arrays across collections\nok 7 - isolates parcel copies and owns options and arrays across collections\n  ---\n  duration_ms: 6.18875\n  ...\n# Subtest: successful options retain price, days, carrier and service ordering\nok 8 - successful options retain price, days, carrier and service ordering\n  ---\n  duration_ms: 0.110166\n  ...\n1..8\n# tests 8\n# suites 0\n# pass 8\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 74.079084\n",
+    "stderr": ""
+  },
+  "source_metrics": {
+    "files": 4,
+    "nonempty_lines": 112,
+    "note": "Descriptive only; not a beauty score."
+  }
+}

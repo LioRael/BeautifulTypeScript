@@ -4,6 +4,7 @@ import argparse
 parser=argparse.ArgumentParser()
 parser.add_argument('--work',required=True)
 parser.add_argument('--results',required=True)
+parser.add_argument('--baselines',nargs='+',default=['without'],choices=['without','old'])
 args=parser.parse_args()
 repo=Path(__file__).resolve().parent.parent
 spec=importlib.util.spec_from_file_location('runner',repo/'evals/run.py')
@@ -11,21 +12,21 @@ runner=importlib.util.module_from_spec(spec);spec.loader.exec_module(runner)
 work=Path(args.work).resolve()
 public=Path(args.results).resolve()
 manifest=json.loads((public/'manifest.json').read_text())
-pairs=[(case,repeat) for case in manifest['selected_cases'] for repeat in range(1,manifest['repetitions']+1)]
+pairs=[(case,repeat,baseline) for case in manifest['selected_cases'] for repeat in range(1,manifest['repetitions']+1) for baseline in args.baselines]
 rng=random.Random(20261027)
-base={f'{case}-{repeat}':rng.choice([True,False]) for case,repeat in pairs}
+base={(case,repeat,baseline):rng.choice([True,False]) for case,repeat,baseline in pairs}
 mapping={}
 for pass_id in [1,2]:
  ws=work/f'judge-{pass_id}';ws.mkdir()
  subprocess.run(['git','init','--quiet','--template=',str(ws)],check=True)
- for index,(case,repeat) in enumerate(pairs,1):
+ for index,(case,repeat,baseline) in enumerate(pairs,1):
   pair=ws/f'pair-{index}';pair.mkdir()
   task=repo/manifest['case_paths'][case]
   shutil.copytree(task/'files',pair/'original')
   shutil.copyfile(task/'prompt.md',pair/'TASK.md')
   shutil.copyfile(task/'graders/rubric.md',pair/'RUBRIC.md')
-  a_with=base[f'{case}-{repeat}'] if pass_id==1 else not base[f'{case}-{repeat}']
-  labels={'A':'with' if a_with else 'without','B':'without' if a_with else 'with'}
+  a_with=base[(case,repeat,baseline)] if pass_id==1 else not base[(case,repeat,baseline)]
+  labels={'A':'with' if a_with else baseline,'B':baseline if a_with else 'with'}
   mapping[f'{pass_id}/pair-{index}']={label:f'{case}-{condition}-{repeat}' for label,condition in labels.items()}
   for label,condition in labels.items():
    run=public/f'{case}-{condition}-{repeat}'

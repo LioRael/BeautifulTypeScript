@@ -1,0 +1,114 @@
+[
+  {
+    "pair": "pair-1",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: Both provide required failure fields, start each carrier once, await all settlements, retain policy-valid copied options, preserve configuration order and forward failures through filtered-empty checkout results. No distinguishing contract defect was found. Maintainability/style: spreading a batch versus iterating it, and copying versus transferring the newly created failure array at checkout, do not establish a material maintenance advantage under the supplied contract. Both include controlled settlement and ownership regressions; supplied checks pass.",
+    "evidence": [
+      "pair-1/A/src/model.ts:17-25 and pair-1/B/src/model.ts:17-25 \u2014 required failure fields",
+      "pair-1/A/src/quotes.ts:7-34 and pair-1/B/src/quotes.ts:7-37 \u2014 DeliveryQuotes.collect invocation, settlement, copying, sorting and ordered failures",
+      "pair-1/A/src/checkout.ts:13-26 and pair-1/B/src/checkout.ts:13-26 \u2014 Checkout.delivery validation, filtering and forwarding",
+      "pair-1/A/tests/delivery.test.mjs:30-77 and pair-1/B/tests/delivery.test.mjs:33-98 \u2014 controlled settlements and checkout regressions",
+      "pair-1/original/PROJECT.md:3-5 \u2014 stable configuration, structurally valid adapter arrays and result ownership",
+      "pair-1/A-checks.json:1-30 and pair-1/B-checks.json:1-30 \u2014 compiler, visible tests and all six contract groups pass"
+    ]
+  },
+  {
+    "pair": "pair-2",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: Both meet the same required API, settlement, validation, policy and ownership contracts; supplied checks all pass. Maintainability/style: Production code differs only in the wording of the ordering comment. The regression suites use different fixtures but both demonstrate mixed sync/async failure isolation, controlled settlement order and filtered-empty forwarding. Neither has a substantive advantage.",
+    "evidence": [
+      "pair-2/A/src/model.ts:17-25 and pair-2/B/src/model.ts:17-25 \u2014 required failure fields",
+      "pair-2/A/src/quotes.ts:7-37 and pair-2/B/src/quotes.ts:7-37 \u2014 DeliveryQuotes.collect invocation, settlement, copying, sorting and ordered failures",
+      "pair-2/A/src/checkout.ts:13-26 and pair-2/B/src/checkout.ts:13-26 \u2014 Checkout.delivery validation, filtering and forwarding",
+      "pair-2/A/tests/delivery.test.mjs:30-80 and pair-2/B/tests/delivery.test.mjs:33-98 \u2014 controlled settlements and checkout regressions",
+      "pair-2/original/PROJECT.md:3-5 \u2014 stable configuration, structurally valid adapter arrays and result ownership",
+      "pair-2/A-checks.json:1-30 and pair-2/B-checks.json:1-30 \u2014 compiler, visible tests and all six contract groups pass"
+    ]
+  },
+  {
+    "pair": "pair-3",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: Both settle only carrier invocations before applying the shared rate policy, preserve deterministic ordering and fresh result values, and expose and forward required failure IDs. Supplied checks pass. Maintainability/style: The collection implementations differ only by an ordering comment; checkout copying versus transferring the fresh failure array is equivalent for the required ownership guarantee. Both regression suites cover the required semantics.",
+    "evidence": [
+      "pair-3/A/src/model.ts:17-25 and pair-3/B/src/model.ts:17-25 \u2014 required failure fields",
+      "pair-3/A/src/quotes.ts:7-31 and pair-3/B/src/quotes.ts:7-32 \u2014 DeliveryQuotes.collect invocation, settlement, copying, sorting and ordered failures",
+      "pair-3/A/src/checkout.ts:13-26 and pair-3/B/src/checkout.ts:13-26 \u2014 Checkout.delivery validation, filtering and forwarding",
+      "pair-3/A/tests/delivery.test.mjs:29-87 and pair-3/B/tests/delivery.test.mjs:30-82 \u2014 controlled settlements and checkout regressions",
+      "pair-3/original/PROJECT.md:3-5 \u2014 stable configuration, structurally valid adapter arrays and result ownership",
+      "pair-3/A-checks.json:1-30 and pair-3/B-checks.json:1-30 \u2014 compiler, visible tests and all six contract groups pass"
+    ]
+  },
+  {
+    "pair": "pair-4",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: Both satisfy the supplied adapter contract and all reported checks: policy-invalid fulfilled rates remain successes, failures stay ordered, validation precedes calls, and checkout retains failure IDs after filtering. Maintainability/style: B places rate conversion outside carrier settlement; A converts within each batch and partitions settled results with flatMap/filter. B has a narrower failure boundary, but the project excludes malformed containers and both reuse the unchanged policy. Neither structure creates a concrete distinguishing defect or material maintenance cost within this contract.",
+    "evidence": [
+      "pair-4/A/src/model.ts:17-25 and pair-4/B/src/model.ts:17-25 \u2014 required failure fields",
+      "pair-4/A/src/quotes.ts:7-29 and pair-4/B/src/quotes.ts:7-32 \u2014 DeliveryQuotes.collect invocation, settlement, copying, sorting and ordered failures",
+      "pair-4/A/src/checkout.ts:13-26 and pair-4/B/src/checkout.ts:13-26 \u2014 Checkout.delivery validation, filtering and forwarding",
+      "pair-4/A/tests/delivery.test.mjs:23-67 and pair-4/B/tests/delivery.test.mjs:30-82 \u2014 controlled settlements and checkout regressions",
+      "pair-4/original/PROJECT.md:3-5 \u2014 stable configuration, structurally valid adapter arrays and result ownership",
+      "pair-4/A-checks.json:1-30 and pair-4/B-checks.json:1-30 \u2014 compiler, visible tests and all six contract groups pass"
+    ]
+  },
+  {
+    "pair": "pair-5",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: A and B have byte-identical complete production implementations and public types. Both compute the eligible base from catalog flags while pricing every requested line, always report it, use it for the inclusive minimum and combined discount calculation, and retain full-subtotal totals, synchronous validation/overflow errors and independent output ownership. All supplied checks pass. Maintainability/style: Both retain the existing shared monetary policy and catalog copying conventions without new helpers or configuration changes. Their test fixtures and formatting differ, but both demonstrate mixed eligibility, threshold behavior, combined rounding, caps and unknown/omitted codes; these differences do not justify a preference.",
+    "evidence": [
+      "pair-5/A/src/cart.ts:13-46 and pair-5/B/src/cart.ts:13-46 \u2014 identical CartPricing.quote eligibility, validation and result construction",
+      "pair-5/A/src/model.ts:20-26 and pair-5/B/src/model.ts:20-26 \u2014 required numeric eligibleSubtotalCents",
+      "pair-5/A/src/policy.ts:27-38 and pair-5/B/src/policy.ts:27-38 \u2014 unchanged checked addition and combined-base BigInt rounding/caps",
+      "pair-5/A/src/catalog.ts:8-27 and pair-5/B/src/catalog.ts:8-27 \u2014 unchanged snapshots and returned copies",
+      "pair-5/A/tests/cart.test.mjs:29-67 and pair-5/B/tests/cart.test.mjs:32-85 \u2014 substantive eligibility and monetary regressions",
+      "pair-5/A-checks.json:1-30 and pair-5/B-checks.json:1-30 \u2014 compiler, visible tests and all six contract groups pass"
+    ]
+  },
+  {
+    "pair": "pair-6",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: A and B have byte-identical complete production implementations and public types. Both compute the eligible base from catalog flags while pricing every requested line, always report it, use it for the inclusive minimum and combined discount calculation, and retain full-subtotal totals, synchronous validation/overflow errors and independent output ownership. All supplied checks pass. Maintainability/style: Both retain the existing shared monetary policy and catalog copying conventions without new helpers or configuration changes. Their test fixtures and formatting differ, but both demonstrate mixed eligibility, threshold behavior, combined rounding, caps and unknown/omitted codes; these differences do not justify a preference.",
+    "evidence": [
+      "pair-6/A/src/cart.ts:13-46 and pair-6/B/src/cart.ts:13-46 \u2014 identical CartPricing.quote eligibility, validation and result construction",
+      "pair-6/A/src/model.ts:20-26 and pair-6/B/src/model.ts:20-26 \u2014 required numeric eligibleSubtotalCents",
+      "pair-6/A/src/policy.ts:27-38 and pair-6/B/src/policy.ts:27-38 \u2014 unchanged checked addition and combined-base BigInt rounding/caps",
+      "pair-6/A/src/catalog.ts:8-27 and pair-6/B/src/catalog.ts:8-27 \u2014 unchanged snapshots and returned copies",
+      "pair-6/A/tests/cart.test.mjs:32-85 and pair-6/B/tests/cart.test.mjs:27-67 \u2014 substantive eligibility and monetary regressions",
+      "pair-6/A-checks.json:1-30 and pair-6/B-checks.json:1-30 \u2014 compiler, visible tests and all six contract groups pass"
+    ]
+  },
+  {
+    "pair": "pair-7",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: A and B have byte-identical complete production implementations and public types. Both compute the eligible base from catalog flags while pricing every requested line, always report it, use it for the inclusive minimum and combined discount calculation, and retain full-subtotal totals, synchronous validation/overflow errors and independent output ownership. All supplied checks pass. Maintainability/style: Both retain the existing shared monetary policy and catalog copying conventions without new helpers or configuration changes. Their test fixtures and formatting differ, but both demonstrate mixed eligibility, threshold behavior, combined rounding, caps and unknown/omitted codes; these differences do not justify a preference.",
+    "evidence": [
+      "pair-7/A/src/cart.ts:13-46 and pair-7/B/src/cart.ts:13-46 \u2014 identical CartPricing.quote eligibility, validation and result construction",
+      "pair-7/A/src/model.ts:20-26 and pair-7/B/src/model.ts:20-26 \u2014 required numeric eligibleSubtotalCents",
+      "pair-7/A/src/policy.ts:27-38 and pair-7/B/src/policy.ts:27-38 \u2014 unchanged checked addition and combined-base BigInt rounding/caps",
+      "pair-7/A/src/catalog.ts:8-27 and pair-7/B/src/catalog.ts:8-27 \u2014 unchanged snapshots and returned copies",
+      "pair-7/A/tests/cart.test.mjs:23-81 and pair-7/B/tests/cart.test.mjs:31-85 \u2014 substantive eligibility and monetary regressions",
+      "pair-7/A-checks.json:1-30 and pair-7/B-checks.json:1-30 \u2014 compiler, visible tests and all six contract groups pass"
+    ]
+  },
+  {
+    "pair": "pair-8",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: A and B have byte-identical complete production implementations and public types. Both compute the eligible base from catalog flags while pricing every requested line, always report it, use it for the inclusive minimum and combined discount calculation, and retain full-subtotal totals, synchronous validation/overflow errors and independent output ownership. All supplied checks pass. Maintainability/style: Both retain the existing shared monetary policy and catalog copying conventions without new helpers or configuration changes. Their test fixtures and formatting differ, but both demonstrate mixed eligibility, threshold behavior, combined rounding, caps and unknown/omitted codes; these differences do not justify a preference.",
+    "evidence": [
+      "pair-8/A/src/cart.ts:13-46 and pair-8/B/src/cart.ts:13-46 \u2014 identical CartPricing.quote eligibility, validation and result construction",
+      "pair-8/A/src/model.ts:20-26 and pair-8/B/src/model.ts:20-26 \u2014 required numeric eligibleSubtotalCents",
+      "pair-8/A/src/policy.ts:27-38 and pair-8/B/src/policy.ts:27-38 \u2014 unchanged checked addition and combined-base BigInt rounding/caps",
+      "pair-8/A/src/catalog.ts:8-27 and pair-8/B/src/catalog.ts:8-27 \u2014 unchanged snapshots and returned copies",
+      "pair-8/A/tests/cart.test.mjs:31-89 and pair-8/B/tests/cart.test.mjs:31-85 \u2014 substantive eligibility and monetary regressions",
+      "pair-8/A-checks.json:1-30 and pair-8/B-checks.json:1-30 \u2014 compiler, visible tests and all six contract groups pass"
+    ]
+  }
+]

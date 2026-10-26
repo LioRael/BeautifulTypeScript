@@ -1,0 +1,24 @@
+{
+  "id": "revision-a-without-1",
+  "case": "revision-a",
+  "condition": "without",
+  "repeat": 1,
+  "exit_code": 0,
+  "error": null,
+  "elapsed_seconds": 53.814,
+  "usage": {
+    "input_tokens": 86513,
+    "cached_input_tokens": 76160,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2738,
+    "reasoning_output_tokens": 46
+  },
+  "changed_inputs": [
+    "tests/delivery.test.mjs",
+    "src/quotes.ts",
+    "src/checkout.ts",
+    "src/model.ts"
+  ],
+  "package_unchanged": true,
+  "tsconfig_unchanged": true
+}

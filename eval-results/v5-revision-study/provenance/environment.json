@@ -1,0 +1,10 @@
+{
+  "verification_node": "v22.13.0",
+  "source": "https://nodejs.org/dist/v22.13.0/node-v22.13.0-darwin-arm64.tar.gz",
+  "sha256": "bc1e374e7393e2f4b20e5bbc157d02e9b1fb2c634b2f992136b38fb8ca2023b7",
+  "checksum_verified_against": "https://nodejs.org/dist/v22.13.0/SHASUMS256.txt",
+  "platform": "darwin arm64",
+  "typescript": "5.9.3",
+  "codex_cli": "codex-cli 0.164.0",
+  "solver_runtime_note": "Host default Node 26.10.0; recovery may use the other installed Node runtime. Inspect per-run events. Local Node 22 used only for independent post-run verification."
+}

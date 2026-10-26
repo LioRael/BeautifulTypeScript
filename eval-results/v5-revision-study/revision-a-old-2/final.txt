@@ -1,0 +1,7 @@
+Implemented resilient quote collection and added `failedCarrierIds` to both result types.
+
+All carriers start once and settle before return. Failures follow configuration order; successful options survive and checkout forwards failures even when filtering removes every option.
+
+Validation passed: `npm run typecheck` and `npm test` (7/7 tests, including build). Tests cover concurrency, failures, filtering, validation, ordering, and ownership isolation.
+
+No blockers. npm emitted configuration warnings.

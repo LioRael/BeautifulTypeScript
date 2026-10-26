@@ -1,0 +1,23 @@
+{
+  "id": "revision-b-without-1",
+  "case": "revision-b",
+  "condition": "without",
+  "repeat": 1,
+  "exit_code": 0,
+  "error": null,
+  "elapsed_seconds": 47.994,
+  "usage": {
+    "input_tokens": 99725,
+    "cached_input_tokens": 86400,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2248,
+    "reasoning_output_tokens": 20
+  },
+  "changed_inputs": [
+    "tests/cart.test.mjs",
+    "src/model.ts",
+    "src/cart.ts"
+  ],
+  "package_unchanged": true,
+  "tsconfig_unchanged": true
+}

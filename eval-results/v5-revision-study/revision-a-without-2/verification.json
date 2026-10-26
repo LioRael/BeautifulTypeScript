@@ -1,0 +1,51 @@
+{
+  "runtime": {
+    "node": "v22.13.0"
+  },
+  "compiler": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "hidden_process": {
+    "exit_code": 0,
+    "stdout": "[{\"id\":\"failure-isolation\",\"pass\":true},{\"id\":\"settlement-and-order\",\"pass\":true},{\"id\":\"policy-and-empty-success\",\"pass\":true},{\"id\":\"checkout-public-contract\",\"pass\":true},{\"id\":\"validation-before-side-effects\",\"pass\":true},{\"id\":\"result-and-parcel-ownership\",\"pass\":true}]\n",
+    "stderr": ""
+  },
+  "contract_groups": [
+    {
+      "id": "failure-isolation",
+      "pass": true
+    },
+    {
+      "id": "settlement-and-order",
+      "pass": true
+    },
+    {
+      "id": "policy-and-empty-success",
+      "pass": true
+    },
+    {
+      "id": "checkout-public-contract",
+      "pass": true
+    },
+    {
+      "id": "validation-before-side-effects",
+      "pass": true
+    },
+    {
+      "id": "result-and-parcel-ownership",
+      "pass": true
+    }
+  ],
+  "visible_tests": {
+    "exit_code": 0,
+    "stdout": "\n> test\n> npm run build && node --test tests/*.test.mjs\n\n\n> build\n> tsc\n\nTAP version 13\n# Subtest: filters invalid rates and recommends cheapest eligible delivery\nok 1 - filters invalid rates and recommends cheapest eligible delivery\n  ---\n  duration_ms: 0.904125\n  ...\n# Subtest: invalid parcel never calls adapters\nok 2 - invalid parcel never calls adapters\n  ---\n  duration_ms: 0.309167\n  ...\n# Subtest: starts every carrier once and waits for all outcomes in configured order\nok 3 - starts every carrier once and waits for all outcomes in configured order\n  ---\n  duration_ms: 2.566917\n  ...\n# Subtest: empty and policy-rejected rates are successful; options retain policy ordering\nok 4 - empty and policy-rejected rates are successful; options retain policy ordering\n  ---\n  duration_ms: 6.408333\n  ...\n# Subtest: checkout forwards failures with and without eligible options\nok 5 - checkout forwards failures with and without eligible options\n  ---\n  duration_ms: 0.275625\n  ...\n# Subtest: invalid inputs reject before any adapter invocation\nok 6 - invalid inputs reject before any adapter invocation\n  ---\n  duration_ms: 0.228041\n  ...\n# Subtest: parcels and result values are isolated from callers, adapters and later collections\nok 7 - parcels and result values are isolated from callers, adapters and later collections\n  ---\n  duration_ms: 0.238833\n  ...\n1..7\n# tests 7\n# suites 0\n# pass 7\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 74.434709\n",
+    "stderr": ""
+  },
+  "source_metrics": {
+    "files": 4,
+    "nonempty_lines": 111,
+    "note": "Descriptive only; not a beauty score."
+  }
+}

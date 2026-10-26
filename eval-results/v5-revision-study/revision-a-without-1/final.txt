@@ -1,0 +1,5 @@
+Implemented resilient quote collection with `failedCarrierIds` on both result types. All carriers start once and settle before returning; successful options survive failures. Checkout preserves failure IDs even when filtering removes every option.
+
+Validation, ordering, recommendations, and data isolation remain intact.
+
+Verified: typecheck passed; all 8 tests passed. No blockers. npm emitted a non-fatal existing configuration warning about `home`.

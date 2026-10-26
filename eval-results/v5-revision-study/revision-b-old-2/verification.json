@@ -1,0 +1,51 @@
+{
+  "runtime": {
+    "node": "v22.13.0"
+  },
+  "compiler": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "hidden_process": {
+    "exit_code": 0,
+    "stdout": "[{\"id\":\"eligible-base-and-minimum\",\"pass\":true},{\"id\":\"public-field-and-no-code\",\"pass\":true},{\"id\":\"rounding-cap-and-boundaries\",\"pass\":true},{\"id\":\"line-order-and-quantities\",\"pass\":true},{\"id\":\"existing-errors-and-range-policy\",\"pass\":true},{\"id\":\"catalog-and-quote-ownership\",\"pass\":true}]\n",
+    "stderr": ""
+  },
+  "contract_groups": [
+    {
+      "id": "eligible-base-and-minimum",
+      "pass": true
+    },
+    {
+      "id": "public-field-and-no-code",
+      "pass": true
+    },
+    {
+      "id": "rounding-cap-and-boundaries",
+      "pass": true
+    },
+    {
+      "id": "line-order-and-quantities",
+      "pass": true
+    },
+    {
+      "id": "existing-errors-and-range-policy",
+      "pass": true
+    },
+    {
+      "id": "catalog-and-quote-ownership",
+      "pass": true
+    }
+  ],
+  "visible_tests": {
+    "exit_code": 0,
+    "stdout": "\n> test\n> npm run build && node --test tests/*.test.mjs\n\n\n> build\n> tsc\n\nTAP version 13\n# Subtest: quantities, repeated lines, rounding and original order\nok 1 - quantities, repeated lines, rounding and original order\n  ---\n  duration_ms: 0.704209\n  ...\n# Subtest: unknown codes remain no discount and invalid lines throw\nok 2 - unknown codes remain no discount and invalid lines throw\n  ---\n  duration_ms: 0.251584\n  ...\n# Subtest: excluded products neither meet the minimum nor receive discounts\nok 3 - excluded products neither meet the minimum nor receive discounts\n  ---\n  duration_ms: 0.197375\n  ...\n# Subtest: eligible subtotal is always reported, including quantities and repeated SKUs\nok 4 - eligible subtotal is always reported, including quantities and repeated SKUs\n  ---\n  duration_ms: 0.09925\n  ...\n# Subtest: empty, ineligible, free and zero-cap quotes retain null applied codes\nok 5 - empty, ineligible, free and zero-cap quotes retain null applied codes\n  ---\n  duration_ms: 0.140125\n  ...\n# Subtest: quotes preserve inputs, catalog snapshots and independent output ownership\nok 6 - quotes preserve inputs, catalog snapshots and independent output ownership\n  ---\n  duration_ms: 0.093125\n  ...\n# Subtest: validation and monetary overflows still throw synchronously for every code path\nok 7 - validation and monetary overflows still throw synchronously for every code path\n  ---\n  duration_ms: 0.400291\n  ...\n1..7\n# tests 7\n# suites 0\n# pass 7\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 67.385167\n",
+    "stderr": ""
+  },
+  "source_metrics": {
+    "files": 4,
+    "nonempty_lines": 132,
+    "note": "Descriptive only; not a beauty score."
+  }
+}

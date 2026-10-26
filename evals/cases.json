@@ -9,7 +9,9 @@
     "simplify": "typescript-best-practices",
     "effect-internal": "typescript-best-practices",
     "effect-async": "typescript-best-practices",
-    "effect-boundary": "typescript-best-practices"
+    "effect-boundary": "typescript-best-practices",
+    "revision-a": "typescript-best-practices",
+    "revision-b": "typescript-best-practices"
   },
   "order": [
     "without",
@@ -24,6 +26,8 @@
     "simplify": "skills/typescript-best-practices/evals/trusted-refactor",
     "effect-internal": "skills/typescript-best-practices/evals/effect-internal",
     "effect-async": "skills/typescript-best-practices/evals/effect-async",
-    "effect-boundary": "skills/typescript-best-practices/evals/effect-boundary"
+    "effect-boundary": "skills/typescript-best-practices/evals/effect-boundary",
+    "revision-a": "skills/typescript-best-practices/evals/revision-a",
+    "revision-b": "skills/typescript-best-practices/evals/revision-b"
   }
 }

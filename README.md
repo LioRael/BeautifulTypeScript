@@ -18,16 +18,23 @@ written for TypeScript. MIT licensed. Install directly from GitHub; no npm packa
 Each skill bundles the references its workflow needs. No companion skill is required.
 No forced Result type, schema package, framework, architecture or formatting style.
 
+The writing workflow starts from callers and existing policies, implements the change,
+then checks the diff for repeated decisions, unnecessary state and unsupported machinery.
+[Six worked simplification examples](skills/typescript-best-practices/references/simplification.md)
+show both what to remove and which validation, errors and ownership guarantees to keep.
+
 ## Measured effect
 
-A [new-task comparison](docs/EFFECT-STUDY.md) tested the writing skill on three tasks,
-with two runs per condition (12 runs total). Both conditions passed 30/30 independent
-contract-check groups. Anonymous review, repeated with A/B reversed, rated all six pairs
-as ties. The code included useful differences and some extra repetition with the skill;
-this study did **not** demonstrate a stable quality advantage.
+A [three-condition revision study](docs/REVISION-STUDY.md) compared no skill, the old
+writing skill and the revised workflow on two new tasks, with 12 runs total. All three
+passed 24/24 frozen behavior-check groups on Node 22. Both anonymous review orders tied
+all four revised-versus-old pairs. One no-skill output failed a supplementary large-array
+check; both old and revised skill outputs passed it. **A stable advantage for the revision
+was not demonstrated.**
 
-The report links every original implementation and judgment. These are measured results;
-the examples below explain the intended practices.
+The [earlier three-task study](docs/EFFECT-STUDY.md) also reported no stable advantage.
+Reports retain original code, checks and judging disagreements. The examples below are
+teaching illustrations, not claimed measured improvements.
 
 ## Illustrative patterns
 
@@ -302,6 +309,8 @@ and fixture-tested async rules.
 
 Each skill bundles its own task, starting project and grading criteria:
 
+- [Writing: delivery failure isolation](skills/typescript-best-practices/evals/revision-a/case.json)
+- [Writing: promotion eligibility](skills/typescript-best-practices/evals/revision-b/case.json)
 - [Writing: simplify trusted internal code](skills/typescript-best-practices/evals/trusted-refactor/case.json)
 - [Writing: settings boundary](skills/typescript-best-practices/evals/settings-boundary/case.json)
 - [Review: queue contract](skills/typescript-review/evals/queue-contract/case.json)

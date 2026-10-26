@@ -1,0 +1,5 @@
+Implemented resilient collection: every carrier starts once, all settle, successful options survive failures, and both result types expose `failedCarrierIds` in configured order. Checkout forwards failures even when filtering removes every option.
+
+Validation, ordering, recommendations, and ownership isolation are preserved.
+
+Verification: typecheck, build, and all 7 tests passed. Checks ran on Node 26.12.1; Node 22 validation remains unverified because the login-shell `mise` invocation failed with a permission error.

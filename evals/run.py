@@ -57,11 +57,15 @@ def case_snapshot(manifest):
             for f in sorted(case_directory(case, manifest).rglob('*'))
             if f.is_file() and '__pycache__' not in f.parts}
 
-def skill_snapshot():
-    return {path: digest for path, digest in snapshot(ROOT/'skills').items()
+def skill_snapshot(root=None):
+    return {path: digest for path, digest in snapshot(root or ROOT/'skills').items()
             if 'evals' not in Path(path).parts and '__pycache__' not in Path(path).parts}
 
-def prepare_workspace(case, condition, repeat, manifest, work):
+def prepare_workspace(case, condition, repeat, manifest, work, old_skill_root=None):
+    if condition not in {'without', 'old', 'with'}:
+        raise ValueError('Unknown evaluation condition')
+    if condition == 'old' and old_skill_root is None:
+        raise ValueError('Old condition requires a frozen skill directory')
     run_id = f'{case}-{condition}-{repeat}'
     folder = work/run_id
     workspace = folder/'workspace'
@@ -69,20 +73,21 @@ def prepare_workspace(case, condition, repeat, manifest, work):
     shutil.copytree(case_directory(case, manifest)/'files', workspace)
     subprocess.run(['git','init','--template=','--quiet',str(workspace)],check=True)
     (workspace/'node_modules').symlink_to(ROOT/'node_modules',target_is_directory=True)
-    if condition == 'with':
+    if condition in {'with', 'old'}:
         # Skill-local evals include hidden graders and must never enter agent context.
-        shutil.copytree(ROOT/'skills'/manifest['cases'][case], workspace/'supplied-skill',
+        skill_root = old_skill_root if condition == 'old' else ROOT/'skills'
+        shutil.copytree(skill_root/manifest['cases'][case], workspace/'supplied-skill',
                         ignore=shutil.ignore_patterns('evals', '__pycache__'))
     return folder, workspace
 
-def run_one(case, condition, repeat, manifest, work, public, disable_config, settings=None):
+def run_one(case, condition, repeat, manifest, work, public, disable_config, settings=None, old_skill_root=None):
     run_id = f'{case}-{condition}-{repeat}'
-    folder, workspace = prepare_workspace(case, condition, repeat, manifest, work)
+    folder, workspace = prepare_workspace(case, condition, repeat, manifest, work, old_skill_root)
     common=('Work only in this workspace. Read PROJECT.md and the task files. Do not inspect parent/home directories, other skills, evaluation rubrics, or other runs. '
             'Do not use network, install packages, delegate, publish, or change global settings. node_modules is preinstalled; use it only to run project tooling. '
             'You have at most 8 minutes. Complete the requested work and report actual evidence, including blockers.\n')
     task=(case_directory(case, manifest)/'prompt.md').read_text()
-    prompt=common+('Read and apply supplied-skill/SKILL.md and only its relevant bundled references.\n' if condition=='with' else '')+task
+    prompt=common+('Read and apply supplied-skill/SKILL.md and only its relevant bundled references.\n' if condition in {'with', 'old'} else '')+task
     (folder/'prompt.txt').write_text(prompt)
     started=time.time(); error=None
     with (folder/'raw-events.jsonl').open('w') as out,(folder/'stderr.txt').open('w') as err:
@@ -128,8 +133,13 @@ def run_one(case, condition, repeat, manifest, work, public, disable_config, set
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--work',required=True);parser.add_argument('--output',required=True);parser.add_argument('--workers',type=int,default=2);parser.add_argument('--cases',nargs='*');parser.add_argument('--rubric',default=None)
+    parser.add_argument('--old-skill-root', help='Directory containing frozen skill folders for a third condition')
+    parser.add_argument('--old-skill-label', help='Public provenance, e.g. a commit SHA; required with --old-skill-root')
     parser.add_argument('--model');parser.add_argument('--effort');parser.add_argument('--repetitions',type=int)
     args=parser.parse_args();work=Path(args.work).resolve();public=Path(args.output).resolve()
+    old_skill_root = Path(args.old_skill_root).resolve() if args.old_skill_root else None
+    if bool(old_skill_root) != bool(args.old_skill_label): raise SystemExit('Supply both old-skill-root and old-skill-label')
+    if old_skill_root is not None and not old_skill_root.is_dir(): raise SystemExit('Old skill root does not exist')
     if work.exists() or public.exists(): raise SystemExit('Refusing to overwrite an evaluation. Choose fresh directories.')
     if not (ROOT/'node_modules/typescript').exists(): raise SystemExit('Run npm ci first.')
     work.mkdir(parents=True);public.mkdir(parents=True)
@@ -140,7 +150,14 @@ def main():
         if args.repetitions < 1: raise SystemExit('Repetitions must be positive')
         manifest['repetitions']=args.repetitions
     manifest['selected_cases']=args.cases or list(manifest['cases'])
-    for case in manifest['selected_cases']: case_directory(case, manifest)
+    for case in manifest['selected_cases']:
+        case_directory(case, manifest)
+        if old_skill_root is not None and not (old_skill_root/manifest['cases'][case]/'SKILL.md').is_file():
+            raise SystemExit('Frozen skill missing for '+case)
+    if old_skill_root is not None:
+        manifest['order']=['without','old','with']
+        manifest['old_skill_label']=args.old_skill_label
+        manifest['old_skill_hashes']=skill_snapshot(old_skill_root)
     manifest['skill_hashes']=skill_snapshot();manifest['case_hashes']=case_snapshot(manifest)
     manifest['rubric_hashes']={case: sha(ROOT/args.rubric if args.rubric else case_directory(case, manifest)/'graders/rubric.md') for case in manifest['cases']}
     manifest['runner_sha256']=sha(Path(__file__));manifest['grader_sha256']=sha(ROOT/'evals/grade-runtime.mjs')
@@ -153,9 +170,11 @@ def main():
             for condition in (manifest['order'] if repeat%2 else list(reversed(manifest['order']))): jobs.append((case,condition,repeat))
     config=disabled_skills()
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as pool:
-        futures=[pool.submit(run_one,*job,manifest,work,public,config,settings) for job in jobs]
+        futures=[pool.submit(run_one,*job,manifest,work,public,config,settings,old_skill_root) for job in jobs]
         records=[future.result() for future in concurrent.futures.as_completed(futures)]
     (public/'runs.json').write_text(json.dumps(sorted(records,key=lambda r:r['id']),indent=2)+'\n')
+    if old_skill_root is not None:
+        assert skill_snapshot(old_skill_root)==manifest['old_skill_hashes'],'Old skills changed during evaluation'
     assert skill_snapshot()==manifest['skill_hashes'],'Skills changed during evaluation'
     assert case_snapshot(manifest)==manifest['case_hashes'],'Tasks changed during evaluation'
     assert {case: sha(ROOT/args.rubric if args.rubric else case_directory(case, manifest)/'graders/rubric.md') for case in manifest['cases']}==manifest['rubric_hashes'],'Rubric changed during evaluation'

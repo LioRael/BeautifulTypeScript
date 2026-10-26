@@ -1,0 +1,284 @@
+[
+  {
+    "id": "revision-a-old-1",
+    "case": "revision-a",
+    "condition": "old",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 88.121,
+    "usage": {
+      "input_tokens": 160826,
+      "cached_input_tokens": 143232,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3809,
+      "reasoning_output_tokens": 920
+    },
+    "changed_inputs": [
+      "tests/delivery.test.mjs",
+      "src/quotes.ts",
+      "src/checkout.ts",
+      "src/model.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "revision-a-old-2",
+    "case": "revision-a",
+    "condition": "old",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 65.903,
+    "usage": {
+      "input_tokens": 112227,
+      "cached_input_tokens": 103936,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2865,
+      "reasoning_output_tokens": 312
+    },
+    "changed_inputs": [
+      "tests/delivery.test.mjs",
+      "src/quotes.ts",
+      "src/checkout.ts",
+      "src/model.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "revision-a-with-1",
+    "case": "revision-a",
+    "condition": "with",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 82.574,
+    "usage": {
+      "input_tokens": 143348,
+      "cached_input_tokens": 133120,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3436,
+      "reasoning_output_tokens": 392
+    },
+    "changed_inputs": [
+      "tests/delivery.test.mjs",
+      "src/quotes.ts",
+      "src/checkout.ts",
+      "src/model.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "revision-a-with-2",
+    "case": "revision-a",
+    "condition": "with",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 71.922,
+    "usage": {
+      "input_tokens": 138475,
+      "cached_input_tokens": 114048,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3210,
+      "reasoning_output_tokens": 390
+    },
+    "changed_inputs": [
+      "tests/delivery.test.mjs",
+      "src/quotes.ts",
+      "src/checkout.ts",
+      "src/model.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "revision-a-without-1",
+    "case": "revision-a",
+    "condition": "without",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 53.814,
+    "usage": {
+      "input_tokens": 86513,
+      "cached_input_tokens": 76160,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2738,
+      "reasoning_output_tokens": 46
+    },
+    "changed_inputs": [
+      "tests/delivery.test.mjs",
+      "src/quotes.ts",
+      "src/checkout.ts",
+      "src/model.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "revision-a-without-2",
+    "case": "revision-a",
+    "condition": "without",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 59.946,
+    "usage": {
+      "input_tokens": 121101,
+      "cached_input_tokens": 112256,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2779,
+      "reasoning_output_tokens": 119
+    },
+    "changed_inputs": [
+      "tests/delivery.test.mjs",
+      "src/quotes.ts",
+      "src/checkout.ts",
+      "src/model.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "revision-b-old-1",
+    "case": "revision-b",
+    "condition": "old",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 54.784,
+    "usage": {
+      "input_tokens": 99867,
+      "cached_input_tokens": 91392,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2628,
+      "reasoning_output_tokens": 82
+    },
+    "changed_inputs": [
+      "tests/cart.test.mjs",
+      "src/model.ts",
+      "src/cart.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "revision-b-old-2",
+    "case": "revision-b",
+    "condition": "old",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 60.017,
+    "usage": {
+      "input_tokens": 136238,
+      "cached_input_tokens": 125568,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2750,
+      "reasoning_output_tokens": 78
+    },
+    "changed_inputs": [
+      "tests/cart.test.mjs",
+      "src/model.ts",
+      "src/cart.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "revision-b-with-1",
+    "case": "revision-b",
+    "condition": "with",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 55.688,
+    "usage": {
+      "input_tokens": 104979,
+      "cached_input_tokens": 92288,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2606,
+      "reasoning_output_tokens": 105
+    },
+    "changed_inputs": [
+      "tests/cart.test.mjs",
+      "src/model.ts",
+      "src/cart.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "revision-b-with-2",
+    "case": "revision-b",
+    "condition": "with",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 44.113,
+    "usage": {
+      "input_tokens": 121617,
+      "cached_input_tokens": 111104,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2464,
+      "reasoning_output_tokens": 32
+    },
+    "changed_inputs": [
+      "tests/cart.test.mjs",
+      "src/model.ts",
+      "src/cart.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "revision-b-without-1",
+    "case": "revision-b",
+    "condition": "without",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 47.994,
+    "usage": {
+      "input_tokens": 99725,
+      "cached_input_tokens": 86400,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2248,
+      "reasoning_output_tokens": 20
+    },
+    "changed_inputs": [
+      "tests/cart.test.mjs",
+      "src/model.ts",
+      "src/cart.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "revision-b-without-2",
+    "case": "revision-b",
+    "condition": "without",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 38.093,
+    "usage": {
+      "input_tokens": 70016,
+      "cached_input_tokens": 57600,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2396,
+      "reasoning_output_tokens": 10
+    },
+    "changed_inputs": [
+      "tests/cart.test.mjs",
+      "src/model.ts",
+      "src/cart.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  }
+]

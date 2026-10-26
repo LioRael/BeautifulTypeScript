@@ -1,0 +1,6 @@
+{
+  "additional_public_trace_redactions": {
+    "ls_owner_name": 1
+  },
+  "note": "Host owner names and absolute local paths are omitted from public author/solver/judge traces. Task code, outputs, exit status and evaluation outcomes are retained. Raw transport logs remain local."
+}

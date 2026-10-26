@@ -1,0 +1,75 @@
+{
+  "reason": "Incidental ancestor git status filenames and host PATH inventory; commands, statuses and task evidence retained. Raw transport logs stay local.",
+  "counts": {
+    "judge-1": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "judge-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "revision-a-old-1": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "revision-a-old-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "revision-a-with-1": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "revision-a-with-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "revision-a-without-1": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "revision-a-without-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "revision-b-old-1": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "revision-b-old-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "revision-b-with-1": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "revision-b-with-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "revision-b-without-1": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "revision-b-without-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    }
+  }
+}

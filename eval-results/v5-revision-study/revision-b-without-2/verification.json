@@ -1,0 +1,51 @@
+{
+  "runtime": {
+    "node": "v22.13.0"
+  },
+  "compiler": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "hidden_process": {
+    "exit_code": 0,
+    "stdout": "[{\"id\":\"eligible-base-and-minimum\",\"pass\":true},{\"id\":\"public-field-and-no-code\",\"pass\":true},{\"id\":\"rounding-cap-and-boundaries\",\"pass\":true},{\"id\":\"line-order-and-quantities\",\"pass\":true},{\"id\":\"existing-errors-and-range-policy\",\"pass\":true},{\"id\":\"catalog-and-quote-ownership\",\"pass\":true}]\n",
+    "stderr": ""
+  },
+  "contract_groups": [
+    {
+      "id": "eligible-base-and-minimum",
+      "pass": true
+    },
+    {
+      "id": "public-field-and-no-code",
+      "pass": true
+    },
+    {
+      "id": "rounding-cap-and-boundaries",
+      "pass": true
+    },
+    {
+      "id": "line-order-and-quantities",
+      "pass": true
+    },
+    {
+      "id": "existing-errors-and-range-policy",
+      "pass": true
+    },
+    {
+      "id": "catalog-and-quote-ownership",
+      "pass": true
+    }
+  ],
+  "visible_tests": {
+    "exit_code": 0,
+    "stdout": "\n> test\n> npm run build && node --test tests/*.test.mjs\n\n\n> build\n> tsc\n\nTAP version 13\n# Subtest: quantities, repeated lines, rounding and original order\nok 1 - quantities, repeated lines, rounding and original order\n  ---\n  duration_ms: 0.877708\n  ...\n# Subtest: ineligible products neither satisfy the minimum nor receive discounts\nok 2 - ineligible products neither satisfy the minimum nor receive discounts\n  ---\n  duration_ms: 0.205875\n  ...\n# Subtest: eligible subtotal is reported with omitted, unknown and case-mismatched codes\nok 3 - eligible subtotal is reported with omitted, unknown and case-mismatched codes\n  ---\n  duration_ms: 0.157583\n  ...\n# Subtest: minimum is inclusive, rounding is combined, and caps preserve zero convention\nok 4 - minimum is inclusive, rounding is combined, and caps preserve zero convention\n  ---\n  duration_ms: 0.161958\n  ...\n# Subtest: validation and overflow errors remain synchronous for every code path\nok 5 - validation and overflow errors remain synchronous for every code path\n  ---\n  duration_ms: 0.497375\n  ...\n# Subtest: catalog snapshots, caller inputs and quote ownership remain independent\nok 6 - catalog snapshots, caller inputs and quote ownership remain independent\n  ---\n  duration_ms: 0.107583\n  ...\n# Subtest: unknown codes remain no discount and invalid lines throw\nok 7 - unknown codes remain no discount and invalid lines throw\n  ---\n  duration_ms: 0.124167\n  ...\n1..7\n# tests 7\n# suites 0\n# pass 7\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 105.085125\n",
+    "stderr": ""
+  },
+  "source_metrics": {
+    "files": 4,
+    "nonempty_lines": 132,
+    "note": "Descriptive only; not a beauty score."
+  }
+}

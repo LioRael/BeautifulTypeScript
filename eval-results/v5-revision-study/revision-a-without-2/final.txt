@@ -1,0 +1,5 @@
+Implemented resilient quote collection and added `failedCarrierIds` to both result types.
+
+Every carrier starts once, all settle, and failures appear in configured order. Successful options, validation, ordering, checkout filtering, recommendations, and value isolation are preserved.
+
+Validation passed: typecheck, build, and all 7 tests. The default npm shim failed with a permission error; system Node/npm completed validation. No remaining blockers.

@@ -60,3 +60,15 @@ The six source references now total 984 lines. The useful evidence is the topic 
 examples and checks above, not whether that count approaches another project's count.
 No model-quality improvement is inferred from these checks. The earlier
 [paired evaluation](EVALUATION.md) records its exact older skill versions and limitations.
+
+
+## Concrete simplification workflow (2026-10-27)
+
+The writing entrypoint now has four phases: establish the existing contract/policy,
+implement directly, simplify the changed code, and verify. Its 118 lines replace the
+previous 176-line entrypoint without removing the authoritative guide digests.
+The new [simplification reference](../skills/typescript-best-practices/references/simplification.md)
+contains six choices illustrated in seven compilable TS blocks, five with executable
+contract probes. These are original project guidance, not additional claims about the
+upstream guides. The full documentation check now compiles 58 blocks and executes 23.
+Content checks establish runnable examples, not model-quality gains.

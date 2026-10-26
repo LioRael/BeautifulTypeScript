@@ -1,0 +1,197 @@
+{
+  "scope": "Two newly authored business changes, three conditions, two repetitions per condition. Same model family authored/solved/judged. No stable advantage over the old skill was demonstrated.",
+  "conditions": {
+    "without": {
+      "runs": 4,
+      "successful_processes": 4,
+      "compiled": 4,
+      "visible_test_suites_passed": 4,
+      "contract_groups_passed": 24,
+      "contract_groups_total": 24,
+      "node_versions": [
+        "v22.13.0"
+      ]
+    },
+    "old": {
+      "runs": 4,
+      "successful_processes": 4,
+      "compiled": 4,
+      "visible_test_suites_passed": 4,
+      "contract_groups_passed": 24,
+      "contract_groups_total": 24,
+      "node_versions": [
+        "v22.13.0"
+      ]
+    },
+    "with": {
+      "runs": 4,
+      "successful_processes": 4,
+      "compiled": 4,
+      "visible_test_suites_passed": 4,
+      "contract_groups_passed": 24,
+      "contract_groups_total": 24,
+      "node_versions": [
+        "v22.13.0"
+      ]
+    }
+  },
+  "judgments": [
+    {
+      "pass": 1,
+      "pair": "pair-1",
+      "candidate": "revision-a-with-1",
+      "baseline": "revision-a-without-1",
+      "baseline_condition": "without",
+      "outcome": "win",
+      "confidence": "high"
+    },
+    {
+      "pass": 1,
+      "pair": "pair-2",
+      "candidate": "revision-a-with-1",
+      "baseline": "revision-a-old-1",
+      "baseline_condition": "old",
+      "outcome": "tie",
+      "confidence": "high"
+    },
+    {
+      "pass": 1,
+      "pair": "pair-3",
+      "candidate": "revision-a-with-2",
+      "baseline": "revision-a-without-2",
+      "baseline_condition": "without",
+      "outcome": "tie",
+      "confidence": "high"
+    },
+    {
+      "pass": 1,
+      "pair": "pair-4",
+      "candidate": "revision-a-with-2",
+      "baseline": "revision-a-old-2",
+      "baseline_condition": "old",
+      "outcome": "tie",
+      "confidence": "high"
+    },
+    {
+      "pass": 1,
+      "pair": "pair-5",
+      "candidate": "revision-b-with-1",
+      "baseline": "revision-b-without-1",
+      "baseline_condition": "without",
+      "outcome": "tie",
+      "confidence": "high"
+    },
+    {
+      "pass": 1,
+      "pair": "pair-6",
+      "candidate": "revision-b-with-1",
+      "baseline": "revision-b-old-1",
+      "baseline_condition": "old",
+      "outcome": "tie",
+      "confidence": "high"
+    },
+    {
+      "pass": 1,
+      "pair": "pair-7",
+      "candidate": "revision-b-with-2",
+      "baseline": "revision-b-without-2",
+      "baseline_condition": "without",
+      "outcome": "tie",
+      "confidence": "high"
+    },
+    {
+      "pass": 1,
+      "pair": "pair-8",
+      "candidate": "revision-b-with-2",
+      "baseline": "revision-b-old-2",
+      "baseline_condition": "old",
+      "outcome": "tie",
+      "confidence": "high"
+    },
+    {
+      "pass": 2,
+      "pair": "pair-1",
+      "candidate": "revision-a-with-1",
+      "baseline": "revision-a-without-1",
+      "baseline_condition": "without",
+      "outcome": "tie",
+      "confidence": "high"
+    },
+    {
+      "pass": 2,
+      "pair": "pair-2",
+      "candidate": "revision-a-with-1",
+      "baseline": "revision-a-old-1",
+      "baseline_condition": "old",
+      "outcome": "tie",
+      "confidence": "high"
+    },
+    {
+      "pass": 2,
+      "pair": "pair-3",
+      "candidate": "revision-a-with-2",
+      "baseline": "revision-a-without-2",
+      "baseline_condition": "without",
+      "outcome": "tie",
+      "confidence": "high"
+    },
+    {
+      "pass": 2,
+      "pair": "pair-4",
+      "candidate": "revision-a-with-2",
+      "baseline": "revision-a-old-2",
+      "baseline_condition": "old",
+      "outcome": "tie",
+      "confidence": "high"
+    },
+    {
+      "pass": 2,
+      "pair": "pair-5",
+      "candidate": "revision-b-with-1",
+      "baseline": "revision-b-without-1",
+      "baseline_condition": "without",
+      "outcome": "tie",
+      "confidence": "high"
+    },
+    {
+      "pass": 2,
+      "pair": "pair-6",
+      "candidate": "revision-b-with-1",
+      "baseline": "revision-b-old-1",
+      "baseline_condition": "old",
+      "outcome": "tie",
+      "confidence": "high"
+    },
+    {
+      "pass": 2,
+      "pair": "pair-7",
+      "candidate": "revision-b-with-2",
+      "baseline": "revision-b-without-2",
+      "baseline_condition": "without",
+      "outcome": "tie",
+      "confidence": "high"
+    },
+    {
+      "pass": 2,
+      "pair": "pair-8",
+      "candidate": "revision-b-with-2",
+      "baseline": "revision-b-old-2",
+      "baseline_condition": "old",
+      "outcome": "tie",
+      "confidence": "high"
+    }
+  ],
+  "posthoc_large_batch": "See posthoc-large-batch.json. Separate from frozen primary counts. One no-skill output failed; both old/new repetitions passed.",
+  "audit": {
+    "supplied_skill_copies_match_frozen_hashes": true,
+    "new_reference_read_in_all_four_revised_runs": true,
+    "required_public_fields_inspected": true,
+    "package_and_tsconfig_preserved": true,
+    "environment_error_runs": [
+      "revision-a-with-1",
+      "revision-b-old-2"
+    ],
+    "solution_reruns": 0,
+    "skill_changed_after_results": false
+  }
+}

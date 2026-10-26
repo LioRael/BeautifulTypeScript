@@ -1,0 +1,5 @@
+Implemented resilient collection with `Promise.allSettled`. Every carrier starts once, all settle, successful options survive, and `failedCarrierIds` follows configured order through checkout—even with no eligible options.
+
+Preserved validation, ordering, recommendations, and mutation isolation.
+
+Validation: typecheck and build passed; all 8 tests passed. The `mise` shim failed with a permission error, so checks used Node 26.12.1. Node 22 remains unverified.

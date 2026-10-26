@@ -49,6 +49,24 @@ class CasePackaging(unittest.TestCase):
         self.assertFalse(any('evals' in Path(p).parts for p in runner.skill_snapshot()))
 
 
+    def test_old_condition_uses_frozen_content_and_excludes_evals(self):
+        manifest = json.loads((ROOT/'evals/cases.json').read_text())
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            old = root/'old'
+            skill = old/'typescript-best-practices'
+            skill.mkdir(parents=True)
+            (skill/'SKILL.md').write_text('Frozen old instructions')
+            (skill/'evals').mkdir()
+            (skill/'evals/secret.txt').write_text('Do not expose')
+            _, ws = runner.prepare_workspace('write', 'old', 1, manifest, root, old)
+            self.assertEqual((ws/'supplied-skill/SKILL.md').read_text(), 'Frozen old instructions')
+            self.assertFalse((ws/'supplied-skill/evals').exists())
+            self.assertEqual(set(runner.skill_snapshot(old)), {'typescript-best-practices/SKILL.md'})
+            with self.assertRaises(ValueError):
+                runner.prepare_workspace('write', 'old', 2, manifest, root)
+
+
     def test_run_record_preserves_failed_runtime_grade_after_successful_process(self):
         manifest = json.loads((ROOT/'evals/cases.json').read_text())
         # Simulated transport only: no model/API use or claimed task success.

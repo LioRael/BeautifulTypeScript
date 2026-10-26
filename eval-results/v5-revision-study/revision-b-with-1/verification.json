@@ -1,0 +1,51 @@
+{
+  "runtime": {
+    "node": "v22.13.0"
+  },
+  "compiler": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "hidden_process": {
+    "exit_code": 0,
+    "stdout": "[{\"id\":\"eligible-base-and-minimum\",\"pass\":true},{\"id\":\"public-field-and-no-code\",\"pass\":true},{\"id\":\"rounding-cap-and-boundaries\",\"pass\":true},{\"id\":\"line-order-and-quantities\",\"pass\":true},{\"id\":\"existing-errors-and-range-policy\",\"pass\":true},{\"id\":\"catalog-and-quote-ownership\",\"pass\":true}]\n",
+    "stderr": ""
+  },
+  "contract_groups": [
+    {
+      "id": "eligible-base-and-minimum",
+      "pass": true
+    },
+    {
+      "id": "public-field-and-no-code",
+      "pass": true
+    },
+    {
+      "id": "rounding-cap-and-boundaries",
+      "pass": true
+    },
+    {
+      "id": "line-order-and-quantities",
+      "pass": true
+    },
+    {
+      "id": "existing-errors-and-range-policy",
+      "pass": true
+    },
+    {
+      "id": "catalog-and-quote-ownership",
+      "pass": true
+    }
+  ],
+  "visible_tests": {
+    "exit_code": 0,
+    "stdout": "\n> test\n> npm run build && node --test tests/*.test.mjs\n\n\n> build\n> tsc\n\nTAP version 13\n# Subtest: quantities, repeated lines, rounding and original order\nok 1 - quantities, repeated lines, rounding and original order\n  ---\n  duration_ms: 0.718417\n  ...\n# Subtest: unknown codes remain no discount and invalid lines throw\nok 2 - unknown codes remain no discount and invalid lines throw\n  ---\n  duration_ms: 0.244167\n  ...\n# Subtest: mixed baskets qualify and discount only the combined eligible subtotal\nok 3 - mixed baskets qualify and discount only the combined eligible subtotal\n  ---\n  duration_ms: 0.219791\n  ...\n# Subtest: eligible subtotal is reported for omitted, unknown and case-mismatched codes\nok 4 - eligible subtotal is reported for omitted, unknown and case-mismatched codes\n  ---\n  duration_ms: 0.082084\n  ...\n# Subtest: caps and zero discounts preserve appliedCode convention\nok 5 - caps and zero discounts preserve appliedCode convention\n  ---\n  duration_ms: 0.1645\n  ...\n# Subtest: inputs, catalog snapshots and quote lines retain independent ownership\nok 6 - inputs, catalog snapshots and quote lines retain independent ownership\n  ---\n  duration_ms: 0.105791\n  ...\n# Subtest: validation and monetary overflows still throw synchronously regardless of promotion\nok 7 - validation and monetary overflows still throw synchronously regardless of promotion\n  ---\n  duration_ms: 0.332666\n  ...\n1..7\n# tests 7\n# suites 0\n# pass 7\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 69.237958\n",
+    "stderr": ""
+  },
+  "source_metrics": {
+    "files": 4,
+    "nonempty_lines": 132,
+    "note": "Descriptive only; not a beauty score."
+  }
+}

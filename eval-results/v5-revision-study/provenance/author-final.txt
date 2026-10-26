@@ -1,0 +1,8 @@
+Created both cases:
+
+- [revision-a](revision-a/prompt.md): resilient delivery quotes.
+- [revision-b](revision-b/prompt.md): promotion eligibility for mixed baskets.
+
+Both pass initial typecheck, build, and visible tests. Each hidden checker reports 2 passing preservation checks and 4 expected feature failures.
+
+Removed temporary symlinks and build output. Production implementations remain unchanged. [AUTHOR.md](AUTHOR.md) records commands, outcomes, and the Node 26 validation limitation for the Node 22 target.
