@@ -44,3 +44,66 @@ rule. Severity depends on actual data/user impact, not the mere presence of asyn
 
 Report: priority; file:line; trigger; consequence; source; minimal remedy; checks run.
 If you cannot establish the trigger, describe the missing evidence instead of declaring a bug.
+
+## Worked case: one line, two independent contracts
+
+```ts
+interface Job { id: string; priority: number }
+function flawedSelection(jobs: Job[], limit: number): Job[] {
+  return jobs.sort((a, b) => a.priority - b.priority).slice(0, limit);
+}
+```
+
+Suppose the API selects the lowest priorities, executes selected jobs in input order,
+and preserves caller ownership. Copying before sort fixes mutation but not execution order.
+A useful finding identifies both separately, gives an input and shows the smallest remedy.
+
+```ts
+// @example-run
+interface Job { id: string; priority: number }
+function selectInInputOrder(jobs: readonly Job[], limit: number): Job[] {
+  return jobs.map((job, index) => ({ job, index }))
+    .sort((a, b) => a.job.priority - b.job.priority || a.index - b.index)
+    .slice(0, limit)
+    .sort((a, b) => a.index - b.index)
+    .map(entry => entry.job);
+}
+const jobs = [{ id: 'a', priority: 2 }, { id: 'b', priority: 1 }, { id: 'c', priority: 3 }];
+const selected = selectInInputOrder(jobs, 2);
+if (selected.map(x => x.id).join(',') !== 'a,b') throw new Error('Wrong execution order');
+if (jobs.map(x => x.id).join(',') !== 'a,b,c') throw new Error('Caller array mutated');
+```
+
+Assumption: limit is already a validated nonnegative integer. Indexing entries preserves
+repeated occurrences even when IDs or object references repeat. If the actual API instead
+requires priority-order execution, this extra reorder is wrong. The contract decides.
+
+Example finding: **P2, queue.ts:8 — Preserve selected input order.** For `[a:2,b:1,c:3]`
+and limit 2, the current code starts b before a. The API requires a before b. Select on
+copied indexed entries, restore original indices, then await saves sequentially. Verify
+membership, order and caller ownership independently. This is a model finding, not a
+claim about a real project's queue.ts.
+
+## Worked case: assertion versus validated boundary
+
+```ts
+interface Receipt { amount: number }
+function unchecked(text: string): Receipt {
+  return JSON.parse(text) as Receipt; // Valid JSON can still have amount: "many".
+}
+```
+
+First follow callers: if they already validate the exact invariant, an extra boundary may
+be unnecessary. If external text reaches this function directly, reproduce with a string
+amount and trace its consequence (incorrect arithmetic, output or persistence). Recommend
+validation there using the existing project's failure convention. Do not flag every `as`
+as equally severe or demand a schema library for one number.
+
+## Worked case: useful findings versus style noise
+
+A default export matching the framework is not a defect. A zero-result review can be valid.
+By contrast, a detached rejection in an operation whose caller awaits completion has a
+concrete effect. Show the call path, an executed pending/rejecting probe, and the minimal
+awaited loop or returned promise. A compilation pass does not answer whether the caller's
+operation actually finished. Include exact test coverage so one default-value test is not
+presented as evidence for ordering, rejection or cancellation.

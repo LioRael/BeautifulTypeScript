@@ -104,3 +104,19 @@ prevent interpreting the ceiling as complete correctness. The targeted follow-up
 same-task regression evidence, not an independent holdout or general efficacy claim.
 Public transcripts omit model reasoning and redact incidental host metadata. The original
 Git-isolation flaw and local shell startup failures are explicitly disclosed.
+
+## Guide/example depth revision
+
+The reference-example test compiles 43 TypeScript blocks directly from the Markdown,
+including expected-error consumer calls, and executes 15 marked behavioral examples.
+It checks the actual snippets, so documentation edits cannot silently diverge from a
+separate handwritten fixture. Shell/JSON/JS illustrations are not all standalone executable
+projects; the optional project configs retain their existing validation.
+
+The earlier 20 model runs used the content at b13a7aa (and its v1 review snapshot). They
+were not rerun for this reference expansion and are not evidence of its agent-effectiveness
+or parity with BeautifulRust. See GUIDE-COVERAGE.md for exact scope.
+
+Final local check: **24/24 tests passed**. All four skill format checks passed. A fresh
+skills 1.7.4 install for Codex and Claude Code preserved all 16 skill files byte-for-byte,
+including the expanded references. No global installation was changed.

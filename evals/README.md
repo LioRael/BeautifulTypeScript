@@ -71,7 +71,8 @@ manifest). That study lacked local Git repositories: incidental ancestor Git fil
 appeared in nine run traces. The current run.py initializes each workspace with an empty
 local Git repository; it also accepts --rubric for a separately frozen follow-up rubric.
 The v1 review skill snapshot is retained in eval-results/v1/skill-snapshots; the other
-three skills are unchanged from their recorded hashes. The targeted follow-up uses:
+three skills match their hashes at commit b13a7aa. Check out that commit to reproduce the
+recorded content: current references have since expanded. The targeted follow-up uses:
 
 ```sh
 python3 evals/run.py --work work/review-regression --output eval-results/new-review --workers 2 --cases review --rubric evals/REVIEW-REGRESSION.md

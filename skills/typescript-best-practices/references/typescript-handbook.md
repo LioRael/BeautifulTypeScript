@@ -1,59 +1,187 @@
-# TypeScript Handbook — type modeling digest
+# TypeScript Handbook — engineering applications
 
-Owner: Microsoft / TypeScript team. Reviewed: 2026-10-27; rolling official documentation.
-Read for narrowing, state models, function contracts and mutation (TS02, TS03).
-These are language explanations, not a preferred application architecture.
+Microsoft / TypeScript team, rolling official documentation; reviewed 2026-10-27.
+This is a selected engineering reading path, not a summary of every Handbook page.
+Language semantics outrank an organizational style preference. Examples are original,
+checked with TS 5.9.3; newer Handbook features need the project's supported compiler.
 
-## Narrowing and control flow
+## Reading map
 
-Source: [Narrowing](https://www.typescriptlang.org/docs/handbook/2/narrowing.html).
+| Topic | Source | Decision |
+|---|---|---|
+| Primitives, unions, assertions | [Everyday Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html) | H1 |
+| Truthiness, guards, predicates, exhaustiveness | [Narrowing](https://www.typescriptlang.org/docs/handbook/2/narrowing.html) | H2–H3 |
+| Callbacks, parameters, overloads, void | [Functions](https://www.typescriptlang.org/docs/handbook/2/functions.html) | H4 |
+| Optional, readonly, index signatures, tuples | [Objects](https://www.typescriptlang.org/docs/handbook/2/objects.html) | H5 |
+| Constraints and related values | [Generics](https://www.typescriptlang.org/docs/handbook/2/generics.html) | H6 |
+| keyof and indexed access | [Indexed access](https://www.typescriptlang.org/docs/handbook/2/indexed-access-types.html) | H6 |
+| Mapped and conditional types | [Mapped](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html), [conditional](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html) | H7 |
+| Classes and modules | [Classes](https://www.typescriptlang.org/docs/handbook/2/classes.html), [modules](https://www.typescriptlang.org/docs/handbook/2/modules.html) | H8 |
 
-Runtime checks and control flow refine a value's static type. A truthiness condition can
-exclude legitimate empty strings or zero, while an explicit null/undefined comparison
-preserves them. A common literal field can distinguish union members; an exhaustive
-branch can use never to expose an omitted case. A user-written type predicate is a claim
-the compiler trusts, so its implementation must actually establish the promised shape.
+## H1. A static assertion does not establish a runtime fact
 
-**Application:** For an external response, validate its discriminant and required payload
-fields together. Do not check only `kind` and then assert a payload type. Include invalid
-payloads for each accepted discriminant in the boundary test corpus.
+Source principle: TS types describe values statically; assertions do not perform validation.
+Our application: isolate JSON uncertainty and reject malformed values before returning a
+trusted shape. `satisfies` is useful for author-written configuration, not untrusted data.
 
-## Functions and generics
+```ts
+// @example-run
+interface Account { id: string }
+function account(value: unknown): Account {
+  if (typeof value !== 'object' || value === null || Array.isArray(value) ||
+      !('id' in value) || typeof value.id !== 'string') throw new TypeError('account.id');
+  return { id: value.id };
+}
+const parsed: unknown = JSON.parse('{"id":7}');
+let rejected = false;
+try { account(parsed); } catch (error) { rejected = error instanceof TypeError; }
+if (!rejected) throw new Error('Malformed account escaped');
+```
 
-Source: [More on Functions](https://www.typescriptlang.org/docs/handbook/2/functions.html).
+For a nested payload, check the nested payload too. A predicate that only checks `kind`
+cannot honestly promise all the fields of a particular union member. A schema dependency
+is appropriate when already established or justified by the shape's complexity.
 
-Generics describe relationships between values. Prefer fewer parameters and constraints
-that express a real relationship; avoid a generic parameter that adds no information.
-A union parameter is often simpler than equivalent overloads. A callback returning a
-value can be assigned where a void-returning callback is expected: void means that the
-caller ignores that return, not that the function cannot produce it.
+## H2. Narrow the absent state, not all falsy values
 
-**Application:** A generic identity-preserving collection helper can be useful; a single
-concrete domain transformation may need no generics. For async callbacks, verify who owns
-the returned promise: a void-accepting API may discard it. See the
-[typed linting reference](typescript-eslint.md) for detection and its limitations.
+Source principle: truthiness narrowing includes empty string and zero; explicit equality
+can target the intended absent state. Our example distinguishes absent text from empty text.
 
-## Object types and mutation
+```ts
+// @example-run
+function displayName(value: string | null): string {
+  return value === null ? '(missing)' : value;
+}
+if (displayName('') !== '' || displayName(null) !== '(missing)') {
+  throw new Error('Absence and empty text were conflated');
+}
+```
 
-Source: [Object Types](https://www.typescriptlang.org/docs/handbook/2/objects.html).
+Check `typeof null`, array containers and optional reads deliberately. The `in` operator
+can find inherited properties; a JSON-object policy and an arbitrary-object policy need
+not accept the same domain. Do not invent prototype restrictions on internal objects.
 
-Optional properties can be absent; reads must account for undefined. Readonly restricts
-writes through a particular type, but does not guarantee deep or runtime immutability.
-Aliases can still refer to the same object. Index signatures describe a family of keys,
-not proof that a requested key exists.
+## H3. Model actual state alternatives; make missing cases visible
 
-**Application:** If caller-owned input must remain unchanged, test that behavior directly.
-Use readonly inputs to document intent, but do not claim they freeze nested values. Prefer
-Map for a dynamic keyed collection when its semantics match the contract; a fixed record
-is still appropriate for known fields. Avoid a blanket “Map everywhere” rule.
+Source principle: a literal discriminant narrows a union; never can expose an unhandled case.
+Our application: keep the payload with the state that permits it instead of independent flags.
 
-## Choosing a model
+```ts
+type LoadState =
+  | { status: 'idle' }
+  | { status: 'ready'; rows: readonly string[] }
+  | { status: 'failed'; error: Error };
+function summary(state: LoadState): string {
+  switch (state.status) {
+    case 'idle': return 'Waiting';
+    case 'ready': return `${state.rows.length} rows`;
+    case 'failed': return state.error.message;
+    default: { const impossible: never = state; return impossible; }
+  }
+}
+// @ts-expect-error Ready requires its rows; optional-everything would conceal this.
+const incomplete: LoadState = { status: 'ready' };
+```
 
-1. List valid states and operations from callers and tests.
-2. Encode distinctions that prevent an actual mistake; keep trivial values simple.
-3. Preserve null/missing/empty semantics at boundaries.
-4. Validate external values before assigning trusted types.
-5. Check consumer ergonomics, not just the implementation's successful compilation.
+Add a new variant during a type test to see whether the switch is exhaustive. Do not
+introduce a state machine for a value with no state-dependent operations. Exhaustiveness
+inside TypeScript still needs an external-input validation boundary.
 
-This process is our synthesis. Neither the Handbook nor this skill requires Result,
-branded IDs, a schema package, dependency injection or a functional-only architecture.
+## H4. Function contracts include ignored results and optional arguments
+
+Source principles: fewer-argument callbacks can be assignable; void callbacks ignore
+results; overloads and generics should express useful relationships.
+Our application: a callback's accepted type is not proof its promise is awaited.
+
+```ts
+async function saveAll<T>(rows: readonly T[], save: (row: T) => Promise<void>): Promise<void> {
+  for (const row of rows) await save(row);
+}
+// Contrast: rows.forEach(async row => save(row)) discards callback promises.
+```
+
+Test with manually deferred promises: the second call must not start until the first
+finishes; reject the first and check that no later call starts. Use bounded parallel work
+when the contract allows it, rather than requiring sequential execution universally.
+See [declaration exercises](typescript-declaration-dos-and-donts.md) for arity and overloads.
+
+## H5. Readonly, tuples and indexed access have different jobs
+
+Source principle: readonly restricts writes through a type, not all aliases or runtime
+mutation. Optional/indexed access can yield absence; tuples express positional structure.
+
+```ts
+// @example-run
+const mutable = { count: 1 };
+const view: Readonly<{ count: number }> = mutable;
+mutable.count = 2;
+if (view.count !== 2) throw new Error('Readonly unexpectedly broke aliasing');
+const independentlyOwned = { ...view };
+mutable.count = 3;
+if (independentlyOwned.count !== 2) throw new Error('Copy unexpectedly aliased');
+```
+
+```ts
+function first<T>(items: readonly T[]): T | undefined { return items[0]; }
+type Interval = readonly [start: number, end: number];
+function width([start, end]: Interval): number { return end - start; }
+// @ts-expect-error Interval requires two coordinates.
+width([2]);
+```
+
+A fixed tuple fits coordinates; named fields are often clearer for unrelated business
+values. An index signature does not prove every key exists; enable/test the intended
+indexed-access policy rather than asserting every lookup is present.
+
+## H6. Relate a key to the value it selects
+
+Source principle: keyof constraints and indexed access retain a property relationship.
+Our application: preserve the consumer's actual result type without a cast at every call.
+
+```ts
+function pick<T, K extends keyof T>(value: T, key: K): T[K] { return value[key]; }
+const config = { attempts: 2, region: 'west' };
+const attempts: number = pick(config, 'attempts');
+// @ts-expect-error Unknown key is not a supported property.
+pick(config, 'timeout');
+// @ts-expect-error Selecting attempts does not produce text.
+const region: string = pick(config, 'attempts');
+```
+
+If only one concrete configuration is ever accepted, a concrete function may be simpler.
+Don't expose a type parameter that occurs only in a return assertion; accept a decoder
+or another input that establishes the output type.
+
+## H7. Advanced types should mirror an operation, not replace it
+
+Source principles: mapped types transform properties; conditional types can distribute
+over unions. Our examples distinguish a patch shape from state validity and distribution
+from testing a union as a whole.
+
+```ts
+type Patch<T> = { [K in keyof T]?: T[K] };
+type Person = { name: string; age: number };
+const patch: Patch<Person> = { age: 28 };
+// @ts-expect-error Patch still preserves each field's value type.
+const invalid: Patch<Person> = { age: '28' };
+
+type EachArray<T> = T extends unknown ? T[] : never;
+type WholeArray<T> = [T] extends [unknown] ? T[] : never;
+const mixed: WholeArray<string | number> = ['a', 1];
+// @ts-expect-error Distributed result is string[] | number[], not a mixed array.
+const separate: EachArray<string | number> = ['a', 1];
+```
+
+A Partial/Patch type does not validate a request or authorize changing every field.
+Expose only editable fields and validate cross-field invariants after merging. Avoid
+recursive conditional machinery when ordinary types provide a clearer public contract.
+
+## H8. Classes, modules and scope limits
+
+Classes can own behavior/lifecycle; an interface describes structure without runtime
+construction. Module resolution and runtime loading are different checks. Use the
+[compiler guide](typescript-compiler-configuration.md) for actual package boundaries.
+
+This digest intentionally defers decorators, JSX, mixins, declaration merging, namespaces,
+compiler internals and framework-specific patterns to their own official/project docs.
+The reading map is explicit about coverage: this is not an exhaustive Handbook rewrite.

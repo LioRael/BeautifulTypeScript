@@ -33,3 +33,13 @@ about ownership, Result and Cargo are not transferred to TypeScript as universal
 The paired evaluation is a small controlled local study. It does not reproduce
 BeautifulRust's tasks, models or reported scores, and the two projects' percentages must
 not be compared as a ranking. See [evaluation](EVALUATION.md) for measured results and limitations.
+
+## Follow-up: source depth was still missing
+
+The workflow-depth revision improved procedures but left the source digests at 305 lines
+with no fenced examples. That was not comparable reference depth. The next revision adds
+source-section coverage maps, individual decisions, original code and checked counterexamples
+across all six digests, plus worked review/port/verify cases. See [coverage](GUIDE-COVERAGE.md)
+for exactly what is represented and what is deferred. It does not claim exhaustive coverage
+of every Handbook page, lint rule or organizational formatting subrule. The old model runs
+are historical evidence and do not evaluate this expanded reference text.

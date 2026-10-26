@@ -180,7 +180,8 @@ source. Read a digest when its topic matters, rather than loading every guide fo
 | [Airbnb JavaScript Style Guide](skills/typescript-best-practices/references/airbnb-javascript-style-guide.md) | Applicable JS conventions and choices we do not impose |
 
 Each digest identifies its source, authority, review date, scope and our application
-choices. [Style decisions](skills/typescript-best-practices/references/style-decisions.md)
+choices. [Guide coverage and examples](docs/GUIDE-COVERAGE.md) shows the topic-level mapping,
+intentional omissions and executable example checks. [Style decisions](skills/typescript-best-practices/references/style-decisions.md)
 resolve concrete conflicts; [source/rule index](docs/SOURCES.md) maps project rules to their
 basis. These are summaries and original examples, not redistributed copies of the guides.
 

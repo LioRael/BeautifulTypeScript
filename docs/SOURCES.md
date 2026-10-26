@@ -1,6 +1,7 @@
 # Sources and decision rules
 
-Reviewed 2026-10-27. These are original, brief summaries, not redistributed guides.
+Reviewed 2026-10-27. These are concise source summaries plus original applications and
+examples, not redistributed guides. See [coverage](GUIDE-COVERAGE.md) for the reading map.
 Online documents are rolling editions, not a specification tied to our npm versions.
 
 | ID | Source / owner | Authority and scope | How to apply |

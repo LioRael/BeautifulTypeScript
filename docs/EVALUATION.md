@@ -1,5 +1,10 @@
 # Paired agent evaluation
 
+Version scope: these runs evaluated the skills recorded at
+[commit b13a7aa](https://github.com/LioRael/BeautifulTypeScript/tree/b13a7aa/skills),
+including the separately retained v1 review snapshot. Later reference/example expansions
+were not rerun through this model study. Their compiler/runtime checks are separate evidence.
+
 The initial study reached a ceiling on its eight prespecified criteria per task;
 it does not establish improved correctness from these skills. An additional contract
 issue in the review task was missed by both with-skill runs and one baseline run.

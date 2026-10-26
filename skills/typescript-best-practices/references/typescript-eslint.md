@@ -1,51 +1,132 @@
-# typescript-eslint — typed linting and rules
+# typescript-eslint — setup, rule decisions and diagnostic examples
 
-Owner: typescript-eslint maintainers. Reviewed: 2026-10-27; rolling tool documentation.
-Read when choosing a lint baseline, diagnosing parser setup or reviewing promises
-(TS04, TS09). Rule behavior is versioned tool policy, not the TypeScript language standard.
+Maintainer: typescript-eslint project; reviewed 2026-10-27. Tool policy is versioned, not
+language law. Tested tuple: TS 5.9.3, ESLint 10.13.0, typescript-eslint 8.72.1. Use the
+consumer project's lockfile; do not silently upgrade to match this repository.
 
-## Typed analysis setup
+## E1. Enable type information for the intended files
 
-Source: [Typed linting](https://typescript-eslint.io/getting-started/typed-linting/).
+[Typed linting](https://typescript-eslint.io/getting-started/typed-linting/) connects a
+TypeChecked preset to TypeScript project information. projectService supplies that context;
+analysis costs more than syntax-only lint. A missing project is a setup problem, not proof
+that the linted code violates a rule.
 
-Type-aware rules need TypeScript project information. A TypeChecked preset and
-projectService connect linted files to their TS projects. That analysis has a cost beyond
-syntax-only linting. A file outside its intended tsconfig is a configuration problem;
-fix its scope rather than assuming every parser failure is a code defect.
+Original optional flat-config shape (adapt files/root/config inheritance):
 
-**Application:** In a monorepo, inspect which tsconfig owns each package's source and test
-files. Keep generated files and JavaScript build scripts under an appropriate separate
-scope. Do not enable a broad fallback project just to silence inclusion errors.
+```js
+import tseslint from 'typescript-eslint';
+export default tseslint.config(
+  { ignores: ['dist/**'] },
+  tseslint.configs.recommendedTypeChecked,
+  {
+    files: ['src/**/*.ts'],
+    languageOptions: { parserOptions: { projectService: true, tsconfigRootDir: import.meta.dirname } },
+    rules: { '@typescript-eslint/no-floating-promises': ['error', { ignoreVoid: false }] },
+  },
+);
+```
 
-## Preset selection
+The preset also applies outside the final files block. In a mixed JS/TS repository, scope
+it appropriately or use a separate disableTypeChecked override for JS tooling. Don't copy
+this miniature config over a framework's existing configuration. The repository's complete
+optional recipe is in configs/; it has actual positive/negative diagnostic fixtures.
 
-Source: [Shared configs](https://typescript-eslint.io/users/configs/).
+## E2. Presets, upgrades and extension rules
 
-recommendedTypeChecked includes the recommended baseline plus type-aware checks.
-strictTypeChecked adds more opinionated checks and is not semver-stable in the same way:
-rules/options can change outside a major release. Stylistic configurations address
-consistency rather than program logic. Presets are starting points and can be customized.
+[Shared configs](https://typescript-eslint.io/users/configs/) distinguish recommended,
+strict and stylistic choices; strict configs can change outside a major version. Our
+application: adopt stricter policies in a scoped change with fixture diagnostics. Don't
+turn on every rule or mistake formatting preferences for runtime correctness.
 
-**Project choice:** Our optional recipe starts with recommendedTypeChecked and does not
-impose a formatter. Adopt stricter checks through a reviewed change, not as a side effect
-of an unrelated feature. Check the installed version's effective config after upgrades.
+When a TS-aware extension replaces a core ESLint rule, disable the core version in the
+same scope to avoid duplicate or incorrect diagnostics. Check the resolved config after
+upgrades. A new preset may change rule options even when your own override file did not.
 
-## Rules that need semantic judgment
+## E3. no-floating-promises: who owns the operation?
 
-| Official rule | Detects | What still needs review |
+[Rule](https://typescript-eslint.io/rules/no-floating-promises/): recognizes several
+handling forms and configurable exceptions. Its default can allow explicit void; this
+project opts out with ignoreVoid:false. Neither form makes a rejection disappear.
+
+```ts
+async function persist(): Promise<void> { throw new Error('disk'); }
+function detached(): void {
+  persist(); // Counterexample: caller cannot await or observe failure.
+  void persist(); // Also unowned; void is not an error handler.
+}
+async function owned(): Promise<void> { await persist(); }
+```
+
+Our application: return/await work when completion matters. Intentional background work
+needs an established supervisor/error sink and lifecycle. A catch that returns fake success
+may satisfy a lint while violating the business contract. Test rejected promises, not just
+resolved ones. The counterexample above is typechecked, not executed by the example runner.
+
+## E4. no-misused-promises: a void callback can discard async work
+
+[Rule](https://typescript-eslint.io/rules/no-misused-promises/) checks promises in conditions,
+void-return positions and spreads, with options for each area. Our application: inspect
+the receiving API before adding async or suppressing a diagnostic.
+
+```ts
+function consume(items: readonly number[], save: (n: number) => Promise<void>): void {
+  items.forEach(async item => { await save(item); }); // Counterexample: no completion owner.
+}
+async function consumeInOrder(items: readonly number[], save: (n: number) => Promise<void>): Promise<void> {
+  for (const item of items) await save(item);
+}
+```
+
+An event handler may have to stay synchronous. In that case, bridge to the project's error
+channel explicitly rather than changing the event API's type to pretend it awaits promises.
+Don't disable checksVoidReturn globally to silence one integration boundary.
+
+## E5. Unsafe-flow rules: contain any at the boundary
+
+The [no-unsafe-assignment](https://typescript-eslint.io/rules/no-unsafe-assignment/),
+[no-unsafe-member-access](https://typescript-eslint.io/rules/no-unsafe-member-access/),
+[no-unsafe-call](https://typescript-eslint.io/rules/no-unsafe-call/),
+[no-unsafe-argument](https://typescript-eslint.io/rules/no-unsafe-argument/) and
+[no-unsafe-return](https://typescript-eslint.io/rules/no-unsafe-return/) rules detect different
+ways any propagates. Fix the trust boundary rather than stacking assertions downstream.
+
+```ts
+function readTitle(text: string): string {
+  const input: unknown = JSON.parse(text);
+  if (typeof input !== 'object' || input === null || !('title' in input) ||
+      typeof input.title !== 'string') throw new TypeError('title');
+  return input.title;
+}
+```
+
+Our application: unsafe-flow diagnostics often have one root cause. Group them during a
+review and show where validation belongs. A complex JSON document may justify the project's
+existing schema; the small example does not require a new dependency.
+
+## E6. Select additional rules by the failure they prevent
+
+| Rule | Useful question | Scope/exception |
 |---|---|---|
-| [no-floating-promises](https://typescript-eslint.io/rules/no-floating-promises/) | Promise-valued statements without recognized handling | Who observes completion and rejection? `void` does not catch errors. Our ignoreVoid:false override is stricter than the default. |
-| [no-misused-promises](https://typescript-eslint.io/rules/no-misused-promises/) | Promises in positions such as conditions or void callbacks | Is the receiving API async-aware? If not, give the task an explicit error owner. |
-| [no-unsafe-assignment](https://typescript-eslint.io/rules/no-unsafe-assignment/) | Assignments that spread any into trusted values | Move uncertainty into unknown and validate it; do not replace any with an unchecked assertion. |
+| [await-thenable](https://typescript-eslint.io/rules/await-thenable/) | Is the awaited value actually awaitable? | Custom thenables need accurate declarations |
+| [unbound-method](https://typescript-eslint.io/rules/unbound-method/) | Does a detached method require this? | Explicit this:void or a deliberate bound adapter |
+| [switch-exhaustiveness-check](https://typescript-eslint.io/rules/switch-exhaustiveness-check/) | Did a finite union gain a case? | External data still needs validation |
+| [strict-boolean-expressions](https://typescript-eslint.io/rules/strict-boolean-expressions/) | Does truthiness hide zero/empty? | Configure allowed types; not a mandatory preset here |
+| [no-unnecessary-condition](https://typescript-eslint.io/rules/no-unnecessary-condition/) | Is a branch impossible under declared types? | Incorrect upstream types can conceal runtime inputs |
+| [consistent-type-imports](https://typescript-eslint.io/rules/consistent-type-imports/) | Should this import exist at runtime? | Check decorators/emit/toolchain and side effects |
+| [ban-ts-comment](https://typescript-eslint.io/rules/ban-ts-comment/) | Is a suppression narrowly justified? | Negative type tests intentionally expect errors |
 
-A lint-clean `.catch()` can still discard a business-critical failure. Likewise, awaiting
-all work may change ordering or latency. Choose error handling from the API contract,
-then use diagnostics as supporting evidence. These judgments are project methodology.
+These are selected decisions, not a digest of the entire rule catalog. Consult each rule's
+versioned options; do not assume every listed rule is enabled by recommendedTypeChecked.
 
-## Versions and verification
+## E7. Prove diagnostics, not only failure exit codes
 
-See [supported dependencies](https://typescript-eslint.io/users/dependency-versions/).
-This repository tested TypeScript 5.9.3, ESLint 10.13.0 and typescript-eslint 8.72.1.
-Do not infer compatibility with every newer compiler. Use the project's lockfile.
-For a custom rule override, verify a deliberately failing input and a clean counterpart;
-assert the diagnostic identity, not just a nonzero exit that could hide a parser crash.
+For an explicit rule change: run one bad input and a clean counterpart in the same project,
+assert rule ID/location, and ensure no parser error substituted for the intended failure.
+For type errors: an unused @ts-expect-error should fail the test when the expected error
+vanishes. For application code: test behavior too; lint cannot prove selection/execution
+order, cancellation, resource cleanup or meaningful recovery.
+
+If lint reports zero files, inspect glob/ignore rules and effective config before declaring
+success. If a file is outside its tsconfig, fix project ownership or a narrowly intended
+scope rather than enabling an unbounded fallback project. [Dependency support](https://typescript-eslint.io/users/dependency-versions/)
+and the installed lockfile determine compatibility, not a broad “latest TS works” claim.

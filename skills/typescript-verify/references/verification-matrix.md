@@ -46,3 +46,69 @@ For each executed command record the scope, exit/result and limitation. Name ski
 hosts and unavailable dependencies. Separate introduced failures from baseline failures;
 use unknown when that distinction cannot be established. Fix the task's issue, not the
 verification standard. Do not lower strictness or erase tests merely to make a report green.
+
+## Worked case: green scripts with no evidence
+
+A script can print “0 tests” and exit successfully. A useful report records that as an
+empty check, then continues independent runtime verification. Do not rewrite the script
+in a verification-only task or claim an empty run passed the requested behavior.
+
+```ts
+// @example-run
+type Observation = { exitCode: number; checked: number };
+function classify(check: Observation): 'failed' | 'empty' | 'executed' {
+  if (check.exitCode !== 0) return 'failed';
+  return check.checked === 0 ? 'empty' : 'executed';
+}
+if (classify({ exitCode: 0, checked: 0 }) !== 'empty') throw new Error('Empty scope hidden');
+if (classify({ exitCode: 1, checked: 5 }) !== 'failed') throw new Error('Failure hidden');
+```
+
+This is an illustration, not a universal log parser. Different runners report counts
+differently, and a nonempty run can still miss the changed files or relevant assertions.
+Inspect script bodies, filters, includes and the meaningful behavior exercised.
+
+## Worked case: source types pass, published loading fails
+
+A library built with Bundler resolution may emit an extensionless relative import.
+Native Node then fails even though typecheck/build were green. Use the actual public entry:
+
+```sh
+npm run typecheck
+npm run lint
+npm test
+npm run build
+node --input-type=module -e "await import('./dist/index.js')"
+```
+
+Run commands independently or record each status; a final successful command must not
+mask an earlier failure. Adapt the path and inspect scripts for external side effects.
+For a package, add a consumer that imports by package name and uses emitted declarations.
+If the public import fails but a private implementation import works, the latter is a
+control experiment, not a substitute pass for the public API.
+
+| Observation | Report | Next action |
+|---|---|---|
+| tsc exits 0 under Bundler | Static check passed for that config | Check native consumer if supported |
+| lint prints 0 files | Empty coverage | Inspect glob/ignore/config |
+| tests print 0 tests | Empty coverage | Establish actual behavior tests |
+| built index import fails | Runtime blocker with error/path | Propose smallest path/emit fix |
+| Bun/browser unavailable | Unrun host check | No compatibility claim |
+
+## Worked case: expected failure versus broken tooling
+
+A negative compiler fixture should fail for the intended call/type error. A missing
+compiler or parser crash is not evidence that the unsafe call was rejected correctly.
+Compile a clean counterpart in the same context and inspect diagnostic identity. For a
+public declaration, pin both accepted calls and a rejected misuse:
+
+```ts
+declare function openSession(region: string): { id: string };
+const id: string = openSession('west').id;
+// @ts-expect-error The declaration must not silently accept a numeric region.
+openSession(7);
+```
+
+This example checks a signature in isolation; a real package test must import its emitted
+declaration through the supported resolution path. Report which of those checks actually
+ran, including the exact environment and what remains unverified.
