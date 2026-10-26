@@ -1,0 +1,557 @@
+CONTRIBUTING.md
+  s_a0b2c85094aa9e::t_612c586b3514c0 23-26
+README.md
+  s_a0b2c85094aa9e::t_279a5883883b9b 133-151
+docs/BENCHMARK.md
+  s_a0b2c85094aa9e::t_9a6c8266791aec 13
+docs/EVALUATION.md
+  s_a0b2c85094aa9e::t_d25e69f15acebe 1-125
+docs/GAP-ANALYSIS.md
+  s_a0b2c85094aa9e::t_14f95802974b33 1-35
+docs/VALIDATION.md
+  s_a0b2c85094aa9e::t_9ceb96e7c138c2 38-40,89-106
+eval-results/v1/environment.json
+  s_a0b2c85094aa9e::t_3776c4dabe7cd5 1-15
+eval-results/v1/port-with-1/artifacts/PORTING.md
+  s_a0b2c85094aa9e::t_92650567eec5fd 1-99
+eval-results/v1/port-with-1/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_165eebaff9860e 1-5
+eval-results/v1/port-with-1/artifacts/package.json
+  s_a0b2c85094aa9e::t_2f784a74454cdd 1-13
+eval-results/v1/port-with-1/artifacts/source/ledger.py
+  s_a0b2c85094aa9e::t_d9add9e0683db0 1-28
+eval-results/v1/port-with-1/artifacts/source/test_ledger.py
+  s_a0b2c85094aa9e::t_e2d94cc4845b89 1-15
+eval-results/v1/port-with-1/artifacts/src/ledger.ts
+  s_a0b2c85094aa9e::t_5f6f0fc1ad227e 1-35
+eval-results/v1/port-with-1/artifacts/tests/ledger.test.mjs
+  s_a0b2c85094aa9e::t_3ef206a68b512a 1-98
+eval-results/v1/port-with-1/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_22ac3f139981a6 1-19
+eval-results/v1/port-with-1/events.jsonl
+  s_a0b2c85094aa9e::t_75aecb8d5b07a0 1-33
+eval-results/v1/port-with-1/final.txt
+  s_a0b2c85094aa9e::t_89ee97d662db09 1-7
+eval-results/v1/port-with-1/prompt.txt
+  s_a0b2c85094aa9e::t_11c71024a61471 1-6
+eval-results/v1/port-with-1/result.json
+  s_a0b2c85094aa9e::t_e9ff7beff2c581 1-48
+eval-results/v1/port-with-2/artifacts/PORTING.md
+  s_a0b2c85094aa9e::t_ab1c014531204c 1-102
+eval-results/v1/port-with-2/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_085bdb0ca35ddd 1-5
+eval-results/v1/port-with-2/artifacts/package.json
+  s_a0b2c85094aa9e::t_c8196a4271ad79 1-13
+eval-results/v1/port-with-2/artifacts/source/ledger.py
+  s_a0b2c85094aa9e::t_5983274a85db4f 1-28
+eval-results/v1/port-with-2/artifacts/source/test_ledger.py
+  s_a0b2c85094aa9e::t_30d3424a37c0ba 1-15
+eval-results/v1/port-with-2/artifacts/src/ledger.ts
+  s_a0b2c85094aa9e::t_d03405a735bd15 1-34
+eval-results/v1/port-with-2/artifacts/tests/ledger.test.mjs
+  s_a0b2c85094aa9e::t_95f9e3e502e986 1-81
+eval-results/v1/port-with-2/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_bb31e7e11d1492 1-19
+eval-results/v1/port-with-2/events.jsonl
+  s_a0b2c85094aa9e::t_b7bfa7e6354072 1-29
+eval-results/v1/port-with-2/final.txt
+  s_a0b2c85094aa9e::t_3a409c89a75f32 1-7
+eval-results/v1/port-with-2/prompt.txt
+  s_a0b2c85094aa9e::t_251f3263fc491a 1-6
+eval-results/v1/port-with-2/result.json
+  s_a0b2c85094aa9e::t_98e4b048ea519d 1-48
+eval-results/v1/port-without-1/artifacts/PORTING.md
+  s_a0b2c85094aa9e::t_373c1b6dc3ac12 1-75
+eval-results/v1/port-without-1/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_cdb4b95895821d 1-5
+eval-results/v1/port-without-1/artifacts/package.json
+  s_a0b2c85094aa9e::t_f58d4bed344d31 1-13
+eval-results/v1/port-without-1/artifacts/source/ledger.py
+  s_a0b2c85094aa9e::t_01a01e4d8c50b1 1-28
+eval-results/v1/port-without-1/artifacts/source/test_ledger.py
+  s_a0b2c85094aa9e::t_c21e1c55ec3660 1-15
+eval-results/v1/port-without-1/artifacts/src/ledger.ts
+  s_a0b2c85094aa9e::t_b69baaa73cb65f 1-41
+eval-results/v1/port-without-1/artifacts/tests/ledger.test.mjs
+  s_a0b2c85094aa9e::t_7a98f5fda19af2 1-85
+eval-results/v1/port-without-1/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_10c89997917fef 1-19
+eval-results/v1/port-without-1/events.jsonl
+  s_a0b2c85094aa9e::t_190b0a305fecf8 1-16
+eval-results/v1/port-without-1/final.txt
+  s_a0b2c85094aa9e::t_38adcda375fdba 1-7
+eval-results/v1/port-without-1/prompt.txt
+  s_a0b2c85094aa9e::t_bae7fd1e3fe767 1-5
+eval-results/v1/port-without-1/result.json
+  s_a0b2c85094aa9e::t_10a67a5048d262 1-48
+eval-results/v1/port-without-2/artifacts/PORTING.md
+  s_a0b2c85094aa9e::t_65a84618eafba2 1-60
+eval-results/v1/port-without-2/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_dd2a45b42b6bd3 1-5
+eval-results/v1/port-without-2/artifacts/package.json
+  s_a0b2c85094aa9e::t_834d9ab8c911f0 1-13
+eval-results/v1/port-without-2/artifacts/source/ledger.py
+  s_a0b2c85094aa9e::t_390db1795d0b14 1-28
+eval-results/v1/port-without-2/artifacts/source/test_ledger.py
+  s_a0b2c85094aa9e::t_ecda6230c0a911 1-15
+eval-results/v1/port-without-2/artifacts/src/ledger.ts
+  s_a0b2c85094aa9e::t_fdd1c75b76160c 1-27
+eval-results/v1/port-without-2/artifacts/tests/ledger.test.mjs
+  s_a0b2c85094aa9e::t_7616a7cd4f2a05 1-75
+eval-results/v1/port-without-2/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_f7519d597e8749 1-19
+eval-results/v1/port-without-2/events.jsonl
+  s_a0b2c85094aa9e::t_de39dee00740c1 1-26
+eval-results/v1/port-without-2/final.txt
+  s_a0b2c85094aa9e::t_1c71b8c5586171 1-8
+eval-results/v1/port-without-2/prompt.txt
+  s_a0b2c85094aa9e::t_36a92837cca91d 1-5
+eval-results/v1/port-without-2/result.json
+  s_a0b2c85094aa9e::t_e5e3c184b02cf0 1-48
+eval-results/v1/redactions.json
+  s_a0b2c85094aa9e::t_ceb82fd71bdd9e 1-69
+eval-results/v1/review-with-1/artifacts/API.md
+  s_a0b2c85094aa9e::t_7e350600610308 1-8
+eval-results/v1/review-with-1/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_e96e9c9c993601 1-5
+eval-results/v1/review-with-1/artifacts/REVIEW.md
+  s_a0b2c85094aa9e::t_89130adc70501f 1-42
+eval-results/v1/review-with-1/artifacts/package.json
+  s_a0b2c85094aa9e::t_adf66b791b2df6 1-13
+eval-results/v1/review-with-1/artifacts/src/caller.ts
+  s_a0b2c85094aa9e::t_e7217cccb4b21f 1-5
+eval-results/v1/review-with-1/artifacts/src/legacy.ts
+  s_a0b2c85094aa9e::t_48962b2903b1af 1-2
+eval-results/v1/review-with-1/artifacts/src/queue.ts
+  s_a0b2c85094aa9e::t_b9338e7cd427d8 1-10
+eval-results/v1/review-with-1/artifacts/tests/queue.test.mjs
+  s_a0b2c85094aa9e::t_30bd42d90bfdf1 1-4
+eval-results/v1/review-with-1/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_224fb2af10f161 1-19
+eval-results/v1/review-with-1/events.jsonl
+  s_a0b2c85094aa9e::t_ad84dd6af575f4 1-18
+eval-results/v1/review-with-1/final.txt
+  s_a0b2c85094aa9e::t_c3baebdc1a9f46 1-7
+eval-results/v1/review-with-1/prompt.txt
+  s_a0b2c85094aa9e::t_7c0e2760c279d0 1-6
+eval-results/v1/review-with-1/result.json
+  s_a0b2c85094aa9e::t_69f691d5d15573 1-19
+eval-results/v1/review-with-2/artifacts/API.md
+  s_a0b2c85094aa9e::t_f70c418de88630 1-8
+eval-results/v1/review-with-2/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_ef328df2c1bf09 1-5
+eval-results/v1/review-with-2/artifacts/REVIEW.md
+  s_a0b2c85094aa9e::t_e20bbab2fdf161 1-43
+eval-results/v1/review-with-2/artifacts/package.json
+  s_a0b2c85094aa9e::t_c80834de30aa3f 1-13
+eval-results/v1/review-with-2/artifacts/src/caller.ts
+  s_a0b2c85094aa9e::t_b03e34a7d4e5cd 1-5
+eval-results/v1/review-with-2/artifacts/src/legacy.ts
+  s_a0b2c85094aa9e::t_f351a8a59ff2ce 1-2
+eval-results/v1/review-with-2/artifacts/src/queue.ts
+  s_a0b2c85094aa9e::t_ff824521b3fa82 1-10
+eval-results/v1/review-with-2/artifacts/tests/queue.test.mjs
+  s_a0b2c85094aa9e::t_085c4e60bc3df4 1-4
+eval-results/v1/review-with-2/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_97d4ae4b5091fd 1-19
+eval-results/v1/review-with-2/events.jsonl
+  s_a0b2c85094aa9e::t_919fefe69e5af8 1-18
+eval-results/v1/review-with-2/final.txt
+  s_a0b2c85094aa9e::t_d0deed4706574b 1-7
+eval-results/v1/review-with-2/prompt.txt
+  s_a0b2c85094aa9e::t_dfc79b1734cdeb 1-6
+eval-results/v1/review-with-2/result.json
+  s_a0b2c85094aa9e::t_a02dc66af03f3d 1-19
+eval-results/v1/review-without-1/artifacts/API.md
+  s_a0b2c85094aa9e::t_cf6dc00dfcc04a 1-8
+eval-results/v1/review-without-1/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_62cac9795cad27 1-5
+eval-results/v1/review-without-1/artifacts/REVIEW.md
+  s_a0b2c85094aa9e::t_181115014d9883 1-49
+eval-results/v1/review-without-1/artifacts/package.json
+  s_a0b2c85094aa9e::t_4c80931153f543 1-13
+eval-results/v1/review-without-1/artifacts/src/caller.ts
+  s_a0b2c85094aa9e::t_f290ef1d350b44 1-5
+eval-results/v1/review-without-1/artifacts/src/legacy.ts
+  s_a0b2c85094aa9e::t_f73cc71d1a43fc 1-2
+eval-results/v1/review-without-1/artifacts/src/queue.ts
+  s_a0b2c85094aa9e::t_bdb3735d9ef2af 1-10
+eval-results/v1/review-without-1/artifacts/tests/queue.test.mjs
+  s_a0b2c85094aa9e::t_d7ec94cb8bcf01 1-4
+eval-results/v1/review-without-1/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_a4083a7de9fbee 1-19
+eval-results/v1/review-without-1/events.jsonl
+  s_a0b2c85094aa9e::t_0f7401b53a1dcb 1-17
+eval-results/v1/review-without-1/final.txt
+  s_a0b2c85094aa9e::t_09f7db9ebc3ca0 1-3
+eval-results/v1/review-without-1/prompt.txt
+  s_a0b2c85094aa9e::t_16b13c2524cd2c 1-5
+eval-results/v1/review-without-1/result.json
+  s_a0b2c85094aa9e::t_2707e88d74ce43 1-19
+eval-results/v1/review-without-2/artifacts/API.md
+  s_a0b2c85094aa9e::t_7eede1f246f8c0 1-8
+eval-results/v1/review-without-2/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_5ff4d8776f8394 1-5
+eval-results/v1/review-without-2/artifacts/REVIEW.md
+  s_a0b2c85094aa9e::t_63979498487012 1-50
+eval-results/v1/review-without-2/artifacts/package.json
+  s_a0b2c85094aa9e::t_2f9d4740d220d5 1-13
+eval-results/v1/review-without-2/artifacts/src/caller.ts
+  s_a0b2c85094aa9e::t_78abb1068eb0e4 1-5
+eval-results/v1/review-without-2/artifacts/src/legacy.ts
+  s_a0b2c85094aa9e::t_56b35625fb92af 1-2
+eval-results/v1/review-without-2/artifacts/src/queue.ts
+  s_a0b2c85094aa9e::t_ad70030ce7642d 1-10
+eval-results/v1/review-without-2/artifacts/tests/queue.test.mjs
+  s_a0b2c85094aa9e::t_e723b24bb8cff7 1-4
+eval-results/v1/review-without-2/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_76cf5370b7cad0 1-19
+eval-results/v1/review-without-2/events.jsonl
+  s_a0b2c85094aa9e::t_dfa9a969eb37c5 1-19
+eval-results/v1/review-without-2/final.txt
+  s_a0b2c85094aa9e::t_eaadd93bddebcf 1-5
+eval-results/v1/review-without-2/prompt.txt
+  s_a0b2c85094aa9e::t_07973f5c5d5917 1-5
+eval-results/v1/review-without-2/result.json
+  s_a0b2c85094aa9e::t_da1dbc2dbf3877 1-19
+eval-results/v1/runs.json
+  s_a0b2c85094aa9e::t_e0d0379b42f189 1-538
+eval-results/v1/scores.json
+  s_a0b2c85094aa9e::t_34b21255da9fc6 1-1485
+eval-results/v1/skill-snapshots/typescript-review/SKILL.md
+  s_a0b2c85094aa9e::t_7ac6cd6f8e671b 1-112
+eval-results/v1/skill-snapshots/typescript-review/references/review-evidence.md
+  s_a0b2c85094aa9e::t_b11cb06bb2a11e 1-46
+eval-results/v1/verify-with-1/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_74f9198a53d8ce 1-5
+eval-results/v1/verify-with-1/artifacts/VERIFY.md
+  s_a0b2c85094aa9e::t_b11124be44a50a 1-85
+eval-results/v1/verify-with-1/artifacts/package.json
+  s_a0b2c85094aa9e::t_e62ed91e3581ce 1-15
+eval-results/v1/verify-with-1/artifacts/scripts/lint.mjs
+  s_a0b2c85094aa9e::t_455186e50a9959 1
+eval-results/v1/verify-with-1/artifacts/scripts/test.mjs
+  s_a0b2c85094aa9e::t_26f1b9f0f4a14a 1
+eval-results/v1/verify-with-1/artifacts/src/core.ts
+  s_a0b2c85094aa9e::t_4ee57e7395fccb 1
+eval-results/v1/verify-with-1/artifacts/src/index.ts
+  s_a0b2c85094aa9e::t_e2bf6739d88de4 1
+eval-results/v1/verify-with-1/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_139528fa4de67c 1-20
+eval-results/v1/verify-with-1/events.jsonl
+  s_a0b2c85094aa9e::t_e0b298afce9c46 1-38
+eval-results/v1/verify-with-1/final.txt
+  s_a0b2c85094aa9e::t_425b813c116457 1-9
+eval-results/v1/verify-with-1/prompt.txt
+  s_a0b2c85094aa9e::t_c79e7f02372891 1-5
+eval-results/v1/verify-with-1/result.json
+  s_a0b2c85094aa9e::t_6e6e2c35653e25 1-19
+eval-results/v1/verify-with-2/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_36876b3f4ab396 1-5
+eval-results/v1/verify-with-2/artifacts/VERIFY.md
+  s_a0b2c85094aa9e::t_a1fcdc13dd1475 1-74
+eval-results/v1/verify-with-2/artifacts/package.json
+  s_a0b2c85094aa9e::t_dd53a5168573cd 1-15
+eval-results/v1/verify-with-2/artifacts/scripts/lint.mjs
+  s_a0b2c85094aa9e::t_7fea97f07c05d4 1
+eval-results/v1/verify-with-2/artifacts/scripts/test.mjs
+  s_a0b2c85094aa9e::t_7139ad1fa19ed7 1
+eval-results/v1/verify-with-2/artifacts/src/core.ts
+  s_a0b2c85094aa9e::t_ddcc8d674285f3 1
+eval-results/v1/verify-with-2/artifacts/src/index.ts
+  s_a0b2c85094aa9e::t_51b9363ab82d43 1
+eval-results/v1/verify-with-2/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_a66afd8ad25434 1-20
+eval-results/v1/verify-with-2/events.jsonl
+  s_a0b2c85094aa9e::t_16f8361fcb0153 1-38
+eval-results/v1/verify-with-2/final.txt
+  s_a0b2c85094aa9e::t_75eb20be5d2841 1-9
+eval-results/v1/verify-with-2/prompt.txt
+  s_a0b2c85094aa9e::t_2fe40e3a82e1fd 1-5
+eval-results/v1/verify-with-2/result.json
+  s_a0b2c85094aa9e::t_f36af19b0b1038 1-19
+eval-results/v1/verify-without-1/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_1432045794d934 1-5
+eval-results/v1/verify-without-1/artifacts/VERIFY.md
+  s_a0b2c85094aa9e::t_47ab342c93edaa 1-51
+eval-results/v1/verify-without-1/artifacts/package.json
+  s_a0b2c85094aa9e::t_a0606ee433a485 1-15
+eval-results/v1/verify-without-1/artifacts/scripts/lint.mjs
+  s_a0b2c85094aa9e::t_e3d6f9e058a3b2 1
+eval-results/v1/verify-without-1/artifacts/scripts/test.mjs
+  s_a0b2c85094aa9e::t_ec6b3dc8038bd4 1
+eval-results/v1/verify-without-1/artifacts/src/core.ts
+  s_a0b2c85094aa9e::t_a42a075824d422 1
+eval-results/v1/verify-without-1/artifacts/src/index.ts
+  s_a0b2c85094aa9e::t_e2bb5f93b7b5e7 1
+eval-results/v1/verify-without-1/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_c06c74e3b4b267 1-20
+eval-results/v1/verify-without-1/events.jsonl
+  s_a0b2c85094aa9e::t_96072923719b57 1-34
+eval-results/v1/verify-without-1/final.txt
+  s_a0b2c85094aa9e::t_e39340d05ad05b 1-5
+eval-results/v1/verify-without-1/prompt.txt
+  s_a0b2c85094aa9e::t_22939a4e57647c 1-4
+eval-results/v1/verify-without-1/result.json
+  s_a0b2c85094aa9e::t_f60d6291294a8f 1-19
+eval-results/v1/verify-without-2/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_c55914b5763360 1-5
+eval-results/v1/verify-without-2/artifacts/VERIFY.md
+  s_a0b2c85094aa9e::t_f899cd69bf6c5d 1-54
+eval-results/v1/verify-without-2/artifacts/package.json
+  s_a0b2c85094aa9e::t_fcb444be7cc0df 1-15
+eval-results/v1/verify-without-2/artifacts/scripts/lint.mjs
+  s_a0b2c85094aa9e::t_1f3b3910fbce23 1
+eval-results/v1/verify-without-2/artifacts/scripts/test.mjs
+  s_a0b2c85094aa9e::t_17985a21e31517 1
+eval-results/v1/verify-without-2/artifacts/src/core.ts
+  s_a0b2c85094aa9e::t_9cae9eaef2575c 1
+eval-results/v1/verify-without-2/artifacts/src/index.ts
+  s_a0b2c85094aa9e::t_0f8b60b7a03666 1
+eval-results/v1/verify-without-2/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_476dd25f6fcf25 1-20
+eval-results/v1/verify-without-2/events.jsonl
+  s_a0b2c85094aa9e::t_d7f7c248e39652 1-20
+eval-results/v1/verify-without-2/final.txt
+  s_a0b2c85094aa9e::t_eebf24a8a9d889 1-5
+eval-results/v1/verify-without-2/prompt.txt
+  s_a0b2c85094aa9e::t_f4ca19d13158ac 1-4
+eval-results/v1/verify-without-2/result.json
+  s_a0b2c85094aa9e::t_6bf4f382a9e22a 1-19
+eval-results/v1/write-with-1/artifacts/API.md
+  s_a0b2c85094aa9e::t_e8a54d760a5962 1-11
+eval-results/v1/write-with-1/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_7fd264d01ef5ea 1-5
+eval-results/v1/write-with-1/artifacts/REPORT.md
+  s_a0b2c85094aa9e::t_ca35449dacb9b7 1-51
+eval-results/v1/write-with-1/artifacts/package.json
+  s_a0b2c85094aa9e::t_9329e3651516f1 1-13
+eval-results/v1/write-with-1/artifacts/src/settings.ts
+  s_a0b2c85094aa9e::t_473e6891e78f93 1-33
+eval-results/v1/write-with-1/artifacts/tests/settings.test.mjs
+  s_a0b2c85094aa9e::t_55f01e7a1d37a0 1-118
+eval-results/v1/write-with-1/artifacts/tests/settings.types.ts
+  s_a0b2c85094aa9e::t_3bc1433cfd4069 1-14
+eval-results/v1/write-with-1/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_b85e985a5b9963 1-19
+eval-results/v1/write-with-1/events.jsonl
+  s_a0b2c85094aa9e::t_59150b63babfb2 1-22
+eval-results/v1/write-with-1/final.txt
+  s_a0b2c85094aa9e::t_0de97b2e829e3f 1-5
+eval-results/v1/write-with-1/prompt.txt
+  s_a0b2c85094aa9e::t_6e29e43c0544f4 1-5
+eval-results/v1/write-with-1/result.json
+  s_a0b2c85094aa9e::t_19c48edc759388 1-48
+eval-results/v1/write-with-2/artifacts/API.md
+  s_a0b2c85094aa9e::t_7c9eece6b594af 1-11
+eval-results/v1/write-with-2/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_4c7c9328eff72a 1-5
+eval-results/v1/write-with-2/artifacts/REPORT.md
+  s_a0b2c85094aa9e::t_21e74bf25db4ed 1-52
+eval-results/v1/write-with-2/artifacts/package.json
+  s_a0b2c85094aa9e::t_b3b68163bbbcb8 1-13
+eval-results/v1/write-with-2/artifacts/src/settings.ts
+  s_a0b2c85094aa9e::t_6f30b22650116d 1-30
+eval-results/v1/write-with-2/artifacts/tests/settings.test.mjs
+  s_a0b2c85094aa9e::t_a6303939d2ac55 1-115
+eval-results/v1/write-with-2/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_9074b01a72b36c 1-19
+eval-results/v1/write-with-2/events.jsonl
+  s_a0b2c85094aa9e::t_7d8a4528d60c3e 1-33
+eval-results/v1/write-with-2/final.txt
+  s_a0b2c85094aa9e::t_7b1d9a118808f3 1-5
+eval-results/v1/write-with-2/prompt.txt
+  s_a0b2c85094aa9e::t_67d5e0db1ea41c 1-5
+eval-results/v1/write-with-2/result.json
+  s_a0b2c85094aa9e::t_4b350d62560746 1-48
+eval-results/v1/write-without-1/artifacts/API.md
+  s_a0b2c85094aa9e::t_4d2298b214794f 1-11
+eval-results/v1/write-without-1/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_a54e1cf8eca69b 1-5
+eval-results/v1/write-without-1/artifacts/REPORT.md
+  s_a0b2c85094aa9e::t_9086b2dea25892 1-20
+eval-results/v1/write-without-1/artifacts/package.json
+  s_a0b2c85094aa9e::t_29a3ed3daf2616 1-13
+eval-results/v1/write-without-1/artifacts/src/settings.ts
+  s_a0b2c85094aa9e::t_8c6d6b80c6b388 1-30
+eval-results/v1/write-without-1/artifacts/tests/settings.test.mjs
+  s_a0b2c85094aa9e::t_193ae278cb6adb 1-114
+eval-results/v1/write-without-1/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_96a6f8de75aacc 1-19
+eval-results/v1/write-without-1/events.jsonl
+  s_a0b2c85094aa9e::t_eacbed9affed94 1-23
+eval-results/v1/write-without-1/final.txt
+  s_a0b2c85094aa9e::t_403eee0da384d9 1-5
+eval-results/v1/write-without-1/prompt.txt
+  s_a0b2c85094aa9e::t_60adcc072d4a54 1-4
+eval-results/v1/write-without-1/result.json
+  s_a0b2c85094aa9e::t_aeb548c08cb2d3 1-48
+eval-results/v1/write-without-2/artifacts/API.md
+  s_a0b2c85094aa9e::t_f43b291a94aa32 1-11
+eval-results/v1/write-without-2/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_ea768ae18acd72 1-5
+eval-results/v1/write-without-2/artifacts/REPORT.md
+  s_a0b2c85094aa9e::t_a4b0f91f33bca4 1-21
+eval-results/v1/write-without-2/artifacts/package.json
+  s_a0b2c85094aa9e::t_7968a960cae0c7 1-13
+eval-results/v1/write-without-2/artifacts/src/settings.ts
+  s_a0b2c85094aa9e::t_588dea0a4e442f 1-30
+eval-results/v1/write-without-2/artifacts/tests/settings.test.mjs
+  s_a0b2c85094aa9e::t_9bee83f2d676d3 1-108
+eval-results/v1/write-without-2/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_691a2ea2bcaa69 1-19
+eval-results/v1/write-without-2/events.jsonl
+  s_a0b2c85094aa9e::t_eaa4ee921e2499 1-24
+eval-results/v1/write-without-2/final.txt
+  s_a0b2c85094aa9e::t_8696471805398d 1-5
+eval-results/v1/write-without-2/prompt.txt
+  s_a0b2c85094aa9e::t_d58e491932fba3 1-4
+eval-results/v1/write-without-2/result.json
+  s_a0b2c85094aa9e::t_c9b937666394e2 1-48
+eval-results/v2-review/manifest.json
+  s_a0b2c85094aa9e::t_3c790271f4a01b 1-75
+eval-results/v2-review/redactions.json
+  s_a0b2c85094aa9e::t_f38be9526331ba 1-21
+eval-results/v2-review/review-with-1/artifacts/API.md
+  s_a0b2c85094aa9e::t_44a532a0222665 1-8
+eval-results/v2-review/review-with-1/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_85a3df07d04ef9 1-5
+eval-results/v2-review/review-with-1/artifacts/REVIEW.md
+  s_a0b2c85094aa9e::t_bbd15931b5dbd0 1-55
+eval-results/v2-review/review-with-1/artifacts/package.json
+  s_a0b2c85094aa9e::t_e5bcd3dc39d518 1-13
+eval-results/v2-review/review-with-1/artifacts/src/caller.ts
+  s_a0b2c85094aa9e::t_8723b36b916894 1-5
+eval-results/v2-review/review-with-1/artifacts/src/legacy.ts
+  s_a0b2c85094aa9e::t_d79571f9e40902 1-2
+eval-results/v2-review/review-with-1/artifacts/src/queue.ts
+  s_a0b2c85094aa9e::t_14b114d220f5a8 1-10
+eval-results/v2-review/review-with-1/artifacts/tests/queue.test.mjs
+  s_a0b2c85094aa9e::t_93fb51289c7855 1-4
+eval-results/v2-review/review-with-1/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_2bb6c7396ab0c7 1-19
+eval-results/v2-review/review-with-1/events.jsonl
+  s_a0b2c85094aa9e::t_a7bcc711a3a558 1-18
+eval-results/v2-review/review-with-1/final.txt
+  s_a0b2c85094aa9e::t_1ee66cb2ac7476 1-3
+eval-results/v2-review/review-with-1/prompt.txt
+  s_a0b2c85094aa9e::t_0f4f68daaacd1c 1-6
+eval-results/v2-review/review-with-1/result.json
+  s_a0b2c85094aa9e::t_919aadc3752a22 1-19
+eval-results/v2-review/review-with-2/artifacts/API.md
+  s_a0b2c85094aa9e::t_5d6facebc6f9f6 1-8
+eval-results/v2-review/review-with-2/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_715f7c1127a063 1-5
+eval-results/v2-review/review-with-2/artifacts/REVIEW.md
+  s_a0b2c85094aa9e::t_4669f569cf29de 1-48
+eval-results/v2-review/review-with-2/artifacts/package.json
+  s_a0b2c85094aa9e::t_a46792e6c07ffe 1-13
+eval-results/v2-review/review-with-2/artifacts/src/caller.ts
+  s_a0b2c85094aa9e::t_8e6f0dc28653b7 1-5
+eval-results/v2-review/review-with-2/artifacts/src/legacy.ts
+  s_a0b2c85094aa9e::t_4ae15fabfe3a89 1-2
+eval-results/v2-review/review-with-2/artifacts/src/queue.ts
+  s_a0b2c85094aa9e::t_fe316e97a9aa5a 1-10
+eval-results/v2-review/review-with-2/artifacts/tests/queue.test.mjs
+  s_a0b2c85094aa9e::t_1cf2bc82f745e5 1-4
+eval-results/v2-review/review-with-2/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_31e190583c7ad9 1-19
+eval-results/v2-review/review-with-2/events.jsonl
+  s_a0b2c85094aa9e::t_d1b8e92e6489fc 1-26
+eval-results/v2-review/review-with-2/final.txt
+  s_a0b2c85094aa9e::t_56b61bd7137a3a 1-5
+eval-results/v2-review/review-with-2/prompt.txt
+  s_a0b2c85094aa9e::t_5444fa5df81e47 1-6
+eval-results/v2-review/review-with-2/result.json
+  s_a0b2c85094aa9e::t_6e90f9828673a0 1-19
+eval-results/v2-review/review-without-1/artifacts/API.md
+  s_a0b2c85094aa9e::t_c35f20bcb22c97 1-8
+eval-results/v2-review/review-without-1/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_f83810880046df 1-5
+eval-results/v2-review/review-without-1/artifacts/REVIEW.md
+  s_a0b2c85094aa9e::t_eb9b2b7711b4ce 1-46
+eval-results/v2-review/review-without-1/artifacts/package.json
+  s_a0b2c85094aa9e::t_3005d52f899370 1-13
+eval-results/v2-review/review-without-1/artifacts/src/caller.ts
+  s_a0b2c85094aa9e::t_9bab54395523ed 1-5
+eval-results/v2-review/review-without-1/artifacts/src/legacy.ts
+  s_a0b2c85094aa9e::t_329c022d6fefcd 1-2
+eval-results/v2-review/review-without-1/artifacts/src/queue.ts
+  s_a0b2c85094aa9e::t_efe5b593fe4bed 1-10
+eval-results/v2-review/review-without-1/artifacts/tests/queue.test.mjs
+  s_a0b2c85094aa9e::t_c2e423fbddca0a 1-4
+eval-results/v2-review/review-without-1/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_d200a8d62151c6 1-19
+eval-results/v2-review/review-without-1/events.jsonl
+  s_a0b2c85094aa9e::t_7d8fcd94d4c5cf 1-19
+eval-results/v2-review/review-without-1/final.txt
+  s_a0b2c85094aa9e::t_893e020f9184d3 1-3
+eval-results/v2-review/review-without-1/prompt.txt
+  s_a0b2c85094aa9e::t_96f27b8d3e1d14 1-5
+eval-results/v2-review/review-without-1/result.json
+  s_a0b2c85094aa9e::t_f9691311b358a8 1-19
+eval-results/v2-review/review-without-2/artifacts/API.md
+  s_a0b2c85094aa9e::t_ab603609966783 1-8
+eval-results/v2-review/review-without-2/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_fb9da31eee52c5 1-5
+eval-results/v2-review/review-without-2/artifacts/REVIEW.md
+  s_a0b2c85094aa9e::t_e65e91f854f329 1-34
+eval-results/v2-review/review-without-2/artifacts/package.json
+  s_a0b2c85094aa9e::t_eefc6d4e25e188 1-13
+eval-results/v2-review/review-without-2/artifacts/src/caller.ts
+  s_a0b2c85094aa9e::t_1e32a75128936d 1-5
+eval-results/v2-review/review-without-2/artifacts/src/legacy.ts
+  s_a0b2c85094aa9e::t_e5df3622f95595 1-2
+eval-results/v2-review/review-without-2/artifacts/src/queue.ts
+  s_a0b2c85094aa9e::t_111f82a8e2e5a1 1-10
+eval-results/v2-review/review-without-2/artifacts/tests/queue.test.mjs
+  s_a0b2c85094aa9e::t_e5885ba723d942 1-4
+eval-results/v2-review/review-without-2/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_4ad751e8d3cb89 1-19
+eval-results/v2-review/review-without-2/events.jsonl
+  s_a0b2c85094aa9e::t_5688c882068de7 1-19
+eval-results/v2-review/review-without-2/final.txt
+  s_a0b2c85094aa9e::t_3cdd5fd7592ff6 1-3
+eval-results/v2-review/review-without-2/prompt.txt
+  s_a0b2c85094aa9e::t_46945e0fba2951 1-5
+eval-results/v2-review/review-without-2/result.json
+  s_a0b2c85094aa9e::t_50905d431e9025 1-19
+eval-results/v2-review/runs.json
+  s_a0b2c85094aa9e::t_e59450cafccf90 1-78
+eval-results/v2-review/scores.json
+  s_a0b2c85094aa9e::t_a08b0562630ea8 1-437
+evals/README.md
+  s_a0b2c85094aa9e::t_b9da4a502a04a4 1-88
+evals/REVIEW-REGRESSION.md
+  s_a0b2c85094aa9e::t_52dc509e3a3bd3 1-12
+evals/recorded-runner-v1.py
+  s_a0b2c85094aa9e::t_021b80d1d66520 1-119
+evals/redact-results.py
+  s_a0b2c85094aa9e::t_e9c08035597d2d 1-42
+evals/run.py
+  s_a0b2c85094aa9e::t_e770892453b101 1-122
+scripts/benchmark.mjs
+  s_a0b2c85094aa9e::t_0216724fbc15d7 26
+skills/typescript-review/SKILL.md
+  s_a0b2c85094aa9e::t_1313c7eceb5a05 8-108
+tests/install.test.mjs
+  s_a0b2c85094aa9e::t_5562695fb79908 3,19-25
+tests/skill-examples.test.mjs
+  s_a0b2c85094aa9e::t_88d3eac219220e 1-48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b13a7aa6e41867abe70f7d37882d80405e72bc9c",
+  "prompts": {},
+  "sessions": {
+    "s_a0b2c85094aa9e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1796b-b4e2-7152-9419-bcb7fb9795b6",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    }
+  }
+}
