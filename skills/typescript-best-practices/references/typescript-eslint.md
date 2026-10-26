@@ -1,8 +1,42 @@
-# typescript-eslint — setup, rule decisions and diagnostic examples
+# Lint setup — Oxlint default and typescript-eslint rule guidance
 
 Maintainer: typescript-eslint project; reviewed 2026-10-27. Tool policy is versioned, not
 language law. Tested tuple: TS 5.9.3, ESLint 10.13.0, typescript-eslint 8.72.1. Use the
 consumer project's lockfile; do not silently upgrade to match this repository.
+
+## Default for a new setup: type-aware Oxlint
+
+Use Oxlint when choosing lint tooling for a new project. Preserve an established
+framework/workspace setup; retain ESLint for plugins or rules without verified
+equivalents. The typescript-eslint sections below explain rule semantics and the
+ESLint compatibility path, not a requirement to install both engines.
+
+Install the tested pair:
+
+```sh
+npm install --save-dev --save-exact oxlint@1.89.0 oxlint-tsgolint@7.0.2005
+```
+
+Create .oxlintrc.json in the project root:
+
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript"],
+  "categories": { "correctness": "error" },
+  "options": { "typeAware": true },
+  "rules": {
+    "eslint/eqeqeq": ["error", "always"],
+    "typescript/no-floating-promises": ["error", { "ignoreVoid": false }],
+    "typescript/no-misused-promises": "error"
+  }
+}
+```
+
+Run npx oxlint src --max-warnings 0, replacing src with your source directories.
+Keep the project's compiler check and test/build commands. This selected baseline
+does not reproduce every recommendedTypeChecked rule. See E8 for migration checks
+and the [official setup](https://oxc.rs/docs/guide/usage/linter/type-aware.html).
 
 ## E1. Enable type information for the intended files
 

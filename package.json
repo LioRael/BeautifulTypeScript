@@ -10,10 +10,10 @@
   "scripts": {
     "check:skills": "node scripts/check-skills.mjs",
     "typecheck": "tsc --noEmit && tsc -p configs/tsconfig.browser.json",
-    "lint": "npm run lint:oxlint && npm run lint:eslint",
+    "lint": "npm run lint:oxlint:typed",
     "build": "tsc",
     "test": "npm run build && node --test tests/*.test.mjs",
-    "check": "npm run check:skills && npm run typecheck && npm run lint && npm run lint:oxlint:typed && npm test",
+    "check": "npm run check:skills && npm run typecheck && npm run lint && npm run lint:eslint && npm test",
     "benchmark": "npm run build && node scripts/benchmark.mjs",
     "lint:eslint": "eslint examples/port/*.ts --max-warnings 0",
     "lint:oxlint": "oxlint -c configs/oxlint.json examples/port --max-warnings 0",

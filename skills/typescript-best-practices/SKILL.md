@@ -26,6 +26,8 @@ Distinguish the deliverable:
 
 Do not infer that a private package has no external callers. Search imports and call sites.
 A missing lint/config file is not permission to reconfigure the repository.
+When asked to establish a new lint setup, default to type-aware Oxlint; preserve
+existing framework requirements and ESLint checks without verified equivalents.
 
 ## 2. Validate data at trust boundaries (TS02)
 

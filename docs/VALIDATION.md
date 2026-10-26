@@ -147,3 +147,11 @@ typed lint both pass on the port examples. New tests assert strict-equality and
 promise-rule diagnostic IDs/locations, nonzero coverage, failure status and clean
 counterparts. Existing ESLint checks remain. No performance or full rule-parity
 claim is made; no model efficacy rerun was needed for this configuration addition.
+
+## Oxlint default and README examples (2026-10-27)
+
+The default lint command now runs type-aware Oxlint. CI still tests the optional
+ESLint recipe. All 27 tests pass; documentation checks now include README snippets:
+51 TypeScript blocks compile and 21 execute. README before/after examples are
+explicitly authored demonstrations, not new agent-evaluation results. The generated
+pixel-art banner is stored in assets/banner.png and displayed by the README.

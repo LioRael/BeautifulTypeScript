@@ -1,4 +1,8 @@
-# Optional configuration recipes
+# Lint and compiler configuration recipes
+
+**Default for new setups: type-aware Oxlint.** Keep existing framework/workspace
+requirements; use ESLint where required plugins or rules lack verified equivalents.
+The recipes remain opt-in for users installing only the skills.
 
 Tested tuple: TypeScript 5.9.3, ESLint 10.13.0, typescript-eslint 8.72.1; exact dependencies
 and transitive versions are locked. Registry checked 2026-10-27: TS latest was 7.0.2,
@@ -65,8 +69,9 @@ belong to their intended tsconfig and build dependent declarations first.
 The separate tsgolint engine is not the project's installed TypeScript compiler:
 keep your existing typecheck/build command until compatibility is established.
 
-In this repository, npm run lint runs basic Oxlint then typed ESLint;
-npm run lint:oxlint:typed independently verifies the alternative typed recipe.
+In this repository, npm run lint runs type-aware Oxlint.
+npm run lint:oxlint runs the basic pass; npm run lint:eslint checks the optional
+ESLint recipe. The repository CI also exercises ESLint because we ship that recipe.
 npm run check exercises both recipes, including bad/clean fixtures with asserted
 diagnostic IDs, lines and nonempty file coverage. This proves the selected rules,
 not equality with every recommendedTypeChecked rule or framework plugin.
