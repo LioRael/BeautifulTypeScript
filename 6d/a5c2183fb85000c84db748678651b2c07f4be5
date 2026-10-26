@@ -1,0 +1,61 @@
+CONTRIBUTING.md
+  s_a0b2c85094aa9e::t_ee59af6fa1d4cf 5-10
+README.md
+  s_1d1ebc94680cfb::t_2f3e89e63ac454 15,151-170
+docs/SOURCES.md
+  s_a0b2c85094aa9e::t_b730559430e91b 16-35,38-42
+docs/VALIDATION.md
+  s_1d1ebc94680cfb::t_b3e82bcab7768c 11,73-87
+skills/typescript-best-practices/SKILL.md
+  s_a0b2c85094aa9e::t_153398a70a784c 51-65
+skills/typescript-best-practices/references/airbnb-javascript-style-guide.md
+  s_a0b2c85094aa9e::t_8b129ee4d1cd94 1-46
+skills/typescript-best-practices/references/style-decisions.md
+  s_a0b2c85094aa9e::t_02b5b12eb45938 1-36
+skills/typescript-best-practices/references/typescript-compiler-configuration.md
+  s_a0b2c85094aa9e::t_dd273fc7b30f86 1-53
+skills/typescript-best-practices/references/typescript-declaration-dos-and-donts.md
+  s_a0b2c85094aa9e::t_58ca20844d5eaa 1-43
+skills/typescript-best-practices/references/typescript-eslint.md
+  s_a0b2c85094aa9e::t_5b6c27e861a917 1-51
+skills/typescript-best-practices/references/typescript-handbook.md
+  s_a0b2c85094aa9e::t_e8c9b7dc5fdd98 1-59
+skills/typescript-port/SKILL.md
+  s_a0b2c85094aa9e::t_6b3d90e5e86491 72-81
+skills/typescript-port/references/type-and-runtime-decisions.md
+  s_a0b2c85094aa9e::t_3e49143048fa00 1-62
+skills/typescript-review/SKILL.md
+  s_a0b2c85094aa9e::t_0e2cbda1404fa0 43-48
+skills/typescript-review/references/review-evidence.md
+  s_a0b2c85094aa9e::t_99a2197bd02dbf 1-46
+skills/typescript-verify/SKILL.md
+  s_a0b2c85094aa9e::t_07eb7eef628a31 34-39
+skills/typescript-verify/references/verification-matrix.md
+  s_a0b2c85094aa9e::t_8f3b9d54dd07cd 1-48
+tests/install.test.mjs
+  s_a0b2c85094aa9e::t_ab22c1bd6a1575 3,13-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6da5c2183fb85000c84db748678651b2c07f4be5",
+  "prompts": {},
+  "sessions": {
+    "s_1d1ebc94680cfb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a174e3-7a80-7303-89d2-f016a5e7e9de",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    },
+    "s_a0b2c85094aa9e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1796b-b4e2-7152-9419-bcb7fb9795b6",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    }
+  }
+}
