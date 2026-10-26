@@ -1,0 +1,161 @@
+eval-results/v5-revision-study/revision-a-old-2/artifacts/PROJECT.md
+  s_1d1ebc94680cfb::t_045966b7e50a09 1-5
+eval-results/v5-revision-study/revision-a-old-2/artifacts/package.json
+  s_1d1ebc94680cfb::t_e9c1b7be9074b9 1-12
+eval-results/v5-revision-study/revision-a-old-2/artifacts/src/checkout.ts
+  s_1d1ebc94680cfb::t_28bbf0fe63db0f 1-29
+eval-results/v5-revision-study/revision-a-old-2/artifacts/src/model.ts
+  s_1d1ebc94680cfb::t_30365760961381 1-26
+eval-results/v5-revision-study/revision-a-old-2/artifacts/src/policy.ts
+  s_1d1ebc94680cfb::t_cdb4a7879f941a 1-33
+eval-results/v5-revision-study/revision-a-old-2/artifacts/src/quotes.ts
+  s_1d1ebc94680cfb::t_b44da92e5adb3e 1-31
+eval-results/v5-revision-study/revision-a-old-2/artifacts/tests/delivery.test.mjs
+  s_1d1ebc94680cfb::t_dcd2be9591d11d 1-145
+eval-results/v5-revision-study/revision-a-old-2/artifacts/tsconfig.json
+  s_1d1ebc94680cfb::t_fe0fd3926a6d24 1-20
+eval-results/v5-revision-study/revision-a-old-2/final.txt
+  s_1d1ebc94680cfb::t_70b8a0eaf32f2d 1-7
+eval-results/v5-revision-study/revision-a-old-2/prompt.txt
+  s_1d1ebc94680cfb::t_4f9bafa2f5ec49 1-7
+eval-results/v5-revision-study/revision-a-old-2/result.json
+  s_1d1ebc94680cfb::t_604b0b4bd3a337 1-24
+eval-results/v5-revision-study/revision-a-with-2/artifacts/PROJECT.md
+  s_1d1ebc94680cfb::t_1ad7c8ddbf5fdb 1-5
+eval-results/v5-revision-study/revision-a-with-2/artifacts/package.json
+  s_1d1ebc94680cfb::t_4034969a3d2f1d 1-12
+eval-results/v5-revision-study/revision-a-with-2/artifacts/src/checkout.ts
+  s_1d1ebc94680cfb::t_480f7c53ffe168 1-29
+eval-results/v5-revision-study/revision-a-with-2/artifacts/src/model.ts
+  s_1d1ebc94680cfb::t_c02aa15da67d53 1-26
+eval-results/v5-revision-study/revision-a-with-2/artifacts/src/policy.ts
+  s_1d1ebc94680cfb::t_8ae100803b20bd 1-33
+eval-results/v5-revision-study/revision-a-with-2/artifacts/src/quotes.ts
+  s_1d1ebc94680cfb::t_6922430037711c 1-34
+eval-results/v5-revision-study/revision-a-with-2/artifacts/tests/delivery.test.mjs
+  s_1d1ebc94680cfb::t_6a7bbf51e88500 1-157
+eval-results/v5-revision-study/revision-a-with-2/artifacts/tsconfig.json
+  s_1d1ebc94680cfb::t_fc0cf6656840a8 1-20
+eval-results/v5-revision-study/revision-a-with-2/final.txt
+  s_1d1ebc94680cfb::t_3f10254d1ee62d 1-5
+eval-results/v5-revision-study/revision-a-with-2/prompt.txt
+  s_1d1ebc94680cfb::t_01ec0b13c272ca 1-7
+eval-results/v5-revision-study/revision-a-with-2/result.json
+  s_1d1ebc94680cfb::t_375d74e84e0268 1-24
+eval-results/v5-revision-study/revision-a-without-2/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_b22d25f4b05470 1-5
+eval-results/v5-revision-study/revision-a-without-2/artifacts/package.json
+  s_a0b2c85094aa9e::t_5748b0f3511482 1-12
+eval-results/v5-revision-study/revision-a-without-2/artifacts/src/checkout.ts
+  s_a0b2c85094aa9e::t_8ceb3279f6df87 1-29
+eval-results/v5-revision-study/revision-a-without-2/artifacts/src/model.ts
+  s_a0b2c85094aa9e::t_ac68c3a535f717 1-26
+eval-results/v5-revision-study/revision-a-without-2/artifacts/src/policy.ts
+  s_a0b2c85094aa9e::t_a2fd55098be360 1-33
+eval-results/v5-revision-study/revision-a-without-2/artifacts/src/quotes.ts
+  s_a0b2c85094aa9e::t_752715708e8d41 1-33
+eval-results/v5-revision-study/revision-a-without-2/artifacts/tests/delivery.test.mjs
+  s_a0b2c85094aa9e::t_81feb720c90c12 1-131
+eval-results/v5-revision-study/revision-a-without-2/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_683d193d050fe2 1-20
+eval-results/v5-revision-study/revision-a-without-2/final.txt
+  s_a0b2c85094aa9e::t_7784a04d20c60c 1-5
+eval-results/v5-revision-study/revision-a-without-2/prompt.txt
+  s_a0b2c85094aa9e::t_7fc3b3386ab2bc 1-6
+eval-results/v5-revision-study/revision-a-without-2/result.json
+  s_a0b2c85094aa9e::t_aca14c3d697b3b 1-24
+eval-results/v5-revision-study/revision-b-with-2/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_ff262cf538d8c3 1-5
+eval-results/v5-revision-study/revision-b-with-2/artifacts/package.json
+  s_a0b2c85094aa9e::t_4d5507eed41a06 1-12
+eval-results/v5-revision-study/revision-b-with-2/artifacts/src/cart.ts
+  s_a0b2c85094aa9e::t_c73bfb5eb11d58 1-49
+eval-results/v5-revision-study/revision-b-with-2/artifacts/src/catalog.ts
+  s_a0b2c85094aa9e::t_8e2f416389ec8d 1-29
+eval-results/v5-revision-study/revision-b-with-2/artifacts/src/model.ts
+  s_a0b2c85094aa9e::t_998d344153cb2b 1-27
+eval-results/v5-revision-study/revision-b-with-2/artifacts/src/policy.ts
+  s_a0b2c85094aa9e::t_cbb1569d1d88a7 1-39
+eval-results/v5-revision-study/revision-b-with-2/artifacts/tests/cart.test.mjs
+  s_a0b2c85094aa9e::t_756a39a3d72622 1-136
+eval-results/v5-revision-study/revision-b-with-2/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_a0194529c3bd89 1-20
+eval-results/v5-revision-study/revision-b-with-2/final.txt
+  s_a0b2c85094aa9e::t_5561ff76694620 1-5
+eval-results/v5-revision-study/revision-b-with-2/prompt.txt
+  s_a0b2c85094aa9e::t_501e24c74722c2 1-9
+eval-results/v5-revision-study/revision-b-with-2/result.json
+  s_a0b2c85094aa9e::t_25c388665c5743 1-23
+eval-results/v5-revision-study/revision-b-without-1/verification.json
+  s_a0b2c85094aa9e::t_ddf6b7b7d6557c 1-51
+skills/typescript-best-practices/evals/revision-a/case.json
+  s_1d1ebc94680cfb::t_0a8f5990e1235d 1-8
+skills/typescript-best-practices/evals/revision-a/files/PROJECT.md
+  s_1d1ebc94680cfb::t_78de1d9f724ad4 1-5
+skills/typescript-best-practices/evals/revision-a/files/package.json
+  s_1d1ebc94680cfb::t_1bbfe93bf917a4 1-12
+skills/typescript-best-practices/evals/revision-a/files/src/checkout.ts
+  s_1d1ebc94680cfb::t_d207102730a5fc 1-28
+skills/typescript-best-practices/evals/revision-a/files/src/model.ts
+  s_1d1ebc94680cfb::t_2a4e07c99ae022 1-24
+skills/typescript-best-practices/evals/revision-a/files/src/policy.ts
+  s_1d1ebc94680cfb::t_d1921e0bee863d 1-33
+skills/typescript-best-practices/evals/revision-a/files/src/quotes.ts
+  s_1d1ebc94680cfb::t_bec7d71316b217 1-28
+skills/typescript-best-practices/evals/revision-a/files/tests/delivery.test.mjs
+  s_1d1ebc94680cfb::t_e45170985a69cd 1-21
+skills/typescript-best-practices/evals/revision-a/files/tsconfig.json
+  s_1d1ebc94680cfb::t_72aa1c06662703 1-20
+skills/typescript-best-practices/evals/revision-a/graders/rubric.md
+  s_a0b2c85094aa9e::t_ca44576fbbd1e0 1-10
+skills/typescript-best-practices/evals/revision-a/prompt.md
+  s_1d1ebc94680cfb::t_7eed77fed52885 1-5
+skills/typescript-best-practices/evals/revision-b/case.json
+  s_1d1ebc94680cfb::t_87312d26a9f783 1-8
+skills/typescript-best-practices/evals/revision-b/files/PROJECT.md
+  s_1d1ebc94680cfb::t_6a70269cce151e 1-5
+skills/typescript-best-practices/evals/revision-b/files/package.json
+  s_1d1ebc94680cfb::t_17bfce4aafc02a 1-12
+skills/typescript-best-practices/evals/revision-b/files/src/cart.ts
+  s_1d1ebc94680cfb::t_d99429c2db2c3c 1-44
+skills/typescript-best-practices/evals/revision-b/files/src/catalog.ts
+  s_1d1ebc94680cfb::t_9a9b362ddaf0bd 1-29
+skills/typescript-best-practices/evals/revision-b/files/src/model.ts
+  s_1d1ebc94680cfb::t_bdd5bcd0aebad0 1-26
+skills/typescript-best-practices/evals/revision-b/files/src/policy.ts
+  s_1d1ebc94680cfb::t_faa3f8fbf50824 1-39
+skills/typescript-best-practices/evals/revision-b/files/tests/cart.test.mjs
+  s_1d1ebc94680cfb::t_e487c775863fd3 1-19
+skills/typescript-best-practices/evals/revision-b/files/tsconfig.json
+  s_1d1ebc94680cfb::t_22a30f870245ba 1-20
+skills/typescript-best-practices/evals/revision-b/graders/rubric.md
+  s_a0b2c85094aa9e::t_858fb5aa7a8abf 1-10
+skills/typescript-best-practices/evals/revision-b/graders/runtime.mjs
+  s_1d1ebc94680cfb::t_4060ed03eecb10 1-98
+skills/typescript-best-practices/evals/revision-b/prompt.md
+  s_1d1ebc94680cfb::t_4ae4837e1b10ca 1-7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4be4709d4ea8fe6cc9eedb9e46ed99c9e2ae7372",
+  "prompts": {},
+  "sessions": {
+    "s_1d1ebc94680cfb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a174e3-7a80-7303-89d2-f016a5e7e9de",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    },
+    "s_a0b2c85094aa9e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1796b-b4e2-7152-9419-bcb7fb9795b6",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    }
+  }
+}
