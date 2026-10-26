@@ -1,0 +1,5 @@
+Implemented admissions pause/reopen support with roster visibility, error precedence, FIFO promotion, and preserved waitlist behavior. Added four admissions tests and updated PROJECT.md.
+
+Validation passed: typecheck, build, all 13 tests, and diff whitespace checks.
+
+The initial `mise` startup failure was bypassed using a non-login shell. No remaining blockers.

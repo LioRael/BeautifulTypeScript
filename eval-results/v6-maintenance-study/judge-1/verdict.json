@@ -1,0 +1,62 @@
+[
+  {
+    "pair": "pair-1",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: Both implement the latest offer contract, reserve confirmed and offered seats, preserve FIFO across pauses, validate portal input, and return detached snapshots. A cannot admit ahead of a backlog: every seat release while open and every reopening fills vacancies before the next enrollment. B's explicit backlog predicate therefore produces equivalent reachable behavior. Both replace the retired automatic-confirmation behavior in code and tests. Maintainability/style: Named versus inline enrollment options, module versus private helpers, and unconditional versus seat-release-only refill calls are proportionate alternatives without a demonstrated maintenance disadvantage.",
+    "evidence": [
+      "pair-1/A/src/desk.ts:20-26 (enroll), :29-36 (cancel), :61-76 (setAdmissions/offerWaiting)",
+      "pair-1/B/src/desk.ts:4-13 (offerWaiting), :32-38 (enroll), :42-76 (cancel/offer operations/admissions)",
+      "pair-1/A/src/portal.ts:9-34 and B/src/portal.ts:9-34 (untrusted validation, domain errors, confirmed-only attendance)",
+      "pair-1/A/tests/offers.test.mjs:17-123 and B/tests/offers.test.mjs:14-107 (reservations, ownership, pauses, errors)",
+      "pair-1/A-history/checkpoint-2/src/desk.ts:45-54 versus A/src/desk.ts:67-76; B-history/checkpoint-2/src/desk.ts:4-13 versus B/src/desk.ts:4-13 (confirmation migrated to offers)",
+      "pair-1/A-checks.json:2-25 and pair-1/B-checks.json:2-25 (independent compiler, contract-group and visible-test success)",
+      "pair-1/A/tsconfig.json:3-5 and pair-1/B/tsconfig.json:3-5 (strict settings retained)"
+    ]
+  },
+  {
+    "pair": "pair-2",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: Both correctly reserve offers, permit acceptance while paused, reject invalid offer operations before mutation, and keep portal validation and attendance consistent. B's shared reservedSeats calculation and A's repeated predicate express the same capacity rule; B's equality stop is sufficient because public operations preserve capacity. Both migrate earlier promotion tests to offers. Maintainability/style: B centralizes capacity counting; A keeps a small calculation local. Neither difference establishes a material maintainability advantage.",
+    "evidence": [
+      "pair-2/A/src/desk.ts:20-26, :39-58, :61-76 (capacity, offer operations, FIFO refill)",
+      "pair-2/B/src/desk.ts:4-25, :35-79 (shared capacity/offer policy and public mutation paths)",
+      "pair-2/A/src/portal.ts:17-34 and B/src/portal.ts:17-33 (validated optional boolean and attendance)",
+      "pair-2/A/tests/offers.test.mjs:17-123 and B/tests/offers.test.mjs:13-106 (public contract and consumers)",
+      "pair-2/B-history/checkpoint-2/src/desk.ts:4-13 versus B/src/desk.ts:8-17; B-history/checkpoint-2/tests/admissions.test.mjs:51-61 versus B/tests/admissions.test.mjs:51-63 (retired promotion behavior updated)",
+      "pair-2/A-checks.json:2-25 and pair-2/B-checks.json:2-25 (independent compiler, contract-group and visible-test success)",
+      "pair-2/A/tsconfig.json:3-5 and pair-2/B/tsconfig.json:3-5 (strict settings retained)"
+    ]
+  },
+  {
+    "pair": "pair-3",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: Both satisfy the latest contract and retained identity, error-ordering, ownership and boundary-validation requirements. A's availableSeats helper and B's inline capacity count agree. B's explicit backlog predicate and refill after every cancellation do not change observable behavior: A fills all vacancies on reopening and on removal of a seat holder, so an open backlog already has all seats reserved. Both retire automatic confirmation in the relevant paths and tests. Maintainability/style: Helper extraction and cancellation branching are equivalent, understandable choices; neither merits preference.",
+    "evidence": [
+      "pair-3/A/src/desk.ts:20-26, :29-43, :46-82 (capacity helper and every seat-release/reopen path)",
+      "pair-3/B/src/desk.ts:20-26, :30-77 (explicit backlog check and FIFO offer refill)",
+      "pair-3/A/src/portal.ts:17-33 and B/src/portal.ts:17-34 (boundary and attendance consistency)",
+      "pair-3/A/tests/offers.test.mjs:17-99 and B/tests/offers.test.mjs:16-84; A/tests/admissions.test.mjs:37-94 and B/tests/admissions.test.mjs:30-77 (offers, atomic failures and multiple vacancies)",
+      "pair-3/A-history/checkpoint-2/src/desk.ts:46-56 versus A/src/desk.ts:72-82; B-history/checkpoint-2/src/desk.ts:45-55 versus B/src/desk.ts:67-77 (FIFO promotion migrated to offers)",
+      "pair-3/A-checks.json:2-25 and pair-3/B-checks.json:2-25 (independent compiler, contract-group and visible-test success)",
+      "pair-3/A/tsconfig.json:3-5 and pair-3/B/tsconfig.json:3-5 (strict settings retained)"
+    ]
+  },
+  {
+    "pair": "pair-4",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: Both have equivalent enrollment, offer validation, pause/reopen, cancellation and decline behavior, with confirmed-only attendance and detached results. Both count offered seats as occupied and fill multiple vacancies in FIFO order without repeated-reopen overbooking. Both update earlier tests for the explicitly retired automatic-confirmation contract. Maintainability/style: A shares availableSeats between admission and offering; B repeats the short capacity expression locally. This small extraction/naming difference has no concrete maintenance cost sufficient to favor either implementation.",
+    "evidence": [
+      "pair-4/A/src/desk.ts:20-26, :29-82 and B/src/desk.ts:20-26, :29-77 (equivalent capacity, validation and transition rules)",
+      "pair-4/A/src/portal.ts:9-33 and B/src/portal.ts:9-33 (same validated JSON consumer and attendance filter)",
+      "pair-4/A/tests/offers.test.mjs:17-99 and B/tests/offers.test.mjs:17-118 (acceptance, pauses, failures and reservations)",
+      "pair-4/A/tests/admissions.test.mjs:37-94 and B/tests/admissions.test.mjs:32-87 (FIFO reopening, repeated reopening and remaining capacity)",
+      "pair-4/A-history/checkpoint-2/src/desk.ts:46-56 versus A/src/desk.ts:72-82; B-history/checkpoint-2/src/desk.ts:46-55 versus B/src/desk.ts:68-77 (latest contract replaces automatic confirmation)",
+      "pair-4/A-checks.json:2-25 and pair-4/B-checks.json:2-25 (independent compiler, contract-group and visible-test success)",
+      "pair-4/A/tsconfig.json:3-5 and pair-4/B/tsconfig.json:3-5 (strict settings retained)"
+    ]
+  }
+]

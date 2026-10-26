@@ -1,0 +1,20 @@
+{
+  "skills/typescript-review/SKILL.md": "c479fda7ed5fa76cb2a3b1cb8b6e5c64496e2cafaad020772466359650f563ff",
+  "skills/typescript-best-practices/SKILL.md": "9176c10d40902f989c5e14e6a159d105ff27d7d33a2bf93fca8a2107da7ae186",
+  "skills/typescript-verify/SKILL.md": "d531f8519d41548cc48a98f1dcb8f911482e27c9334c7f4e8e65dc36b960313f",
+  "skills/typescript-port/SKILL.md": "df8803d68f5e7c336b98ed7579497dde5b5f7f30d4bba55e7aeb9f1a3e2a1895",
+  "skills/typescript-port/references/type-and-runtime-decisions.md": "ae3ad6e088d4473e0533a76693942037af2755ac996122c2de48fe96842b89eb",
+  "skills/typescript-port/references/porting.md": "10ed16dcb2d678eb5231dfe71fe909df2e38d3d05a16178b50e776396544d440",
+  "skills/typescript-verify/references/verification-matrix.md": "c1cfd7bf8f8a4028fba8d52c17e4fd9745f987433f0cfa212ffbe4a290907a68",
+  "skills/typescript-best-practices/references/google-typescript-style-guide.md": "3a13afa64a3e78802a3e76155c989c45376a7efef0fba2b8e466bf2f664c2d46",
+  "skills/typescript-best-practices/references/typescript-declaration-dos-and-donts.md": "f4798013885e9de9c77a38f30efaab0a3c4ba46b856f392c2f39c9d56c05fa07",
+  "skills/typescript-best-practices/references/simplification.md": "417b21cdc12dfa3aef10dd7ac92c8aa11a49b1fe1106945427d2dceb761999e5",
+  "skills/typescript-best-practices/references/airbnb-javascript-style-guide.md": "e598435b09c0e0414c314344e8f0fea4ad38cf92ba776627f17828f93a59755f",
+  "skills/typescript-best-practices/references/style-decisions.md": "34e2b7806a73039a3189740e5bf9afa9b9d8112d6ea5a8f7b275d419346f86ee",
+  "skills/typescript-best-practices/references/typescript-handbook.md": "baf994430b3f80c037a7d585a72e42f13fc71ea6f309714abb608dbfb068a1d5",
+  "skills/typescript-best-practices/references/typescript-eslint.md": "51fa908d728cc837cd31ab5a678cb19c863a7028f2ed6121668b54a9dd746ce4",
+  "skills/typescript-best-practices/references/typescript-compiler-configuration.md": "59b5c108b43f3e539bf85f42a0afe21bc7ecfb92b26dbb24bb1180705b152814",
+  "skills/typescript-best-practices/references/maintenance.md": "61f2c33d2da429b553b279b5b72a98ab80dd48eb7e1933c735cf3da30ad3f0cf",
+  "skills/typescript-best-practices/assets/patterns.ts": "689f305370cd16b5f469df9cfcda63eee437bb5b91b460b53f6beb360b690b5d",
+  "skills/typescript-review/references/review-evidence.md": "fde4ff6cc3eeec8ef76f804f9d5d8cd957b9e8c9026f4ba951dd45bbdaa8d3fc"
+}

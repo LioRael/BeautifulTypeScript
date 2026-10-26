@@ -1,0 +1,3 @@
+Implemented admissions pause/reopen with `admissionsOpen` on rosters, `ADMISSIONS_CLOSED` precedence, and FIFO promotion into all vacant seats upon reopening. Existing waitlist and portal behavior remains covered.
+
+Validation: typecheck, build, and all 11 tests passed; diff check passed. No blockers. npm emitted an existing configuration warning.

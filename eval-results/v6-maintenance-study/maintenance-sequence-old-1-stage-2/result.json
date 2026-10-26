@@ -1,0 +1,49 @@
+{
+  "id": "maintenance-sequence-old-1-stage-2",
+  "case": "maintenance-sequence",
+  "condition": "old",
+  "repeat": 1,
+  "exit_code": 0,
+  "error": null,
+  "elapsed_seconds": 62.464,
+  "usage": {
+    "input_tokens": 140314,
+    "cached_input_tokens": 126720,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 3008,
+    "reasoning_output_tokens": 123
+  },
+  "starting_source_hashes": {
+    "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+    "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+    "src/desk.ts": "37c031db4b48442ede49d21be56ec379a937c8780bbf761a868ff0ec4911dbce",
+    "src/model.ts": "4b7e66021b33e1d78c4498aea6aad5954cedc13e61a016bd724f93fe64d9683d",
+    "src/portal.ts": "7406ff727f0cbcd80e23e8a8d49ad60d90b800e629ca115752318bc2d4028dcb",
+    "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+    "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+    "tests/waitlist.test.mjs": "b8b48c03662c7f8aae0aa1ac803dd1817271746e503d13bde52af5dd7d5fad28",
+    "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+  },
+  "ending_source_hashes": {
+    "PROJECT.md": "2b6418b27ba0292ca797b64dde557d25779bc9bfbcc8d454f9c69f4a107d9095",
+    "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+    "src/desk.ts": "73dee73a37f98b581901a0f19c6cc454b622f7f28c9dc32d3d9e8a4c17470ce6",
+    "src/model.ts": "060de93ac29a53f67fccf031e5ba9997c7d13a0d8ee3ace1456b780c251e74d0",
+    "src/portal.ts": "7406ff727f0cbcd80e23e8a8d49ad60d90b800e629ca115752318bc2d4028dcb",
+    "src/store.ts": "7ba66c7b5eedd0a9bcd0a0a75a10a9a8363cba407bac2a50b89c0d97865b5e5a",
+    "tests/admissions.test.mjs": "131f8e903d30752b6c48884f887d7749e93d7ea94b9d5b51c0954837e2062490",
+    "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+    "tests/waitlist.test.mjs": "b8b48c03662c7f8aae0aa1ac803dd1817271746e503d13bde52af5dd7d5fad28",
+    "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+  },
+  "stage": 2,
+  "changed_inputs": [
+    "PROJECT.md",
+    "src/model.ts",
+    "src/portal.ts",
+    "src/store.ts",
+    "src/desk.ts"
+  ],
+  "package_unchanged": true,
+  "tsconfig_unchanged": true
+}

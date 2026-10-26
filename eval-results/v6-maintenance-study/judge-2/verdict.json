@@ -1,0 +1,63 @@
+[
+  {
+    "pair": "pair-1",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: both satisfy the final offer contract and retained waitlist/admissions behavior, including normalized offer errors, reserved capacity, paused acceptance, FIFO reopening, detached snapshots and confirmed-only attendance. All supplied final and checkpoint checks pass. A explicitly checks for a backlog; B preserves the same priority by filling vacancies on reopening and seat release, so no public operation exposes a free open seat ahead of waiters. Maintainability/style: named versus inline options, module versus private helpers, and unconditional versus seat-release-only filling are equivalent small designs; no material maintenance disadvantage is demonstrated. Earlier automatic-confirmation assertions were appropriately migrated to offers.",
+    "evidence": [
+      "pair-1/A/src/desk.ts:4-14 (offerWaiting), :23-40 (enroll), :43-77 (cancel, offer operations and admissions)",
+      "pair-1/B/src/desk.ts:11-37 (enroll/cancel), :39-78 (offer validation, acceptance and FIFO filling)",
+      "pair-1/A/src/model.ts:7-23 and pair-1/B/src/model.ts:7-19 (current statuses and roster types)",
+      "pair-1/A/src/portal.ts:10-39 and pair-1/B/src/portal.ts:10-39 (boundary validation, domain errors and attendance)",
+      "pair-1/A/tests/offers.test.mjs:14-107; pair-1/B/tests/offers.test.mjs:17-125 (public offer flows, failures, pauses and ownership)",
+      "pair-1/A-history/checkpoint-2/src/desk.ts:4-14; pair-1/A/src/desk.ts:4-14 (promotion migrated to reserved offers)",
+      "pair-1/A-checks.json:2-25; pair-1/B-checks.json:2-25 (compiler, five contract groups and visible tests pass)"
+    ]
+  },
+  {
+    "pair": "pair-2",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: both correctly replace promotion with capacity-reserving offers, preserve FIFO across pauses, allow paused acceptance, validate offer operations before mutation and keep portal/attendance behavior consistent. Supplied checks pass at every stage. Maintainability/style: A centralizes reserved-seat counting and uses module-local helpers; B keeps a short repeated count and private helpers. These are proportionate alternatives. A fills after every cancellation while B fills after reserved-seat removal; reachable-state invariants make their effects equivalent. Portal omission mapped to false versus undefined also preserves the default contract. No functional or material maintainability advantage warrants ranking.",
+    "evidence": [
+      "pair-2/A/src/desk.ts:4-25 (reservedSeats, fillAvailableSeats and offeredEnrollment), :35-80 (public transitions)",
+      "pair-2/B/src/desk.ts:11-78 (enroll, reserved-seat cancellation, shared offer validation and filling)",
+      "pair-2/A/src/portal.ts:18-38; pair-2/B/src/portal.ts:18-39 (required boolean validation, equivalent option mapping and confirmed-only export)",
+      "pair-2/A/tests/offers.test.mjs:13-106; pair-2/B/tests/offers.test.mjs:17-125 (reservations, pauses, errors and snapshots)",
+      "pair-2/A-history/checkpoint-2/src/desk.ts:4-15; pair-2/A/src/desk.ts:4-17 (capacity policy migrated from confirmations to reservations)",
+      "pair-2/A-checks.json:2-25; pair-2/B-checks.json:2-25 (all supplied final checks pass)",
+      "pair-2/A/tsconfig.json:3-5; pair-2/B/tsconfig.json:3-5 (strict settings retained)"
+    ]
+  },
+  {
+    "pair": "pair-3",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: both meet the latest contract and retained behavior. A explicitly includes backlog in the full predicate; B exhausts available capacity into FIFO offers at every relevant transition, which prevents arrivals bypassing waiters without that predicate. Both count offers as reservations and require acceptance for attendance, with session-first normalized failures and detached results. Supplied final and historical checks pass. Maintainability/style: B factors available-seat calculation while A repeats the simple count; helper names, placement and cancellation conditions remain understandable and equivalent. Different test scenarios provide meaningful public-operation evidence without establishing a material ranking.",
+    "evidence": [
+      "pair-3/A/src/desk.ts:11-37, :39-78 (backlog-aware enroll and shared offer transitions)",
+      "pair-3/B/src/desk.ts:11-43, :46-83 (availableSeats, seat-release handling, normalized offers and FIFO filling)",
+      "pair-3/A/src/portal.ts:18-39; pair-3/B/src/portal.ts:18-38 (boolean boundary and attendance filtering)",
+      "pair-3/A/tests/admissions.test.mjs:30-77; pair-3/B/tests/admissions.test.mjs:36-95 (multiple vacancies, idempotence, backlog priority and remaining seats)",
+      "pair-3/A/tests/offers.test.mjs:17-97; pair-3/B/tests/offers.test.mjs:18-100 (acceptance, decline, cancellation, errors and ownership)",
+      "pair-3/A-history/checkpoint-2/src/desk.ts:49-62; pair-3/A/src/desk.ts:67-78; pair-3/B/src/desk.ts:72-83 (obsolete promotion replaced by offers)",
+      "pair-3/A-checks.json:2-25; pair-3/B-checks.json:2-25 (all supplied final checks pass)"
+    ]
+  },
+  {
+    "pair": "pair-4",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: both preserve the complete current contract: offers reserve capacity, cancellation/decline release seats only into offers while open, paused acceptance works, reopening fills FIFO once, errors remain atomic and normalized, and attendance excludes offers. Final and checkpoint checks pass, and earlier tests were updated for the explicitly retired automatic-confirmation behavior. Maintainability/style: B shares the available-seat calculation; A keeps the same short expression in enrollment and filling. Both share offer validation and refill behavior across the required paths. Naming and method order do not establish a material advantage. A omits ADMISSIONS_CLOSED from its documentation code enumeration but explicitly documents the error immediately below; this minor documentation inconsistency does not change the verdict.",
+    "evidence": [
+      "pair-4/A/src/desk.ts:11-78 (capacity, cancellation, shared validation and FIFO filling)",
+      "pair-4/B/src/desk.ts:11-83 (equivalent transitions with shared availableSeats)",
+      "pair-4/A/src/portal.ts:18-38; pair-4/B/src/portal.ts:18-38 (identical required boundary and attendance behavior)",
+      "pair-4/A/tests/offers.test.mjs:17-118; pair-4/B/tests/offers.test.mjs:18-100 (public reservations, pauses, normalized errors and snapshots)",
+      "pair-4/A/tests/admissions.test.mjs:50-68; pair-4/B/tests/admissions.test.mjs:58-71 (offer-aware reopening and repeated-state behavior)",
+      "pair-4/A-history/checkpoint-2/src/desk.ts:45-58; pair-4/A/src/desk.ts:68-78 (retired confirmation migrated to offers)",
+      "pair-4/A/PROJECT.md:9-13 (documentation enumeration and explicit closure behavior)",
+      "pair-4/A-checks.json:2-25; pair-4/B-checks.json:2-25 (all supplied final checks pass)"
+    ]
+  }
+]

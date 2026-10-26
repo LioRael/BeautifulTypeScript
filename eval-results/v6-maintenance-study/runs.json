@@ -1,0 +1,872 @@
+[
+  {
+    "id": "maintenance-sequence-old-1-stage-1",
+    "case": "maintenance-sequence",
+    "condition": "old",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 67.839,
+    "usage": {
+      "input_tokens": 120240,
+      "cached_input_tokens": 108928,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2839,
+      "reasoning_output_tokens": 83
+    },
+    "starting_source_hashes": {
+      "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "26751624a04f63932681d49a5bef7511e88997b3af593c68ceb7df5dbb1382d8",
+      "src/model.ts": "68ac98aba724cfdc135f111d69a96e1bfc259d9b629edb31a9b63866430e2fb2",
+      "src/portal.ts": "87da11ae77ca6f6b555637263f0bc1d8d0d821773b1500b4ca0d6d04fd77f1ec",
+      "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "ending_source_hashes": {
+      "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "37c031db4b48442ede49d21be56ec379a937c8780bbf761a868ff0ec4911dbce",
+      "src/model.ts": "4b7e66021b33e1d78c4498aea6aad5954cedc13e61a016bd724f93fe64d9683d",
+      "src/portal.ts": "7406ff727f0cbcd80e23e8a8d49ad60d90b800e629ca115752318bc2d4028dcb",
+      "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "b8b48c03662c7f8aae0aa1ac803dd1817271746e503d13bde52af5dd7d5fad28",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "stage": 1,
+    "changed_inputs": [
+      "src/model.ts",
+      "src/portal.ts",
+      "src/desk.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "maintenance-sequence-old-1-stage-2",
+    "case": "maintenance-sequence",
+    "condition": "old",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 62.464,
+    "usage": {
+      "input_tokens": 140314,
+      "cached_input_tokens": 126720,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3008,
+      "reasoning_output_tokens": 123
+    },
+    "starting_source_hashes": {
+      "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "37c031db4b48442ede49d21be56ec379a937c8780bbf761a868ff0ec4911dbce",
+      "src/model.ts": "4b7e66021b33e1d78c4498aea6aad5954cedc13e61a016bd724f93fe64d9683d",
+      "src/portal.ts": "7406ff727f0cbcd80e23e8a8d49ad60d90b800e629ca115752318bc2d4028dcb",
+      "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "b8b48c03662c7f8aae0aa1ac803dd1817271746e503d13bde52af5dd7d5fad28",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "ending_source_hashes": {
+      "PROJECT.md": "2b6418b27ba0292ca797b64dde557d25779bc9bfbcc8d454f9c69f4a107d9095",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "73dee73a37f98b581901a0f19c6cc454b622f7f28c9dc32d3d9e8a4c17470ce6",
+      "src/model.ts": "060de93ac29a53f67fccf031e5ba9997c7d13a0d8ee3ace1456b780c251e74d0",
+      "src/portal.ts": "7406ff727f0cbcd80e23e8a8d49ad60d90b800e629ca115752318bc2d4028dcb",
+      "src/store.ts": "7ba66c7b5eedd0a9bcd0a0a75a10a9a8363cba407bac2a50b89c0d97865b5e5a",
+      "tests/admissions.test.mjs": "131f8e903d30752b6c48884f887d7749e93d7ea94b9d5b51c0954837e2062490",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "b8b48c03662c7f8aae0aa1ac803dd1817271746e503d13bde52af5dd7d5fad28",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "stage": 2,
+    "changed_inputs": [
+      "PROJECT.md",
+      "src/model.ts",
+      "src/portal.ts",
+      "src/store.ts",
+      "src/desk.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "maintenance-sequence-old-1-stage-3",
+    "case": "maintenance-sequence",
+    "condition": "old",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 94.139,
+    "usage": {
+      "input_tokens": 198977,
+      "cached_input_tokens": 180736,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 4388,
+      "reasoning_output_tokens": 184
+    },
+    "starting_source_hashes": {
+      "PROJECT.md": "2b6418b27ba0292ca797b64dde557d25779bc9bfbcc8d454f9c69f4a107d9095",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "73dee73a37f98b581901a0f19c6cc454b622f7f28c9dc32d3d9e8a4c17470ce6",
+      "src/model.ts": "060de93ac29a53f67fccf031e5ba9997c7d13a0d8ee3ace1456b780c251e74d0",
+      "src/portal.ts": "7406ff727f0cbcd80e23e8a8d49ad60d90b800e629ca115752318bc2d4028dcb",
+      "src/store.ts": "7ba66c7b5eedd0a9bcd0a0a75a10a9a8363cba407bac2a50b89c0d97865b5e5a",
+      "tests/admissions.test.mjs": "131f8e903d30752b6c48884f887d7749e93d7ea94b9d5b51c0954837e2062490",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "b8b48c03662c7f8aae0aa1ac803dd1817271746e503d13bde52af5dd7d5fad28",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "ending_source_hashes": {
+      "PROJECT.md": "ffc12698459b34ec526806201e1f202da6627c250c1f388b8a67576bc233bfdf",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "3f628b7ceb6c9bd49b640f3fa22f8ffe7cc12d26ba4b8b777379acd60dfdc946",
+      "src/model.ts": "61ccc7ff58c5790df14535d45fb243b64e65e56f2ddfc5096ee042f855e4fac6",
+      "src/portal.ts": "7406ff727f0cbcd80e23e8a8d49ad60d90b800e629ca115752318bc2d4028dcb",
+      "src/store.ts": "7ba66c7b5eedd0a9bcd0a0a75a10a9a8363cba407bac2a50b89c0d97865b5e5a",
+      "tests/admissions.test.mjs": "09f6c38f4235b761772ca82a6a18671d4484881302fda12ed00624f940d24b24",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/offers.test.mjs": "30bd482e3ab1000a9842a3cdfc1f445df5fc15c34ee0abb7c71a3783adea4d58",
+      "tests/waitlist.test.mjs": "a124651c1031598116fc9e462177d4d8a45017a63e433910d4c46d97bc33dae1",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "stage": 3,
+    "changed_inputs": [
+      "PROJECT.md",
+      "src/model.ts",
+      "src/portal.ts",
+      "src/store.ts",
+      "src/desk.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "maintenance-sequence-old-2-stage-1",
+    "case": "maintenance-sequence",
+    "condition": "old",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 71.782,
+    "usage": {
+      "input_tokens": 209947,
+      "cached_input_tokens": 193920,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3377,
+      "reasoning_output_tokens": 69
+    },
+    "starting_source_hashes": {
+      "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "26751624a04f63932681d49a5bef7511e88997b3af593c68ceb7df5dbb1382d8",
+      "src/model.ts": "68ac98aba724cfdc135f111d69a96e1bfc259d9b629edb31a9b63866430e2fb2",
+      "src/portal.ts": "87da11ae77ca6f6b555637263f0bc1d8d0d821773b1500b4ca0d6d04fd77f1ec",
+      "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "ending_source_hashes": {
+      "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "a014b0ce4bb551ad32cfd161ab05326120ab51b5ae6a6f2853c5a39a8cd229a2",
+      "src/model.ts": "4b7e66021b33e1d78c4498aea6aad5954cedc13e61a016bd724f93fe64d9683d",
+      "src/portal.ts": "7406ff727f0cbcd80e23e8a8d49ad60d90b800e629ca115752318bc2d4028dcb",
+      "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "45c749113056852156ee972781954901cca3c70096902b825efd7587428253f5",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "stage": 1,
+    "changed_inputs": [
+      "src/model.ts",
+      "src/portal.ts",
+      "src/desk.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "maintenance-sequence-old-2-stage-2",
+    "case": "maintenance-sequence",
+    "condition": "old",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 60.704,
+    "usage": {
+      "input_tokens": 134002,
+      "cached_input_tokens": 106112,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3103,
+      "reasoning_output_tokens": 76
+    },
+    "starting_source_hashes": {
+      "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "a014b0ce4bb551ad32cfd161ab05326120ab51b5ae6a6f2853c5a39a8cd229a2",
+      "src/model.ts": "4b7e66021b33e1d78c4498aea6aad5954cedc13e61a016bd724f93fe64d9683d",
+      "src/portal.ts": "7406ff727f0cbcd80e23e8a8d49ad60d90b800e629ca115752318bc2d4028dcb",
+      "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "45c749113056852156ee972781954901cca3c70096902b825efd7587428253f5",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "ending_source_hashes": {
+      "PROJECT.md": "c5ef37d96a1449914c74adf9bc5e882c894d89fabe85eebcfeefc58e85c9ca78",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "c9116f617fdf6cba2d845306b13a74bd5c785549ce011afe644f142c0049ccaa",
+      "src/model.ts": "060de93ac29a53f67fccf031e5ba9997c7d13a0d8ee3ace1456b780c251e74d0",
+      "src/portal.ts": "7406ff727f0cbcd80e23e8a8d49ad60d90b800e629ca115752318bc2d4028dcb",
+      "src/store.ts": "7ba66c7b5eedd0a9bcd0a0a75a10a9a8363cba407bac2a50b89c0d97865b5e5a",
+      "tests/admissions.test.mjs": "7e809e75b342fa56005556bc36aa87879b3ccd32acdbb3eb44407a5e4a0c66a0",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "45c749113056852156ee972781954901cca3c70096902b825efd7587428253f5",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "stage": 2,
+    "changed_inputs": [
+      "PROJECT.md",
+      "src/model.ts",
+      "src/portal.ts",
+      "src/store.ts",
+      "src/desk.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "maintenance-sequence-old-2-stage-3",
+    "case": "maintenance-sequence",
+    "condition": "old",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 66.46,
+    "usage": {
+      "input_tokens": 144517,
+      "cached_input_tokens": 126464,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3746,
+      "reasoning_output_tokens": 156
+    },
+    "starting_source_hashes": {
+      "PROJECT.md": "c5ef37d96a1449914c74adf9bc5e882c894d89fabe85eebcfeefc58e85c9ca78",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "c9116f617fdf6cba2d845306b13a74bd5c785549ce011afe644f142c0049ccaa",
+      "src/model.ts": "060de93ac29a53f67fccf031e5ba9997c7d13a0d8ee3ace1456b780c251e74d0",
+      "src/portal.ts": "7406ff727f0cbcd80e23e8a8d49ad60d90b800e629ca115752318bc2d4028dcb",
+      "src/store.ts": "7ba66c7b5eedd0a9bcd0a0a75a10a9a8363cba407bac2a50b89c0d97865b5e5a",
+      "tests/admissions.test.mjs": "7e809e75b342fa56005556bc36aa87879b3ccd32acdbb3eb44407a5e4a0c66a0",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "45c749113056852156ee972781954901cca3c70096902b825efd7587428253f5",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "ending_source_hashes": {
+      "PROJECT.md": "3d2eae439fb1473690ddad0b2497adfb0fecc8c4068f3356eef042d460ea6ab6",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "6abb69270d56659272021230a260d0a6d00ef74858f8131beb2c352e266d88eb",
+      "src/model.ts": "61ccc7ff58c5790df14535d45fb243b64e65e56f2ddfc5096ee042f855e4fac6",
+      "src/portal.ts": "7406ff727f0cbcd80e23e8a8d49ad60d90b800e629ca115752318bc2d4028dcb",
+      "src/store.ts": "7ba66c7b5eedd0a9bcd0a0a75a10a9a8363cba407bac2a50b89c0d97865b5e5a",
+      "tests/admissions.test.mjs": "e721756198c5b39f4b599446a8fb1d9b74b17dd9fb9a2394a3919ff588f4c339",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/offers.test.mjs": "6e83ad5000580ced2d55a3c030520492dedbd6601d0b6ca567699218908c281d",
+      "tests/waitlist.test.mjs": "1c4467cea94f40333ea7537cebc61634b994c7eac7be99867c1e231ed580f348",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "stage": 3,
+    "changed_inputs": [
+      "PROJECT.md",
+      "src/model.ts",
+      "src/portal.ts",
+      "src/store.ts",
+      "src/desk.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "maintenance-sequence-with-1-stage-1",
+    "case": "maintenance-sequence",
+    "condition": "with",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 83.476,
+    "usage": {
+      "input_tokens": 156659,
+      "cached_input_tokens": 142464,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3680,
+      "reasoning_output_tokens": 294
+    },
+    "starting_source_hashes": {
+      "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "26751624a04f63932681d49a5bef7511e88997b3af593c68ceb7df5dbb1382d8",
+      "src/model.ts": "68ac98aba724cfdc135f111d69a96e1bfc259d9b629edb31a9b63866430e2fb2",
+      "src/portal.ts": "87da11ae77ca6f6b555637263f0bc1d8d0d821773b1500b4ca0d6d04fd77f1ec",
+      "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "ending_source_hashes": {
+      "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "572802c989eb86ec9adaf776f423dfa193ce5888e31264bcb13b28617a7670ba",
+      "src/model.ts": "4b7e66021b33e1d78c4498aea6aad5954cedc13e61a016bd724f93fe64d9683d",
+      "src/portal.ts": "8744a95948efee233c29c8704eaa3787b70ff79d526a72423bb21d63693813bc",
+      "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "8ac25427fe427bbfc2969b60247af24d108d74b20c22fb960edaa1341facd1f4",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "stage": 1,
+    "changed_inputs": [
+      "src/model.ts",
+      "src/portal.ts",
+      "src/desk.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "maintenance-sequence-with-1-stage-2",
+    "case": "maintenance-sequence",
+    "condition": "with",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 60.874,
+    "usage": {
+      "input_tokens": 144785,
+      "cached_input_tokens": 119040,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3109,
+      "reasoning_output_tokens": 109
+    },
+    "starting_source_hashes": {
+      "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "572802c989eb86ec9adaf776f423dfa193ce5888e31264bcb13b28617a7670ba",
+      "src/model.ts": "4b7e66021b33e1d78c4498aea6aad5954cedc13e61a016bd724f93fe64d9683d",
+      "src/portal.ts": "8744a95948efee233c29c8704eaa3787b70ff79d526a72423bb21d63693813bc",
+      "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "8ac25427fe427bbfc2969b60247af24d108d74b20c22fb960edaa1341facd1f4",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "ending_source_hashes": {
+      "PROJECT.md": "3a0755c28d1c4c430e051f47c14529b44149181ebbf22e7fb7309f060a5730d6",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "1819e01f050cdac450e4acaa60543110251dbf81e4720061c1c2f8b077a93953",
+      "src/model.ts": "060de93ac29a53f67fccf031e5ba9997c7d13a0d8ee3ace1456b780c251e74d0",
+      "src/portal.ts": "8744a95948efee233c29c8704eaa3787b70ff79d526a72423bb21d63693813bc",
+      "src/store.ts": "7ba66c7b5eedd0a9bcd0a0a75a10a9a8363cba407bac2a50b89c0d97865b5e5a",
+      "tests/admissions.test.mjs": "3f3df1f3318b18a5422c22eb8421b3af28a800f6e62aae5e29fb19f408db9f5a",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "8ac25427fe427bbfc2969b60247af24d108d74b20c22fb960edaa1341facd1f4",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "stage": 2,
+    "changed_inputs": [
+      "PROJECT.md",
+      "src/model.ts",
+      "src/portal.ts",
+      "src/store.ts",
+      "src/desk.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "maintenance-sequence-with-1-stage-3",
+    "case": "maintenance-sequence",
+    "condition": "with",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 86.614,
+    "usage": {
+      "input_tokens": 272025,
+      "cached_input_tokens": 223104,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 4665,
+      "reasoning_output_tokens": 289
+    },
+    "starting_source_hashes": {
+      "PROJECT.md": "3a0755c28d1c4c430e051f47c14529b44149181ebbf22e7fb7309f060a5730d6",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "1819e01f050cdac450e4acaa60543110251dbf81e4720061c1c2f8b077a93953",
+      "src/model.ts": "060de93ac29a53f67fccf031e5ba9997c7d13a0d8ee3ace1456b780c251e74d0",
+      "src/portal.ts": "8744a95948efee233c29c8704eaa3787b70ff79d526a72423bb21d63693813bc",
+      "src/store.ts": "7ba66c7b5eedd0a9bcd0a0a75a10a9a8363cba407bac2a50b89c0d97865b5e5a",
+      "tests/admissions.test.mjs": "3f3df1f3318b18a5422c22eb8421b3af28a800f6e62aae5e29fb19f408db9f5a",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "8ac25427fe427bbfc2969b60247af24d108d74b20c22fb960edaa1341facd1f4",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "ending_source_hashes": {
+      "PROJECT.md": "716931d38c8aa581f2e50321e38bec99822ff3069c741dabe7869c181d97f2f5",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "469e08a9bfdacf3db1aef69a6d65ebd372943b13a1881f7a2afe142e4e5b9eba",
+      "src/model.ts": "61ccc7ff58c5790df14535d45fb243b64e65e56f2ddfc5096ee042f855e4fac6",
+      "src/portal.ts": "8744a95948efee233c29c8704eaa3787b70ff79d526a72423bb21d63693813bc",
+      "src/store.ts": "7ba66c7b5eedd0a9bcd0a0a75a10a9a8363cba407bac2a50b89c0d97865b5e5a",
+      "tests/admissions.test.mjs": "9fe0da5874224734ada5dafb691a3e8a230ff41d7c8c36870641268bc548e79a",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/offers.test.mjs": "339bdf5bc9acba51c397c188633a94cdd85b9605e590a106c80a23226191f05a",
+      "tests/waitlist.test.mjs": "61f6d7bacb516df0e5ab6cc8b23186a480e8a54c4bbce2e593717859f48214e3",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "stage": 3,
+    "changed_inputs": [
+      "PROJECT.md",
+      "src/model.ts",
+      "src/portal.ts",
+      "src/store.ts",
+      "src/desk.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "maintenance-sequence-with-2-stage-1",
+    "case": "maintenance-sequence",
+    "condition": "with",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 56.961,
+    "usage": {
+      "input_tokens": 131138,
+      "cached_input_tokens": 117760,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2840,
+      "reasoning_output_tokens": 37
+    },
+    "starting_source_hashes": {
+      "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "26751624a04f63932681d49a5bef7511e88997b3af593c68ceb7df5dbb1382d8",
+      "src/model.ts": "68ac98aba724cfdc135f111d69a96e1bfc259d9b629edb31a9b63866430e2fb2",
+      "src/portal.ts": "87da11ae77ca6f6b555637263f0bc1d8d0d821773b1500b4ca0d6d04fd77f1ec",
+      "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "ending_source_hashes": {
+      "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "a014b0ce4bb551ad32cfd161ab05326120ab51b5ae6a6f2853c5a39a8cd229a2",
+      "src/model.ts": "4b7e66021b33e1d78c4498aea6aad5954cedc13e61a016bd724f93fe64d9683d",
+      "src/portal.ts": "7406ff727f0cbcd80e23e8a8d49ad60d90b800e629ca115752318bc2d4028dcb",
+      "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "8048d5bed9e59119c5654098703a89f22030d8fd0aaccddf2177238c647344ff",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "stage": 1,
+    "changed_inputs": [
+      "src/model.ts",
+      "src/portal.ts",
+      "src/desk.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "maintenance-sequence-with-2-stage-2",
+    "case": "maintenance-sequence",
+    "condition": "with",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 79.88,
+    "usage": {
+      "input_tokens": 183956,
+      "cached_input_tokens": 163712,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3749,
+      "reasoning_output_tokens": 142
+    },
+    "starting_source_hashes": {
+      "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "a014b0ce4bb551ad32cfd161ab05326120ab51b5ae6a6f2853c5a39a8cd229a2",
+      "src/model.ts": "4b7e66021b33e1d78c4498aea6aad5954cedc13e61a016bd724f93fe64d9683d",
+      "src/portal.ts": "7406ff727f0cbcd80e23e8a8d49ad60d90b800e629ca115752318bc2d4028dcb",
+      "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "8048d5bed9e59119c5654098703a89f22030d8fd0aaccddf2177238c647344ff",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "ending_source_hashes": {
+      "PROJECT.md": "6e5c6ded3fdbfbdaa38fc02f43daca40fc8859974db0d702a8e847f8303e5b55",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "36db6ce9cbff36730a19105eb425b60c44d81311b9e3b704cec700a4b7f7b100",
+      "src/model.ts": "060de93ac29a53f67fccf031e5ba9997c7d13a0d8ee3ace1456b780c251e74d0",
+      "src/portal.ts": "7406ff727f0cbcd80e23e8a8d49ad60d90b800e629ca115752318bc2d4028dcb",
+      "src/store.ts": "7ba66c7b5eedd0a9bcd0a0a75a10a9a8363cba407bac2a50b89c0d97865b5e5a",
+      "tests/admissions.test.mjs": "0f23c5e9a37779902031ab7bcfdfcab894ea6d3890f517fd3b9af054763a7bcb",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "8048d5bed9e59119c5654098703a89f22030d8fd0aaccddf2177238c647344ff",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "stage": 2,
+    "changed_inputs": [
+      "PROJECT.md",
+      "src/model.ts",
+      "src/portal.ts",
+      "src/store.ts",
+      "src/desk.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "maintenance-sequence-with-2-stage-3",
+    "case": "maintenance-sequence",
+    "condition": "with",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 73.367,
+    "usage": {
+      "input_tokens": 153869,
+      "cached_input_tokens": 133632,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3207,
+      "reasoning_output_tokens": 209
+    },
+    "starting_source_hashes": {
+      "PROJECT.md": "6e5c6ded3fdbfbdaa38fc02f43daca40fc8859974db0d702a8e847f8303e5b55",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "36db6ce9cbff36730a19105eb425b60c44d81311b9e3b704cec700a4b7f7b100",
+      "src/model.ts": "060de93ac29a53f67fccf031e5ba9997c7d13a0d8ee3ace1456b780c251e74d0",
+      "src/portal.ts": "7406ff727f0cbcd80e23e8a8d49ad60d90b800e629ca115752318bc2d4028dcb",
+      "src/store.ts": "7ba66c7b5eedd0a9bcd0a0a75a10a9a8363cba407bac2a50b89c0d97865b5e5a",
+      "tests/admissions.test.mjs": "0f23c5e9a37779902031ab7bcfdfcab894ea6d3890f517fd3b9af054763a7bcb",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "8048d5bed9e59119c5654098703a89f22030d8fd0aaccddf2177238c647344ff",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "ending_source_hashes": {
+      "PROJECT.md": "55f71df18e944b7635a1951dd0f38c2b71501d8bac50c2a32df7a45ab62466d8",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "60994e16145498baf32fbcad2874b959a95f2029f405e20634bce269bd6c6599",
+      "src/model.ts": "61ccc7ff58c5790df14535d45fb243b64e65e56f2ddfc5096ee042f855e4fac6",
+      "src/portal.ts": "7406ff727f0cbcd80e23e8a8d49ad60d90b800e629ca115752318bc2d4028dcb",
+      "src/store.ts": "7ba66c7b5eedd0a9bcd0a0a75a10a9a8363cba407bac2a50b89c0d97865b5e5a",
+      "tests/admissions.test.mjs": "0fd35a9f3065996b5bd7ac7c721ef9188cd3f7b76c321fe2c438bbdd1a5409bb",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/offers.test.mjs": "a0a1e225744208f4f6eef2da1349d35c33317147be98772e27d37cf04667bace",
+      "tests/waitlist.test.mjs": "e182f6f84a811e4a46b3d266b0c7cfa7ee049ab7cfeef1123c54bd188cc3dd12",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "stage": 3,
+    "changed_inputs": [
+      "PROJECT.md",
+      "src/model.ts",
+      "src/portal.ts",
+      "src/store.ts",
+      "src/desk.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "maintenance-sequence-without-1-stage-1",
+    "case": "maintenance-sequence",
+    "condition": "without",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 53.102,
+    "usage": {
+      "input_tokens": 104318,
+      "cached_input_tokens": 96512,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2750,
+      "reasoning_output_tokens": 37
+    },
+    "starting_source_hashes": {
+      "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "26751624a04f63932681d49a5bef7511e88997b3af593c68ceb7df5dbb1382d8",
+      "src/model.ts": "68ac98aba724cfdc135f111d69a96e1bfc259d9b629edb31a9b63866430e2fb2",
+      "src/portal.ts": "87da11ae77ca6f6b555637263f0bc1d8d0d821773b1500b4ca0d6d04fd77f1ec",
+      "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "ending_source_hashes": {
+      "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "cbd598804c442323b71138ea9d8e69262749d5729374c27231a98add5dd3781a",
+      "src/model.ts": "94be6fc988ac4ca273390f8473f9cfaabce96fabc3c976f4220fe25ebf9c8c6f",
+      "src/portal.ts": "8744a95948efee233c29c8704eaa3787b70ff79d526a72423bb21d63693813bc",
+      "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "5808037e362cfd893dd378da28ab7bcbac4f7f3685d5c5e7c820a7b0909a3bd1",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "stage": 1,
+    "changed_inputs": [
+      "src/model.ts",
+      "src/portal.ts",
+      "src/desk.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "maintenance-sequence-without-1-stage-2",
+    "case": "maintenance-sequence",
+    "condition": "without",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 76.274,
+    "usage": {
+      "input_tokens": 162939,
+      "cached_input_tokens": 152192,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3544,
+      "reasoning_output_tokens": 134
+    },
+    "starting_source_hashes": {
+      "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "cbd598804c442323b71138ea9d8e69262749d5729374c27231a98add5dd3781a",
+      "src/model.ts": "94be6fc988ac4ca273390f8473f9cfaabce96fabc3c976f4220fe25ebf9c8c6f",
+      "src/portal.ts": "8744a95948efee233c29c8704eaa3787b70ff79d526a72423bb21d63693813bc",
+      "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "5808037e362cfd893dd378da28ab7bcbac4f7f3685d5c5e7c820a7b0909a3bd1",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "ending_source_hashes": {
+      "PROJECT.md": "1d83dadba73d6dd5183473a8c1e39e56a66a52dbdee1a86cd3d56fb46ad354f1",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "9024391b974aef83d855299e948621030e51737ca61d594040580af2d766197d",
+      "src/model.ts": "16697e64a77d28b24bcde458e33a2964c8ce4985df995b05242893a16495658c",
+      "src/portal.ts": "8744a95948efee233c29c8704eaa3787b70ff79d526a72423bb21d63693813bc",
+      "src/store.ts": "7ba66c7b5eedd0a9bcd0a0a75a10a9a8363cba407bac2a50b89c0d97865b5e5a",
+      "tests/admissions.test.mjs": "45c65968bb76e03f186a04f7e8967a1256aeccea8c310cf0883546334843febb",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "5808037e362cfd893dd378da28ab7bcbac4f7f3685d5c5e7c820a7b0909a3bd1",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "stage": 2,
+    "changed_inputs": [
+      "PROJECT.md",
+      "src/model.ts",
+      "src/portal.ts",
+      "src/store.ts",
+      "src/desk.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "maintenance-sequence-without-1-stage-3",
+    "case": "maintenance-sequence",
+    "condition": "without",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 71.451,
+    "usage": {
+      "input_tokens": 130734,
+      "cached_input_tokens": 118784,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3643,
+      "reasoning_output_tokens": 46
+    },
+    "starting_source_hashes": {
+      "PROJECT.md": "1d83dadba73d6dd5183473a8c1e39e56a66a52dbdee1a86cd3d56fb46ad354f1",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "9024391b974aef83d855299e948621030e51737ca61d594040580af2d766197d",
+      "src/model.ts": "16697e64a77d28b24bcde458e33a2964c8ce4985df995b05242893a16495658c",
+      "src/portal.ts": "8744a95948efee233c29c8704eaa3787b70ff79d526a72423bb21d63693813bc",
+      "src/store.ts": "7ba66c7b5eedd0a9bcd0a0a75a10a9a8363cba407bac2a50b89c0d97865b5e5a",
+      "tests/admissions.test.mjs": "45c65968bb76e03f186a04f7e8967a1256aeccea8c310cf0883546334843febb",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "5808037e362cfd893dd378da28ab7bcbac4f7f3685d5c5e7c820a7b0909a3bd1",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "ending_source_hashes": {
+      "PROJECT.md": "ec785c91899d678f0e992a2429686c59d9a8405d8098cf1c4b43acb681ba2844",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "2f579b4e7d388d9e217fbef51529abee5b61da1fd4707373bfc760b9c586e34e",
+      "src/model.ts": "7c3c004d0a7f99511b514e71529ac970398d74708f5747548dc63ed7ed8e34e1",
+      "src/portal.ts": "8744a95948efee233c29c8704eaa3787b70ff79d526a72423bb21d63693813bc",
+      "src/store.ts": "7ba66c7b5eedd0a9bcd0a0a75a10a9a8363cba407bac2a50b89c0d97865b5e5a",
+      "tests/admissions.test.mjs": "e4ad4987048f1293d49e72f9fa52003d91b25d0d2ceba507fb1b75f11f47f541",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/offers.test.mjs": "f7058e9c13c8877b14e4c764d786c816acad573628c48f6b99ba0498478316c2",
+      "tests/waitlist.test.mjs": "a77d59f93be37db1f18c7c792c404cf47f4816613ba456af81344d63b551fde4",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "stage": 3,
+    "changed_inputs": [
+      "PROJECT.md",
+      "src/model.ts",
+      "src/portal.ts",
+      "src/store.ts",
+      "src/desk.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "maintenance-sequence-without-2-stage-1",
+    "case": "maintenance-sequence",
+    "condition": "without",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 57.651,
+    "usage": {
+      "input_tokens": 103501,
+      "cached_input_tokens": 93952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2740,
+      "reasoning_output_tokens": 45
+    },
+    "starting_source_hashes": {
+      "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "26751624a04f63932681d49a5bef7511e88997b3af593c68ceb7df5dbb1382d8",
+      "src/model.ts": "68ac98aba724cfdc135f111d69a96e1bfc259d9b629edb31a9b63866430e2fb2",
+      "src/portal.ts": "87da11ae77ca6f6b555637263f0bc1d8d0d821773b1500b4ca0d6d04fd77f1ec",
+      "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "ending_source_hashes": {
+      "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "a014b0ce4bb551ad32cfd161ab05326120ab51b5ae6a6f2853c5a39a8cd229a2",
+      "src/model.ts": "4b7e66021b33e1d78c4498aea6aad5954cedc13e61a016bd724f93fe64d9683d",
+      "src/portal.ts": "8744a95948efee233c29c8704eaa3787b70ff79d526a72423bb21d63693813bc",
+      "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "5fe3f2997f521d7b883276675f9b212f26e90e014579bed39291618064780eae",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "stage": 1,
+    "changed_inputs": [
+      "src/model.ts",
+      "src/portal.ts",
+      "src/desk.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "maintenance-sequence-without-2-stage-2",
+    "case": "maintenance-sequence",
+    "condition": "without",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 68.196,
+    "usage": {
+      "input_tokens": 138128,
+      "cached_input_tokens": 119296,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3186,
+      "reasoning_output_tokens": 169
+    },
+    "starting_source_hashes": {
+      "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "a014b0ce4bb551ad32cfd161ab05326120ab51b5ae6a6f2853c5a39a8cd229a2",
+      "src/model.ts": "4b7e66021b33e1d78c4498aea6aad5954cedc13e61a016bd724f93fe64d9683d",
+      "src/portal.ts": "8744a95948efee233c29c8704eaa3787b70ff79d526a72423bb21d63693813bc",
+      "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "5fe3f2997f521d7b883276675f9b212f26e90e014579bed39291618064780eae",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "ending_source_hashes": {
+      "PROJECT.md": "3e08204085f5b15f3609867a968dbe550ea8e1a8944e22be5fd7744a2fdb4594",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "48ea922864038574c4d92e878e5248f78afa1428297f7404fd033772cfa5602b",
+      "src/model.ts": "060de93ac29a53f67fccf031e5ba9997c7d13a0d8ee3ace1456b780c251e74d0",
+      "src/portal.ts": "8744a95948efee233c29c8704eaa3787b70ff79d526a72423bb21d63693813bc",
+      "src/store.ts": "7ba66c7b5eedd0a9bcd0a0a75a10a9a8363cba407bac2a50b89c0d97865b5e5a",
+      "tests/admissions.test.mjs": "f84f30acf2c821e753bc002d00af0865ce64579e628623f93b50df4a9524a20d",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "5fe3f2997f521d7b883276675f9b212f26e90e014579bed39291618064780eae",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "stage": 2,
+    "changed_inputs": [
+      "PROJECT.md",
+      "src/model.ts",
+      "src/portal.ts",
+      "src/store.ts",
+      "src/desk.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "maintenance-sequence-without-2-stage-3",
+    "case": "maintenance-sequence",
+    "condition": "without",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 84.553,
+    "usage": {
+      "input_tokens": 224246,
+      "cached_input_tokens": 193792,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 4476,
+      "reasoning_output_tokens": 215
+    },
+    "starting_source_hashes": {
+      "PROJECT.md": "3e08204085f5b15f3609867a968dbe550ea8e1a8944e22be5fd7744a2fdb4594",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "48ea922864038574c4d92e878e5248f78afa1428297f7404fd033772cfa5602b",
+      "src/model.ts": "060de93ac29a53f67fccf031e5ba9997c7d13a0d8ee3ace1456b780c251e74d0",
+      "src/portal.ts": "8744a95948efee233c29c8704eaa3787b70ff79d526a72423bb21d63693813bc",
+      "src/store.ts": "7ba66c7b5eedd0a9bcd0a0a75a10a9a8363cba407bac2a50b89c0d97865b5e5a",
+      "tests/admissions.test.mjs": "f84f30acf2c821e753bc002d00af0865ce64579e628623f93b50df4a9524a20d",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/waitlist.test.mjs": "5fe3f2997f521d7b883276675f9b212f26e90e014579bed39291618064780eae",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "ending_source_hashes": {
+      "PROJECT.md": "84a9e27d6ce5d992c48409f4acf28d5e253acd02a576464311ce0416c34766b4",
+      "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+      "src/desk.ts": "8257caa95c465caa58f8d4af3fc37771dca12f0b85656f961ad3aba72c835342",
+      "src/model.ts": "61ccc7ff58c5790df14535d45fb243b64e65e56f2ddfc5096ee042f855e4fac6",
+      "src/portal.ts": "8744a95948efee233c29c8704eaa3787b70ff79d526a72423bb21d63693813bc",
+      "src/store.ts": "7ba66c7b5eedd0a9bcd0a0a75a10a9a8363cba407bac2a50b89c0d97865b5e5a",
+      "tests/admissions.test.mjs": "d89723bcaafbce907e2662cfb6fc15085778a87acd0edd608d348e70804f0433",
+      "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+      "tests/offers.test.mjs": "f0476e625b77f7b2135057ffa8b59d4dbd47f62512259ac4ee723728ccad1048",
+      "tests/waitlist.test.mjs": "04e4a671321750ef72a5d8d3b52b4077559975c002e9e347e620cc00282603c7",
+      "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+    },
+    "stage": 3,
+    "changed_inputs": [
+      "PROJECT.md",
+      "src/model.ts",
+      "src/portal.ts",
+      "src/store.ts",
+      "src/desk.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  }
+]

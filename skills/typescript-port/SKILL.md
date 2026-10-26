@@ -7,7 +7,8 @@ description: Port an existing module or service into TypeScript with characteriz
 
 Port observable behavior into a defined TypeScript runtime. No language pair is
 universally supported; native APIs, concurrency and numeric/text semantics need explicit
-choices. Keep both implementations available until cutover is authorized.
+choices. Keep the source runnable as a comparison oracle until cutover is authorized.
+A production fallback to the source needs its own supported rollout/consumer requirement.
 Translate into direct TypeScript, not a layer-for-layer copy of the source architecture.
 Preserve behavior with the fewest necessary concepts. Do not add rejection cases, defaults,
 wrapper classes or compatibility machinery for inputs outside the characterized contract.
@@ -136,6 +137,12 @@ Only claim hosts actually exercised; shared syntax is not shared runtime support
 5. Integrate public callers and verify built entrypoints/declarations.
 
 At each stage keep a runnable result and record a deliberate difference immediately.
+Give temporary adapters, dual routes and unsafe types a concrete role and exit condition.
+Reuse one target policy/model inside the port rather than copying each source layer.
+When cutover is authorized, update actual callers and remove superseded runtime paths,
+flags, exports and dependencies within scope (TS10). Keep the comparison oracle separately
+when still needed; do not catch all target failures and silently execute the source.
+See the [cutover example](references/type-and-runtime-decisions.md#complete-the-cutover-ts10).
 Avoid optimization and architecture rewrites until behavior agrees. For JavaScript
 migration, a scoped allowJs/checkJs stage can be useful; contain and retire temporary
 unsafe types rather than treating any as the final model.

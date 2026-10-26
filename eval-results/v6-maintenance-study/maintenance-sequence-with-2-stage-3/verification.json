@@ -1,0 +1,48 @@
+{
+  "runtime": {
+    "node": "v22.13.0"
+  },
+  "compiler": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "snapshot_restored": true,
+  "hidden_process": {
+    "exit_code": 0,
+    "stdout": "[\n  {\n    \"id\": \"offer_replaces_automatic_confirmation\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"acceptance_and_ownership\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"decline_and_cancel_release_reservations\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"pause_reopen_reservations_and_fifo\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"offer_errors_are_atomic_and_normalized\",\n    \"pass\": true\n  }\n]\n",
+    "stderr": ""
+  },
+  "contract_groups": [
+    {
+      "id": "offer_replaces_automatic_confirmation",
+      "pass": true
+    },
+    {
+      "id": "acceptance_and_ownership",
+      "pass": true
+    },
+    {
+      "id": "decline_and_cancel_release_reservations",
+      "pass": true
+    },
+    {
+      "id": "pause_reopen_reservations_and_fifo",
+      "pass": true
+    },
+    {
+      "id": "offer_errors_are_atomic_and_normalized",
+      "pass": true
+    }
+  ],
+  "visible_tests": {
+    "exit_code": 0,
+    "stdout": "\n> test\n> npm run build && node --test tests/*.test.mjs\n\n\n> build\n> tsc\n\nTAP version 13\n# Subtest: admissions start open; closure takes precedence and failures preserve state\nok 1 - admissions start open; closure takes precedence and failures preserve state\n  ---\n  duration_ms: 1.277292\n  ...\n# Subtest: paused cancellation preserves FIFO; reopening fills every seat before arrivals\nok 2 - paused cancellation preserves FIFO; reopening fills every seat before arrivals\n  ---\n  duration_ms: 0.365875\n  ...\n# Subtest: reopening a short queue leaves remaining seats available with normal rules\nok 3 - reopening a short queue leaves remaining seats available with normal rules\n  ---\n  duration_ms: 0.140959\n  ...\n# Subtest: portal translates admissions errors while retaining JSON boundary validation\nok 4 - portal translates admissions errors while retaining JSON boundary validation\n  ---\n  duration_ms: 0.118958\n  ...\n# Subtest: portal validates unknown data and normalizes directory identity\nok 5 - portal validates unknown data and normalizes directory identity\n  ---\n  duration_ms: 0.790541\n  ...\n# Subtest: capacity and cancellation preserve atomic failures\nok 6 - capacity and cancellation preserve atomic failures\n  ---\n  duration_ms: 0.247625\n  ...\n# Subtest: snapshots and seeds have independent ownership\nok 7 - snapshots and seeds have independent ownership\n  ---\n  duration_ms: 0.08425\n  ...\n# Subtest: configuration and domain errors\nok 8 - configuration and domain errors\n  ---\n  duration_ms: 0.091084\n  ...\n# Subtest: offers reserve seats; acceptance is explicit, normalized and owns its result\nok 9 - offers reserve seats; acceptance is explicit, normalized and owns its result\n  ---\n  duration_ms: 1.301542\n  ...\n# Subtest: decline and offered cancellation release seats in FIFO order\nok 10 - decline and offered cancellation release seats in FIFO order\n  ---\n  duration_ms: 0.172458\n  ...\n# Subtest: paused decline and cancellation defer offers; reopening cannot overbook reservations\nok 11 - paused decline and cancellation defer offers; reopening cannot overbook reservations\n  ---\n  duration_ms: 0.255125\n  ...\n# Subtest: offer operations preserve error precedence and never mutate on failure\nok 12 - offer operations preserve error precedence and never mutate on failure\n  ---\n  duration_ms: 0.421959\n  ...\n# Subtest: opt-in confirms free seats, queues full sessions and offers in join order\nok 13 - opt-in confirms free seats, queues full sessions and offers in join order\n  ---\n  duration_ms: 1.204667\n  ...\n# Subtest: waiting cancellation removes only that employee and rejoining goes to the end\nok 14 - waiting cancellation removes only that employee and rejoining goes to the end\n  ---\n  duration_ms: 0.183042\n  ...\n# Subtest: duplicates and failures preserve the queue and domain error precedence\nok 15 - duplicates and failures preserve the queue and domain error precedence\n  ---\n  duration_ms: 0.2265\n  ...\n# Subtest: portal validates optional waitlist before enrollment and returns actual status\nok 16 - portal validates optional waitlist before enrollment and returns actual status\n  ---\n  duration_ms: 0.281042\n  ...\n# Subtest: waitlist entries, snapshots, exports and desk instances keep independent ownership\nok 17 - waitlist entries, snapshots, exports and desk instances keep independent ownership\n  ---\n  duration_ms: 0.143375\n  ...\n1..17\n# tests 17\n# suites 0\n# pass 17\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 69.977875\n",
+    "stderr": ""
+  },
+  "source_metrics": {
+    "files": 4,
+    "nonempty_lines": 170,
+    "note": "Descriptive only; not a beauty score."
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "runtime": {
+    "node": "v22.13.0"
+  },
+  "compiler": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "snapshot_restored": true,
+  "hidden_process": {
+    "exit_code": 0,
+    "stdout": "[\n  {\n    \"id\": \"opt_in_and_default\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"fifo_cancellation\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"portal_and_attendance\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"identity_errors_and_isolation\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"snapshot_ownership\",\n    \"pass\": true\n  }\n]\n",
+    "stderr": ""
+  },
+  "contract_groups": [
+    {
+      "id": "opt_in_and_default",
+      "pass": true
+    },
+    {
+      "id": "fifo_cancellation",
+      "pass": true
+    },
+    {
+      "id": "portal_and_attendance",
+      "pass": true
+    },
+    {
+      "id": "identity_errors_and_isolation",
+      "pass": true
+    },
+    {
+      "id": "snapshot_ownership",
+      "pass": true
+    }
+  ],
+  "visible_tests": {
+    "exit_code": 0,
+    "stdout": "\n> test\n> npm run build && node --test tests/*.test.mjs\n\n\n> build\n> tsc\n\nTAP version 13\n# Subtest: portal validates unknown data and normalizes directory identity\nok 1 - portal validates unknown data and normalizes directory identity\n  ---\n  duration_ms: 0.753458\n  ...\n# Subtest: capacity and cancellation preserve atomic failures\nok 2 - capacity and cancellation preserve atomic failures\n  ---\n  duration_ms: 0.336292\n  ...\n# Subtest: snapshots and seeds have independent ownership\nok 3 - snapshots and seeds have independent ownership\n  ---\n  duration_ms: 0.080542\n  ...\n# Subtest: configuration and domain errors\nok 4 - configuration and domain errors\n  ---\n  duration_ms: 0.090375\n  ...\n# Subtest: opt-in confirms free seats and queues full sessions in join order\nok 5 - opt-in confirms free seats and queues full sessions in join order\n  ---\n  duration_ms: 1.055667\n  ...\n# Subtest: cancelling a waiting employee removes them and rejoining goes to the end\nok 6 - cancelling a waiting employee removes them and rejoining goes to the end\n  ---\n  duration_ms: 0.149917\n  ...\n# Subtest: portal validates optional waitlist before mutation and returns actual status\nok 7 - portal validates optional waitlist before mutation and returns actual status\n  ---\n  duration_ms: 0.265375\n  ...\n# Subtest: waitlist snapshots, failures and desk instances preserve ownership\nok 8 - waitlist snapshots, failures and desk instances preserve ownership\n  ---\n  duration_ms: 0.188875\n  ...\n# Subtest: multiple confirmed seats promote one waiter per cancellation\nok 9 - multiple confirmed seats promote one waiter per cancellation\n  ---\n  duration_ms: 0.127708\n  ...\n1..9\n# tests 9\n# suites 0\n# pass 9\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 67.071458\n",
+    "stderr": ""
+  },
+  "source_metrics": {
+    "files": 4,
+    "nonempty_lines": 127,
+    "note": "Descriptive only; not a beauty score."
+  }
+}

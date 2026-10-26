@@ -1,0 +1,5 @@
+Implemented explicit seat offers with `acceptOffer` and `declineOffer`. Offers reserve capacity, follow FIFO order, and stay out of attendance until accepted. Pause/reopen behavior, validation precedence, and snapshot ownership are covered by updated tests.
+
+Validation passed: typecheck, build, all 16 tests, and `git diff --check`.
+
+The default `mise` shim failed; checks succeeded using installed Node v26.12.1. Target Node 22 was not validated.

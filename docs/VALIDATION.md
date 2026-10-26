@@ -192,3 +192,30 @@ pairs. New-versus-no-skill has three consistent ties and one review disagreement
 separate post-hoc 200,000-rate probe confirms a spread-call RangeError in one no-skill
 output; both old/new repetitions pass. It is not counted as a frozen primary check or
 claimed as a revision-specific gain. See REVISION-STUDY.md for artifacts and limits.
+
+## Research and sequential maintenance revision (2026-10-27)
+
+All four skills add scoped maintenance guidance (TS10), with original worked examples and
+source-specific limitations. The writing entrypoint is 135 lines. The research note pins
+paper versions and separates Python findings, TS maintainer experience and TS mechanisms.
+
+Local Node 22.13.0: npm run check passes **29/29 tests**, including **64 compiled Markdown
+TypeScript examples and 29 marked executions**, both lint recipes, compiler fixtures,
+source/target parity, installation isolation and four Python eval-packaging tests. All four
+skill-creator format validations pass. The packaging tests now verify sequential workspace
+continuity, stage snapshots, hidden-grader exclusion and unavailable future requests.
+
+Two preceding full-suite attempts failed only during temporary Git-directory cleanup:
+the host's global Trace2 target notified a Git AI daemon, which recreated refs/notes/ai
+while Python removed the fixture. The final run used the invocation-only environment
+override GIT_TRACE2_EVENT=0. No global configuration or repository test assertion changed;
+no tool-specific dependency or workaround was added to the project.
+
+Six three-stage trajectories produced 18 retained model outputs. Independent Node 22.13.0
+checks restored every checkpoint separately: compiler/visible tests pass for all 18 and
+hidden behavior groups pass 28/28 per condition. All 12 continuity comparisons and all
+retained source hashes match. Package scripts/compiler configuration remain unchanged.
+Both anonymous review orders tie all four final comparisons. Skills/tasks stayed frozen;
+no solver rerolls or post-result tuning. See [study](MAINTENANCE-STUDY.md) for artifacts,
+intermediate failures, descriptive usage and limitations. These results do not demonstrate
+an efficacy gain, and do not evaluate the other three skills' new guidance with a model.

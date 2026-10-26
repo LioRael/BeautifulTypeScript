@@ -107,3 +107,49 @@ concrete effect. Show the call path, an executed pending/rejecting probe, and th
 awaited loop or returned promise. A compilation pass does not answer whether the caller's
 operation actually finished. Include exact test coverage so one default-value test is not
 presented as evidence for ordering, rejection or cancellation.
+
+## Accumulated changes: inspect the path, not the amount of code (TS10)
+
+For a replacement, trace the changed entrypoint through its policy and consumers. Report
+an obsolete path only after establishing which contract was retired and why it is still
+reachable or costly to maintain. For a public API or dynamically registered handler,
+missing text references alone do not prove removal is safe. Keep source review read-only
+unless fixes were requested.
+
+| Observation | Evidence that makes it actionable | False-positive control |
+|---|---|---|
+| A new implementation plus old fallback | A current failure executes a retired behavior or fabricates success | An explicit rollout/rollback or supported consumer may require it |
+| Copied policy | Both callers promise the same rule, but a boundary case yields different results | Similar expressions may implement different business contracts |
+| New any, assertion or suppression | A producer/consumer mismatch is hidden, or invalid construction now typechecks | Interop limitations and negative type tests can justify narrow escapes |
+| More wrapper layers | The caller must understand competing policies/state or cross several meaningless adapters | A real domain operation, lifecycle owner or public seam may deserve a helper |
+| Tests changed along with implementation | An expectation or mock now avoids the supported failure path | An authorized behavior change needs corresponding expectation updates |
+| Apparently unnecessary guard | Caller/runtime evidence proves the state impossible | Type declarations, indexed access and mutation tracking can be incomplete |
+
+Example: both quote and summary are documented to use the configured service charge.
+A summary caller has retained a copied old rate. This is a behavior divergence, not a
+complaint that there are two functions:
+
+```ts
+// @example-run
+function serviceCharge(cents: number, percent: number): number {
+  return Math.floor(cents * percent / 100);
+}
+function staleSummary(cents: number): number { return Math.floor(cents * 0.1); }
+function summary(cents: number, percent: number): number {
+  return serviceCharge(cents, percent);
+}
+if (serviceCharge(1000, 15) !== 150 || staleSummary(1000) !== 100) {
+  throw new Error('Divergence probe changed');
+}
+if (summary(1000, 15) !== 150) throw new Error('Shared policy not applied');
+```
+
+An actionable finding identifies the affected summary caller, the 15% input, the 100/150
+mismatch and the existing policy to reuse. If no divergent behavior is reachable yet,
+classify a demonstrated coordination burden as maintenance advice instead of inflating
+it into a correctness defect. Do not rank code by deleted lines, helper count or comments.
+
+Language/tool context: [assertions do not validate runtime values](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions),
+[explicit and leaked any remain possible](https://typescript-eslint.io/blog/avoiding-anys/),
+and [typed conditional checks have limits](https://typescript-eslint.io/rules/no-unnecessary-condition/#limitations).
+These explain mechanisms; they do not prove that any given author or model introduced them.

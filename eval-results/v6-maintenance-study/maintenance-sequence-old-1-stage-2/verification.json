@@ -1,0 +1,44 @@
+{
+  "runtime": {
+    "node": "v22.13.0"
+  },
+  "compiler": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "snapshot_restored": true,
+  "hidden_process": {
+    "exit_code": 0,
+    "stdout": "[\n  {\n    \"id\": \"pause_boundary_and_precedence\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"paused_cancellation_and_fifo_reopen\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"isolation_and_roster_ownership\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"open_waitlist_and_current_callers\",\n    \"pass\": true\n  }\n]\n",
+    "stderr": ""
+  },
+  "contract_groups": [
+    {
+      "id": "pause_boundary_and_precedence",
+      "pass": true
+    },
+    {
+      "id": "paused_cancellation_and_fifo_reopen",
+      "pass": true
+    },
+    {
+      "id": "isolation_and_roster_ownership",
+      "pass": true
+    },
+    {
+      "id": "open_waitlist_and_current_callers",
+      "pass": true
+    }
+  ],
+  "visible_tests": {
+    "exit_code": 0,
+    "stdout": "\n> test\n> npm run build && node --test tests/*.test.mjs\n\n\n> build\n> tsc\n\nTAP version 13\n# Subtest: closed admissions reject all new requests before email and duplicate checks\nok 1 - closed admissions reject all new requests before email and duplicate checks\n  ---\n  duration_ms: 1.377542\n  ...\n# Subtest: paused cancellations retain FIFO and reopening fills all vacancies before new arrivals\nok 2 - paused cancellations retain FIFO and reopening fills all vacancies before new arrivals\n  ---\n  duration_ms: 0.359875\n  ...\n# Subtest: reopening with fewer waiting employees leaves free seats and preserves isolation and ownership\nok 3 - reopening with fewer waiting employees leaves free seats and preserves isolation and ownership\n  ---\n  duration_ms: 0.148583\n  ...\n# Subtest: portal validates unknown data and normalizes directory identity\nok 4 - portal validates unknown data and normalizes directory identity\n  ---\n  duration_ms: 0.766041\n  ...\n# Subtest: capacity and cancellation preserve atomic failures\nok 5 - capacity and cancellation preserve atomic failures\n  ---\n  duration_ms: 0.296666\n  ...\n# Subtest: snapshots and seeds have independent ownership\nok 6 - snapshots and seeds have independent ownership\n  ---\n  duration_ms: 0.070125\n  ...\n# Subtest: configuration and domain errors\nok 7 - configuration and domain errors\n  ---\n  duration_ms: 0.087625\n  ...\n# Subtest: opt-in confirms free seats and queues full-session requests in joining order\nok 8 - opt-in confirms free seats and queues full-session requests in joining order\n  ---\n  duration_ms: 1.261042\n  ...\n# Subtest: waiting cancellations remove only that employee and rejoining goes to the back\nok 9 - waiting cancellations remove only that employee and rejoining goes to the back\n  ---\n  duration_ms: 0.327708\n  ...\n# Subtest: portal validates the optional boolean before any state change and returns status\nok 10 - portal validates the optional boolean before any state change and returns status\n  ---\n  duration_ms: 0.348917\n  ...\n# Subtest: waiting entries, promotions and attendance retain independent ownership\nok 11 - waiting entries, promotions and attendance retain independent ownership\n  ---\n  duration_ms: 0.151041\n  ...\n1..11\n# tests 11\n# suites 0\n# pass 11\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 69.324833\n",
+    "stderr": ""
+  },
+  "source_metrics": {
+    "files": 4,
+    "nonempty_lines": 145,
+    "note": "Descriptive only; not a beauty score."
+  }
+}

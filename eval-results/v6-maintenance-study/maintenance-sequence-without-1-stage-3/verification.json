@@ -1,0 +1,48 @@
+{
+  "runtime": {
+    "node": "v22.13.0"
+  },
+  "compiler": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "snapshot_restored": true,
+  "hidden_process": {
+    "exit_code": 0,
+    "stdout": "[\n  {\n    \"id\": \"offer_replaces_automatic_confirmation\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"acceptance_and_ownership\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"decline_and_cancel_release_reservations\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"pause_reopen_reservations_and_fifo\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"offer_errors_are_atomic_and_normalized\",\n    \"pass\": true\n  }\n]\n",
+    "stderr": ""
+  },
+  "contract_groups": [
+    {
+      "id": "offer_replaces_automatic_confirmation",
+      "pass": true
+    },
+    {
+      "id": "acceptance_and_ownership",
+      "pass": true
+    },
+    {
+      "id": "decline_and_cancel_release_reservations",
+      "pass": true
+    },
+    {
+      "id": "pause_reopen_reservations_and_fifo",
+      "pass": true
+    },
+    {
+      "id": "offer_errors_are_atomic_and_normalized",
+      "pass": true
+    }
+  ],
+  "visible_tests": {
+    "exit_code": 0,
+    "stdout": "\n> test\n> npm run build && node --test tests/*.test.mjs\n\n\n> build\n> tsc\n\nTAP version 13\n# Subtest: sessions start open and paused enrollment errors precede email and duplicate checks\nok 1 - sessions start open and paused enrollment errors precede email and duplicate checks\n  ---\n  duration_ms: 1.114917\n  ...\n# Subtest: pause preserves FIFO while cancellations leave seats empty until reopening\nok 2 - pause preserves FIFO while cancellations leave seats empty until reopening\n  ---\n  duration_ms: 0.461958\n  ...\n# Subtest: reopening can exhaust the queue and allows arrivals into remaining seats\nok 3 - reopening can exhaust the queue and allows arrivals into remaining seats\n  ---\n  duration_ms: 0.12425\n  ...\n# Subtest: portal translates closure errors and still validates untrusted input first\nok 4 - portal translates closure errors and still validates untrusted input first\n  ---\n  duration_ms: 0.289875\n  ...\n# Subtest: admissions changes are isolated and roster state is detached\nok 5 - admissions changes are isolated and roster state is detached\n  ---\n  duration_ms: 0.090167\n  ...\n# Subtest: portal validates unknown data and normalizes directory identity\nok 6 - portal validates unknown data and normalizes directory identity\n  ---\n  duration_ms: 0.811458\n  ...\n# Subtest: capacity and cancellation preserve atomic failures\nok 7 - capacity and cancellation preserve atomic failures\n  ---\n  duration_ms: 0.252708\n  ...\n# Subtest: snapshots and seeds have independent ownership\nok 8 - snapshots and seeds have independent ownership\n  ---\n  duration_ms: 0.073833\n  ...\n# Subtest: configuration and domain errors\nok 9 - configuration and domain errors\n  ---\n  duration_ms: 0.090458\n  ...\n# Subtest: offers reserve seats, require acceptance for attendance and preserve identity and snapshots\nok 10 - offers reserve seats, require acceptance for attendance and preserve identity and snapshots\n  ---\n  duration_ms: 1.062417\n  ...\n# Subtest: decline and cancellation release offered seats in FIFO order, with rejoining at the back\nok 11 - decline and cancellation release offered seats in FIFO order, with rejoining at the back\n  ---\n  duration_ms: 0.205708\n  ...\n# Subtest: paused offers can be accepted, declined or cancelled; reopening reserves only free seats\nok 12 - paused offers can be accepted, declined or cancelled; reopening reserves only free seats\n  ---\n  duration_ms: 0.294708\n  ...\n# Subtest: offer operations validate session, email, enrollment and status without changing state\nok 13 - offer operations validate session, email, enrollment and status without changing state\n  ---\n  duration_ms: 0.566042\n  ...\n# Subtest: opt-in confirms free seats and queues full sessions without changing default behavior\nok 14 - opt-in confirms free seats and queues full sessions without changing default behavior\n  ---\n  duration_ms: 1.047667\n  ...\n# Subtest: cancellation offers FIFO, skips cancelled waiters, and permits rejoining at the back\nok 15 - cancellation offers FIFO, skips cancelled waiters, and permits rejoining at the back\n  ---\n  duration_ms: 0.282583\n  ...\n# Subtest: waitlist snapshots are detached and failed operations preserve the queue\nok 16 - waitlist snapshots are detached and failed operations preserve the queue\n  ---\n  duration_ms: 0.276375\n  ...\n# Subtest: portal accepts boolean opt-in and reports the resulting status\nok 17 - portal accepts boolean opt-in and reports the resulting status\n  ---\n  duration_ms: 0.181375\n  ...\n# Subtest: portal rejects every nonboolean waitlist field before any state change\nok 18 - portal rejects every nonboolean waitlist field before any state change\n  ---\n  duration_ms: 0.222125\n  ...\n1..18\n# tests 18\n# suites 0\n# pass 18\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 70.861833\n",
+    "stderr": ""
+  },
+  "source_metrics": {
+    "files": 4,
+    "nonempty_lines": 169,
+    "note": "Descriptive only; not a beauty score."
+  }
+}

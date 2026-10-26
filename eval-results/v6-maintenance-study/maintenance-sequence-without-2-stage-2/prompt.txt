@@ -1,0 +1,17 @@
+Work only in this workspace. Read PROJECT.md and the task files. Do not inspect parent/home directories, other skills, evaluation rubrics, or other runs. Do not use network, install packages, delegate, publish, or change global settings. node_modules is preinstalled; use it only to run project tooling. You have at most 8 minutes. Complete the requested work and report actual evidence, including blockers.
+Continue this private application from its current code. Earlier requests below remain in effect except where the current request explicitly replaces them. No future request is available.
+
+Earlier request 1:
+The training coordinator wants employees to join a waiting list when a session fills up.
+
+Extend `TrainingDesk.enroll(sessionId, email, options?)` with an optional `{ waitlist: boolean }` option. With a free seat, enrollment is still confirmed. When full, opt-in requests return and store status `waitlisted`; requests without opt-in still fail with FULL. Waiting employees are ordered by when they joined. Cancelling a confirmed employee immediately confirms the earliest waiting employee; cancelling a waiting employee simply removes that employee. An employee can have only one entry per session, regardless of status or email casing. Rosters expose both statuses, while attendance exports include only confirmed employees.
+
+Update the existing `submitEnrollment` JSON caller to accept an optional boolean `waitlist` field and return the resulting status. If that field is present but is not boolean, return BAD_REQUEST without changing state. Keep the existing error, normalization, ownership and default enrollment behavior. Add tests covering the new user flows.
+
+
+Current request 2:
+The coordinator needs to pause admissions while arranging trainers, without losing a session's waiting list.
+
+Add `TrainingDesk.setAdmissions(sessionId, open)` and expose `admissionsOpen` on its roster; new sessions start open. While closed, every new enrollment request (including waitlist opt-ins) fails with ADMISSIONS_CLOSED. For an existing session this check takes precedence over email or duplicate checks. The portal returns that domain error using its usual failure reply.
+
+Cancellation remains available during a pause, but no waiting employee is promoted until admissions reopen. Reopening fills all available seats from the waiting list in FIFO order. Setting the same state again is harmless. If an open session has a backlog, a new arrival cannot take a seat ahead of that backlog. Session isolation, attendance, waitlist opt-in rules and the other existing contracts still apply. Add tests for pause/cancel/reopen flows.

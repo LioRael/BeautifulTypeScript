@@ -67,6 +67,49 @@ class CasePackaging(unittest.TestCase):
                 runner.prepare_workspace('write', 'old', 2, manifest, root)
 
 
+    def test_sequence_keeps_its_own_code_and_reveals_only_current_requests(self):
+        manifest = json.loads((ROOT/'evals/cases.json').read_text())
+        # Simulate transport, not model quality. Every checkpoint edits its inherited code.
+        script = """from pathlib import Path
+import sys
+sys.stdin.read()
+p=Path('src/progress.ts')
+n=int(p.read_text().split('=')[1].strip(' ;\\n'))+1 if p.exists() else 1
+p.write_text(f'export const progress = {n};\\n')
+Path(sys.argv[1]).write_text('Transport fixture')
+print('{"type":"turn.completed","usage":{}}')
+"""
+        with tempfile.TemporaryDirectory() as tmp:
+            work=Path(tmp)/'work';work.mkdir()
+            public=Path(tmp)/'public';public.mkdir()
+            def invocation(workspace, final, config):
+                return [sys.executable,'-c',script,str(final)]
+            # The real CLI runs with -C; simulate that working-directory behavior explicitly.
+            original_run=runner.subprocess.run
+            def in_workspace(command, **kwargs):
+                if command[0] == sys.executable:
+                    kwargs['cwd']=work/'maintenance-sequence-without-1-stage-1/workspace'
+                return original_run(command, **kwargs)
+            with patch.object(runner,'command',side_effect=invocation), patch.object(runner.subprocess,'run',side_effect=in_workspace):
+                records=runner.run_trajectory('maintenance-sequence','without',1,manifest,work,public,'')
+            self.assertEqual([r['stage'] for r in records],[1,2,3])
+            self.assertTrue(all(r['exit_code']==0 for r in records))
+            for before,after in zip(records,records[1:]):
+                self.assertEqual(before['ending_source_hashes'],after['starting_source_hashes'])
+            descriptor=json.loads((runner.case_directory('maintenance-sequence',manifest)/'case.json').read_text())
+            for index,record in enumerate(records):
+                prompt=(public/record['id']/'prompt.txt').read_text()
+                for stage in descriptor['stages']:
+                    text=(runner.case_directory('maintenance-sequence',manifest)/stage['prompt']).read_text()
+                    self.assertEqual(text in prompt,stage['id']<=index+1)
+                artifact=public/record['id']/'artifacts/src/progress.ts'
+                self.assertIn(f'= {index+1};',artifact.read_text())
+                self.assertNotIn('graders',record['ending_source_hashes'])
+            ws=work/records[0]['id']/'workspace'
+            count=runner.subprocess.check_output(['git','-C',str(ws),'rev-list','--count','HEAD'],text=True)
+            self.assertEqual(count.strip(),'4')
+
+
     def test_run_record_preserves_failed_runtime_grade_after_successful_process(self):
         manifest = json.loads((ROOT/'evals/cases.json').read_text())
         # Simulated transport only: no model/API use or claimed task success.

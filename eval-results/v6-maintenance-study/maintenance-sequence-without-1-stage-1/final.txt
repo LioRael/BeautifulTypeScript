@@ -1,0 +1,5 @@
+Implemented optional waitlisting, FIFO promotion on confirmed cancellation, duplicate protection across statuses, and portal boolean validation. Rosters include both statuses; attendance includes only confirmed employees.
+
+Validation passed: typecheck, build, all 9 tests, and `git diff --check`.
+
+No blockers. npm emitted a non-failing existing configuration warning about `home`.

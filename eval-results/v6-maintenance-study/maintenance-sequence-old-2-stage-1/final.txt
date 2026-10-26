@@ -1,0 +1,5 @@
+Implemented waitlist opt-in, FIFO promotion on confirmed cancellation, case-insensitive duplicate prevention, and portal boolean validation. Rosters include both statuses; attendance remains confirmed-only.
+
+Validation passed: typecheck, build, all 9 tests, and `git diff --check`.
+
+The blocked `mise` shim was bypassed using a command-local PATH. Tests ran on Node 26.12.1; Node 22 compatibility was not directly verified.

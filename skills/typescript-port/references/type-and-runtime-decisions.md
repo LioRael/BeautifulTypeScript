@@ -136,3 +136,40 @@ because the source language commonly uses it.
 The repository's ledger evaluation demonstrates stages 1–3 for a pure JSON module; it does
 not prove stage 4 for native resources or concurrent services. Benchmark only after checks
 establish equal work/results for the declared input domain.
+
+## Complete the cutover (TS10)
+
+A port has three distinct roles that may temporarily coexist: source behavior as an oracle,
+a production adapter during rollout, and the target implementation. Record which role each
+remaining path serves. Preserve the source for differential tests without automatically
+calling it whenever the target fails.
+
+For each temporary branch or escape, identify its consumer and retirement condition. When
+the requested cutover removes that consumer, follow references through exports, flags,
+registrations, dependency usage and tests. Keep evidence for retained behavior, retire tests
+for deliberately removed behavior, and verify the real target caller. Avoid global cleanup
+of unrelated source files or dependencies shared with another package.
+
+An authorized final cutover below promises target failures to callers. Catching them and
+silently falling back to the source is an incomplete transition:
+
+```ts
+// @example-run
+type Calculate = (input: string) => Promise<string>;
+const failure = new Error('Target unavailable');
+const target: Calculate = async () => { throw failure; };
+const calculate: Calculate = target;
+let observed: unknown;
+try { await calculate('input'); } catch (error) { observed = error; }
+if (observed !== failure) throw new Error('Target failure was concealed');
+```
+
+The example binds the target directly. During a supported rollout the design may differ.
+No fallback, retry or source-runtime emulation follows merely from the word “port”.
+
+Temporary any/assertions belong at a specific interoperability boundary, with the invariant
+and exit condition stated. Fix the target model instead of spreading unknown/as chains
+through every internal function. A small copied transport object can be a real ownership
+boundary; a second mutable model with no independent lifetime creates synchronization work.
+The [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions)
+explains why assertions alone cannot establish source/target compatibility.

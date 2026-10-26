@@ -1,0 +1,48 @@
+{
+  "runtime": {
+    "node": "v22.13.0"
+  },
+  "compiler": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "snapshot_restored": true,
+  "hidden_process": {
+    "exit_code": 0,
+    "stdout": "[\n  {\n    \"id\": \"offer_replaces_automatic_confirmation\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"acceptance_and_ownership\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"decline_and_cancel_release_reservations\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"pause_reopen_reservations_and_fifo\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"offer_errors_are_atomic_and_normalized\",\n    \"pass\": true\n  }\n]\n",
+    "stderr": ""
+  },
+  "contract_groups": [
+    {
+      "id": "offer_replaces_automatic_confirmation",
+      "pass": true
+    },
+    {
+      "id": "acceptance_and_ownership",
+      "pass": true
+    },
+    {
+      "id": "decline_and_cancel_release_reservations",
+      "pass": true
+    },
+    {
+      "id": "pause_reopen_reservations_and_fifo",
+      "pass": true
+    },
+    {
+      "id": "offer_errors_are_atomic_and_normalized",
+      "pass": true
+    }
+  ],
+  "visible_tests": {
+    "exit_code": 0,
+    "stdout": "\n> test\n> npm run build && node --test tests/*.test.mjs\n\n\n> build\n> tsc\n\nTAP version 13\n# Subtest: sessions start open; paused admissions precede email and duplicate checks\nok 1 - sessions start open; paused admissions precede email and duplicate checks\n  ---\n  duration_ms: 1.145\n  ...\n# Subtest: pause preserves FIFO through cancellations and reopening fills every vacancy\nok 2 - pause preserves FIFO through cancellations and reopening fills every vacancy\n  ---\n  duration_ms: 0.48025\n  ...\n# Subtest: reopening with spare capacity exhausts the queue before admitting new arrivals\nok 3 - reopening with spare capacity exhausts the queue before admitting new arrivals\n  ---\n  duration_ms: 0.086791\n  ...\n# Subtest: admissions state belongs to each session and desk, independently of roster snapshots\nok 4 - admissions state belongs to each session and desk, independently of roster snapshots\n  ---\n  duration_ms: 0.132458\n  ...\n# Subtest: portal translates closed admissions while retaining boundary validation\nok 5 - portal translates closed admissions while retaining boundary validation\n  ---\n  duration_ms: 0.220125\n  ...\n# Subtest: portal validates unknown data and normalizes directory identity\nok 6 - portal validates unknown data and normalizes directory identity\n  ---\n  duration_ms: 0.799958\n  ...\n# Subtest: capacity and cancellation preserve atomic failures\nok 7 - capacity and cancellation preserve atomic failures\n  ---\n  duration_ms: 0.44725\n  ...\n# Subtest: snapshots and seeds have independent ownership\nok 8 - snapshots and seeds have independent ownership\n  ---\n  duration_ms: 0.131708\n  ...\n# Subtest: configuration and domain errors\nok 9 - configuration and domain errors\n  ---\n  duration_ms: 0.130125\n  ...\n# Subtest: offers reserve seats, require agreement for attendance, and return owned snapshots\nok 10 - offers reserve seats, require agreement for attendance, and return owned snapshots\n  ---\n  duration_ms: 1.149958\n  ...\n# Subtest: declining or cancelling an offered seat advances FIFO only while open\nok 11 - declining or cancelling an offered seat advances FIFO only while open\n  ---\n  duration_ms: 0.193083\n  ...\n# Subtest: paused offered cancellations and declines preserve the queue until reopening\nok 12 - paused offered cancellations and declines preserve the queue until reopening\n  ---\n  duration_ms: 0.310375\n  ...\n# Subtest: offer operations preserve error precedence and leave failed requests unchanged\nok 13 - offer operations preserve error precedence and leave failed requests unchanged\n  ---\n  duration_ms: 0.301709\n  ...\n# Subtest: reopening counts existing offers and fills all remaining vacancies in FIFO order\nok 14 - reopening counts existing offers and fills all remaining vacancies in FIFO order\n  ---\n  duration_ms: 0.111416\n  ...\n# Subtest: free seats confirm opt-ins; full sessions require opt-in and preserve unique identity\nok 15 - free seats confirm opt-ins; full sessions require opt-in and preserve unique identity\n  ---\n  duration_ms: 1.179541\n  ...\n# Subtest: cancellation offers in join order, while waiting cancellation only removes that entry\nok 16 - cancellation offers in join order, while waiting cancellation only removes that entry\n  ---\n  duration_ms: 0.312833\n  ...\n# Subtest: waiting entries and offered snapshots remain owned by their desk\nok 17 - waiting entries and offered snapshots remain owned by their desk\n  ---\n  duration_ms: 0.146292\n  ...\n# Subtest: portal validates present waitlist values before making any changes\nok 18 - portal validates present waitlist values before making any changes\n  ---\n  duration_ms: 0.294833\n  ...\n# Subtest: waitlisting preserves domain error ordering and atomic failures\nok 19 - waitlisting preserves domain error ordering and atomic failures\n  ---\n  duration_ms: 0.18425\n  ...\n1..19\n# tests 19\n# suites 0\n# pass 19\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 75.534459\n",
+    "stderr": ""
+  },
+  "source_metrics": {
+    "files": 4,
+    "nonempty_lines": 166,
+    "note": "Descriptive only; not a beauty score."
+  }
+}

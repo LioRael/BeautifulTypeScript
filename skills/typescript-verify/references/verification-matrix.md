@@ -123,3 +123,34 @@ A basic Oxlint pass does not prove promise checks ran. During migration, compare
 existing rule options and framework coverage before removing ESLint checks.
 Keep the project's compiler and production build checks while validating the
 separate type engine against the actual project.
+
+## Verify the replacement as well as the addition (TS10)
+
+A green test of a new helper does not establish that consumers use it or that the old
+behavior was retired. Choose checks from the actual transition contract:
+
+| Change | Evidence to collect | What not to infer |
+|---|---|---|
+| Internal policy replacement | Exercise each affected caller at a case that distinguishes old/new behavior | One helper test covers all copied policy |
+| Completed runtime cutover | Target caller runs; target failure follows its promised channel; no retired fallback executes | Keeping a source test oracle requires a live production fallback |
+| Export/registration removal | Inspect supported entrypoints and built output; test the new consumer and required absence | A search with no matches proves no external/dynamic consumer |
+| Type-error repair | Check the producer/consumer relationship and new escapes/suppressions | A green tsc after as any proves the shape is valid |
+| Changed tests/config | Explain which contract changed and which guarantees remain checked | Fewer tests or diagnostics necessarily means a cleaner implementation |
+
+For a caller that must now surface a target read failure, use its existing test seam to
+make the target reject with a recognizable error and observe any call to the retired
+adapter. Assert that the real caller rejects with the required error and that the retired
+adapter was not invoked. Test a valid empty result separately: empty success and read
+failure must not become indistinguishable. Merely assigning a local variable to the new
+helper and testing that variable does not verify application wiring.
+
+Inspect output cleanup when files/exports were removed: emitting into an existing directory
+can leave obsolete files behind. Use the repository's scoped clean/build procedure if
+needed, then test the artifact a consumer loads. Do not delete an arbitrary shared folder
+or infer that a source-only import is a production smoke test.
+
+For newly changed compiler/lint coverage, retain the original diagnostics and establish
+why the proposed change is legitimate. Negative type tests and documented library/tool
+limitations are valid scoped exceptions; removing a check solely to obtain green output
+is not a fix. See [typed-rule caveats](https://typescript-eslint.io/rules/no-unnecessary-condition/#limitations)
+and [directive scope](https://typescript-eslint.io/rules/ban-ts-comment/).

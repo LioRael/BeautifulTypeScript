@@ -1,0 +1,5 @@
+Implemented explicit seat offers with capacity reservation, FIFO allocation, acceptance, and decline. Pause/reopen and cancellation rules are preserved; attendance includes only confirmed employees.
+
+Updated documentation and regression tests.
+
+Validation passed: typecheck, build, all 15 tests, and diff whitespace check. No blockers. npm emitted an existing configuration warning about `home`.

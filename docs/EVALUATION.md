@@ -1,8 +1,9 @@
 # Paired agent evaluation
 
-Latest: [new-task comparison](EFFECT-STUDY.md), 12 fresh writing runs with frozen tasks
-and reversed-label anonymous review. It found no stable advantage. Earlier studies
-below remain historical and are not pooled with it.
+Latest: [sequential maintenance comparison](MAINTENANCE-STUDY.md), 18 writing calls
+across six trajectories, each preserving its own code through three requirements.
+All conditions passed behavior checks; both anonymous review orders tied every comparison.
+Earlier studies below remain historical and are not pooled with it.
 
 Version scope: these runs evaluated the skills recorded at
 [commit b13a7aa](https://github.com/LioRael/BeautifulTypeScript/tree/b13a7aa/skills),

@@ -1,0 +1,5 @@
+Implemented admissions pause/reopen with roster state, closure error precedence, and FIFO promotion. Added five tests covering cancellation during pauses, reopening, portal errors, isolation, and ownership.
+
+Validation passed: typecheck, build, all 14 tests, and diff checks.
+
+The mise shim failed; validation succeeded using system Node 26.12.1. Target Node 22 validation remains unverified.

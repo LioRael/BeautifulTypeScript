@@ -48,6 +48,9 @@ success to exit code alone:
   files is a coverage gap unless that empty scope is intentionally unrelated to the task.
 - Separate a parser/configuration crash from the diagnostic a negative fixture intends
   to exercise. Pair it with a clean fixture to rule out a universally broken setup.
+- Compare source and check changes: new any/assertions/suppressions, narrower include
+  patterns, disabled rules, mocks and changed expectations can conceal a regression.
+  Separate an authorized contract update from weakening retained guarantees.
 - Do not allow a previous command's successful output to stand in for the current build.
   Verify the artifact that will actually be used.
 
@@ -65,6 +68,12 @@ a development loader if consumers import built JS through Node.
 For browser apps, use the framework production build and a browser smoke test when
 available. DOM types do not prove a browser run, and Node globals can leak through broad
 ambient typings. Bun and Deno need actual host-specific checks. State which hosts ran.
+
+For a replacement or completed port (TS10), exercise the real consumers and establish
+that the retired behavior is no longer exposed where the request removes it. Check old
+exports/registrations and emitted files; a fresh build can leave stale output if the build
+never removes it. Inspect the build script and use its scoped cleanup only when needed.
+Preserve still-supported compatibility. A passing new helper test does not prove cutover.
 
 Exercise bad boundary data, failure and cleanup paths relevant to the change. For async
 code, check observable completion/rejection/order rather than merely awaiting a happy path.

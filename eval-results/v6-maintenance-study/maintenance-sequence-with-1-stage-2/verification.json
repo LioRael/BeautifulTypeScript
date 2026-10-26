@@ -1,0 +1,44 @@
+{
+  "runtime": {
+    "node": "v22.13.0"
+  },
+  "compiler": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "snapshot_restored": true,
+  "hidden_process": {
+    "exit_code": 0,
+    "stdout": "[\n  {\n    \"id\": \"pause_boundary_and_precedence\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"paused_cancellation_and_fifo_reopen\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"isolation_and_roster_ownership\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"open_waitlist_and_current_callers\",\n    \"pass\": true\n  }\n]\n",
+    "stderr": ""
+  },
+  "contract_groups": [
+    {
+      "id": "pause_boundary_and_precedence",
+      "pass": true
+    },
+    {
+      "id": "paused_cancellation_and_fifo_reopen",
+      "pass": true
+    },
+    {
+      "id": "isolation_and_roster_ownership",
+      "pass": true
+    },
+    {
+      "id": "open_waitlist_and_current_callers",
+      "pass": true
+    }
+  ],
+  "visible_tests": {
+    "exit_code": 0,
+    "stdout": "\n> test\n> npm run build && node --test tests/*.test.mjs\n\n\n> build\n> tsc\n\nTAP version 13\n# Subtest: sessions start open; closure precedes email and duplicate checks without mutation\nok 1 - sessions start open; closure precedes email and duplicate checks without mutation\n  ---\n  duration_ms: 1.039\n  ...\n# Subtest: paused cancellations preserve the queue; reopening fills every vacancy in FIFO order\nok 2 - paused cancellations preserve the queue; reopening fills every vacancy in FIFO order\n  ---\n  duration_ms: 0.391709\n  ...\n# Subtest: reopening with fewer waiters than vacancies leaves seats for new arrivals\nok 3 - reopening with fewer waiters than vacancies leaves seats for new arrivals\n  ---\n  duration_ms: 0.140416\n  ...\n# Subtest: admissions state belongs to its session and desk, and roster snapshots are detached\nok 4 - admissions state belongs to its session and desk, and roster snapshots are detached\n  ---\n  duration_ms: 0.114833\n  ...\n# Subtest: portal translates admissions errors while retaining JSON boundary validation\nok 5 - portal translates admissions errors while retaining JSON boundary validation\n  ---\n  duration_ms: 0.200458\n  ...\n# Subtest: portal validates unknown data and normalizes directory identity\nok 6 - portal validates unknown data and normalizes directory identity\n  ---\n  duration_ms: 0.790625\n  ...\n# Subtest: capacity and cancellation preserve atomic failures\nok 7 - capacity and cancellation preserve atomic failures\n  ---\n  duration_ms: 0.253916\n  ...\n# Subtest: snapshots and seeds have independent ownership\nok 8 - snapshots and seeds have independent ownership\n  ---\n  duration_ms: 0.071\n  ...\n# Subtest: configuration and domain errors\nok 9 - configuration and domain errors\n  ---\n  duration_ms: 0.088333\n  ...\n# Subtest: free seats confirm opt-ins; full sessions require explicit opt-in\nok 10 - free seats confirm opt-ins; full sessions require explicit opt-in\n  ---\n  duration_ms: 1.082041\n  ...\n# Subtest: cancellation removes waiting employees and promotes remaining employees in join order\nok 11 - cancellation removes waiting employees and promotes remaining employees in join order\n  ---\n  duration_ms: 0.237583\n  ...\n# Subtest: waitlist snapshots and desk instances retain independent ownership\nok 12 - waitlist snapshots and desk instances retain independent ownership\n  ---\n  duration_ms: 0.110833\n  ...\n# Subtest: portal accepts boolean waitlist and returns the resulting enrollment status\nok 13 - portal accepts boolean waitlist and returns the resulting enrollment status\n  ---\n  duration_ms: 0.306458\n  ...\n# Subtest: portal rejects every nonboolean waitlist value before mutating or checking domain data\nok 14 - portal rejects every nonboolean waitlist value before mutating or checking domain data\n  ---\n  duration_ms: 0.167833\n  ...\n# Subtest: waitlist preserves domain error precedence and failed-operation atomicity\nok 15 - waitlist preserves domain error precedence and failed-operation atomicity\n  ---\n  duration_ms: 0.260916\n  ...\n1..15\n# tests 15\n# suites 0\n# pass 15\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 69.133833\n",
+    "stderr": ""
+  },
+  "source_metrics": {
+    "files": 4,
+    "nonempty_lines": 147,
+    "note": "Descriptive only; not a beauty score."
+  }
+}

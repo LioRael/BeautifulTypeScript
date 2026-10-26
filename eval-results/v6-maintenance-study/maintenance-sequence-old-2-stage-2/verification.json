@@ -1,0 +1,44 @@
+{
+  "runtime": {
+    "node": "v22.13.0"
+  },
+  "compiler": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "snapshot_restored": true,
+  "hidden_process": {
+    "exit_code": 0,
+    "stdout": "[\n  {\n    \"id\": \"pause_boundary_and_precedence\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"paused_cancellation_and_fifo_reopen\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"isolation_and_roster_ownership\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"open_waitlist_and_current_callers\",\n    \"pass\": true\n  }\n]\n",
+    "stderr": ""
+  },
+  "contract_groups": [
+    {
+      "id": "pause_boundary_and_precedence",
+      "pass": true
+    },
+    {
+      "id": "paused_cancellation_and_fifo_reopen",
+      "pass": true
+    },
+    {
+      "id": "isolation_and_roster_ownership",
+      "pass": true
+    },
+    {
+      "id": "open_waitlist_and_current_callers",
+      "pass": true
+    }
+  ],
+  "visible_tests": {
+    "exit_code": 0,
+    "stdout": "\n> test\n> npm run build && node --test tests/*.test.mjs\n\n\n> build\n> tsc\n\nTAP version 13\n# Subtest: sessions start open; paused admissions precede email and duplicate checks\nok 1 - sessions start open; paused admissions precede email and duplicate checks\n  ---\n  duration_ms: 1.163125\n  ...\n# Subtest: pause preserves FIFO through cancellations and reopening fills every vacancy\nok 2 - pause preserves FIFO through cancellations and reopening fills every vacancy\n  ---\n  duration_ms: 0.414542\n  ...\n# Subtest: reopening with spare capacity exhausts the queue before admitting new arrivals\nok 3 - reopening with spare capacity exhausts the queue before admitting new arrivals\n  ---\n  duration_ms: 0.079334\n  ...\n# Subtest: admissions state belongs to each session and desk, independently of roster snapshots\nok 4 - admissions state belongs to each session and desk, independently of roster snapshots\n  ---\n  duration_ms: 0.134125\n  ...\n# Subtest: portal translates closed admissions while retaining boundary validation\nok 5 - portal translates closed admissions while retaining boundary validation\n  ---\n  duration_ms: 0.2165\n  ...\n# Subtest: portal validates unknown data and normalizes directory identity\nok 6 - portal validates unknown data and normalizes directory identity\n  ---\n  duration_ms: 0.827208\n  ...\n# Subtest: capacity and cancellation preserve atomic failures\nok 7 - capacity and cancellation preserve atomic failures\n  ---\n  duration_ms: 0.335375\n  ...\n# Subtest: snapshots and seeds have independent ownership\nok 8 - snapshots and seeds have independent ownership\n  ---\n  duration_ms: 0.0855\n  ...\n# Subtest: configuration and domain errors\nok 9 - configuration and domain errors\n  ---\n  duration_ms: 0.10025\n  ...\n# Subtest: free seats confirm opt-ins; full sessions require opt-in and preserve unique identity\nok 10 - free seats confirm opt-ins; full sessions require opt-in and preserve unique identity\n  ---\n  duration_ms: 1.005875\n  ...\n# Subtest: cancellation promotes in join order, while waiting cancellation only removes that entry\nok 11 - cancellation promotes in join order, while waiting cancellation only removes that entry\n  ---\n  duration_ms: 0.256083\n  ...\n# Subtest: waiting entries and promoted snapshots remain owned by their desk\nok 12 - waiting entries and promoted snapshots remain owned by their desk\n  ---\n  duration_ms: 0.143875\n  ...\n# Subtest: portal validates present waitlist values before making any changes\nok 13 - portal validates present waitlist values before making any changes\n  ---\n  duration_ms: 0.301167\n  ...\n# Subtest: waitlisting preserves domain error ordering and atomic failures\nok 14 - waitlisting preserves domain error ordering and atomic failures\n  ---\n  duration_ms: 0.178416\n  ...\n1..14\n# tests 14\n# suites 0\n# pass 14\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 71.056042\n",
+    "stderr": ""
+  },
+  "source_metrics": {
+    "files": 4,
+    "nonempty_lines": 147,
+    "note": "Descriptive only; not a beauty score."
+  }
+}

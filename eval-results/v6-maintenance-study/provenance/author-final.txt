@@ -1,0 +1,5 @@
+Created `maintenance-sequence/` with the initial app, three sequential requests, graders, and six-criterion rubric.
+
+Validation: typecheck/build passed; 4 baseline tests passed. All 14 grader groups failed as expected on unimplemented requirements. Generated files were removed.
+
+[AUTHOR.md](maintenance-sequence/AUTHOR.md) records outcomes and limitations, including validation on Node 26 rather than Node 22.

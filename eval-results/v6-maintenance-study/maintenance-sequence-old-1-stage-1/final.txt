@@ -1,0 +1,3 @@
+Implemented waitlist enrollment, promotion in joining order, waiting-list cancellation, and strict portal boolean validation. Rosters expose both statuses; attendance includes only confirmed employees.
+
+Validation passed: typecheck, build, all 8 tests, and diff whitespace check. No blockers. npm emitted an existing `home` configuration warning.

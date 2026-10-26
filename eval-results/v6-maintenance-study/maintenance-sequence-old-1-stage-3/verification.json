@@ -1,0 +1,48 @@
+{
+  "runtime": {
+    "node": "v22.13.0"
+  },
+  "compiler": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "snapshot_restored": true,
+  "hidden_process": {
+    "exit_code": 0,
+    "stdout": "[\n  {\n    \"id\": \"offer_replaces_automatic_confirmation\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"acceptance_and_ownership\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"decline_and_cancel_release_reservations\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"pause_reopen_reservations_and_fifo\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"offer_errors_are_atomic_and_normalized\",\n    \"pass\": true\n  }\n]\n",
+    "stderr": ""
+  },
+  "contract_groups": [
+    {
+      "id": "offer_replaces_automatic_confirmation",
+      "pass": true
+    },
+    {
+      "id": "acceptance_and_ownership",
+      "pass": true
+    },
+    {
+      "id": "decline_and_cancel_release_reservations",
+      "pass": true
+    },
+    {
+      "id": "pause_reopen_reservations_and_fifo",
+      "pass": true
+    },
+    {
+      "id": "offer_errors_are_atomic_and_normalized",
+      "pass": true
+    }
+  ],
+  "visible_tests": {
+    "exit_code": 0,
+    "stdout": "\n> test\n> npm run build && node --test tests/*.test.mjs\n\n\n> build\n> tsc\n\nTAP version 13\n# Subtest: closed admissions reject all new requests before email and duplicate checks\nok 1 - closed admissions reject all new requests before email and duplicate checks\n  ---\n  duration_ms: 1.307375\n  ...\n# Subtest: paused cancellations retain FIFO and reopening fills all vacancies before new arrivals\nok 2 - paused cancellations retain FIFO and reopening fills all vacancies before new arrivals\n  ---\n  duration_ms: 0.351125\n  ...\n# Subtest: reopening with fewer waiting employees leaves free seats and preserves isolation and ownership\nok 3 - reopening with fewer waiting employees leaves free seats and preserves isolation and ownership\n  ---\n  duration_ms: 0.149667\n  ...\n# Subtest: portal validates unknown data and normalizes directory identity\nok 4 - portal validates unknown data and normalizes directory identity\n  ---\n  duration_ms: 0.812083\n  ...\n# Subtest: capacity and cancellation preserve atomic failures\nok 5 - capacity and cancellation preserve atomic failures\n  ---\n  duration_ms: 0.256084\n  ...\n# Subtest: snapshots and seeds have independent ownership\nok 6 - snapshots and seeds have independent ownership\n  ---\n  duration_ms: 0.074917\n  ...\n# Subtest: configuration and domain errors\nok 7 - configuration and domain errors\n  ---\n  duration_ms: 0.090291\n  ...\n# Subtest: offers reserve seats until explicit acceptance and preserve snapshot ownership\nok 8 - offers reserve seats until explicit acceptance and preserve snapshot ownership\n  ---\n  duration_ms: 1.070125\n  ...\n# Subtest: declining and cancelling offers release seats in FIFO order, respecting a pause\nok 9 - declining and cancelling offers release seats in FIFO order, respecting a pause\n  ---\n  duration_ms: 0.179667\n  ...\n# Subtest: reopening offers all free seats once and later acceptance cannot create capacity\nok 10 - reopening offers all free seats once and later acceptance cannot create capacity\n  ---\n  duration_ms: 0.391541\n  ...\n# Subtest: offer operations preserve error precedence and leave failures atomic\nok 11 - offer operations preserve error precedence and leave failures atomic\n  ---\n  duration_ms: 0.307167\n  ...\n# Subtest: opt-in confirms free seats and queues full-session requests in joining order\nok 12 - opt-in confirms free seats and queues full-session requests in joining order\n  ---\n  duration_ms: 1.181042\n  ...\n# Subtest: waiting cancellations remove only that employee and rejoining goes to the back\nok 13 - waiting cancellations remove only that employee and rejoining goes to the back\n  ---\n  duration_ms: 0.262792\n  ...\n# Subtest: portal validates the optional boolean before any state change and returns status\nok 14 - portal validates the optional boolean before any state change and returns status\n  ---\n  duration_ms: 0.270125\n  ...\n# Subtest: waiting entries, offers and attendance retain independent ownership\nok 15 - waiting entries, offers and attendance retain independent ownership\n  ---\n  duration_ms: 0.134584\n  ...\n1..15\n# tests 15\n# suites 0\n# pass 15\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 70.90025\n",
+    "stderr": ""
+  },
+  "source_metrics": {
+    "files": 4,
+    "nonempty_lines": 167,
+    "note": "Descriptive only; not a beauty score."
+  }
+}

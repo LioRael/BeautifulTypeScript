@@ -1,0 +1,44 @@
+{
+  "runtime": {
+    "node": "v22.13.0"
+  },
+  "compiler": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "snapshot_restored": true,
+  "hidden_process": {
+    "exit_code": 0,
+    "stdout": "[\n  {\n    \"id\": \"pause_boundary_and_precedence\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"paused_cancellation_and_fifo_reopen\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"isolation_and_roster_ownership\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"open_waitlist_and_current_callers\",\n    \"pass\": true\n  }\n]\n",
+    "stderr": ""
+  },
+  "contract_groups": [
+    {
+      "id": "pause_boundary_and_precedence",
+      "pass": true
+    },
+    {
+      "id": "paused_cancellation_and_fifo_reopen",
+      "pass": true
+    },
+    {
+      "id": "isolation_and_roster_ownership",
+      "pass": true
+    },
+    {
+      "id": "open_waitlist_and_current_callers",
+      "pass": true
+    }
+  ],
+  "visible_tests": {
+    "exit_code": 0,
+    "stdout": "\n> test\n> npm run build && node --test tests/*.test.mjs\n\n\n> build\n> tsc\n\nTAP version 13\n# Subtest: sessions start open and paused enrollment errors precede email and duplicate checks\nok 1 - sessions start open and paused enrollment errors precede email and duplicate checks\n  ---\n  duration_ms: 1.079541\n  ...\n# Subtest: pause preserves FIFO while cancellations leave seats empty until reopening\nok 2 - pause preserves FIFO while cancellations leave seats empty until reopening\n  ---\n  duration_ms: 0.430167\n  ...\n# Subtest: reopening can exhaust the queue and allows arrivals into remaining seats\nok 3 - reopening can exhaust the queue and allows arrivals into remaining seats\n  ---\n  duration_ms: 0.120125\n  ...\n# Subtest: portal translates closure errors and still validates untrusted input first\nok 4 - portal translates closure errors and still validates untrusted input first\n  ---\n  duration_ms: 0.283625\n  ...\n# Subtest: admissions changes are isolated and roster state is detached\nok 5 - admissions changes are isolated and roster state is detached\n  ---\n  duration_ms: 0.088333\n  ...\n# Subtest: portal validates unknown data and normalizes directory identity\nok 6 - portal validates unknown data and normalizes directory identity\n  ---\n  duration_ms: 1.018125\n  ...\n# Subtest: capacity and cancellation preserve atomic failures\nok 7 - capacity and cancellation preserve atomic failures\n  ---\n  duration_ms: 0.299375\n  ...\n# Subtest: snapshots and seeds have independent ownership\nok 8 - snapshots and seeds have independent ownership\n  ---\n  duration_ms: 0.0875\n  ...\n# Subtest: configuration and domain errors\nok 9 - configuration and domain errors\n  ---\n  duration_ms: 0.097333\n  ...\n# Subtest: opt-in confirms free seats and queues full sessions without changing default behavior\nok 10 - opt-in confirms free seats and queues full sessions without changing default behavior\n  ---\n  duration_ms: 1.039875\n  ...\n# Subtest: cancellation promotes FIFO, skips cancelled waiters, and permits rejoining at the back\nok 11 - cancellation promotes FIFO, skips cancelled waiters, and permits rejoining at the back\n  ---\n  duration_ms: 0.244458\n  ...\n# Subtest: waitlist snapshots are detached and failed operations preserve the queue\nok 12 - waitlist snapshots are detached and failed operations preserve the queue\n  ---\n  duration_ms: 0.287875\n  ...\n# Subtest: portal accepts boolean opt-in and reports the resulting status\nok 13 - portal accepts boolean opt-in and reports the resulting status\n  ---\n  duration_ms: 0.185125\n  ...\n# Subtest: portal rejects every nonboolean waitlist field before any state change\nok 14 - portal rejects every nonboolean waitlist field before any state change\n  ---\n  duration_ms: 0.186208\n  ...\n1..14\n# tests 14\n# suites 0\n# pass 14\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 69.494709\n",
+    "stderr": ""
+  },
+  "source_metrics": {
+    "files": 4,
+    "nonempty_lines": 150,
+    "note": "Descriptive only; not a beauty score."
+  }
+}

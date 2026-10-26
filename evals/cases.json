@@ -11,7 +11,8 @@
     "effect-async": "typescript-best-practices",
     "effect-boundary": "typescript-best-practices",
     "revision-a": "typescript-best-practices",
-    "revision-b": "typescript-best-practices"
+    "revision-b": "typescript-best-practices",
+    "maintenance-sequence": "typescript-best-practices"
   },
   "order": [
     "without",
@@ -28,6 +29,7 @@
     "effect-async": "skills/typescript-best-practices/evals/effect-async",
     "effect-boundary": "skills/typescript-best-practices/evals/effect-boundary",
     "revision-a": "skills/typescript-best-practices/evals/revision-a",
-    "revision-b": "skills/typescript-best-practices/evals/revision-b"
+    "revision-b": "skills/typescript-best-practices/evals/revision-b",
+    "maintenance-sequence": "skills/typescript-best-practices/evals/maintenance-sequence"
   }
 }

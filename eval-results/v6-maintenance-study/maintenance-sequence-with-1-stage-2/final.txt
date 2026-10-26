@@ -1,0 +1,3 @@
+Implemented admissions pause/reopen behavior with `setAdmissions` and roster `admissionsOpen`. Paused sessions reject enrollments with `ADMISSIONS_CLOSED`; cancellations preserve the queue, and reopening fills vacancies in FIFO order.
+
+Validation: typecheck, build, all 15 tests, and diff whitespace check passed. No blockers. npm emitted an existing configuration warning about `home`.

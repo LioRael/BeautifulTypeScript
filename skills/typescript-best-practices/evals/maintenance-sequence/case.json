@@ -1,0 +1,25 @@
+{
+  "id": "maintenance-sequence",
+  "skill": "typescript-best-practices",
+  "prompt": "prompts/1.md",
+  "files": "files",
+  "rubric": "graders/rubric.md",
+  "criteria": 6,
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "prompts/1.md",
+      "grader": "graders/1.mjs"
+    },
+    {
+      "id": 2,
+      "prompt": "prompts/2.md",
+      "grader": "graders/2.mjs"
+    },
+    {
+      "id": 3,
+      "prompt": "prompts/3.md",
+      "grader": "graders/3.mjs"
+    }
+  ]
+}

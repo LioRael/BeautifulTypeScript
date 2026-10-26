@@ -21,6 +21,10 @@ normalization, sorting, rounding, parsing, retries and error translation are beh
 not incidental syntax. Reuse that behavior where it applies. Do not consolidate two
 operations just because their code looks alike if their contracts differ.
 
+For an existing feature, decide whether this adds behavior or replaces it. Trace the
+entrypoint, policy owner and consumers before adding another path. A replacement should
+update its owner and callers; preserve old behavior only for a supported compatibility need.
+
 Choose the narrowest implementation that satisfies the request and fits nearby code.
 Preserve exported signatures and existing framework/tool conventions unless the task
 requires changing them. A missing config is not a request to reconfigure the project.
@@ -53,6 +57,10 @@ Promise.all does not cancel siblings. A timeout race does not stop the underlyin
 Use the existing cleanup mechanism, commonly try/finally. Preserve synchronous versus
 asynchronous failure behavior where callers observe it.
 
+Resolve type mismatches at their source: construct a complete value, retain a real
+discriminant, or narrow the boundary. Do not silence them with any, double assertions or
+suppressed checks merely to finish. Keep justified interop assertions local and explained.
+
 Do not force interface/type, class/function, enum/union, schema or error-model migrations.
 Use generics for a real relationship, not decoration. Do not widen a concrete API just to
 make a helper reusable. Readonly is a type-level permission, not a deep runtime freeze.
@@ -60,7 +68,10 @@ make a helper reusable. Readonly is a type-level permission, not a deep runtime 
 ## 3. Read the diff once for unnecessary work (TS07, TS08)
 
 After a nontrivial implementation, use the relevant examples in
-[the simplification pass](references/simplification.md). Review the code you changed:
+[the simplification pass](references/simplification.md). For repeated feature changes,
+replacements or type-error work, also use [maintenance decisions](references/maintenance.md)
+(TS10): one policy owner, no superseded runtime path without a consumer, and no extra
+synchronized state without an independent lifetime. Review the code you changed:
 
 - **Repeated decisions:** Is normalization, selection or another policy calculated more
   than once? Give the result a meaningful name and use it consistently when its lifetime
@@ -74,6 +85,10 @@ After a nontrivial implementation, use the relevant examples in
 - **Cost moved elsewhere:** Did a shorter expression hide new helpers, repeated scans,
   side effects, casts or dependencies? Compare the whole implementation, not one excerpt.
 
+For a replacement, follow references to retired options, branches, exports, tests and
+dependencies. Finish the authorized cutover; distinguish public compatibility and dynamic
+registration from genuinely obsolete internal code. Keep unrelated cleanup out of the diff.
+
 Keep a change only when it makes the actual behavior easier to follow. Do not golf code,
 rewrite unrelated functions or introduce a framework to finish this pass. Keep necessary
 boundary checks and ownership copies. Stop when further edits are merely preferences.
@@ -84,7 +99,8 @@ do, not a checklist to paste into the answer. For a tiny edit, a quick diff read
 ## 4. Verify the contract, then report the evidence (TS09)
 
 Use the repository's affected-package typecheck, lint, tests and build as applicable.
-Make sure they include the changed files. Test a changed behavior or regression, including
+Make sure they include the changed files. Inspect newly added suppressions, exclusions
+and changed expectations as part of the diff. Test a changed behavior or regression, including
 relevant failure/ownership/order cases; do not mirror each implementation line with a test.
 
 For packages, check the emitted entrypoint and a consumer of declarations when affected.
@@ -100,6 +116,7 @@ failures and unavailable runtimes are not passes. Do not weaken checks to obtain
 
 | When deciding | Read |
 |---|---|
+| Replacing behavior, repeated maintenance, type escapes or duplicated state | [Maintenance decisions](references/maintenance.md) |
 | Simplifying a diff without changing its contract | [Simplification examples](references/simplification.md) |
 | Module organization, inference, naming or assertions | [Google TypeScript Style Guide](references/google-typescript-style-guide.md) |
 | Narrowing, state models, generics or mutation | [TypeScript Handbook](references/typescript-handbook.md) |

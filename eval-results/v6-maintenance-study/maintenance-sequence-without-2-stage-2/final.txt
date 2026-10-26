@@ -1,0 +1,5 @@
+Implemented admissions pause/reopen behavior, roster `admissionsOpen`, closure error precedence, and FIFO promotion across all available seats. Existing waitlist and portal behavior is preserved.
+
+Added four admissions tests. Validation passed: typecheck, build, all 13 tests, and `git diff --check`.
+
+Initial tooling hit a blocked `mise` shim; a non-login shell resolved it without configuration changes. No remaining blockers.

@@ -1,0 +1,5 @@
+Implemented waitlist opt-in, automatic promotion in join order, case-insensitive duplicate prevention, and portal boolean validation. Rosters include both statuses; attendance includes only confirmed employees.
+
+Validation passed: typecheck, build, and all 10 tests.
+
+Limitation: the default Node shim failed with a permission error. Checks passed using available Node 26; Node 22 remains unverified.

@@ -13,6 +13,7 @@ Task definitions live with the skill they evaluate:
 
 | Case ID | Skill-local task |
 |---|---|
+| maintenance-sequence | [three-stage training application](../skills/typescript-best-practices/evals/maintenance-sequence/case.json) |
 | revision-a | [delivery failure isolation](../skills/typescript-best-practices/evals/revision-a/case.json) |
 | revision-b | [promotion eligibility](../skills/typescript-best-practices/evals/revision-b/case.json) |
 | effect-internal | [room workload feature](../skills/typescript-best-practices/evals/effect-internal/case.json) |
@@ -46,7 +47,8 @@ Use a fresh directory for each experiment:
 python3 evals/run.py --work work/agent-eval-new --output eval-results/new --workers 2
 ```
 
-The runner refuses existing output directories. Inputs are copied; node_modules is shared
+By default the runner selects single-change cases. Use --sequence to select sequential
+cases; do not mix the two modes in one run. The runner refuses existing output directories. Inputs are copied; node_modules is shared
 read-only by convention for tooling. It does not install target skills into user directories
 or edit personal configuration. Use --cases write review port verify to select tasks.
 
@@ -101,8 +103,8 @@ This evaluation has separate inputs, metrics and results.
 
 The exact initial runner is retained as recorded-runner-v1.py (its hash is in the v1
 manifest). That study lacked local Git repositories: incidental ancestor Git filenames
-appeared in nine run traces. The current run.py initializes each workspace with an empty
-local Git repository; it also accepts --rubric for a separately frozen follow-up rubric.
+appeared in nine run traces. The current run.py initializes each workspace with a local
+Git repository and committed inputs; it also accepts --rubric for a separately frozen follow-up rubric.
 The v1 review skill snapshot is retained in eval-results/v1/skill-snapshots; the other
 three skills match their hashes at commit b13a7aa. Check out that commit to reproduce the
 recorded content and original root-case paths: current references and entrypoints have
@@ -133,3 +135,30 @@ both revisions and supplies the same activation instruction to old/with. See the
 without old to compare the current revision against both, with reversed A/B labels in a
 second review. verify-effect-study.py --node /absolute/path/to/node rechecks generated
 projects using that runtime and records its version; ordinary CI does not run model calls.
+
+
+## Sequential maintenance
+
+The [maintenance protocol](maintenance-study-protocol.md) preserves each trajectory's own
+code, tests and configuration across three requests. Every checkpoint uses a fresh process
+with earlier/current request text, never future prompts or hidden graders. Local fixture
+commits make diffs meaningful; start/end hashes prove that the next request inherited the
+previous output. Each checkpoint retains its own artifacts and events. A failed solver
+process remains in the record and does not reset later checkpoints.
+
+```sh
+python3 evals/run.py --sequence --cases maintenance-sequence \
+  --model gpt-6.1-sol --effort low --repetitions 2 --workers 2 \
+  --work work/maintenance/solutions --output eval-results/new-maintenance
+python3 evals/verify-effect-study.py --node /absolute/path/to/node22 \
+  --work work/maintenance/solutions --results eval-results/new-maintenance
+python3 evals/judge-effect-study.py \
+  --work work/maintenance --results eval-results/new-maintenance
+```
+
+Add the documented old-skill-root/label options and judge --baselines without old for a
+three-condition comparison. Sequential verification restores each checkpoint's recorded
+artifacts into a fresh temporary project; it never grades an earlier stage against the
+live final workspace. Judges receive the final pair and both earlier histories. Grades
+are collected only after generation and are never fed back into later solver requests.
+These are repeated maintenance probes, not a claim of long-term production maintainability.

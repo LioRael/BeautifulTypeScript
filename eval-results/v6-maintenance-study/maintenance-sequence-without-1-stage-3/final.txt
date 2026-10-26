@@ -1,0 +1,5 @@
+Implemented explicit seat offers, `acceptOffer`, and `declineOffer`. Offers reserve capacity, follow FIFO order, and enter attendance only after acceptance. Pause/reopen behavior, cancellation, normalization, and snapshot ownership remain supported.
+
+Updated documentation and tests; verified the existing portal callers remain consistent.
+
+Validation: typecheck, build, all 18 tests, and `git diff --check` passed. No blockers. npm emitted an existing unknown `home` configuration warning.

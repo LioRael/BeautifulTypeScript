@@ -1,0 +1,45 @@
+{
+  "id": "maintenance-sequence-with-2-stage-1",
+  "case": "maintenance-sequence",
+  "condition": "with",
+  "repeat": 2,
+  "exit_code": 0,
+  "error": null,
+  "elapsed_seconds": 56.961,
+  "usage": {
+    "input_tokens": 131138,
+    "cached_input_tokens": 117760,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2840,
+    "reasoning_output_tokens": 37
+  },
+  "starting_source_hashes": {
+    "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+    "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+    "src/desk.ts": "26751624a04f63932681d49a5bef7511e88997b3af593c68ceb7df5dbb1382d8",
+    "src/model.ts": "68ac98aba724cfdc135f111d69a96e1bfc259d9b629edb31a9b63866430e2fb2",
+    "src/portal.ts": "87da11ae77ca6f6b555637263f0bc1d8d0d821773b1500b4ca0d6d04fd77f1ec",
+    "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+    "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+    "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+  },
+  "ending_source_hashes": {
+    "PROJECT.md": "e0cb5a20a027584ec9b31e07d9c3d7412d779809d55d3fed826e5d443bea8885",
+    "package.json": "b34345cf3ce9be386198596b02715983f2a571845a58eb05d13badd01e5c6000",
+    "src/desk.ts": "a014b0ce4bb551ad32cfd161ab05326120ab51b5ae6a6f2853c5a39a8cd229a2",
+    "src/model.ts": "4b7e66021b33e1d78c4498aea6aad5954cedc13e61a016bd724f93fe64d9683d",
+    "src/portal.ts": "7406ff727f0cbcd80e23e8a8d49ad60d90b800e629ca115752318bc2d4028dcb",
+    "src/store.ts": "ea2aa86937ce50e5955bd4e2ac29681b7860b1749810cbd15f12125f60acbcd1",
+    "tests/baseline.test.mjs": "6d270ed37ada19a01c0881d66be29480ef01f02b377123e3ac59243b0901add7",
+    "tests/waitlist.test.mjs": "8048d5bed9e59119c5654098703a89f22030d8fd0aaccddf2177238c647344ff",
+    "tsconfig.json": "1739951840e6c181e10cc5ca7ce80f476d6149f1074a33954873c434b8686e62"
+  },
+  "stage": 1,
+  "changed_inputs": [
+    "src/model.ts",
+    "src/portal.ts",
+    "src/desk.ts"
+  ],
+  "package_unchanged": true,
+  "tsconfig_unchanged": true
+}

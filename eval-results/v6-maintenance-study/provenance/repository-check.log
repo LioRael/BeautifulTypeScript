@@ -1,0 +1,194 @@
+
+> beautiful-typescript@0.1.0 check
+> npm run check:skills && npm run typecheck && npm run lint && npm run lint:eslint && npm test
+
+
+> beautiful-typescript@0.1.0 check:skills
+> node scripts/check-skills.mjs
+
+4 standalone skills: frontmatter, local reference isolation and linked references passed
+Repository Markdown file links passed (external URLs/anchors not checked)
+
+> beautiful-typescript@0.1.0 typecheck
+> tsc --noEmit && tsc -p configs/tsconfig.browser.json
+
+
+> beautiful-typescript@0.1.0 lint
+> npm run lint:oxlint:typed
+
+
+> beautiful-typescript@0.1.0 lint:oxlint:typed
+> oxlint -c configs/oxlint.typed.json examples/port --max-warnings 0
+
+
+> beautiful-typescript@0.1.0 lint:eslint
+> eslint examples/port/*.ts --max-warnings 0
+
+
+> beautiful-typescript@0.1.0 test
+> npm run build && node --test tests/*.test.mjs
+
+
+> beautiful-typescript@0.1.0 build
+> tsc
+
+TAP version 13
+# Subtest: skill-local evals prepare all paired workspaces without leaking graders
+ok 1 - skill-local evals prepare all paired workspaces without leaking graders
+  ---
+  duration_ms: 2697.863291
+  ...
+# Subtest: standalone install and overwrite protection
+ok 2 - standalone install and overwrite protection
+  ---
+  duration_ms: 750.660792
+  ...
+# Subtest: typed rules fire at expected lines and good counterpart is clean
+ok 3 - typed rules fire at expected lines and good counterpart is clean
+  ---
+  duration_ms: 911.684042
+  ...
+# Subtest: Oxlint syntax recipe reports intended rules and accepts the fix
+ok 4 - Oxlint syntax recipe reports intended rules and accepts the fix
+  ---
+  duration_ms: 275.779417
+  ...
+# Subtest: Oxlint typed recipe reports intended rules and accepts the fix
+ok 5 - Oxlint typed recipe reports intended rules and accepts the fix
+  ---
+  duration_ms: 401.22025
+  ...
+# .
+# ----------------------------------------------------------------------
+# Ran 1 test in 0.001s
+# OK
+# Subtest: empty
+ok 6 - empty
+  ---
+  duration_ms: 0.97225
+  ...
+# Subtest: first-seen
+ok 7 - first-seen
+  ---
+  duration_ms: 0.263541
+  ...
+# Subtest: boolean
+ok 8 - boolean
+  ---
+  duration_ms: 0.109375
+  ...
+# Subtest: null
+ok 9 - null
+  ---
+  duration_ms: 0.050167
+  ...
+# Subtest: missing
+ok 10 - missing
+  ---
+  duration_ms: 0.054041
+  ...
+# Subtest: fraction
+ok 11 - fraction
+  ---
+  duration_ms: 0.048083
+  ...
+# Subtest: numeric-string
+ok 12 - numeric-string
+  ---
+  duration_ms: 0.088125
+  ...
+# Subtest: safe-limit
+ok 13 - safe-limit
+  ---
+  duration_ms: 0.138458
+  ...
+# Subtest: unsafe
+ok 14 - unsafe
+  ---
+  duration_ms: 0.242334
+  ...
+# Subtest: overflow
+ok 15 - overflow
+  ---
+  duration_ms: 0.288875
+  ...
+# Subtest: underflow
+ok 16 - underflow
+  ---
+  duration_ms: 0.120459
+  ...
+# Subtest: validate-before-sum
+ok 17 - validate-before-sum
+  ---
+  duration_ms: 0.048375
+  ...
+# Subtest: source characterization tests
+ok 18 - source characterization tests
+  ---
+  duration_ms: 142.799542
+  ...
+# Subtest: 312 differential cases, seed 20261027
+ok 19 - 312 differential cases, seed 20261027
+  ---
+  duration_ms: 158.58475
+  ...
+# Subtest: does not mutate inputs; returns fresh rows
+ok 20 - does not mutate inputs; returns fresh rows
+  ---
+  duration_ms: 0.338625
+  ...
+# Subtest: rejects target-only nonfinite values
+ok 21 - rejects target-only nonfinite values
+  ---
+  duration_ms: 0.500792
+  ...
+# Subtest: README search refactor preserves the same contract on both sides
+ok 22 - README search refactor preserves the same contract on both sides
+  ---
+  duration_ms: 0.425583
+  ...
+# Subtest: README async fix waits, propagates the original error, and stops later writes
+ok 23 - README async fix waits, propagates the original error, and stops later writes
+  ---
+  duration_ms: 0.509708
+  ...
+# README/skill/reference examples: 64 compiled; 29 executed
+# Subtest: README, skill and reference TypeScript examples compile, including expected type errors
+ok 24 - README, skill and reference TypeScript examples compile, including expected type errors
+  ---
+  duration_ms: 2339.157458
+  ...
+# Subtest: bundled skill patterns typecheck under strict optional/indexed settings
+ok 25 - bundled skill patterns typecheck under strict optional/indexed settings
+  ---
+  duration_ms: 331.933125
+  ...
+# Subtest: boundary example preserves valid empty/zero values and rejects invalid present fields
+ok 26 - boundary example preserves valid empty/zero values and rejects invalid present fields
+  ---
+  duration_ms: 0.394542
+  ...
+# Subtest: sequential example waits and stops later side effects after rejection
+ok 27 - sequential example waits and stops later side effects after rejection
+  ---
+  duration_ms: 1.4295
+  ...
+# Subtest: strict/indexed/optional checks reject bad types
+ok 28 - strict/indexed/optional checks reject bad types
+  ---
+  duration_ms: 323.188166
+  ...
+# Subtest: good types and built declaration consumer compile
+ok 29 - good types and built declaration consumer compile
+  ---
+  duration_ms: 270.28675
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2775.34525

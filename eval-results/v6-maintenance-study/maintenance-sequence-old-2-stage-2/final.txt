@@ -1,0 +1,5 @@
+Implemented admissions pause/resume with roster `admissionsOpen`, prioritized `ADMISSIONS_CLOSED` errors, and FIFO promotion on reopening. Cancellation remains available while paused. Existing waitlist and attendance behavior is preserved.
+
+Validation: typecheck, build, all 14 tests, and diff whitespace check passed.
+
+No blockers. npm emitted an existing configuration warning about `home`.

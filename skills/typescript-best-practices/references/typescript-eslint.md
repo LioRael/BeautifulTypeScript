@@ -188,3 +188,24 @@ A concrete migration sequence:
 This project tests Oxlint 1.89.0 with oxlint-tsgolint 7.0.2005 (2026-10-27).
 The two explicit async rules match our fixtures; this is not full preset parity.
 Use the project's chosen linter rather than adding a second one automatically.
+
+
+## E9. Lint can reveal escapes; it cannot decide the contract
+
+When a patch becomes green after new any/assertions, suppressions or exclusions, inspect
+the original mismatch. no-unsafe-* rules help find leaked any; no-unsafe-type-assertion and
+no-unnecessary-type-parameters can expose some unsupported promises. Adopt extra rules
+only where the existing engine/version supports them and their noise fits the project.
+Do not enable every strict rule or add a second linter for one hypothetical warning.
+
+The [no-unnecessary-condition limitations](https://typescript-eslint.io/rules/no-unnecessary-condition/#limitations)
+include optimistic indexed access and mutation not tracked by narrowing. A diagnostic is
+not proof that a guard can be removed. Establish the caller/runtime fact first. Conversely,
+a trust boundary does not justify revalidating every internal call. Preserve narrow
+[documented directive exceptions](https://typescript-eslint.io/rules/ban-ts-comment/),
+including negative type tests; do not weaken a whole file or config to silence one problem.
+
+No lint preset proves a migration is complete, identifies every duplicated business rule,
+or establishes that a test exercises the shipped caller. Use the
+[maintenance workflow](maintenance.md) for those decisions. Keep typed Oxlint as the new-setup
+default and existing verified framework checks as described above.

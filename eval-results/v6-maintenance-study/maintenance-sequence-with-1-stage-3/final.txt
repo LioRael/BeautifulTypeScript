@@ -1,0 +1,5 @@
+Implemented explicit seat offers, `acceptOffer`, and `declineOffer`. Offers reserve capacity in FIFO order; attendance includes only confirmed employees. Updated documentation and transition tests.
+
+Validation passed: typecheck, build, all 19 tests, and diff whitespace checks.
+
+Limitation: validation used Node 26.12.1; the project targets Node 22. No remaining implementation blockers.

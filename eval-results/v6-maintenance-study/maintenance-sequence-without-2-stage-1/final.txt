@@ -1,0 +1,5 @@
+Implemented waitlist enrollment, FIFO promotion on confirmed cancellation, and removal of waiting employees. Rosters expose both statuses; attendance includes only confirmed employees. The JSON caller validates optional `waitlist` booleans before mutation and returns the resulting status.
+
+Validation passed: typecheck, build, all 9 tests, and `git diff --check`.
+
+No blockers. npm emitted an existing configuration warning about `home`.

@@ -1,0 +1,84 @@
+{
+  "date": "2026-10-27",
+  "model": {
+    "model": "gpt-6.1-sol",
+    "effort": "low"
+  },
+  "node": "v22.13.0",
+  "trajectory_count": 6,
+  "solver_calls": 18,
+  "conditions": {
+    "without": {
+      "solver_exit_zero": 6,
+      "compiler_passes": 6,
+      "visible_test_passes": 6,
+      "contract_groups_passed": 28,
+      "contract_groups_total": 28,
+      "elapsed_seconds_sum": 411.227,
+      "usage_sum": {
+        "input_tokens": 863866,
+        "cached_input_tokens": 774528,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 20339,
+        "reasoning_output_tokens": 646
+      },
+      "final_nonempty_source_lines": [
+        169,
+        167
+      ]
+    },
+    "old": {
+      "solver_exit_zero": 6,
+      "compiler_passes": 6,
+      "visible_test_passes": 6,
+      "contract_groups_passed": 28,
+      "contract_groups_total": 28,
+      "elapsed_seconds_sum": 423.388,
+      "usage_sum": {
+        "input_tokens": 947997,
+        "cached_input_tokens": 842880,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 20461,
+        "reasoning_output_tokens": 691
+      },
+      "final_nonempty_source_lines": [
+        167,
+        166
+      ]
+    },
+    "with": {
+      "solver_exit_zero": 6,
+      "compiler_passes": 6,
+      "visible_test_passes": 6,
+      "contract_groups_passed": 28,
+      "contract_groups_total": 28,
+      "elapsed_seconds_sum": 441.172,
+      "usage_sum": {
+        "input_tokens": 1042432,
+        "cached_input_tokens": 899712,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 21250,
+        "reasoning_output_tokens": 1080
+      },
+      "final_nonempty_source_lines": [
+        166,
+        170
+      ]
+    }
+  },
+  "blind_reviews": {
+    "1": {
+      "pairs": 4,
+      "ties": 4,
+      "order": "original"
+    },
+    "2": {
+      "pairs": 4,
+      "ties": 4,
+      "order": "reversed"
+    }
+  },
+  "continuity_verified": true,
+  "artifact_hashes_verified": true,
+  "conclusion": "No observed advantage over old or no skill on this three-stage synthetic case."
+}

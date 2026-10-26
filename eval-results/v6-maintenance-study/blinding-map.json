@@ -1,0 +1,34 @@
+{
+  "1/pair-1": {
+    "A": "maintenance-sequence-with-1-stage-3",
+    "B": "maintenance-sequence-without-1-stage-3"
+  },
+  "1/pair-2": {
+    "A": "maintenance-sequence-with-1-stage-3",
+    "B": "maintenance-sequence-old-1-stage-3"
+  },
+  "1/pair-3": {
+    "A": "maintenance-sequence-with-2-stage-3",
+    "B": "maintenance-sequence-without-2-stage-3"
+  },
+  "1/pair-4": {
+    "A": "maintenance-sequence-with-2-stage-3",
+    "B": "maintenance-sequence-old-2-stage-3"
+  },
+  "2/pair-1": {
+    "A": "maintenance-sequence-without-1-stage-3",
+    "B": "maintenance-sequence-with-1-stage-3"
+  },
+  "2/pair-2": {
+    "A": "maintenance-sequence-old-1-stage-3",
+    "B": "maintenance-sequence-with-1-stage-3"
+  },
+  "2/pair-3": {
+    "A": "maintenance-sequence-without-2-stage-3",
+    "B": "maintenance-sequence-with-2-stage-3"
+  },
+  "2/pair-4": {
+    "A": "maintenance-sequence-old-2-stage-3",
+    "B": "maintenance-sequence-with-2-stage-3"
+  }
+}

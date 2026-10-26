@@ -55,6 +55,7 @@ a universal policy here. See the bundled conflict decisions for the remaining ch
 | TS07 | Keep changes small and style contextual | G, A; project policy | Review diff; do not report taste as correctness |
 | TS08 | Measure before making speed claims | Project methodology | Same workload/results, raw samples and limitations |
 | TS09 | Verify actual commands and report gaps | C, L; project methodology | Exit codes, diagnostic fixtures, runtime tests |
+| TS10 | Complete authorized replacements and preserve one policy owner | Project maintenance methodology; TS and typed-lint mechanisms | Trace consumers, retired paths and newly introduced check escapes |
 
 ## Licensing and attribution
 
@@ -63,3 +64,13 @@ summaries and original examples; it does not relicense upstream text, logos or c
 Consult each upstream repository's current license before copying material. No endorsement
 by Google, Microsoft, Airbnb or typescript-eslint is implied. Source review date is not a
 claim that every recommendation tracks the newest tool release.
+
+
+## Agent maintenance evidence (TS10)
+
+[Agent-written TypeScript research](AGENT-TS-RESEARCH.md) separates current empirical
+research, first-party maintainer experience and language/framework mechanisms. Its paper
+findings are not presented as TypeScript prevalence statistics. TS10 is this project's
+maintenance methodology: distinguish additions from replacements, retain one owner per
+policy, and verify both current behavior and authorized retirement. It is implemented
+within each standalone skill; it does not require installing the research document.

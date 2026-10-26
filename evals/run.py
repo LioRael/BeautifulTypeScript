@@ -61,17 +61,33 @@ def skill_snapshot(root=None):
     return {path: digest for path, digest in snapshot(root or ROOT/'skills').items()
             if 'evals' not in Path(path).parts and '__pycache__' not in Path(path).parts}
 
-def prepare_workspace(case, condition, repeat, manifest, work, old_skill_root=None):
+def project_snapshot(workspace):
+    return {str(f.relative_to(workspace)): sha(f) for f in sorted(workspace.rglob('*'))
+            if f.is_file() and not any(p in {'node_modules','supplied-skill','.git','dist','__pycache__'}
+                                      for p in f.relative_to(workspace).parts)}
+
+def checkpoint(workspace, message):
+    # Local fixture commits make git diff meaningful without changing personal config.
+    cmd = ['git','-C',str(workspace),'-c','core.hooksPath=/dev/null',
+           '-c','user.name=Evaluation Fixture','-c','user.email=eval@example.invalid',
+           '-c','commit.gpgsign=false']
+    subprocess.run(cmd+['add','--all'],check=True,capture_output=True)
+    subprocess.run(cmd+['commit','--quiet','--allow-empty','-m',message],check=True,capture_output=True)
+
+def prepare_workspace(case, condition, repeat, manifest, work, old_skill_root=None, suffix=''):
     if condition not in {'without', 'old', 'with'}:
         raise ValueError('Unknown evaluation condition')
     if condition == 'old' and old_skill_root is None:
         raise ValueError('Old condition requires a frozen skill directory')
-    run_id = f'{case}-{condition}-{repeat}'
+    run_id = f'{case}-{condition}-{repeat}'+suffix
     folder = work/run_id
     workspace = folder/'workspace'
     folder.mkdir()
     shutil.copytree(case_directory(case, manifest)/'files', workspace)
     subprocess.run(['git','init','--template=','--quiet',str(workspace)],check=True)
+    (workspace/'.git/info').mkdir(exist_ok=True)
+    (workspace/'.git/info/exclude').write_text('node_modules\nsupplied-skill/\ndist/\n__pycache__/\n')
+    checkpoint(workspace, 'Initial evaluation input')
     (workspace/'node_modules').symlink_to(ROOT/'node_modules',target_is_directory=True)
     if condition in {'with', 'old'}:
         # Skill-local evals include hidden graders and must never enter agent context.
@@ -80,13 +96,20 @@ def prepare_workspace(case, condition, repeat, manifest, work, old_skill_root=No
                         ignore=shutil.ignore_patterns('evals', '__pycache__'))
     return folder, workspace
 
-def run_one(case, condition, repeat, manifest, work, public, disable_config, settings=None, old_skill_root=None):
-    run_id = f'{case}-{condition}-{repeat}'
-    folder, workspace = prepare_workspace(case, condition, repeat, manifest, work, old_skill_root)
+def run_one(case, condition, repeat, manifest, work, public, disable_config, settings=None, old_skill_root=None, stage=None, workspace=None, task_override=None):
+    suffix = f"-stage-{stage['id']}" if stage else ''
+    run_id = f'{case}-{condition}-{repeat}'+suffix
+    if workspace is None:
+        folder, workspace = prepare_workspace(case, condition, repeat, manifest, work, old_skill_root, suffix)
+    else:
+        folder = work/run_id; folder.mkdir()
+    starting_hashes = project_snapshot(workspace)
     common=('Work only in this workspace. Read PROJECT.md and the task files. Do not inspect parent/home directories, other skills, evaluation rubrics, or other runs. '
             'Do not use network, install packages, delegate, publish, or change global settings. node_modules is preinstalled; use it only to run project tooling. '
             'You have at most 8 minutes. Complete the requested work and report actual evidence, including blockers.\n')
-    task=(case_directory(case, manifest)/'prompt.md').read_text()
+    directory=case_directory(case, manifest)
+    descriptor=json.loads((directory/'case.json').read_text())
+    task=task_override if task_override is not None else (directory/descriptor['prompt']).read_text()
     prompt=common+('Read and apply supplied-skill/SKILL.md and only its relevant bundled references.\n' if condition in {'with', 'old'} else '')+task
     (folder/'prompt.txt').write_text(prompt)
     started=time.time(); error=None
@@ -98,6 +121,9 @@ def run_one(case, condition, repeat, manifest, work, public, disable_config, set
         except subprocess.TimeoutExpired:
             exit_code=None;error='timeout'
     record={'id':run_id,'case':case,'condition':condition,'repeat':repeat,'exit_code':exit_code,'error':error,'elapsed_seconds':round(time.time()-started,3),'usage':None}
+    record['starting_source_hashes']=starting_hashes
+    record['ending_source_hashes']=project_snapshot(workspace)
+    if stage: record['stage']=stage['id']
     dest=public/run_id;dest.mkdir()
     events=[]
     for line in (folder/'raw-events.jsonl').read_text().splitlines():
@@ -131,10 +157,32 @@ def run_one(case, condition, repeat, manifest, work, public, disable_config, set
     print(run_id,exit_code,record['elapsed_seconds'],flush=True)
     return record
 
+def run_trajectory(case, condition, repeat, manifest, work, public, disable_config, settings=None, old_skill_root=None):
+    directory = case_directory(case, manifest)
+    descriptor = json.loads((directory/'case.json').read_text())
+    if not descriptor.get('stages'):
+        return [run_one(case,condition,repeat,manifest,work,public,disable_config,settings,old_skill_root)]
+    records=[]; history=[]; workspace=None
+    for stage in descriptor['stages']:
+        current=(directory/stage['prompt']).read_text()
+        task=('Continue this private application from its current code. Earlier requests below remain in effect '
+              'except where the current request explicitly replaces them. No future request is available.\n'
+              + ''.join(f'\nEarlier request {number}:\n{text}\n' for number,text in history)
+              + f"\nCurrent request {stage['id']}:\n"+current)
+        record=run_one(case,condition,repeat,manifest,work,public,disable_config,settings,old_skill_root,
+                       stage,workspace,task)
+        if workspace is None: workspace=work/record['id']/'workspace'
+        checkpoint(workspace, f"Completed evaluation checkpoint {stage['id']}")
+        records.append(record);history.append((stage['id'],current))
+    for before,after in zip(records,records[1:]):
+        assert before['ending_source_hashes']==after['starting_source_hashes'],'Checkpoint state was reset or contaminated'
+    return records
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--work',required=True);parser.add_argument('--output',required=True);parser.add_argument('--workers',type=int,default=2);parser.add_argument('--cases',nargs='*');parser.add_argument('--rubric',default=None)
     parser.add_argument('--old-skill-root', help='Directory containing frozen skill folders for a third condition')
     parser.add_argument('--old-skill-label', help='Public provenance, e.g. a commit SHA; required with --old-skill-root')
+    parser.add_argument('--sequence',action='store_true',help='Run sequential cases, preserving each trajectory across requests')
     parser.add_argument('--model');parser.add_argument('--effort');parser.add_argument('--repetitions',type=int)
     args=parser.parse_args();work=Path(args.work).resolve();public=Path(args.output).resolve()
     old_skill_root = Path(args.old_skill_root).resolve() if args.old_skill_root else None
@@ -149,9 +197,12 @@ def main():
     if args.repetitions is not None:
         if args.repetitions < 1: raise SystemExit('Repetitions must be positive')
         manifest['repetitions']=args.repetitions
-    manifest['selected_cases']=args.cases or list(manifest['cases'])
+    manifest['sequence']=args.sequence
+    manifest['selected_cases']=args.cases or [case for case in manifest['cases']
+        if bool(json.loads((case_directory(case,manifest)/'case.json').read_text()).get('stages'))==args.sequence]
     for case in manifest['selected_cases']:
-        case_directory(case, manifest)
+        descriptor=json.loads((case_directory(case,manifest)/'case.json').read_text())
+        if bool(descriptor.get('stages')) != args.sequence: raise SystemExit('Use --sequence only for sequential cases')
         if old_skill_root is not None and not (old_skill_root/manifest['cases'][case]/'SKILL.md').is_file():
             raise SystemExit('Frozen skill missing for '+case)
     if old_skill_root is not None:
@@ -166,12 +217,12 @@ def main():
     (public/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     jobs=[]
     for repeat in range(1,manifest['repetitions']+1):
-        for case in (args.cases or list(manifest['cases'])):
+        for case in manifest['selected_cases']:
             for condition in (manifest['order'] if repeat%2 else list(reversed(manifest['order']))): jobs.append((case,condition,repeat))
     config=disabled_skills()
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as pool:
-        futures=[pool.submit(run_one,*job,manifest,work,public,config,settings,old_skill_root) for job in jobs]
-        records=[future.result() for future in concurrent.futures.as_completed(futures)]
+        futures=[pool.submit(run_trajectory,*job,manifest,work,public,config,settings,old_skill_root) for job in jobs]
+        records=[record for future in concurrent.futures.as_completed(futures) for record in future.result()]
     (public/'runs.json').write_text(json.dumps(sorted(records,key=lambda r:r['id']),indent=2)+'\n')
     if old_skill_root is not None:
         assert skill_snapshot(old_skill_root)==manifest['old_skill_hashes'],'Old skills changed during evaluation'

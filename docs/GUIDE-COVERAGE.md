@@ -72,3 +72,13 @@ contains six choices illustrated in seven compilable TS blocks, five with execut
 contract probes. These are original project guidance, not additional claims about the
 upstream guides. The full documentation check now compiles 58 blocks and executes 23.
 Content checks establish runnable examples, not model-quality gains.
+
+
+## Maintenance across changes (2026-10-27)
+
+TS10 adds project-specific decisions for replacement ownership and check integrity. It
+is based on the [evidence review](AGENT-TS-RESEARCH.md), with Python benchmark findings
+explicitly separated from TS language/tool mechanisms. Writing has a bundled maintenance
+reference; review, port and verify each carry their own concrete guidance and keep standalone
+installation. The source-guide summaries remain available. There are now 64 compiled TS
+blocks and 29 executable documentation examples; those checks do not prove agent efficacy.

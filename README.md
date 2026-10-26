@@ -22,19 +22,22 @@ The writing workflow starts from callers and existing policies, implements the c
 then checks the diff for repeated decisions, unnecessary state and unsupported machinery.
 [Six worked simplification examples](skills/typescript-best-practices/references/simplification.md)
 show both what to remove and which validation, errors and ownership guarantees to keep.
+For changes that replace earlier behavior, the [maintenance workflow](skills/typescript-best-practices/references/maintenance.md)
+traces current callers, shared policy, retired paths and newly introduced type/check escapes.
+The [research note](docs/AGENT-TS-RESEARCH.md) explains the evidence and its limits.
 
 ## Measured effect
 
-A [three-condition revision study](docs/REVISION-STUDY.md) compared no skill, the old
-writing skill and the revised workflow on two new tasks, with 12 runs total. All three
-passed 24/24 frozen behavior-check groups on Node 22. Both anonymous review orders tied
-all four revised-versus-old pairs. One no-skill output failed a supplementary large-array
-check; both old and revised skill outputs passed it. **A stable advantage for the revision
-was not demonstrated.**
+A [sequential maintenance study](docs/MAINTENANCE-STUDY.md) compared no skill, the old
+writing skill and the revised workflow across three changing requirements. Six trajectories
+kept their own previous code, producing 18 model calls. All three conditions passed 28/28
+frozen behavior-check groups on Node 22. Both anonymous review orders tied all four
+comparisons. **An advantage for the revision was not demonstrated.**
 
-The [earlier three-task study](docs/EFFECT-STUDY.md) also reported no stable advantage.
-Reports retain original code, checks and judging disagreements. The examples below are
-teaching illustrations, not claimed measured improvements.
+The [earlier revision study](docs/REVISION-STUDY.md) and
+[three-task study](docs/EFFECT-STUDY.md) also reported no stable advantage.
+Reports retain original code, checks, intermediate failures and judging disagreements.
+The examples below are teaching illustrations, not claimed measured improvements.
 
 ## Illustrative patterns
 

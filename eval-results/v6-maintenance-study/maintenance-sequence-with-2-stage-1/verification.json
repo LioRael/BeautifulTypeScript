@@ -1,0 +1,48 @@
+{
+  "runtime": {
+    "node": "v22.13.0"
+  },
+  "compiler": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "snapshot_restored": true,
+  "hidden_process": {
+    "exit_code": 0,
+    "stdout": "[\n  {\n    \"id\": \"opt_in_and_default\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"fifo_cancellation\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"portal_and_attendance\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"identity_errors_and_isolation\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"snapshot_ownership\",\n    \"pass\": true\n  }\n]\n",
+    "stderr": ""
+  },
+  "contract_groups": [
+    {
+      "id": "opt_in_and_default",
+      "pass": true
+    },
+    {
+      "id": "fifo_cancellation",
+      "pass": true
+    },
+    {
+      "id": "portal_and_attendance",
+      "pass": true
+    },
+    {
+      "id": "identity_errors_and_isolation",
+      "pass": true
+    },
+    {
+      "id": "snapshot_ownership",
+      "pass": true
+    }
+  ],
+  "visible_tests": {
+    "exit_code": 0,
+    "stdout": "\n> test\n> npm run build && node --test tests/*.test.mjs\n\n\n> build\n> tsc\n\nTAP version 13\n# Subtest: portal validates unknown data and normalizes directory identity\nok 1 - portal validates unknown data and normalizes directory identity\n  ---\n  duration_ms: 0.890459\n  ...\n# Subtest: capacity and cancellation preserve atomic failures\nok 2 - capacity and cancellation preserve atomic failures\n  ---\n  duration_ms: 0.254333\n  ...\n# Subtest: snapshots and seeds have independent ownership\nok 3 - snapshots and seeds have independent ownership\n  ---\n  duration_ms: 0.073\n  ...\n# Subtest: configuration and domain errors\nok 4 - configuration and domain errors\n  ---\n  duration_ms: 0.084833\n  ...\n# Subtest: opt-in confirms free seats, queues full sessions and promotes in join order\nok 5 - opt-in confirms free seats, queues full sessions and promotes in join order\n  ---\n  duration_ms: 1.153583\n  ...\n# Subtest: waiting cancellation removes only that employee and rejoining goes to the end\nok 6 - waiting cancellation removes only that employee and rejoining goes to the end\n  ---\n  duration_ms: 0.151083\n  ...\n# Subtest: duplicates and failures preserve the queue and domain error precedence\nok 7 - duplicates and failures preserve the queue and domain error precedence\n  ---\n  duration_ms: 0.205792\n  ...\n# Subtest: portal validates optional waitlist before enrollment and returns actual status\nok 8 - portal validates optional waitlist before enrollment and returns actual status\n  ---\n  duration_ms: 0.27\n  ...\n# Subtest: waitlist entries, snapshots, exports and desk instances keep independent ownership\nok 9 - waitlist entries, snapshots, exports and desk instances keep independent ownership\n  ---\n  duration_ms: 0.127416\n  ...\n1..9\n# tests 9\n# suites 0\n# pass 9\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 67.134917\n",
+    "stderr": ""
+  },
+  "source_metrics": {
+    "files": 4,
+    "nonempty_lines": 126,
+    "note": "Descriptive only; not a beauty score."
+  }
+}

@@ -66,8 +66,15 @@ Do not claim a passing typecheck establishes runtime safety or public-package us
 - Check host-specific globals/imports and accidental use of unsupported runtime features.
 - Distinguish a framework-required convention from a generic style preference.
 
-### Maintainability, tests and performance (TS07, TS08)
+### Maintainability, tests and performance (TS07, TS08, TS10)
 
+- Trace an added path against the behavior it replaces. Check affected callers, duplicate
+  policy, old flags/exports and extra state; distinguish a supported compatibility route
+  from an obsolete internal path. Show a divergence or actual next-change burden before
+  reporting debt. A wrapper, long file or repeated-looking expression alone is not a finding.
+- Inspect new any/assertions/suppressions, config exclusions and changed test expectations.
+  Trace whether they establish the contract or conceal a mismatch. Preserve justified
+  interop and negative type tests; do not mechanically ban every escape.
 - Identify abstractions or unsafe types that conceal a concrete invariant or caller burden.
 - Check that tests observe behavior, exercise important failure paths and actually run.
 - Require equal workloads/results for a performance claim. Do not infer a bottleneck

@@ -1,0 +1,7 @@
+Implemented explicit seat offers with `acceptOffer` and `declineOffer`. Offers reserve capacity; attendance includes employees only after confirmation. FIFO order, admissions pauses, errors, and snapshot ownership remain supported.
+
+Updated documentation and tests.
+
+Validation passed: typecheck, build, all 19 tests, and `git diff --check`.
+
+No blockers. npm emitted an existing configuration warning about `home`.

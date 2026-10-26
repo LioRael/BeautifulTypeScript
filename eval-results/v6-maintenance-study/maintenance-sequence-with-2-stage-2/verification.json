@@ -1,0 +1,44 @@
+{
+  "runtime": {
+    "node": "v22.13.0"
+  },
+  "compiler": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "snapshot_restored": true,
+  "hidden_process": {
+    "exit_code": 0,
+    "stdout": "[\n  {\n    \"id\": \"pause_boundary_and_precedence\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"paused_cancellation_and_fifo_reopen\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"isolation_and_roster_ownership\",\n    \"pass\": true\n  },\n  {\n    \"id\": \"open_waitlist_and_current_callers\",\n    \"pass\": true\n  }\n]\n",
+    "stderr": ""
+  },
+  "contract_groups": [
+    {
+      "id": "pause_boundary_and_precedence",
+      "pass": true
+    },
+    {
+      "id": "paused_cancellation_and_fifo_reopen",
+      "pass": true
+    },
+    {
+      "id": "isolation_and_roster_ownership",
+      "pass": true
+    },
+    {
+      "id": "open_waitlist_and_current_callers",
+      "pass": true
+    }
+  ],
+  "visible_tests": {
+    "exit_code": 0,
+    "stdout": "\n> test\n> npm run build && node --test tests/*.test.mjs\n\n\n> build\n> tsc\n\nTAP version 13\n# Subtest: admissions start open; closure takes precedence and failures preserve state\nok 1 - admissions start open; closure takes precedence and failures preserve state\n  ---\n  duration_ms: 1.248209\n  ...\n# Subtest: paused cancellation preserves FIFO; reopening fills every seat before arrivals\nok 2 - paused cancellation preserves FIFO; reopening fills every seat before arrivals\n  ---\n  duration_ms: 0.369417\n  ...\n# Subtest: reopening a short queue leaves remaining seats available with normal rules\nok 3 - reopening a short queue leaves remaining seats available with normal rules\n  ---\n  duration_ms: 0.150417\n  ...\n# Subtest: portal translates admissions errors while retaining JSON boundary validation\nok 4 - portal translates admissions errors while retaining JSON boundary validation\n  ---\n  duration_ms: 0.118375\n  ...\n# Subtest: portal validates unknown data and normalizes directory identity\nok 5 - portal validates unknown data and normalizes directory identity\n  ---\n  duration_ms: 0.777792\n  ...\n# Subtest: capacity and cancellation preserve atomic failures\nok 6 - capacity and cancellation preserve atomic failures\n  ---\n  duration_ms: 0.254292\n  ...\n# Subtest: snapshots and seeds have independent ownership\nok 7 - snapshots and seeds have independent ownership\n  ---\n  duration_ms: 0.07125\n  ...\n# Subtest: configuration and domain errors\nok 8 - configuration and domain errors\n  ---\n  duration_ms: 0.08975\n  ...\n# Subtest: opt-in confirms free seats, queues full sessions and promotes in join order\nok 9 - opt-in confirms free seats, queues full sessions and promotes in join order\n  ---\n  duration_ms: 1.270334\n  ...\n# Subtest: waiting cancellation removes only that employee and rejoining goes to the end\nok 10 - waiting cancellation removes only that employee and rejoining goes to the end\n  ---\n  duration_ms: 0.166084\n  ...\n# Subtest: duplicates and failures preserve the queue and domain error precedence\nok 11 - duplicates and failures preserve the queue and domain error precedence\n  ---\n  duration_ms: 0.220041\n  ...\n# Subtest: portal validates optional waitlist before enrollment and returns actual status\nok 12 - portal validates optional waitlist before enrollment and returns actual status\n  ---\n  duration_ms: 0.291291\n  ...\n# Subtest: waitlist entries, snapshots, exports and desk instances keep independent ownership\nok 13 - waitlist entries, snapshots, exports and desk instances keep independent ownership\n  ---\n  duration_ms: 0.1495\n  ...\n1..13\n# tests 13\n# suites 0\n# pass 13\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 68.561625\n",
+    "stderr": ""
+  },
+  "source_metrics": {
+    "files": 4,
+    "nonempty_lines": 148,
+    "note": "Descriptive only; not a beauty score."
+  }
+}

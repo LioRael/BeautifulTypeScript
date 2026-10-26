@@ -29,6 +29,7 @@ These are project identifiers, not upstream rule numbers.
 | TS05 | Align modules/types with deployment | Compiler configuration |
 | TS06 | Preserve port behavior | Project methodology: characterization and differential evidence |
 | TS07 | Keep style contextual and changes proportionate | Google; Airbnb |
+| TS10 | Complete replacements, keep one policy owner, and audit type/check escapes | Project maintenance methodology; TypeScript and typed-lint mechanisms |
 | TS08 | Measure equivalent workloads before performance claims | Project methodology |
 | TS09 | Report executed checks and their limits | Project methodology informed by compiler/lint docs |
 
