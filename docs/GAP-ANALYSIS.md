@@ -43,3 +43,19 @@ across all six digests, plus worked review/port/verify cases. See [coverage](GUI
 for exactly what is represented and what is deferred. It does not claim exhaustive coverage
 of every Handbook page, lint rule or organizational formatting subrule. The old model runs
 are historical evidence and do not evaluate this expanded reference text.
+
+## Follow-up: ownership and usable entrypoints
+
+BeautifulRust stores cases under the owning skill and includes language mapping tables
+in rust-port and concrete findings/report structure in rust-review. It has no independent
+rust-verify skill. Our root-only case layout and more abstract entrypoints did not match
+those choices. Cases now live in skills/<name>/evals/<case>/; only shared runner/grader
+machinery and historical rubrics remain at root. Agent workspace preparation excludes the
+skill's evals tree to avoid exposing grading material.
+
+Port now includes source-language and host mappings, a checked parser and concrete delivery
+notes in its entrypoint. Review includes trigger/remedy pairs, a reproduced zero-default
+case and an awaited-loop finding/fix. Verify includes commands, a checked rejection probe
+and a concrete readiness table. References provide deeper cases and attribution; following
+a link is not required to obtain the core procedure. This is a content/layout correction,
+not evidence of measured agent superiority or exact parity with BeautifulRust.

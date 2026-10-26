@@ -24,3 +24,8 @@ port a numeric-key Python map; verify a browser app without claiming a Node-only
 The [paired evaluation harness](evals/README.md) provides frozen task inputs, a rubric
 and fresh-process execution. Use a new output directory for every evaluation; keep failures
 and score evidence. Do not change skills or task inputs midway through a measured run.
+
+Keep a new evaluation under the owning skill's evals/<case>/ with case.json, prompt.md,
+files/ and graders/rubric.md; register its path in evals/cases.json. Never supply evals/
+to an evaluated agent as part of skill content. Run npm run check to verify packaging,
+case ownership, grader isolation and code examples in entrypoints and references.

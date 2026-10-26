@@ -189,7 +189,21 @@ Review, port and verify carry their own focused evidence/checklist references an
 source links. They do not depend on the writing skill being installed. [Optional configs](configs/README.md) use a tested toolchain;
 existing framework and workspace settings take precedence.
 
-Layout: skills/ contains installable folders; configs/ contains optional recipes;
+## Evaluation cases belong to their skills
+
+Each skill bundles its own task, starting project and grading criteria:
+
+- [Writing: settings boundary](skills/typescript-best-practices/evals/settings-boundary/case.json)
+- [Review: queue contract](skills/typescript-review/evals/queue-contract/case.json)
+- [Port: Python ledger](skills/typescript-port/evals/python-ledger/case.json)
+- [Verify: Node ESM release](skills/typescript-verify/evals/node-esm-release/case.json)
+
+The shared runner stays in evals/ and recorded outputs stay in eval-results/. It deliberately
+excludes skill-local evals/ from the evaluated agent's supplied skill, so the grader stays
+hidden. See the [evaluation instructions](evals/README.md). These cases are maintainer
+materials, not additional instructions to load during ordinary user work.
+
+Layout: skills/ contains installable folders and their evals; configs/ contains optional recipes;
 examples/port/ is the executable migration; fixtures/ and tests/ exercise diagnostics and
 behavior; scripts/ handles installation, packaging checks and measurement; docs/ records
 evidence. [Research provenance](docs/UPSTREAM.md), [contributing](CONTRIBUTING.md),

@@ -67,6 +67,45 @@ Exercise bad boundary data, failure and cleanup paths relevant to the change. Fo
 code, check observable completion/rejection/order rather than merely awaiting a happy path.
 Do not introduce network-dependent probes when deterministic local substitutes suffice.
 
+### Concrete Node package verification
+
+After inspecting scripts and selecting the affected package, run the project's actual
+commands and retain each result. The following is illustrative; use its package manager,
+script names and public entry instead of assuming every project has this layout:
+
+```sh
+npm run typecheck
+npm run lint
+npm test
+npm run build
+node --input-type=module -e "await import('./dist/index.js')"
+```
+
+A failing public import is not repaired by successfully importing an internal file.
+For declaration changes, create a temporary consumer outside source aliases, import the
+package's emitted API and check an accepted call plus an expected-invalid call. For an
+application, use its real production build and host smoke path instead of a library test.
+
+### Completion is a runtime property
+
+```ts
+// @example-run
+async function writeAll<T>(items: readonly T[], write: (item: T) => Promise<void>): Promise<void> {
+  for (const item of items) await write(item);
+}
+const started: number[] = [];
+const failure = new Error('write failed');
+let observed: unknown;
+try {
+  await writeAll([1, 2], async item => { started.push(item); throw failure; });
+} catch (error) { observed = error; }
+if (observed !== failure || started.join(',') !== '1') throw new Error('Failure contract broken');
+```
+
+Adapt the probe to the actual function. A happy-path await cannot establish stop-on-failure;
+controlled pending operations are also needed to establish that later work does not start
+early. Don't replace a concurrent API with this sequential illustration to make a test pass.
+
 ## 5. Classify failures without hiding them
 
 Use a baseline where practical to distinguish introduced, pre-existing and unknown
@@ -94,9 +133,27 @@ Do not claim security, correctness, cross-runtime support or agent effectiveness
 these observations. If asked to benchmark, verify equal results, retain raw samples and
 state workload/machine limitations (TS08). Performance timing does not measure skill quality.
 
+### Example readiness decision
+
+| Executed check | Observation | Meaning |
+|---|---|---|
+| Typecheck | Exit 0 under Bundler resolution | Static check passed; native Node loading still unproven |
+| Lint | Exit 0, zero files | Empty coverage, not lint evidence |
+| Tests | Exit 0, zero tests | No behavioral coverage |
+| Build | Fresh JS/declarations emitted | Build passed |
+| Public Node import | ERR_MODULE_NOT_FOUND for extensionless `./core` | Runtime blocker |
+
+**Decision for this example:** not ready for native Node. Propose correcting the emitted
+relative import and adding meaningful lint/tests; don't apply fixes in a verification-only
+task. Browser/Bun/Deno remain unverified. Replace every row with actual observed results
+when writing the real report; successful script exits alone don't establish readiness.
+
 ## Reference
 
 Read [verification matrix](references/verification-matrix.md) to select checks by change
 and diagnose misleading green results. It explains the rule IDs used here and links to
 compiler, declaration and lint documentation. This skill is usable alone; preserve the
 repository's framework, scripts and locked versions.
+
+The `evals/` directory contains maintainer evaluation cases and graders. It is not
+additional task guidance; do not read it while applying this skill to a user project.

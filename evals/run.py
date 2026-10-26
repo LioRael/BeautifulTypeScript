@@ -6,7 +6,6 @@ import argparse
 import concurrent.futures
 import hashlib
 import json
-import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -39,19 +38,46 @@ def command(workspace, final, disable_config):
 def sanitize(text, workspace):
     return text.replace(str(workspace), '<workspace>').replace(str(ROOT), '<repository>').replace(str(Path.home()), '<home>')
 
-def run_one(case, condition, repeat, manifest, work, public, disable_config):
+def case_directory(case, manifest):
+    directory = (ROOT/manifest['case_paths'][case]).resolve()
+    owner = (ROOT/'skills'/manifest['cases'][case]/'evals').resolve()
+    directory.relative_to(owner)
+    spec = json.loads((directory/'case.json').read_text())
+    if spec['id'] != case or spec['skill'] != manifest['cases'][case]:
+        raise ValueError('Case index disagrees with skill-local descriptor')
+    return directory
+
+def case_snapshot(manifest):
+    return {str(f.relative_to(ROOT)): sha(f)
+            for case in manifest['cases']
+            for f in sorted(case_directory(case, manifest).rglob('*'))
+            if f.is_file() and '__pycache__' not in f.parts}
+
+def skill_snapshot():
+    return {path: digest for path, digest in snapshot(ROOT/'skills').items()
+            if 'evals' not in Path(path).parts and '__pycache__' not in Path(path).parts}
+
+def prepare_workspace(case, condition, repeat, manifest, work):
     run_id = f'{case}-{condition}-{repeat}'
-    folder=work/run_id; workspace=folder/'workspace'; folder.mkdir()
-    shutil.copytree(ROOT/'evals/cases'/case/'input',workspace)
-    # Keep Git inspection inside the task rather than discovering an ancestor repository.
+    folder = work/run_id
+    workspace = folder/'workspace'
+    folder.mkdir()
+    shutil.copytree(case_directory(case, manifest)/'files', workspace)
     subprocess.run(['git','init','--template=','--quiet',str(workspace)],check=True)
     (workspace/'node_modules').symlink_to(ROOT/'node_modules',target_is_directory=True)
-    skill=manifest['cases'][case]
-    if condition=='with': shutil.copytree(ROOT/'skills'/skill,workspace/'supplied-skill')
+    if condition == 'with':
+        # Skill-local evals include hidden graders and must never enter agent context.
+        shutil.copytree(ROOT/'skills'/manifest['cases'][case], workspace/'supplied-skill',
+                        ignore=shutil.ignore_patterns('evals', '__pycache__'))
+    return folder, workspace
+
+def run_one(case, condition, repeat, manifest, work, public, disable_config):
+    run_id = f'{case}-{condition}-{repeat}'
+    folder, workspace = prepare_workspace(case, condition, repeat, manifest, work)
     common=('Work only in this workspace. Read PROJECT.md and the task files. Do not inspect parent/home directories, other skills, evaluation rubrics, or other runs. '
             'Do not use network, install packages, delegate, publish, or change global settings. node_modules is preinstalled; use it only to run project tooling. '
             'You have at most 8 minutes. Complete the requested work and report actual evidence, including blockers.\n')
-    task=(ROOT/'evals/cases'/case/'task.md').read_text()
+    task=(case_directory(case, manifest)/'prompt.md').read_text()
     prompt=common+('Read and apply supplied-skill/SKILL.md and only its relevant bundled references.\n' if condition=='with' else '')+task
     (folder/'prompt.txt').write_text(prompt)
     started=time.time(); error=None
@@ -83,10 +109,10 @@ def run_one(case, condition, repeat, manifest, work, public, disable_config):
             target=artifacts/rel;target.parent.mkdir(parents=True,exist_ok=True)
             try: target.write_text(sanitize(f.read_text(),workspace))
             except UnicodeError: pass
-    original=ROOT/'evals/cases'/case/'input'
+    original=case_directory(case, manifest)/'files'
     record['changed_inputs']=[str(f.relative_to(original)) for f in original.rglob('*') if f.is_file() and (not (workspace/f.relative_to(original)).exists() or sha(f)!=sha(workspace/f.relative_to(original)))]
-    record['package_unchanged']=sha(original/'package.json')==sha(workspace/'package.json')
-    record['tsconfig_unchanged']=sha(original/'tsconfig.json')==sha(workspace/'tsconfig.json')
+    record['package_unchanged']=(workspace/'package.json').is_file() and sha(original/'package.json')==sha(workspace/'package.json')
+    record['tsconfig_unchanged']=(workspace/'tsconfig.json').is_file() and sha(original/'tsconfig.json')==sha(workspace/'tsconfig.json')
     if case in {'write','port'}:
         result=subprocess.run(['node',str(ROOT/'evals/grade-runtime.mjs'),case,str(workspace)],cwd=ROOT,text=True,capture_output=True,timeout=60)
         try: record['runtime_scores']=json.loads(sanitize(result.stdout,workspace))
@@ -96,14 +122,16 @@ def run_one(case, condition, repeat, manifest, work, public, disable_config):
     return record
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--work',required=True);parser.add_argument('--output',required=True);parser.add_argument('--workers',type=int,default=2);parser.add_argument('--cases',nargs='*');parser.add_argument('--rubric',default='evals/RUBRIC.md')
+    parser=argparse.ArgumentParser();parser.add_argument('--work',required=True);parser.add_argument('--output',required=True);parser.add_argument('--workers',type=int,default=2);parser.add_argument('--cases',nargs='*');parser.add_argument('--rubric',default=None)
     args=parser.parse_args();work=Path(args.work).resolve();public=Path(args.output).resolve()
     if work.exists() or public.exists(): raise SystemExit('Refusing to overwrite an evaluation. Choose fresh directories.')
     if not (ROOT/'node_modules/typescript').exists(): raise SystemExit('Run npm ci first.')
     work.mkdir(parents=True);public.mkdir(parents=True)
     manifest=json.loads((ROOT/'evals/cases.json').read_text());manifest['tool_version']=subprocess.check_output(['codex','--version'],text=True).strip()
-    manifest['model_selection']='CLI default with --ignore-user-config; preflight banner: gpt-6.1-sol, reasoning effort none'
-    manifest['skill_hashes']=snapshot(ROOT/'skills');manifest['case_hashes']=snapshot(ROOT/'evals/cases');manifest['rubric_sha256']=sha(ROOT/args.rubric);manifest['runner_sha256']=sha(Path(__file__));manifest['grader_sha256']=sha(ROOT/'evals/grade-runtime.mjs')
+    manifest['model_selection']='CLI default with --ignore-user-config; capture the current banner before interpreting results'
+    manifest['skill_hashes']=skill_snapshot();manifest['case_hashes']=case_snapshot(manifest)
+    manifest['rubric_hashes']={case: sha(ROOT/args.rubric if args.rubric else case_directory(case, manifest)/'graders/rubric.md') for case in manifest['cases']}
+    manifest['runner_sha256']=sha(Path(__file__));manifest['grader_sha256']=sha(ROOT/'evals/grade-runtime.mjs')
     manifest['rubric_path']=args.rubric
     manifest['started_utc']=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime());manifest['workers']=args.workers
     (public/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
@@ -116,7 +144,8 @@ def main():
         futures=[pool.submit(run_one,*job,manifest,work,public,config) for job in jobs]
         records=[future.result() for future in concurrent.futures.as_completed(futures)]
     (public/'runs.json').write_text(json.dumps(sorted(records,key=lambda r:r['id']),indent=2)+'\n')
-    assert snapshot(ROOT/'skills')==manifest['skill_hashes'],'Skills changed during evaluation'
-    assert snapshot(ROOT/'evals/cases')==manifest['case_hashes'],'Tasks changed during evaluation'
+    assert skill_snapshot()==manifest['skill_hashes'],'Skills changed during evaluation'
+    assert case_snapshot(manifest)==manifest['case_hashes'],'Tasks changed during evaluation'
+    assert {case: sha(ROOT/args.rubric if args.rubric else case_directory(case, manifest)/'graders/rubric.md') for case in manifest['cases']}==manifest['rubric_hashes'],'Rubric changed during evaluation'
 
 if __name__=='__main__': main()

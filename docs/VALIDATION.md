@@ -120,3 +120,20 @@ or parity with BeautifulRust. See GUIDE-COVERAGE.md for exact scope.
 Final local check: **24/24 tests passed**. All four skill format checks passed. A fresh
 skills 1.7.4 install for Codex and Claude Code preserved all 16 skill files byte-for-byte,
 including the expanded references. No global installation was changed.
+
+## Skill-local evaluations and concrete entrypoints
+
+All four cases moved under their owning skills with prompt, starting files, metadata and
+grading criteria. The shared runner reads the new index; historical results/rubrics are
+unchanged. Workspace-preparation tests exercise both conditions for all four cases and
+verify input integrity, skill content and exclusion of every skill-local evals directory.
+Installation tests now recursively verify the complete skill, including its evaluation.
+
+The example check now covers SKILL.md as well as references: **47 TS blocks compile and
+18 execute**. The full suite passes **25/25 tests**. These deterministic checks validate
+layout/content; no new model-quality evaluation is claimed for this revision.
+
+Fresh skills 1.7.4 installation for Codex/Claude Code preserved all **56 files**, including
+each local evaluation case. Four format checks passed. A simulated-transport runner test
+also confirmed that a successful process exit retains failed runtime-grader results; it
+does not call a model or claim task success.

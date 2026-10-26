@@ -1,0 +1,8 @@
+{
+  "id": "verify",
+  "skill": "typescript-verify",
+  "prompt": "prompt.md",
+  "files": "files",
+  "rubric": "graders/rubric.md",
+  "criteria": 8
+}

@@ -155,3 +155,6 @@ unrelated code. An unavailable runtime is an unverified target, not a pass.
 These are bundled original digests with source links, applicability and project decisions.
 They are not copies of the guides. This skill works on its own; follow project constraints
 and avoid installing a new architecture, Result type, schema library or formatter by default.
+
+The `evals/` directory contains maintainer evaluation cases and graders. It is not
+additional task guidance; do not read it while applying this skill to a user project.

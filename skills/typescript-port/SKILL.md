@@ -74,6 +74,56 @@ For parsers, verify full-string acceptance, whitespace, signs, Unicode, trailing
 terminators and numeric overflow against source behavior. Similar-looking regular
 expressions or standard-library functions can accept different inputs across languages.
 
+### Source-language decisions to make explicitly
+
+| Source construct | TypeScript starting point | Required compatibility check |
+|---|---|---|
+| Python unbounded int | bigint internally, decimal string on JSON boundaries when needed | Wide values and serialization; never round through Number first |
+| Python dict / sorted | Map for insertion order; numeric comparator for sorting | Numeric-looking keys, stable ties, duplicates and output order |
+| Python None / missing key | null and optional properties as distinct states | Defaults, membership and round-trip serialization |
+| Python exception classes | Existing JS exceptions with observable code/cause where callers need it | Error category/message and partial effects; don't force Result |
+| Go `(value, error)` | Existing project error convention or a small discriminated return | No ignored error or invented success value |
+| Go goroutine/channel | Runtime task/queue adapter appropriate to actual concurrency | Backpressure, cancellation, ordering and shutdown; Promise.all is not a channel |
+| C/C++ pointer + length | Uint8Array/DataView or native/WASM adapter | Bounds, byte order, encoding, aliasing and owner lifetime |
+| C/C++ allocation / destructor | Explicit adapter close/release, usually try/finally | Release after failure; garbage collection does not schedule timely cleanup |
+| Java/C# long / decimal | bigint or existing decimal representation when required | Range, rounding and wire representation; number is not a general replacement |
+| JS callback / CommonJS | Preserve callback timing/error contract and module boundary first | Promise rejection versus synchronous throw; actual ESM/CJS consumers |
+
+These are decisions to validate, not promises of full language support. If native memory,
+threads, reflection or runtime-specific dependencies dominate, identify an adapter or a
+bounded porting scope before rewriting. Preserve supported odd inputs; don't expand the
+project into a source-runtime emulator for hypothetical cases.
+
+### Example: whole-string decimal parsing
+
+```ts
+// @example-run
+function decimalAmount(text: string): bigint {
+  const match = /^[+-]?[0-9]+/.exec(text);
+  if (match === null || match[0].length !== text.length) throw new Error('amount');
+  return BigInt(text);
+}
+if (decimalAmount('9007199254740993') !== 9007199254740993n) throw new Error('Precision lost');
+let rejected = false;
+try { decimalAmount('12\n'); } catch { rejected = true; }
+if (!rejected) throw new Error('Partial input accepted');
+```
+
+This example assumes a signed ASCII-decimal string contract and the existing `amount`
+error code. It preserves neither an arbitrary parser nor an unspecified digit limit.
+Characterize signs, whitespace, Unicode and resource limits against the actual source.
+
+### Host boundary to record
+
+| Target | Design boundary | Verify |
+|---|---|---|
+| Compiled Node | package type/exports, emitted extensions, Node APIs | Build and import emitted public entry on supported Node |
+| Browser | No filesystem/process dependency in browser paths; bundler/DOM context | Production build and browser smoke, not just DOM typechecking |
+| Bun | Supported Node compatibility and runtime-native APIs | Chosen Bun version's check/test/run path |
+| Deno | Imports/npm compatibility and permissions | Chosen Deno version's check/test path with intended permissions |
+
+Only claim hosts actually exercised; shared syntax is not shared runtime support.
+
 ## 5. Implement in runnable stages
 
 1. Establish the target project and test command without replacing existing config.
@@ -122,6 +172,15 @@ Keep the source and original tests intact. A compile pass is not behavioral equi
 a passing finite corpus is not proof for every possible input. Report the boundary of
 what the evidence supports, along with any blocker to replacing the source in production.
 
+### Example delivery note
+
+For a small ledger port, a useful PORTING.md records: `summarize → summarize`,
+`test_empty → empty`, `test_bad_amount → malformed amount`; exact decimal totals via bigint;
+first-seen keys via Map; source/target test commands and counts; and the known distinction
+between Python JSON `1.0` and JS's already-parsed number `1`. Record that as a compatibility
+gap rather than claiming all JSON inputs are equivalent. Use the same format for the actual
+module; do not paste these invented results into its report.
+
 ## Reference selection
 
 - Read [semantic and host checklist](references/porting.md) for source-language hazards
@@ -132,3 +191,6 @@ what the evidence supports, along with any blocker to replacing the source in pr
 
 Both references are bundled. Do not require a companion skill or impose a new architecture,
 Result type or schema library on the target project.
+
+The `evals/` directory contains maintainer evaluation cases and graders. It is not
+additional task guidance; do not read it while applying this skill to a user project.

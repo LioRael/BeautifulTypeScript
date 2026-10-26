@@ -1,0 +1,8 @@
+{
+  "id": "port",
+  "skill": "typescript-port",
+  "prompt": "prompt.md",
+  "files": "files",
+  "rubric": "graders/rubric.md",
+  "criteria": 8
+}

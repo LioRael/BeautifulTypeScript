@@ -72,6 +72,29 @@ Do not claim a passing typecheck establishes runtime safety or public-package us
 - Omit punctuation, type/interface and default-export preferences unless a project rule
   or a specific consequence makes them relevant. Do not invent findings to fill a quota.
 
+### Concrete checks that types alone miss
+
+| Suspicious code | Establish before reporting | Minimal direction |
+|---|---|---|
+| `value || defaultValue` | Is zero/false/empty a supported input? | Default only on the contract's absent state |
+| `JSON.parse(text) as Payload` | Does an earlier boundary already validate the whole shape? | Validate at the first untrusted boundary if not |
+| `jobs.sort(...)` | Does the caller retain ownership? Does selection order differ from execution order? | Copy if needed; restore the required execution order separately |
+| `rows.forEach(async ...)` | Does the caller need completion and failure? | Return/await the actual operation; use sequential or bounded concurrent work as required |
+| `catch { return [] }` | Is empty data a valid success distinct from failure? | Preserve the project's failure contract |
+| extensionless emitted import | Will a native loader, not a development bundler, load it? | Align shipped paths and verify the real entrypoint |
+
+For example, zero is a valid pause setting in this illustrative API:
+
+```ts
+// @example-run
+function badLimit(raw?: string): number { return Number(raw) || 3; }
+function limit(raw?: string): number { return raw === undefined ? 3 : Number(raw); }
+if (badLimit('0') !== 3 || limit('0') !== 0 || limit() !== 3) throw new Error('Probe changed');
+```
+
+This fixes documented omission/zero behavior only. Malformed-string policy remains a
+separate contract decision. A review should not invent a new validation API incidentally.
+
 ## 4. Reproduce and calibrate findings
 
 For each suspected defect, establish a trigger and consequence. Use a small executed probe
@@ -107,9 +130,31 @@ Example calibration: `JSON.parse(text) as Order` is a concern only after checkin
 validation already occurred. A default export is not a bug by itself. Inserting void
 before an unowned promise is not a failure-handling fix.
 
+### Example finding and fix
+
+**P1 — Observe save completion (`queue.ts:9`).** The caller awaits `saveRows` before
+reporting success. With two deferred saves, async forEach starts both and returns before
+either completes; a rejected save cannot reject the outer operation. For a sequential,
+stop-on-failure contract, the smallest correction is:
+
+```ts
+async function saveRows<T>(rows: readonly T[], save: (row: T) => Promise<void>): Promise<void> {
+  for (const row of rows) await save(row);
+}
+```
+
+A useful report then records the actual probe, tool results and limits: “typecheck passed;
+one existing default-value test passed; the deferred/rejection probe reproduced the
+completion defect; cancellation was not tested.” These are example report fields, not
+results to reuse. Explain the local trigger and keep the code suggestion focused. A source
+citation supports the reason; it never replaces the reproduction or the fix.
+
 ## Reference
 
 Read [review evidence and source selection](references/review-evidence.md) when choosing
 what to inspect, checking a suspected defect or calibrating findings. It includes the
 rule IDs used here, official source links and false-positive controls. It works without
 another installed skill. Preserve the project's framework, error and validation conventions.
+
+The `evals/` directory contains maintainer evaluation cases and graders. It is not
+additional task guidance; do not read it while applying this skill to a user project.

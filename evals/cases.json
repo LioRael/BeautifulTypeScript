@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "repetitions": 2,
   "cases": {
     "write": "typescript-best-practices",
@@ -11,5 +11,11 @@
     "without",
     "with"
   ],
-  "timeout_seconds": 600
+  "timeout_seconds": 600,
+  "case_paths": {
+    "write": "skills/typescript-best-practices/evals/settings-boundary",
+    "review": "skills/typescript-review/evals/queue-contract",
+    "port": "skills/typescript-port/evals/python-ledger",
+    "verify": "skills/typescript-verify/evals/node-esm-release"
+  }
 }

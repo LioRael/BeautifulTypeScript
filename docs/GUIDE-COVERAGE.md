@@ -42,14 +42,14 @@ These examples remain inside each skill's own installed folder; no companion ski
 
 ## What is automatically checked
 
-`npm run check` extracts every `ts` fence from installed-skill references and compiles the
+`npm run check` extracts every `ts` fence from SKILL.md entrypoints and installed-skill references and compiles the
 examples as separate modules with strict, exactOptionalPropertyTypes and
 noUncheckedIndexedAccess enabled. Expected-invalid calls use @ts-expect-error, so an error
 that disappears also fails validation. Marked self-contained examples execute against
 freshly emitted JavaScript, including malformed parser inputs, aliasing, key order,
 selection order and failure propagation.
 
-This revision has **43 TypeScript code blocks, all compiler-checked; 15 also execute behavior
+This revision has **47 TypeScript code blocks, all compiler-checked; 18 also execute behavior
 assertions**. Other snippets are illustrations: shell commands need a real target project;
 JSON configurations are optional context examples; the miniature ESLint config is not a
 replacement for the separately tested repository recipe. Typechecking a lint counterexample

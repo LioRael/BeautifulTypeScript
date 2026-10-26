@@ -1,9 +1,34 @@
 # Paired skill evaluation
 
 This suite evaluates task execution, not whether Markdown contains preferred words.
-There is one independent small project per skill, two fresh runs per condition, eight
-binary criteria per task and a fixed 600-second process timeout. Model runs consume the
+There is one independent small project per skill and two fresh runs per condition.
+Writing/port/verify have eight binary criteria; review has nine, including the ordering
+criterion discovered in v1. Every process has a fixed 600-second timeout. Model runs consume the
 signed-in account's quota; ordinary npm test does not launch agents.
+
+## Task ownership and layout
+
+Task definitions live with the skill they evaluate:
+
+| Case ID | Skill-local task |
+|---|---|
+| write | [settings-boundary](../skills/typescript-best-practices/evals/settings-boundary/case.json) |
+| review | [queue-contract](../skills/typescript-review/evals/queue-contract/case.json) |
+| port | [python-ledger](../skills/typescript-port/evals/python-ledger/case.json) |
+| verify | [node-esm-release](../skills/typescript-verify/evals/node-esm-release/case.json) |
+
+Each case contains case.json, prompt.md, files/ and graders/rubric.md. The root evals/
+directory contains the shared runner, runtime grader, index and historical rubrics only;
+eval-results/ holds measured outputs. This keeps the task bundled with an independently
+installed skill without duplicating the execution machinery four times. Cases use JSON
+metadata rather than BeautifulRust's YAML; the ownership/layout is the relevant convention.
+
+Normal skill use does not require opening evals/. During measured runs the harness copies
+only the case's files/ into the target project. With-skill runs additionally receive the
+skill content **excluding its entire evals/ tree**. This prevents prompts, sibling inputs
+and hidden graders from being supplied as skill instructions. npm test verifies every pair's
+workspace content, byte-for-byte, without running a model. An ordinary full installation
+includes evals/ for maintainers; that is different from the evaluation context.
 
 ## Reproduce
 
@@ -35,12 +60,13 @@ not a controlled performance comparison.
 ## Freeze and grade
 
 Before execution, manifest.json records hashes of case inputs, prompts, skill files,
-rubric, runner and runtime grader. Do not change them mid-run. The target agent never
+per-case rubric, runner and runtime grader. Do not change them mid-run. The target agent never
 receives RUBRIC.md or the runtime grader. They remain outside its allowed workspace.
 
 The runtime grader exercises write/port artifacts after execution. Review/verify and
 workflow criteria are scored from reports, generated tests and command traces using
-RUBRIC.md. Record a pass/fail and evidence for every criterion; do not infer success from
+each case's graders/rubric.md. An explicit --rubric overrides that selection for a named
+experiment; root RUBRIC.md and REVIEW-REGRESSION.md retain historical v1/v2 definitions. Record a pass/fail and evidence for every criterion; do not infer success from
 word matching alone. Record configuration/source changes, incomplete runs and failures.
 Scores must not be changed to reward a style preference absent from the frozen rubric.
 
@@ -72,10 +98,11 @@ appeared in nine run traces. The current run.py initializes each workspace with 
 local Git repository; it also accepts --rubric for a separately frozen follow-up rubric.
 The v1 review skill snapshot is retained in eval-results/v1/skill-snapshots; the other
 three skills match their hashes at commit b13a7aa. Check out that commit to reproduce the
-recorded content: current references have since expanded. The targeted follow-up uses:
+recorded content and original root-case paths: current references and entrypoints have
+since expanded, and cases have moved into their skills. To run the current review case, including criterion 9, use:
 
 ```sh
-python3 evals/run.py --work work/review-regression --output eval-results/new-review --workers 2 --cases review --rubric evals/REVIEW-REGRESSION.md
+python3 evals/run.py --work work/review-regression --output eval-results/new-review --workers 2 --cases review
 ```
 
 Before publishing results, inspect the traces and run the redaction step once:

@@ -8,8 +8,9 @@ import { execFileSync } from 'node:child_process';
 const examples = [];
 for (const skill of readdirSync('skills')) {
   const directory = join('skills', skill, 'references');
-  for (const file of readdirSync(directory).filter(name => name.endsWith('.md'))) {
-    const path = join(directory, file);
+  const documents = [join('skills', skill, 'SKILL.md'),
+    ...readdirSync(directory).filter(name => name.endsWith('.md')).map(file => join(directory, file))];
+  for (const path of documents) {
     for (const match of readFileSync(path, 'utf8').matchAll(/^```ts\r?\n([\s\S]*?)^```\s*$/gm)) {
       const line = readFileSync(path, 'utf8').slice(0, match.index).split('\n').length;
       examples.push({ name: `${path}:${line}`, code: match[1] });
@@ -17,7 +18,7 @@ for (const skill of readdirSync('skills')) {
   }
 }
 
-test('reference TypeScript examples compile, including expected type errors', () => {
+test('skill and reference TypeScript examples compile, including expected type errors', () => {
   assert.ok(examples.length > 0, 'No examples discovered');
   const directory = mkdtempSync(join(tmpdir(), 'beautiful-ts-references-'));
   try {
@@ -44,7 +45,7 @@ test('reference TypeScript examples compile, including expected type errors', ()
       if (!example.code.includes('// @example-run')) continue;
       assert.doesNotThrow(() => execFileSync(process.execPath, [join(directory, 'dist', `example-${index}.js`)], { stdio: 'pipe', timeout: 5000 }), example.name);
     }
-    console.log(`Reference examples: ${examples.length} compiled; ${examples.filter(e => e.code.includes('// @example-run')).length} executed`);
+    console.log(`Skill/reference examples: ${examples.length} compiled; ${examples.filter(e => e.code.includes('// @example-run')).length} executed`);
   } finally {
     rmSync(directory, { recursive: true, force: true });
   }
