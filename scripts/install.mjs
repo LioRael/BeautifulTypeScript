@@ -1,0 +1,11 @@
+import { cpSync, existsSync, mkdirSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+const [name, destination] = process.argv.slice(2);
+const names = ['typescript-best-practices', 'typescript-review', 'typescript-port', 'typescript-verify'];
+if (!names.includes(name) || !destination) throw new Error('Usage: node scripts/install.mjs <skill-name> <skills-directory>');
+const target = resolve(destination, name);
+if (existsSync(target)) throw new Error(`Refusing to overwrite ${target}; review/remove the old copy explicitly.`);
+mkdirSync(resolve(destination), { recursive: true });
+cpSync(fileURLToPath(new URL(`../skills/${name}`, import.meta.url)), target, { recursive: true, errorOnExist: true, force: false });
+console.log(`Installed ${name} at ${target}`);

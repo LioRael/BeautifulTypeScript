@@ -1,0 +1,28 @@
+{
+  "name": "beautiful-typescript",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": "^22.13.0 || >=24"
+  },
+  "scripts": {
+    "check:skills": "node scripts/check-skills.mjs",
+    "typecheck": "tsc --noEmit && tsc -p configs/tsconfig.browser.json",
+    "lint": "eslint examples/port/*.ts --max-warnings 0",
+    "build": "tsc",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "check": "npm run check:skills && npm run typecheck && npm run lint && npm test",
+    "benchmark": "npm run build && node scripts/benchmark.mjs"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "eslint": "10.13.0",
+    "typescript-eslint": "8.72.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LioRael/BeautifulTypeScript.git"
+  }
+}

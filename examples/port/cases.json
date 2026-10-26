@@ -1,0 +1,186 @@
+[
+  {
+    "name": "empty",
+    "input": [],
+    "expected": {
+      "ok": []
+    }
+  },
+  {
+    "name": "first-seen",
+    "input": [
+      {
+        "key": "10",
+        "quantity": 1
+      },
+      {
+        "key": "2",
+        "quantity": 2
+      },
+      {
+        "key": "10",
+        "quantity": -1
+      },
+      {
+        "key": "__proto__",
+        "quantity": 3
+      },
+      {
+        "key": "猫😀",
+        "quantity": 0
+      }
+    ],
+    "expected": {
+      "ok": [
+        {
+          "key": "10",
+          "quantity": 0
+        },
+        {
+          "key": "2",
+          "quantity": 2
+        },
+        {
+          "key": "__proto__",
+          "quantity": 3
+        },
+        {
+          "key": "猫😀",
+          "quantity": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "boolean",
+    "input": [
+      {
+        "key": "a",
+        "quantity": true
+      }
+    ],
+    "expected": {
+      "error": "invalid-input"
+    }
+  },
+  {
+    "name": "null",
+    "input": null,
+    "expected": {
+      "error": "invalid-input"
+    }
+  },
+  {
+    "name": "missing",
+    "input": [
+      {
+        "key": "a"
+      }
+    ],
+    "expected": {
+      "error": "invalid-input"
+    }
+  },
+  {
+    "name": "fraction",
+    "input": [
+      {
+        "key": "a",
+        "quantity": 0.5
+      }
+    ],
+    "expected": {
+      "error": "invalid-input"
+    }
+  },
+  {
+    "name": "numeric-string",
+    "input": [
+      {
+        "key": "a",
+        "quantity": "1"
+      }
+    ],
+    "expected": {
+      "error": "invalid-input"
+    }
+  },
+  {
+    "name": "safe-limit",
+    "input": [
+      {
+        "key": "a",
+        "quantity": 9007199254740991
+      }
+    ],
+    "expected": {
+      "ok": [
+        {
+          "key": "a",
+          "quantity": 9007199254740991
+        }
+      ]
+    }
+  },
+  {
+    "name": "unsafe",
+    "input": [
+      {
+        "key": "a",
+        "quantity": 9007199254740992
+      }
+    ],
+    "expected": {
+      "error": "invalid-input"
+    }
+  },
+  {
+    "name": "overflow",
+    "input": [
+      {
+        "key": "a",
+        "quantity": 9007199254740991
+      },
+      {
+        "key": "a",
+        "quantity": 1
+      }
+    ],
+    "expected": {
+      "error": "overflow"
+    }
+  },
+  {
+    "name": "underflow",
+    "input": [
+      {
+        "key": "a",
+        "quantity": -9007199254740991
+      },
+      {
+        "key": "a",
+        "quantity": -1
+      }
+    ],
+    "expected": {
+      "error": "overflow"
+    }
+  },
+  {
+    "name": "validate-before-sum",
+    "input": [
+      {
+        "key": "a",
+        "quantity": 9007199254740991
+      },
+      {
+        "key": "a",
+        "quantity": 1
+      },
+      {}
+    ],
+    "expected": {
+      "error": "invalid-input"
+    }
+  }
+]
