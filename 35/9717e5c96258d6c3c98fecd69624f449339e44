@@ -1,0 +1,19 @@
+docs/VALIDATION.md
+  s_78bc682a302090::t_ec7b9df4c8a07b 34,60-72
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "359717e5c96258d6c3c98fecd69624f449339e44",
+  "prompts": {},
+  "sessions": {
+    "s_78bc682a302090": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1793d-88d7-7700-a665-3f955a52da85",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    }
+  }
+}
