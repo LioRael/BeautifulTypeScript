@@ -1,0 +1,39 @@
+docs/VALIDATION.md
+  s_1d1ebc94680cfb::t_1c6a86344d3329 123-139
+evals/run.py
+  s_1d1ebc94680cfb::t_fce13f961d7b56 41-60,62-65,68-76,80,112,114-115,125,131-134,147-149
+evals/tests/test_packaging.py
+  s_1d1ebc94680cfb::t_40243fbb25cf66 1-74
+skills/typescript-port/SKILL.md
+  s_a0b2c85094aa9e::t_d53f5b83f252c9 77-126,175-183,194-196
+tests/eval-packaging.test.mjs
+  s_a0b2c85094aa9e::t_ee7a5c204f9eb1 1-6
+tests/install.test.mjs
+  s_a0b2c85094aa9e::t_6c726380e2d753 13-18,21-22
+tests/reference-examples.test.mjs
+  s_a0b2c85094aa9e::t_f084e9c959a32c 11-13,21,48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a8ba95d3f50f6c01035053f317c1ed95a6a468cb",
+  "prompts": {},
+  "sessions": {
+    "s_1d1ebc94680cfb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a174e3-7a80-7303-89d2-f016a5e7e9de",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    },
+    "s_a0b2c85094aa9e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1796b-b4e2-7152-9419-bcb7fb9795b6",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    }
+  }
+}
