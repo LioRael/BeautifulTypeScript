@@ -1,0 +1,8 @@
+Simplified `src/selection.ts` using `find` with optional chaining and `?? 20`. Public signatures remain unchanged; empty names and zero limits are preserved.
+
+Inspected `PROJECT.md`, the caller, and tests. Validation passed:
+
+- `npm run typecheck`
+- `npm test` — build succeeded, 2 tests passed
+
+No blockers. npm emitted an existing configuration warning about `home`.

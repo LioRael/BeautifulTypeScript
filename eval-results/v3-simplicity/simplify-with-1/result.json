@@ -1,0 +1,21 @@
+{
+  "id": "simplify-with-1",
+  "case": "simplify",
+  "condition": "with",
+  "repeat": 1,
+  "exit_code": 0,
+  "error": null,
+  "elapsed_seconds": 29.313,
+  "usage": {
+    "input_tokens": 75096,
+    "cached_input_tokens": 63744,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 703,
+    "reasoning_output_tokens": 81
+  },
+  "changed_inputs": [
+    "src/selection.ts"
+  ],
+  "package_unchanged": true,
+  "tsconfig_unchanged": true
+}

@@ -1,0 +1,5 @@
+Simplified [src/selection.ts](src/selection.ts) using `find` and a conditional default, preserving public signatures and behavior.
+
+Inspected its caller and tests. Validation passed: `npm run typecheck` and `npm test` (build plus 2 tests).
+
+No blockers. No lint script is configured; npm emitted a nonblocking configuration warning.

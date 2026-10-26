@@ -7,6 +7,9 @@ description: Review TypeScript files or diffs for actionable correctness, API, a
 
 Produce actionable findings for the requested scope. Review does not imply permission to
 rewrite source, apply a new preset or impose a preferred architecture.
+A missing guard is not a defect without a reachable invalid input. Trace existing
+validation and caller guarantees first; do not invent null cases for a trusted internal
+type. Prefer a remedy that removes the cause with the fewest new concepts.
 
 ## 1. Establish scope and baseline (TS01)
 

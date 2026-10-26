@@ -5,8 +5,16 @@ description: Write and refactor TypeScript using project-aware type, runtime, as
 
 # TypeScript best practices
 
-Write code that fits the project's runtime and callers. Types should expose mistakes;
-runtime checks should establish trust. Do not substitute a new architecture for the task.
+Write the smallest clear implementation that satisfies the actual contract. Beautiful
+code makes intent easy to see with fewer concepts, branches and indirections. Correctness
+is required; extra validation, annotations and abstractions are not quality by themselves.
+
+Before adding code, identify the caller or requirement it serves. Trust established
+internal types and validated values. Add runtime checks at an actual untrusted boundary,
+reuse existing parsers, and keep business logic direct. Do not widen trusted inputs to
+unknown just to validate them again. Preserve errors instead of inventing fallback success.
+Prefer ordinary language features; introduce a helper or type only when it removes real
+repetition or expresses a meaningful relationship. Stop when the contract is met.
 
 ## 1. Establish the contract before editing (TS01)
 
@@ -34,7 +42,8 @@ existing framework requirements and ESLint checks without verified equivalents.
 Network responses, JSON, storage, command arguments and foreign-language values are not
 validated by an interface, `as`, non-null assertion or `satisfies`.
 
-1. Accept unknown at an untrusted boundary.
+1. Locate the real boundary and check for an existing validator before adding one.
+   Accept unknown there when the shape is not established.
 2. Validate the outer container, then properties and domain constraints actually needed.
 3. Return a trusted representation using the project's existing failure convention.
 4. Test rejection and defaults as well as one valid input.
@@ -120,9 +129,14 @@ contexts where globals differ. Do not claim Bun, Deno or browser execution from 
 
 ## 7. Keep ordinary code ordinary (TS07, TS08)
 
-Prefer focused functions and data to new factories, registries, wrapper types or class
-hierarchies without an actual requirement. Preserve public behavior during a refactor;
-make behavior changes explicit and test them separately.
+Use direct access, standard collection operations and plain control flow when they express
+the contract. Avoid optional chaining, defaults, catches and defensive copies for states
+the caller contract excludes. Keep them when they serve real optionality, error handling
+or ownership. Do not trade readable code for dense one-liners or remove required validation.
+
+Compare refactors under the same input, output and failure contract. Count the concepts
+a reader must understand, including hidden helpers and dependencies, not only visible lines.
+Preserve public behavior; make behavior changes explicit and test them separately.
 
 Use comments for invariants, tradeoffs and surprising compatibility behavior. Document
 failure conditions, mutation, ordering and numeric/text limits where callers need them.

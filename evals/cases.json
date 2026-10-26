@@ -5,7 +5,8 @@
     "write": "typescript-best-practices",
     "review": "typescript-review",
     "port": "typescript-port",
-    "verify": "typescript-verify"
+    "verify": "typescript-verify",
+    "simplify": "typescript-best-practices"
   },
   "order": [
     "without",
@@ -16,6 +17,7 @@
     "write": "skills/typescript-best-practices/evals/settings-boundary",
     "review": "skills/typescript-review/evals/queue-contract",
     "port": "skills/typescript-port/evals/python-ledger",
-    "verify": "skills/typescript-verify/evals/node-esm-release"
+    "verify": "skills/typescript-verify/evals/node-esm-release",
+    "simplify": "skills/typescript-best-practices/evals/trusted-refactor"
   }
 }

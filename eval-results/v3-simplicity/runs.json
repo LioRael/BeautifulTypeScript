@@ -1,0 +1,86 @@
+[
+  {
+    "id": "simplify-with-1",
+    "case": "simplify",
+    "condition": "with",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 29.313,
+    "usage": {
+      "input_tokens": 75096,
+      "cached_input_tokens": 63744,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 703,
+      "reasoning_output_tokens": 81
+    },
+    "changed_inputs": [
+      "src/selection.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "simplify-with-2",
+    "case": "simplify",
+    "condition": "with",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 31.44,
+    "usage": {
+      "input_tokens": 75451,
+      "cached_input_tokens": 61184,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 708,
+      "reasoning_output_tokens": 53
+    },
+    "changed_inputs": [
+      "src/selection.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "simplify-without-1",
+    "case": "simplify",
+    "condition": "without",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 26.923,
+    "usage": {
+      "input_tokens": 50209,
+      "cached_input_tokens": 46208,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 578,
+      "reasoning_output_tokens": 51
+    },
+    "changed_inputs": [
+      "src/selection.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "simplify-without-2",
+    "case": "simplify",
+    "condition": "without",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 27.565,
+    "usage": {
+      "input_tokens": 63870,
+      "cached_input_tokens": 57216,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 657,
+      "reasoning_output_tokens": 33
+    },
+    "changed_inputs": [
+      "src/selection.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  }
+]

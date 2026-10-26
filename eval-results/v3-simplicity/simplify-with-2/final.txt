@@ -1,0 +1,8 @@
+Simplified [src/selection.ts](src/selection.ts) using `find` and `??`, preserving public signatures and behavior for the documented inputs.
+
+Inspected the caller and tests. Validation passed:
+
+- `npm run typecheck`
+- `npm test` — build passed; 2 tests passed.
+
+No blockers. No lint script is configured.

@@ -1,7 +1,8 @@
 # Paired skill evaluation
 
 This suite evaluates task execution, not whether Markdown contains preferred words.
-There is one independent small project per skill and two fresh runs per condition.
+Each case is an independent small project with two fresh runs per condition.
+The writing skill also has a trusted-refactor regression with five criteria.
 Writing/port/verify have eight binary criteria; review has nine, including the ordering
 criterion discovered in v1. Every process has a fixed 600-second timeout. Model runs consume the
 signed-in account's quota; ordinary npm test does not launch agents.
@@ -12,6 +13,7 @@ Task definitions live with the skill they evaluate:
 
 | Case ID | Skill-local task |
 |---|---|
+| simplify | [trusted-refactor](../skills/typescript-best-practices/evals/trusted-refactor/case.json) |
 | write | [settings-boundary](../skills/typescript-best-practices/evals/settings-boundary/case.json) |
 | review | [queue-contract](../skills/typescript-review/evals/queue-contract/case.json) |
 | port | [python-ledger](../skills/typescript-port/evals/python-ledger/case.json) |

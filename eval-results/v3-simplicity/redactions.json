@@ -1,0 +1,21 @@
+{
+  "reason": "Incidental ancestor git status filenames and host PATH inventory; commands, statuses and task evidence retained. Raw transport logs stay local.",
+  "counts": {
+    "simplify-with-1": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0
+    },
+    "simplify-with-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0
+    },
+    "simplify-without-1": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0
+    },
+    "simplify-without-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0
+    }
+  }
+}

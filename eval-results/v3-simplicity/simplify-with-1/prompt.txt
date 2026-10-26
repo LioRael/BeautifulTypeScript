@@ -1,0 +1,3 @@
+Work only in this workspace. Read PROJECT.md and the task files. Do not inspect parent/home directories, other skills, evaluation rubrics, or other runs. Do not use network, install packages, delegate, publish, or change global settings. node_modules is preinstalled; use it only to run project tooling. You have at most 8 minutes. Complete the requested work and report actual evidence, including blockers.
+Read and apply supplied-skill/SKILL.md and only its relevant bundled references.
+Simplify src/selection.ts for readability while preserving its public signatures and behavior. Inspect its callers and tests, make the change, and run the relevant checks.

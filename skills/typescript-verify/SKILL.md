@@ -7,6 +7,9 @@ description: Verify a TypeScript change using existing type, lint, test, build a
 
 Establish what was actually checked and whether the requested change is ready for its
 stated environment. Never turn a failed or empty check into a pass by weakening it.
+Verify the agreed contract, not every imaginable input. Do not require internal functions
+to handle values their callers exclude, or reward more guards/tests as inherently better.
+Check that simplification preserves behavior without moving complexity into new helpers.
 
 ## 1. Determine scope and execution safety (TS01)
 

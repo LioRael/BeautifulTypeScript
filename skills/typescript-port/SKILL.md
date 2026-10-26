@@ -8,6 +8,9 @@ description: Port an existing module or service into TypeScript with characteriz
 Port observable behavior into a defined TypeScript runtime. No language pair is
 universally supported; native APIs, concurrency and numeric/text semantics need explicit
 choices. Keep both implementations available until cutover is authorized.
+Translate into direct TypeScript, not a layer-for-layer copy of the source architecture.
+Preserve behavior with the fewest necessary concepts. Do not add rejection cases, defaults,
+wrapper classes or compatibility machinery for inputs outside the characterized contract.
 
 ## 1. Establish the source baseline (TS01, TS06)
 

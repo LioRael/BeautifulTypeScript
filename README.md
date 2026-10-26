@@ -3,7 +3,8 @@
 # BeautifulTypeScript
 
 Four small, independent Agent Skills for practical TypeScript work. Preserve the project's
-framework and conventions; make correctness visible through tests and runtime checks.
+framework and conventions. Express the contract directly, with fewer unnecessary branches,
+wrappers and repeated checks; verify that the simpler code still behaves correctly.
 Inspired by [BeautifulRust](https://github.com/morganlinton/BeautifulRust), independently
 written for TypeScript. MIT licensed. Install directly from GitHub; no npm package installation is required.
 
@@ -19,47 +20,47 @@ No forced Result type, schema package, framework, architecture or formatting sty
 
 ## What it changes
 
-The skills turn broad advice into concrete behavior: validate external values,
-preserve valid zero/empty values, and make async completion explicit. These are
-authored before/after teaching examples, not transcripts of a controlled model run.
-Our [paired evaluation](docs/EVALUATION.md) records actual runs and their limits;
-it has not established an overall advantage over the baseline.
+Beautiful means the smallest clear implementation of the actual contract: useful types,
+direct control flow, and no speculative machinery. Validate external data once; let
+trusted internal code use that result. Shorter is useful when it also means less to understand.
 
-### Writing: defaults are not validation
+These are authored teaching examples, not measured model outputs. Our
+[paired evaluation](docs/EVALUATION.md) records actual runs and their limits.
 
-Contract: an omitted limit defaults to 20; integer limits from 0 to 100 are valid.
-A type assertion and a truthiness fallback violate that contract:
+### Writing: express the operation directly
+
+Both versions receive the same trusted internal data and return the first active member's
+name, including an empty string; no match returns undefined. Validation belongs to the
+existing input boundary, so neither implementation adds a new parser.
 
 ```ts
-// Before: 0 becomes 20; strings can escape despite the declared return type.
-// @example-run
-function readLimit(input: unknown): number {
-  return (input as { limit?: number }).limit || 20;
+// Before
+interface Member { name: string; active: boolean }
+
+export function firstActiveName(members: readonly Member[]): string | undefined {
+  let name: string | undefined = undefined;
+  for (const member of members) {
+    if (member.active === true) {
+      name = member.name;
+      break;
+    }
+  }
+  return name;
 }
-if (readLimit({ limit: 0 }) !== 20) throw new Error('Expected the demonstrated bug');
 ```
 
 ```ts
-// After: narrow the boundary and preserve a valid zero.
-// @example-run
-function readLimit(input: unknown): number {
-  if (typeof input !== 'object' || input === null || Array.isArray(input)) {
-    throw new TypeError('options must be an object');
-  }
-  const limit = 'limit' in input ? input.limit : 20;
-  if (typeof limit !== 'number' || !Number.isInteger(limit) || limit < 0 || limit > 100) {
-    throw new TypeError('limit must be an integer from 0 to 100');
-  }
-  return limit;
+// After: same contract, no mutable temporary or manual search.
+interface Member { name: string; active: boolean }
+
+export function firstActiveName(members: readonly Member[]): string | undefined {
+  return members.find(member => member.active)?.name;
 }
-if (readLimit({ limit: 0 }) !== 0 || readLimit({}) !== 20) throw new Error('Defaults');
-let rejected = false;
-try { readLimit({ limit: '10' }); } catch { rejected = true; }
-if (!rejected) throw new Error('Expected invalid input to be rejected');
 ```
 
-Use an existing validator when the project already has one; no schema dependency
-is required for this small boundary.
+The optional access represents a real possibility: find can return no match. There is
+no fallback name, catch block, generic lookup framework or extra dependency.
+A loop remains appropriate when it makes a more complex operation clearer.
 
 ### Review: show the failure and the fix
 
@@ -67,7 +68,7 @@ Contract: save in order, stop at the first failure, and let the caller await com
 
 ```ts
 // Before: forEach discards callback promises.
-function saveAll<T>(items: readonly T[], save: (item: T) => Promise<void>): void {
+export function saveAll<T>(items: readonly T[], save: (item: T) => Promise<void>): void {
   items.forEach(async item => { await save(item); });
 }
 ```
@@ -78,19 +79,9 @@ Return an owned promise and execute sequentially:
 
 ```ts
 // After: the caller owns completion; rejection stops later writes.
-// @example-run
-async function saveAll<T>(items: readonly T[], save: (item: T) => Promise<void>): Promise<void> {
+export async function saveAll<T>(items: readonly T[], save: (item: T) => Promise<void>): Promise<void> {
   for (const item of items) await save(item);
 }
-const seen: number[] = [];
-let rejected = false;
-try {
-  await saveAll([1, 2], async item => {
-    seen.push(item);
-    throw new Error('write failed');
-  });
-} catch { rejected = true; }
-if (!rejected || seen.join(',') !== '1') throw new Error('Failure must stop later writes');
 ```
 
 Sequential execution follows this contract; choose bounded concurrency when the
@@ -103,9 +94,9 @@ actual contract permits it.
 | Port | A Python-to-TS translation changes integer bounds, validation order or first-seen ordering | Characterize the source, then compare both implementations on [312 deterministic cases](tests/port.test.mjs) |
 | Verify | A green typecheck is treated as proof that Node can load the built package | Check lint coverage, production build, emitted imports and runtime behavior; report missing evidence explicitly |
 
-The TS snippets above are compiled in CI. Blocks marked @example-run also execute,
-including rejection and valid-zero checks. These demonstrate the intended behavior,
-not a guarantee about every agent response.
+The TS snippets above compile in CI. Tests compare both search implementations on the
+same inputs and exercise the async fix with pending and rejected writes. These examples
+demonstrate code behavior, not a guarantee about every agent response.
 
 ## Default lint setup
 
@@ -300,6 +291,7 @@ and fixture-tested async rules.
 
 Each skill bundles its own task, starting project and grading criteria:
 
+- [Writing: simplify trusted internal code](skills/typescript-best-practices/evals/trusted-refactor/case.json)
 - [Writing: settings boundary](skills/typescript-best-practices/evals/settings-boundary/case.json)
 - [Review: queue contract](skills/typescript-review/evals/queue-contract/case.json)
 - [Port: Python ledger](skills/typescript-port/evals/python-ledger/case.json)

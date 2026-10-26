@@ -1,0 +1,129 @@
+{
+  "method": "Author-scored against frozen five-criterion rubric; independent runtime recheck. Not blinded.",
+  "runs": {
+    "simplify-with-1": {
+      "criteria": [
+        {
+          "id": 1,
+          "pass": true,
+          "evidence": "Independent rerun: typecheck and build plus both behavior tests pass; signatures retained."
+        },
+        {
+          "id": 2,
+          "pass": true,
+          "evidence": "Replaces temporary/manual search with find and direct optional access; page size uses a direct expression."
+        },
+        {
+          "id": 3,
+          "pass": true,
+          "evidence": "Only selection.ts changed; no guards, coercion, copies, catches, wrappers or dependency additions."
+        },
+        {
+          "id": 4,
+          "pass": true,
+          "evidence": "Caller, tests, package.json and tsconfig.json unchanged, confirmed by recorded changed_inputs and artifacts."
+        },
+        {
+          "id": 5,
+          "pass": true,
+          "evidence": "Command traces show successful typecheck and npm test; final reports match observed results without speed claims."
+        }
+      ],
+      "total": 5,
+      "out_of": 5
+    },
+    "simplify-with-2": {
+      "criteria": [
+        {
+          "id": 1,
+          "pass": true,
+          "evidence": "Independent rerun: typecheck and build plus both behavior tests pass; signatures retained."
+        },
+        {
+          "id": 2,
+          "pass": true,
+          "evidence": "Replaces temporary/manual search with find and direct optional access; page size uses a direct expression."
+        },
+        {
+          "id": 3,
+          "pass": true,
+          "evidence": "Only selection.ts changed; no guards, coercion, copies, catches, wrappers or dependency additions."
+        },
+        {
+          "id": 4,
+          "pass": true,
+          "evidence": "Caller, tests, package.json and tsconfig.json unchanged, confirmed by recorded changed_inputs and artifacts."
+        },
+        {
+          "id": 5,
+          "pass": true,
+          "evidence": "Command traces show successful typecheck and npm test; final reports match observed results without speed claims."
+        }
+      ],
+      "total": 5,
+      "out_of": 5
+    },
+    "simplify-without-1": {
+      "criteria": [
+        {
+          "id": 1,
+          "pass": true,
+          "evidence": "Independent rerun: typecheck and build plus both behavior tests pass; signatures retained."
+        },
+        {
+          "id": 2,
+          "pass": true,
+          "evidence": "Replaces temporary/manual search with find and direct optional access; page size uses a direct expression."
+        },
+        {
+          "id": 3,
+          "pass": true,
+          "evidence": "Only selection.ts changed; no guards, coercion, copies, catches, wrappers or dependency additions."
+        },
+        {
+          "id": 4,
+          "pass": true,
+          "evidence": "Caller, tests, package.json and tsconfig.json unchanged, confirmed by recorded changed_inputs and artifacts."
+        },
+        {
+          "id": 5,
+          "pass": true,
+          "evidence": "Command traces show successful typecheck and npm test; final reports match observed results without speed claims."
+        }
+      ],
+      "total": 5,
+      "out_of": 5
+    },
+    "simplify-without-2": {
+      "criteria": [
+        {
+          "id": 1,
+          "pass": true,
+          "evidence": "Independent rerun: typecheck and build plus both behavior tests pass; signatures retained."
+        },
+        {
+          "id": 2,
+          "pass": true,
+          "evidence": "Replaces temporary/manual search with find and direct optional access; page size uses a direct expression."
+        },
+        {
+          "id": 3,
+          "pass": true,
+          "evidence": "Only selection.ts changed; no guards, coercion, copies, catches, wrappers or dependency additions."
+        },
+        {
+          "id": 4,
+          "pass": true,
+          "evidence": "Caller, tests, package.json and tsconfig.json unchanged, confirmed by recorded changed_inputs and artifacts."
+        },
+        {
+          "id": 5,
+          "pass": true,
+          "evidence": "Command traces show successful typecheck and npm test; final reports match observed results without speed claims."
+        }
+      ],
+      "total": 5,
+      "out_of": 5
+    }
+  }
+}

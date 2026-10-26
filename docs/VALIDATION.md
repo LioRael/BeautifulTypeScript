@@ -155,3 +155,13 @@ ESLint recipe. All 27 tests pass; documentation checks now include README snippe
 51 TypeScript blocks compile and 21 execute. README before/after examples are
 explicitly authored demonstrations, not new agent-evaluation results. The generated
 pixel-art banner is stored in assets/banner.png and displayed by the README.
+
+## Simplicity correction (2026-10-27)
+
+All four skills now constrain added complexity to the actual contract. The README compares
+equivalent search implementations and keeps execution probes in tests. npm run check:
+29 tests pass, 51 documentation blocks compile, 18 marked blocks execute; two additional
+tests exercise the README search/async examples. Four skill frontmatter validations pass.
+The new skill-local trusted-refactor case was evaluated in four fresh processes;
+both conditions passed all five criteria per run. This records a narrow regression
+without a claim of superiority. See EVALUATION.md for artifacts and model/isolation limits.

@@ -13,6 +13,7 @@ conventions for style. Read only the source digest relevant to the decision.
 | Return annotations | Local inference versus stable exported API | Annotate useful public contracts; avoid annotations that only repeat obvious local inference. |
 | Strict lint | [typescript-eslint](typescript-eslint.md) distinguishes recommended and opinionated presets | Keep the existing baseline; introduce stricter checks with scoped diagnostics and fixes. |
 | Callback signatures | [Declaration guidance](typescript-declaration-dos-and-donts.md) versus runtime behavior | Model what the producer actually calls; test promise ownership separately. |
+| Defensive checks | Runtime validation versus already established internal contracts | Validate at the real boundary; trust the resulting type downstream. A new guard needs a reachable input and a contract reason. |
 | Schema/Result/classes | No listed source mandates one architecture for every TS app | Reuse project conventions; justify new abstractions by a concrete requirement. |
 
 ## Rule identifiers

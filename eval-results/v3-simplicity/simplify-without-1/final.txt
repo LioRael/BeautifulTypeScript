@@ -1,0 +1,5 @@
+Simplified [src/selection.ts](src/selection.ts) using `find` and `??`, preserving public signatures and behavior for the documented typed inputs.
+
+Inspected the caller and tests. Validation passed: `npm run typecheck` and `npm test` (build plus 2 tests).
+
+No blockers. npm emitted a non-failing configuration warning about `home`.

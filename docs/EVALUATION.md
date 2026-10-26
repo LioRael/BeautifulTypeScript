@@ -128,3 +128,43 @@ non-login shells or direct executables. Invalid probe commands and these environ
 failures remain in traces and reports. No run is dropped for producing an inconvenient
 result. Shared dependency files are read-only by convention, not a separately mounted
 read-only filesystem.
+
+## Trusted refactor regression (v3, 2026-10-27)
+
+The README previously foregrounded adding input validation. That did not demonstrate
+simpler code under an equal contract. The skills now prioritize the smallest clear
+implementation of the actual contract, with validation at real trust boundaries.
+The new [trusted-refactor case](../skills/typescript-best-practices/evals/trusted-refactor/case.json)
+asks for a readability refactor of two internal helpers with existing caller guarantees.
+It checks behavior and scope, plus whether the change introduces speculative defensive
+machinery. The frozen rubric accepts different clear implementations, not a magic syntax
+or a minimum line count.
+
+Four fresh Codex CLI 0.164.0 processes ran serially, two per condition with reversed order
+on repetition two. The runner used its default model selection with user configuration
+disabled. This run did not independently capture the model banner/catalog preflight:
+the exact served model is unverified, so do not pool it with prior runs as a controlled
+model comparison. Task/skill/rubric hashes and invocation settings are retained.
+
+| Condition | Criteria passed | Added defensive machinery |
+|---|---:|---|
+| Without skill, two runs | 10/10 | None observed |
+| With updated skill, two runs | 10/10 | None observed |
+
+All four changed only selection.ts, using find for selection and a direct default expression.
+One with-skill run retained an explicit undefined comparison; the other three used nullish
+coalescing. Both preserve the documented domain, which excludes null. All preserved empty
+names, first-match behavior, absence and zero. Independent post-run typecheck/build and
+both existing behavior tests passed in every workspace.
+
+This is a narrow regression smoke test. It does not demonstrate a gain over baseline,
+prove beauty objectively, or show that the updated instructions caused the outcome.
+The task is small, author-designed and author-scored, with only two repetitions.
+No unrelated skill reads, hidden grader reads or out-of-workspace command access were
+observed in the retained traces; read isolation still relies partly on task instructions.
+
+[Scores](../eval-results/v3-simplicity/scores.json),
+[manifest](../eval-results/v3-simplicity/manifest.json), and
+[run records](../eval-results/v3-simplicity/runs.json) preserve the evidence.
+Each run also includes source artifacts, command events and independent verification.json.
+Reproduce with --cases simplify --workers 1 using the existing runner.
