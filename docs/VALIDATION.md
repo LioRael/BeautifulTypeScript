@@ -31,7 +31,7 @@ configuration emits an unknown `home` option warning; it did not fail checks and
 
 ## Remaining limits
 
-- Node 22/24 CI matrix is supplied but has not run remotely; local runtime was Node 26.
+- Node 22/24 Linux CI passed after publication (see the run below); local runtime was Node 26.
 - Browser configuration typechecks; no browser execution, Bun or Deno run was performed.
 - The source contract is JSON safe-integer inventory aggregation, not arbitrary Python.
   Async migration is documented but this synchronous fixture does not test async parity.
@@ -57,3 +57,16 @@ confirms both agents; named removal of all four succeeds. README file-link check
 Global installation and remote-source updating were documented but not executed; no
 user-level skill installation was changed. The English README uses npx skills as
 the primary installer and includes both GitHub and local-checkout installation commands.
+
+## GitHub publication verification
+
+Public repository: [LioRael/BeautifulTypeScript](https://github.com/LioRael/BeautifulTypeScript).
+The initial published code passed both Node 22 and Node 24 jobs in
+[GitHub Actions run 40375047334](https://github.com/LioRael/BeautifulTypeScript/actions/runs/40375047334).
+Each job ran npm ci and the complete npm run check suite.
+
+Using skills 1.7.4, `npx skills add LioRael/BeautifulTypeScript --list` discovered all four
+skills. Installing with `--skill '*' -a codex -a claude-code -y` succeeded in an isolated
+scratch project. No user-level skills were installed. README installation commands use
+the actual public repository. GitHub emitted action-runtime deprecation notices for the
+current action majors, but both jobs completed successfully.
