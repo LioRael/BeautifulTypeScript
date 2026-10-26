@@ -1,0 +1,205 @@
+evals/run.py
+  s_78bc682a302090::t_12ea9592ee205f 32-37,78,90-91,131,137-143,156
+evals/redact-results.py
+  s_78bc682a302090::t_3a397a680feb69 12,21-24,40-42
+README.md
+  s_a0b2c85094aa9e::t_b00e463c70bb2b 21-32
+docs/EFFECT-STUDY.md
+  s_a0b2c85094aa9e::t_bce13f50a294af 1-172
+docs/EVALUATION.md
+  s_a0b2c85094aa9e::t_63df5b59457ea5 3-6
+docs/VALIDATION.md
+  s_a0b2c85094aa9e::t_93549225706cd6 168-177
+eval-results/v4-effect-study/blinding-map.json
+  s_a0b2c85094aa9e::t_f569ec04b25fb8 1-50
+eval-results/v4-effect-study/effect-async-with-1/verification.json
+  s_a0b2c85094aa9e::t_d6567807c18e88 1-48
+eval-results/v4-effect-study/effect-async-with-2/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_8dfbb5ef83cdae 1-5
+eval-results/v4-effect-study/effect-async-with-2/artifacts/package.json
+  s_a0b2c85094aa9e::t_6769e47071570f 1-13
+eval-results/v4-effect-study/effect-async-with-2/artifacts/src/preview-cache.ts
+  s_a0b2c85094aa9e::t_e0e9c7b94399af 1-67
+eval-results/v4-effect-study/effect-async-with-2/artifacts/tests/cache.test.mjs
+  s_a0b2c85094aa9e::t_962395e85ed63f 1-129
+eval-results/v4-effect-study/effect-async-with-2/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_728dca43e8a4ee 1-20
+eval-results/v4-effect-study/effect-async-with-2/final.txt
+  s_a0b2c85094aa9e::t_371eb0ddf23acd 1-5
+eval-results/v4-effect-study/effect-async-with-2/prompt.txt
+  s_a0b2c85094aa9e::t_065a933aedc8cd 1-3
+eval-results/v4-effect-study/effect-async-with-2/result.json
+  s_a0b2c85094aa9e::t_4881388e7cbb0d 1-22
+eval-results/v4-effect-study/effect-async-with-2/verification.json
+  s_a0b2c85094aa9e::t_1dddb77ca07c6f 1-48
+eval-results/v4-effect-study/effect-async-without-1/verification.json
+  s_a0b2c85094aa9e::t_0a0f802ef7dd6a 1-48
+eval-results/v4-effect-study/effect-async-without-2/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_f30b2fd560edb0 1-5
+eval-results/v4-effect-study/effect-async-without-2/artifacts/package.json
+  s_a0b2c85094aa9e::t_d3b2887679551b 1-13
+eval-results/v4-effect-study/effect-async-without-2/artifacts/src/preview-cache.ts
+  s_a0b2c85094aa9e::t_4c89e7e6986011 1-67
+eval-results/v4-effect-study/effect-async-without-2/artifacts/tests/cache.test.mjs
+  s_a0b2c85094aa9e::t_0d2dcf60587ccd 1-143
+eval-results/v4-effect-study/effect-async-without-2/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_b63b26f309b08a 1-20
+eval-results/v4-effect-study/effect-async-without-2/final.txt
+  s_a0b2c85094aa9e::t_aca8cacfea1162 1-5
+eval-results/v4-effect-study/effect-async-without-2/prompt.txt
+  s_a0b2c85094aa9e::t_a23986839a3ff0 1-2
+eval-results/v4-effect-study/effect-async-without-2/result.json
+  s_a0b2c85094aa9e::t_cb53ed6dcffa7c 1-22
+eval-results/v4-effect-study/effect-async-without-2/verification.json
+  s_a0b2c85094aa9e::t_6ef04d2279cba0 1-48
+eval-results/v4-effect-study/effect-boundary-with-1/verification.json
+  s_a0b2c85094aa9e::t_7dd4717655330c 1-44
+eval-results/v4-effect-study/effect-boundary-with-2/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_54078f1ee4ecb2 1-5
+eval-results/v4-effect-study/effect-boundary-with-2/artifacts/package.json
+  s_a0b2c85094aa9e::t_6d6d2d0dea0f74 1-13
+eval-results/v4-effect-study/effect-boundary-with-2/artifacts/src/sensor.ts
+  s_a0b2c85094aa9e::t_fecab43b6e31af 1-84
+eval-results/v4-effect-study/effect-boundary-with-2/artifacts/tests/sensor.test.mjs
+  s_a0b2c85094aa9e::t_4eef7926528794 1-86
+eval-results/v4-effect-study/effect-boundary-with-2/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_3ccac6a98c7251 1-20
+eval-results/v4-effect-study/effect-boundary-with-2/final.txt
+  s_a0b2c85094aa9e::t_880b66517303ed 1-5
+eval-results/v4-effect-study/effect-boundary-with-2/prompt.txt
+  s_a0b2c85094aa9e::t_39439b1367ef98 1-3
+eval-results/v4-effect-study/effect-boundary-with-2/result.json
+  s_a0b2c85094aa9e::t_76a722e2417c4a 1-22
+eval-results/v4-effect-study/effect-boundary-with-2/verification.json
+  s_a0b2c85094aa9e::t_422a7c7d1f57a3 1-44
+eval-results/v4-effect-study/effect-boundary-without-1/verification.json
+  s_a0b2c85094aa9e::t_da94dff4539ae1 1-44
+eval-results/v4-effect-study/effect-boundary-without-2/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_9f8021606a84c6 1-5
+eval-results/v4-effect-study/effect-boundary-without-2/artifacts/package.json
+  s_a0b2c85094aa9e::t_66ce163c7ee980 1-13
+eval-results/v4-effect-study/effect-boundary-without-2/artifacts/src/sensor.ts
+  s_a0b2c85094aa9e::t_94a58ca780de1a 1-74
+eval-results/v4-effect-study/effect-boundary-without-2/artifacts/tests/sensor.test.mjs
+  s_a0b2c85094aa9e::t_9ee0a0f83a53f0 1-69
+eval-results/v4-effect-study/effect-boundary-without-2/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_8b7071e950b467 1-20
+eval-results/v4-effect-study/effect-boundary-without-2/final.txt
+  s_a0b2c85094aa9e::t_43dd89215b6f9c 1-7
+eval-results/v4-effect-study/effect-boundary-without-2/prompt.txt
+  s_a0b2c85094aa9e::t_cc0a55b1d728ce 1-2
+eval-results/v4-effect-study/effect-boundary-without-2/result.json
+  s_a0b2c85094aa9e::t_ac1271457d1858 1-22
+eval-results/v4-effect-study/effect-boundary-without-2/verification.json
+  s_a0b2c85094aa9e::t_0b1cbef3f5e9c1 1-44
+eval-results/v4-effect-study/effect-internal-with-1/verification.json
+  s_a0b2c85094aa9e::t_9c9feb1caa6567 1-40
+eval-results/v4-effect-study/effect-internal-with-2/verification.json
+  s_a0b2c85094aa9e::t_cd186c42a84376 1-40
+eval-results/v4-effect-study/effect-internal-without-1/verification.json
+  s_a0b2c85094aa9e::t_80b05630b35e75 1-40
+eval-results/v4-effect-study/effect-internal-without-2/verification.json
+  s_a0b2c85094aa9e::t_92947b1288747e 1-40
+eval-results/v4-effect-study/judge-1/judge-prompt.txt
+  s_1d1ebc94680cfb::t_65e7259ae73659 1-7
+eval-results/v4-effect-study/judge-1/verdict.json
+  s_1d1ebc94680cfb::t_b1d7f35028744f 1-80
+eval-results/v4-effect-study/judge-2/judge-prompt.txt
+  s_1d1ebc94680cfb::t_d1a63c51151fda 1-7
+eval-results/v4-effect-study/judge-2/verdict.json
+  s_1d1ebc94680cfb::t_ed3da17d859ecf 1-78
+eval-results/v4-effect-study/provenance/judge-runner.py
+  s_a0b2c85094aa9e::t_a5c63cb1996253 1-62
+eval-results/v4-effect-study/provenance/tool-hashes.json
+  s_a0b2c85094aa9e::t_2904a5f8c98f95 1-6
+eval-results/v4-effect-study/runs.json
+  s_a0b2c85094aa9e::t_040d4b1758b85d 1-266
+eval-results/v4-effect-study/effect-async-with-1/events.jsonl
+  s_78bc682a302090::t_9cb224b79276db 1-19
+eval-results/v4-effect-study/effect-async-with-2/events.jsonl
+  s_78bc682a302090::t_7b859a352d02d2 1-28
+eval-results/v4-effect-study/effect-async-without-1/events.jsonl
+  s_78bc682a302090::t_6e72d4dffa68bc 1-28
+eval-results/v4-effect-study/effect-async-without-2/events.jsonl
+  s_78bc682a302090::t_94bc977cf2311a 1-15
+eval-results/v4-effect-study/effect-boundary-with-1/events.jsonl
+  s_78bc682a302090::t_20614aabbca1c3 1-18
+eval-results/v4-effect-study/effect-boundary-with-2/events.jsonl
+  s_78bc682a302090::t_baf1d15fbc79cb 1-22
+eval-results/v4-effect-study/effect-boundary-without-1/events.jsonl
+  s_78bc682a302090::t_c349f35c8bf3de 1-22
+eval-results/v4-effect-study/effect-boundary-without-2/events.jsonl
+  s_78bc682a302090::t_29fbc7b367ca4d 1-17
+eval-results/v4-effect-study/effect-internal-with-1/events.jsonl
+  s_78bc682a302090::t_9c829965a61ccb 1-19
+eval-results/v4-effect-study/effect-internal-with-2/artifacts/PROJECT.md
+  s_78bc682a302090::t_2c158faf3492a8 1-3
+eval-results/v4-effect-study/effect-internal-with-2/artifacts/package.json
+  s_78bc682a302090::t_42babe52450165 1-13
+eval-results/v4-effect-study/effect-internal-with-2/artifacts/src/plan.ts
+  s_78bc682a302090::t_b1aede33cf9014 1-82
+eval-results/v4-effect-study/effect-internal-with-2/artifacts/tests/plan.test.mjs
+  s_78bc682a302090::t_e9c16912d19665 1-56
+eval-results/v4-effect-study/effect-internal-with-2/artifacts/tsconfig.json
+  s_78bc682a302090::t_3a992c5b671070 1-20
+eval-results/v4-effect-study/effect-internal-with-2/events.jsonl
+  s_78bc682a302090::t_2de1e50b64db90 1-15
+eval-results/v4-effect-study/effect-internal-with-2/final.txt
+  s_78bc682a302090::t_7c69cbe3d32d4f 1-5
+eval-results/v4-effect-study/effect-internal-with-2/prompt.txt
+  s_78bc682a302090::t_8506582a9ea983 1-5
+eval-results/v4-effect-study/effect-internal-with-2/result.json
+  s_78bc682a302090::t_ecd406add8f28b 1-22
+eval-results/v4-effect-study/effect-internal-without-1/events.jsonl
+  s_78bc682a302090::t_34339343df914f 1-13
+eval-results/v4-effect-study/effect-internal-without-2/events.jsonl
+  s_78bc682a302090::t_b36c4ac9a83352 1-15
+eval-results/v4-effect-study/judge-1/events.jsonl
+  s_78bc682a302090::t_7ce651e4b27023 1-25
+eval-results/v4-effect-study/judge-2/events.jsonl
+  s_78bc682a302090::t_b3c3a739c993f3 1-21
+eval-results/v4-effect-study/provenance/author-events.jsonl
+  s_78bc682a302090::t_1e5294c179e106 1-16
+eval-results/v4-effect-study/provenance/environment.json
+  s_78bc682a302090::t_4ad9ef1306efd8 1-13
+eval-results/v4-effect-study/provenance/metadata-redactions.json
+  s_78bc682a302090::t_1f0504a131c4e4 1-4
+eval-results/v4-effect-study/redactions.json
+  s_78bc682a302090::t_b71502e57a08af 1-75
+eval-results/v4-effect-study/summary.json
+  s_78bc682a302090::t_98e73a230d3607 1-104
+evals/judge-effect-study.py
+  s_78bc682a302090::t_9588cdfc9ee9c4 1-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "59ccdabd7138788bd06bc1d7aa5b4bbf4fa6aa08",
+  "prompts": {},
+  "sessions": {
+    "s_1d1ebc94680cfb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a174e3-7a80-7303-89d2-f016a5e7e9de",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    },
+    "s_78bc682a302090": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1793d-88d7-7700-a665-3f955a52da85",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    },
+    "s_a0b2c85094aa9e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1796b-b4e2-7152-9419-bcb7fb9795b6",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    }
+  }
+}
