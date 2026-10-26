@@ -1,0 +1,35 @@
+eval-results/v3-simplicity/simplify-without-1/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_52952033ce220f 1-5
+eval-results/v3-simplicity/simplify-without-1/artifacts/package.json
+  s_a0b2c85094aa9e::t_b1519e6092f193 1-13
+eval-results/v3-simplicity/simplify-without-1/artifacts/src/caller.ts
+  s_a0b2c85094aa9e::t_f6692fe9c5c753 1-5
+eval-results/v3-simplicity/simplify-without-1/artifacts/src/selection.ts
+  s_a0b2c85094aa9e::t_5368a96e0df7b9 1-9
+eval-results/v3-simplicity/simplify-without-1/artifacts/tests/selection.test.mjs
+  s_a0b2c85094aa9e::t_a65fc1ece2bebe 1-19
+eval-results/v3-simplicity/simplify-without-1/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_06096b3abf2f28 1-19
+eval-results/v3-simplicity/simplify-without-1/final.txt
+  s_a0b2c85094aa9e::t_7e704dbf12a215 1-5
+eval-results/v3-simplicity/simplify-without-1/prompt.txt
+  s_a0b2c85094aa9e::t_4ffd5975630bb5 1-2
+eval-results/v3-simplicity/simplify-without-1/result.json
+  s_a0b2c85094aa9e::t_fc2a168c8675c9 1-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3c100f73b09bde76a7f6e544449b2ebd8df3cf82",
+  "prompts": {},
+  "sessions": {
+    "s_a0b2c85094aa9e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1796b-b4e2-7152-9419-bcb7fb9795b6",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    }
+  }
+}
