@@ -12,7 +12,7 @@ written for TypeScript. MIT licensed. Install directly from GitHub; no npm packa
 | [typescript-port](skills/typescript-port/SKILL.md) | Characterizing and porting behavior in executable stages |
 | [typescript-verify](skills/typescript-verify/SKILL.md) | Checking types, lint, tests, builds and real host behavior |
 
-Each folder includes its own source/rule reference. No companion skill is required.
+Each skill bundles the references its workflow needs. No companion skill is required.
 No forced Result type, schema package, framework, architecture or formatting style.
 
 ## Install with npx skills
@@ -148,12 +148,26 @@ quality or language speed. See [results](docs/BENCHMARK.md) and [validation](doc
 
 ## Guides, rules and configuration
 
-[Sources and rule map](docs/SOURCES.md) distinguishes Google's organizational TS guide,
-Microsoft's official Handbook/API/config docs, typescript-eslint tool guidance and Airbnb's
-JS conventions. It explains conflicts, scope and review dates, with links to originals.
-The summaries and code are original; upstream content retains its own ownership.
-[Optional configs](configs/README.md) use a locked compatible toolchain rather than forcing
-latest versions. Existing framework and workspace settings take precedence.
+The writing skill includes a reference library, with a separate original digest for each
+source. Read a digest when its topic matters, rather than loading every guide for every task:
+
+| Reference | Covers |
+|---|---|
+| [Google TypeScript Style Guide](skills/typescript-best-practices/references/google-typescript-style-guide.md) | Organization, inference, assertions and Google-specific conventions |
+| [TypeScript Handbook](skills/typescript-best-practices/references/typescript-handbook.md) | Narrowing, state modeling, generics, callbacks and mutation |
+| [Declaration Do’s and Don’ts](skills/typescript-best-practices/references/typescript-declaration-dos-and-donts.md) | Public types, callback signatures, overloads and consumer checks |
+| [typescript-eslint](skills/typescript-best-practices/references/typescript-eslint.md) | Typed linting, presets, async diagnostics and their limits |
+| [Compiler configuration](skills/typescript-best-practices/references/typescript-compiler-configuration.md) | Strictness, module loading, host environments and output |
+| [Airbnb JavaScript Style Guide](skills/typescript-best-practices/references/airbnb-javascript-style-guide.md) | Applicable JS conventions and choices we do not impose |
+
+Each digest identifies its source, authority, review date, scope and our application
+choices. [Style decisions](skills/typescript-best-practices/references/style-decisions.md)
+resolve concrete conflicts; [source/rule index](docs/SOURCES.md) maps project rules to their
+basis. These are summaries and original examples, not redistributed copies of the guides.
+
+Review, port and verify carry their own focused evidence/checklist references and direct
+source links. They do not depend on the writing skill being installed. [Optional configs](configs/README.md) use a tested toolchain;
+existing framework and workspace settings take precedence.
 
 Layout: skills/ contains installable folders; configs/ contains optional recipes;
 examples/port/ is the executable migration; fixtures/ and tests/ exercise diagnostics and

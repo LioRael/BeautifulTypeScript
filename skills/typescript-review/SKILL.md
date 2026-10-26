@@ -40,7 +40,9 @@ by inserting `void` without handling the rejection.
 Example request: “Review only this checkout diff. Prioritize observable bugs, keep the
 current error model, and include a reproduction for each finding.”
 
-Read [sources and rule map](references/sources.md) when resolving a rule or style conflict.
-This reference is bundled so this skill works alone. Respect repository instructions,
-framework conventions, supported runtimes and the user's scope. Do not install a new
-architecture, Result type, validation library or formatter just to satisfy this skill.
+## Reference
+
+Read [review evidence and source selection](references/review-evidence.md) when choosing
+what to inspect, checking a suspected defect or calibrating findings. It includes the
+rule IDs used here, official source links and false-positive controls. It works without
+another installed skill. Preserve the project's framework, error and validation conventions.

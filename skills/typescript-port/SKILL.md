@@ -69,7 +69,13 @@ full equivalence or a speedup beyond the measured corpus/workload.
 Example request: “Port this Python aggregation function to a Node ESM TypeScript library.
 Preserve first-seen order and errors; run both versions on the same boundary cases.”
 
-Read [sources and rule map](references/sources.md) when resolving a rule or style conflict.
-This reference is bundled so this skill works alone. Respect repository instructions,
-framework conventions, supported runtimes and the user's scope. Do not install a new
-architecture, Result type, validation library or formatter just to satisfy this skill.
+## Reference selection
+
+- Read [semantic and host checklist](references/porting.md) for source-language hazards
+  and the PORTING.md evidence template.
+- Read [type and runtime decisions](references/type-and-runtime-decisions.md) before
+  choosing boundary types, error ownership, async scheduling or deployment configuration.
+  It maps the rule IDs used here to migration decisions and official source links.
+
+Both references are bundled. Do not require a companion skill or impose a new architecture,
+Result type or schema library on the target project.

@@ -48,7 +48,18 @@ results and unavailable checks. Avoid unrelated fixes merely to obtain a green b
 Example request: “Add a typed API client to this existing React app; preserve its fetch
 and error conventions and test malformed responses.”
 
-Read [sources and rule map](references/sources.md) when resolving a rule or style conflict.
-This reference is bundled so this skill works alone. Respect repository instructions,
-framework conventions, supported runtimes and the user's scope. Do not install a new
-architecture, Result type, validation library or formatter just to satisfy this skill.
+## Reference library — read only what the change needs
+
+| When deciding | Read |
+|---|---|
+| Module organization, inference, naming or assertions | [Google TypeScript Style Guide](references/google-typescript-style-guide.md) |
+| Narrowing, state models, generics or mutation | [TypeScript Handbook](references/typescript-handbook.md) |
+| Public callbacks, overloads or declaration files | [Declaration Do’s and Don’ts](references/typescript-declaration-dos-and-donts.md) |
+| Promise diagnostics or lint setup | [typescript-eslint](references/typescript-eslint.md) |
+| Host globals, strictness, modules or emitted output | [Compiler configuration](references/typescript-compiler-configuration.md) |
+| JavaScript readability and local style | [Airbnb JavaScript Style Guide](references/airbnb-javascript-style-guide.md) |
+| Guides disagree, or a rule ID needs explanation | [Style decisions and rule map](references/style-decisions.md) |
+
+These are bundled original digests with source links, applicability and project decisions.
+They are not copies of the guides. This skill works on its own; follow project constraints
+and avoid installing a new architecture, Result type, schema library or formatter by default.

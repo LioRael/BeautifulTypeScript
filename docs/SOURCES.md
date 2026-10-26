@@ -13,18 +13,33 @@ Online documents are rolling editions, not a specification tied to our npm versi
 | M | [Choosing compiler options](https://www.typescriptlang.org/docs/handbook/modules/guides/choosing-compiler-options.html), TypeScript team | Official module-environment guidance | Separate host environments; choose resolution for the actual loader/bundler. |
 | A | [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript), Airbnb contributors | Community/company JavaScript style, not TypeScript guidance | Consider const, clear names and explicit equality; defer formatting and iteration preferences to the project. |
 
+## Bundled reference library
+
+The detailed digests live inside typescript-best-practices, where an agent can read them
+without network access. Each separates source advice from our application decisions:
+
+- [Google TypeScript Style Guide](../skills/typescript-best-practices/references/google-typescript-style-guide.md)
+- [TypeScript Handbook](../skills/typescript-best-practices/references/typescript-handbook.md)
+- [Declaration Do’s and Don’ts](../skills/typescript-best-practices/references/typescript-declaration-dos-and-donts.md)
+- [typescript-eslint](../skills/typescript-best-practices/references/typescript-eslint.md)
+- [Compiler configuration](../skills/typescript-best-practices/references/typescript-compiler-configuration.md)
+- [Airbnb JavaScript Style Guide](../skills/typescript-best-practices/references/airbnb-javascript-style-guide.md)
+- [Conflict decisions](../skills/typescript-best-practices/references/style-decisions.md)
+
+The other skills bundle focused working references, rather than copies of this index:
+[review evidence](../skills/typescript-review/references/review-evidence.md),
+[port decisions](../skills/typescript-port/references/type-and-runtime-decisions.md),
+[port semantics](../skills/typescript-port/references/porting.md), and
+[verification matrix](../skills/typescript-verify/references/verification-matrix.md).
+All four remain independently installable; none links to another skill as a required local file.
+
 ## Conflicts and precedence
 
-User intent and existing project constraints set scope. Actual language/runtime semantics
-and observed behavior decide correctness; project conventions decide style. These skills
-supply defaults only where the project is silent. Never use a convention to excuse a bug.
-Google/Airbnb choices about naming, exports, classes, iteration and punctuation are not
-universal requirements. In particular, do not ban loops because Airbnb prefers iterator
-helpers; use readable code and measured workloads. `interface` versus `type`, semicolons,
-quote style, default exports and enum usage follow the codebase unless a concrete bug exists.
-The declaration guide's advice is most directly relevant to public API typings.
-`strict` is a starting point, not all possible safety checks; enabling additional checks
-in legacy code is a scoped migration. Compiler types cannot enforce trust boundaries.
+Language/runtime facts decide correctness; project instructions and public contracts
+constrain changes. Organization-specific preferences do not override those constraints.
+Google rejects default exports while Airbnb prefers them for single-export modules;
+we preserve the project's API/framework conventions. Airbnb's loop restrictions are not
+a universal policy here. See the bundled conflict decisions for the remaining choices.
 
 ## Rule map (project-authored synthesis)
 

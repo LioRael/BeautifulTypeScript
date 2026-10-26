@@ -31,7 +31,9 @@ description: Verify a TypeScript change using existing type, lint, test, build a
 Example request: “Verify this TS library change using its locked toolchain. Include
 runtime imports and error tests, and distinguish local results from unrun CI.”
 
-Read [sources and rule map](references/sources.md) when resolving a rule or style conflict.
-This reference is bundled so this skill works alone. Respect repository instructions,
-framework conventions, supported runtimes and the user's scope. Do not install a new
-architecture, Result type, validation library or formatter just to satisfy this skill.
+## Reference
+
+Read [verification matrix](references/verification-matrix.md) to select checks by change
+and diagnose misleading green results. It explains the rule IDs used here and links to
+compiler, declaration and lint documentation. This skill is usable alone; preserve the
+repository's framework, scripts and locked versions.

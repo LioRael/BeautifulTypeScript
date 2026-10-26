@@ -2,7 +2,12 @@
 
 Keep skills small and independently installable. Propose a rule with its source, scope,
 concrete failure case and exceptions; label project methodology rather than inventing an
-upstream mandate. Update docs/SOURCES.md and all four bundled references together.
+upstream mandate. Update the relevant source digest or workflow reference and the
+repository-level docs/SOURCES.md index when its mappings change. Do not duplicate the
+source index in each skill. Keep local reference links inside the installable skill.
+For digests, identify the source/owner, review date, scope, source advice, our decisions
+and concrete verification. Prefer short paraphrases and original applications to copying
+upstream passages. Link the relevant reference from SKILL.md with a reason to read it.
 Do not copy large upstream passages. Add a negative and positive fixture for a new explicit
 lint rule, or a behavior test for a new example. Run npm ci, npm run check and, for performance
 changes, npm run benchmark. Keep raw results and disclose regressions/noise.

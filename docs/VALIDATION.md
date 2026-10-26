@@ -8,7 +8,7 @@ TypeScript 5.9.3, ESLint 10.13.0, typescript-eslint 8.72.1.
 |---|---|---|
 | npm ci --ignore-scripts | exit 0 | Lockfile reinstall; no lifecycle scripts needed; public npm registry URLs |
 | npm run check (after reinstall) | exit 0 | All commands below, 20 Node tests, zero failures/skips |
-| npm run check:skills | exit 0 | Four names/frontmatter, local reference isolation/parity, Markdown file links; remote URLs and anchors not automatically crawled |
+| npm run check:skills | exit 0 | Four names/frontmatter, local reference isolation and linked references, Markdown file links; remote URLs and anchors not automatically crawled |
 | Bundled skill-creator quick_validate.py on each skill | exit 0, four valid | Format/scaffold validation, not agent efficacy |
 | npm run typecheck | exit 0 | Node and browser bundler compilation contexts |
 | npm run lint | exit 0 | Real TS example; zero warnings |
@@ -70,3 +70,18 @@ skills. Installing with `--skill '*' -a codex -a claude-code -y` succeeded in an
 scratch project. No user-level skills were installed. README installation commands use
 the actual public repository. GitHub emitted action-runtime deprecation notices for the
 current action majors, but both jobs completed successfully.
+
+## Reference library revision
+
+Replaced four identical sources.md appendices with six source-specific digests and a
+conflict/rule map in typescript-best-practices, plus focused review, port and verification
+references. Each skill links only to files within its own installed folder or official
+external sources. The repository-level SOURCES.md remains an index, not an install dependency.
+
+Validation: npm run check passed all 20 tests, including standalone installation and
+byte-for-byte copying of each reference. The link checker now follows the reference graph
+from SKILL.md and rejects missing, escaping or unreachable reference files. All four
+quick_validate.py checks passed using an isolated Python environment with PyYAML; no
+project dependency was added. A skills 1.7.4 local-source install for Codex and Claude Code
+also preserved all 11 reference files byte-for-byte. These checks establish packaging
+integrity, not improved agent performance or parity with another project's evaluations.
