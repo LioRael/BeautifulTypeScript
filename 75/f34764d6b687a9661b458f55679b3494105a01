@@ -1,0 +1,46 @@
+README.md
+  h_9d56aba080c170 183-184
+docs/EVALUATION.md
+  h_9d56aba080c170 3-7
+docs/GAP-ANALYSIS.md
+  h_9d56aba080c170 36-45
+docs/GUIDE-COVERAGE.md
+  h_9d56aba080c170 1-62
+docs/SOURCES.md
+  h_9d56aba080c170 3-4
+docs/VALIDATION.md
+  h_9d56aba080c170 107-122
+evals/README.md
+  h_9d56aba080c170 74-75
+skills/typescript-best-practices/references/airbnb-javascript-style-guide.md
+  h_9d56aba080c170 1,3-6,8,10-25,27,29-40,42-44,46,48-55,57-61,63,65-156
+skills/typescript-best-practices/references/google-typescript-style-guide.md
+  h_9d56aba080c170 1,3-7,9,11-26,28,30-34,36,38-41,43-46,48-50,52-55,57,59-68,70-191
+skills/typescript-best-practices/references/typescript-compiler-configuration.md
+  h_9d56aba080c170 1,3-7,9,11-12,14-17,19-20,22,24-31,33-34,36-45,47-166
+skills/typescript-best-practices/references/typescript-declaration-dos-and-donts.md
+  h_9d56aba080c170 1,3-5,7,9,11-21,23-24,26,28-33,35-37,39,41-152
+skills/typescript-best-practices/references/typescript-eslint.md
+  h_9d56aba080c170 1,3-5,7,9-12,14,16-27,29-32,34,36-39,41-43,45,47-108,110-119,121,123-127,129-132
+skills/typescript-best-practices/references/typescript-handbook.md
+  h_9d56aba080c170 1-187
+skills/typescript-port/references/type-and-runtime-decisions.md
+  h_9d56aba080c170 63-138
+skills/typescript-review/references/review-evidence.md
+  h_9d56aba080c170 47-109
+skills/typescript-verify/references/verification-matrix.md
+  h_9d56aba080c170 49-114
+tests/reference-examples.test.mjs
+  h_9d56aba080c170 1-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "75f34764d6b687a9661b458f55679b3494105a01",
+  "prompts": {},
+  "humans": {
+    "h_9d56aba080c170": {
+      "author": "LioRael <leo@lenso.dev>"
+    }
+  }
+}
