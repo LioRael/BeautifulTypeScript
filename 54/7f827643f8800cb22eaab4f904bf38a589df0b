@@ -1,0 +1,193 @@
+evals/README.md
+  s_78bc682a302090::t_3b9f16c74de3eb 16,50-51,106-107,138-164
+docs/VALIDATION.md
+  s_78bc682a302090::t_3528e4363c5c34 195-221
+docs/EVALUATION.md
+  s_78bc682a302090::t_3528e4363c5c34 3-6
+README.md
+  s_78bc682a302090::t_3528e4363c5c34 25-27,31-35,37-40
+docs/MAINTENANCE-STUDY.md
+  s_78bc682a302090::t_3528e4363c5c34 1-149
+docs/AGENT-TS-RESEARCH.md
+  s_78bc682a302090::t_3528e4363c5c34 1-150
+eval-results/v6-maintenance-study/maintenance-sequence-old-2-stage-2/verification.json
+  s_a0b2c85094aa9e::t_051050a7805758 1-44
+eval-results/v6-maintenance-study/maintenance-sequence-old-2-stage-3/verification.json
+  s_a0b2c85094aa9e::t_64f430d55659bd 1-48
+eval-results/v6-maintenance-study/maintenance-sequence-with-2-stage-1/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_45ed2466da98aa 1-11
+eval-results/v6-maintenance-study/maintenance-sequence-with-2-stage-1/artifacts/package.json
+  s_a0b2c85094aa9e::t_b3e9fae7c0e2be 1-13
+eval-results/v6-maintenance-study/maintenance-sequence-with-2-stage-1/artifacts/src/desk.ts
+  s_a0b2c85094aa9e::t_40c0ff7f019908 1-47
+eval-results/v6-maintenance-study/maintenance-sequence-with-2-stage-1/artifacts/src/model.ts
+  s_a0b2c85094aa9e::t_c8a50065584b1b 1-33
+eval-results/v6-maintenance-study/maintenance-sequence-with-2-stage-1/artifacts/src/portal.ts
+  s_a0b2c85094aa9e::t_9e933181ae736b 1-34
+eval-results/v6-maintenance-study/maintenance-sequence-with-2-stage-1/artifacts/src/store.ts
+  s_a0b2c85094aa9e::t_d775e7b0d7a1a3 1-28
+eval-results/v6-maintenance-study/maintenance-sequence-with-2-stage-1/artifacts/tests/baseline.test.mjs
+  s_a0b2c85094aa9e::t_a5ac3e8df5f5a4 1-40
+eval-results/v6-maintenance-study/maintenance-sequence-with-2-stage-1/artifacts/tests/waitlist.test.mjs
+  s_a0b2c85094aa9e::t_bd52c586ef0e48 1-107
+eval-results/v6-maintenance-study/maintenance-sequence-with-2-stage-1/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_40c49482d62812 1-20
+eval-results/v6-maintenance-study/maintenance-sequence-with-2-stage-1/final.txt
+  s_a0b2c85094aa9e::t_4426da99e4c7e9 1-3
+eval-results/v6-maintenance-study/maintenance-sequence-with-2-stage-1/prompt.txt
+  s_a0b2c85094aa9e::t_de5038ab00c600 1-10
+eval-results/v6-maintenance-study/maintenance-sequence-with-2-stage-1/result.json
+  s_a0b2c85094aa9e::t_63ce4cea6cbf4d 1-45
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-1/artifacts/PROJECT.md
+  s_a0b2c85094aa9e::t_f8585cbce90a46 1-11
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-1/artifacts/package.json
+  s_a0b2c85094aa9e::t_c2370c6bb3712f 1-13
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-1/artifacts/src/desk.ts
+  s_a0b2c85094aa9e::t_f601ea9a83d4f8 1-47
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-1/artifacts/src/model.ts
+  s_a0b2c85094aa9e::t_331867076440e5 1-37
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-1/artifacts/src/portal.ts
+  s_a0b2c85094aa9e::t_dbf555e2d3bbae 1-35
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-1/artifacts/src/store.ts
+  s_a0b2c85094aa9e::t_df818c0e7e4716 1-28
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-1/artifacts/tests/baseline.test.mjs
+  s_a0b2c85094aa9e::t_8f5f11637aec03 1-40
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-1/artifacts/tests/waitlist.test.mjs
+  s_a0b2c85094aa9e::t_0774f8002e38af 1-92
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-1/artifacts/tsconfig.json
+  s_a0b2c85094aa9e::t_b13714f10f3e40 1-20
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-1/final.txt
+  s_a0b2c85094aa9e::t_53b3a230c467a6 1-5
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-1/prompt.txt
+  s_a0b2c85094aa9e::t_853e9334ff4911 1-9
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-1/result.json
+  s_a0b2c85094aa9e::t_847d0c0d67dffe 1-45
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-3/artifacts/PROJECT.md
+  s_1d1ebc94680cfb::t_2ffa82b9529c4b 1-15
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-3/artifacts/package.json
+  s_1d1ebc94680cfb::t_5fca1665488256 1-13
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-3/artifacts/src/desk.ts
+  s_1d1ebc94680cfb::t_7846c654c60e56 1-89
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-3/artifacts/src/model.ts
+  s_1d1ebc94680cfb::t_08c33075ee1a18 1-38
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-3/artifacts/src/portal.ts
+  s_1d1ebc94680cfb::t_071ac5c12df635 1-35
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-3/artifacts/src/store.ts
+  s_1d1ebc94680cfb::t_cc1b98ccc691a4 1-29
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-3/artifacts/tests/admissions.test.mjs
+  s_1d1ebc94680cfb::t_1a95e2e5dd476b 1-115
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-3/artifacts/tests/baseline.test.mjs
+  s_1d1ebc94680cfb::t_83f0818ea5280c 1-40
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-3/artifacts/tests/offers.test.mjs
+  s_1d1ebc94680cfb::t_2416e7c6cbc291 1-107
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-3/artifacts/tests/waitlist.test.mjs
+  s_1d1ebc94680cfb::t_01f74586424479 1-100
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-3/artifacts/tsconfig.json
+  s_1d1ebc94680cfb::t_fbe7d96371be55 1-20
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-3/final.txt
+  s_1d1ebc94680cfb::t_ef1c2268807bd1 1-5
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-3/prompt.txt
+  s_1d1ebc94680cfb::t_b86e8ec94c2d64 1-27
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-3/result.json
+  s_1d1ebc94680cfb::t_d4818471187368 1-51
+eval-results/v6-maintenance-study/manifest.json
+  s_1d1ebc94680cfb::t_ab3a128bb369d2 1-223
+evals/judge-effect-study.py
+  s_1d1ebc94680cfb::t_25e0d9ac17e320 15-17,29-33,37,39-44,53
+evals/maintenance-study-protocol.md
+  s_1d1ebc94680cfb::t_241c057284fe9f 1-53
+evals/run.py
+  s_1d1ebc94680cfb::t_e96d2ad668ed49 64-77,82,88-90,99-106,110-112,124-126,160-180,185,200-202,204-205,220,224-225
+evals/tests/test_packaging.py
+  s_1d1ebc94680cfb::t_b584f42fa68b48 70-112
+evals/verify-effect-study.py
+  s_1d1ebc94680cfb::t_8f0ca255ec06ce 9-10,33-68
+eval-results/v6-maintenance-study/judge-1/events.jsonl
+  s_78bc682a302090::t_cea1d310470fc4 1-34
+eval-results/v6-maintenance-study/judge-1/judge-prompt.txt
+  s_78bc682a302090::t_34b9801df8cf5f 1-8
+eval-results/v6-maintenance-study/judge-1/verdict.json
+  s_78bc682a302090::t_5a5683a4d6ae56 1-62
+eval-results/v6-maintenance-study/judge-2/events.jsonl
+  s_78bc682a302090::t_0104637cd912a0 1-36
+eval-results/v6-maintenance-study/judge-2/judge-prompt.txt
+  s_78bc682a302090::t_96b70143e24b48 1-8
+eval-results/v6-maintenance-study/judge-2/verdict.json
+  s_78bc682a302090::t_13cdace5ca6942 1-63
+eval-results/v6-maintenance-study/maintenance-sequence-old-1-stage-1/events.jsonl
+  s_78bc682a302090::t_81e4f4dd440e58 1-20
+eval-results/v6-maintenance-study/maintenance-sequence-old-1-stage-2/events.jsonl
+  s_78bc682a302090::t_a15a60bd006f09 1-24
+eval-results/v6-maintenance-study/maintenance-sequence-old-1-stage-3/events.jsonl
+  s_78bc682a302090::t_368b2b1b8780a8 1-25
+eval-results/v6-maintenance-study/maintenance-sequence-old-2-stage-1/events.jsonl
+  s_78bc682a302090::t_f9fd406c0821f3 1-28
+eval-results/v6-maintenance-study/maintenance-sequence-old-2-stage-2/events.jsonl
+  s_78bc682a302090::t_c07d375db0f993 1-20
+eval-results/v6-maintenance-study/maintenance-sequence-old-2-stage-3/events.jsonl
+  s_78bc682a302090::t_5b7f8e358cc7c2 1-18
+eval-results/v6-maintenance-study/maintenance-sequence-with-1-stage-1/events.jsonl
+  s_78bc682a302090::t_5e760dd98f9cbc 1-24
+eval-results/v6-maintenance-study/maintenance-sequence-with-1-stage-2/events.jsonl
+  s_78bc682a302090::t_7d89df783cc788 1-20
+eval-results/v6-maintenance-study/maintenance-sequence-with-1-stage-3/events.jsonl
+  s_78bc682a302090::t_45230af0674639 1-25
+eval-results/v6-maintenance-study/maintenance-sequence-with-2-stage-1/events.jsonl
+  s_78bc682a302090::t_5115d662f0df59 1-20
+eval-results/v6-maintenance-study/maintenance-sequence-with-2-stage-2/events.jsonl
+  s_78bc682a302090::t_ce0f199f8c5c86 1-28
+eval-results/v6-maintenance-study/maintenance-sequence-with-2-stage-3/events.jsonl
+  s_78bc682a302090::t_b54a7e4415fe6a 1-18
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-1/events.jsonl
+  s_78bc682a302090::t_50f4f260da570f 1-18
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-2/events.jsonl
+  s_78bc682a302090::t_f36d9631b13eba 1-24
+eval-results/v6-maintenance-study/maintenance-sequence-without-1-stage-3/events.jsonl
+  s_78bc682a302090::t_ec36440a71b0ba 1-18
+eval-results/v6-maintenance-study/maintenance-sequence-without-2-stage-1/events.jsonl
+  s_78bc682a302090::t_4b2eea339c574f 1-19
+eval-results/v6-maintenance-study/maintenance-sequence-without-2-stage-2/events.jsonl
+  s_78bc682a302090::t_963fc7f5ca8f91 1-24
+eval-results/v6-maintenance-study/maintenance-sequence-without-2-stage-3/events.jsonl
+  s_78bc682a302090::t_23e30905162be2 1-26
+eval-results/v6-maintenance-study/provenance/recorded-runner.py
+  s_78bc682a302090::t_83e64952371b6c 1-233
+eval-results/v6-maintenance-study/provenance/repository-check.log
+  s_78bc682a302090::t_b359f63824745e 1-194
+eval-results/v6-maintenance-study/redactions.json
+  s_78bc682a302090::t_2c14d0878a4bf0 1-109
+eval-results/v6-maintenance-study/summary.json
+  s_78bc682a302090::t_37c48245e77d05 1-84
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "547f827643f8800cb22eaab4f904bf38a589df0b",
+  "prompts": {},
+  "sessions": {
+    "s_1d1ebc94680cfb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a174e3-7a80-7303-89d2-f016a5e7e9de",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    },
+    "s_78bc682a302090": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1793d-88d7-7700-a665-3f955a52da85",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    },
+    "s_a0b2c85094aa9e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1796b-b4e2-7152-9419-bcb7fb9795b6",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    }
+  }
+}
