@@ -1,0 +1,27 @@
+README.md
+  s_a0b2c85094aa9e::t_ddff863ddf368c 190-192
+configs/README.md
+  s_a0b2c85094aa9e::t_f8b75bd7af75d8 33-80
+skills/typescript-best-practices/references/typescript-eslint.md
+  s_a0b2c85094aa9e::t_bb3b31762b8b98 133-156
+skills/typescript-verify/references/verification-matrix.md
+  s_a0b2c85094aa9e::t_5c1ff320184b77 115-125
+tests/oxlint.test.mjs
+  s_a0b2c85094aa9e::t_3aaf3811a7eea9 1-34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a559034ed9f3356d3d96956d693b5de5b32361dd",
+  "prompts": {},
+  "sessions": {
+    "s_a0b2c85094aa9e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1796b-b4e2-7152-9419-bcb7fb9795b6",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    }
+  }
+}
