@@ -1,0 +1,7 @@
+Implemented `src/ledger.ts` with exact BigInt totals, stable ordering, and validation error codes. Added target tests and `PORTING.md`; Python files remain unchanged.
+
+Verified: typecheck/build pass, 9 target tests pass, 307 differential cases match Python, and all 4 original tests pass.
+
+Known gap: JavaScript loses JSON’s `1` versus `1.0` distinction, affecting priority validation. Documented alongside verification limits.
+
+A Git status command unexpectedly listed external paths; no further Git inspection occurred.

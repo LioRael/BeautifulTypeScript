@@ -1,0 +1,5 @@
+Created [VERIFY.md](VERIFY.md) with commands, results, blockers, coverage gaps, and untested hosts.
+
+**Not ready to ship:** build and typecheck pass, but native Node ESM imports fail with `ERR_MODULE_NOT_FOUND` because the emitted entry uses extensionless `./core`. Tests execute zero assertions; lint inspects zero files.
+
+No source/configuration changes were made. Temporary artifacts were removed. The report also documents the accidental out-of-workspace listing from `git status`.

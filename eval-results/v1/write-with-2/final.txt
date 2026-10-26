@@ -1,0 +1,5 @@
+Implemented `src/settings.ts` with validation, defaults, fresh output, and error preservation. Public signatures remain unchanged.
+
+Validation passed: typecheck, build, all 12 tests, and an emitted-declaration consumer check. No blockers; details are in [REPORT.md](REPORT.md).
+
+Scope incident: `git status` unexpectedly listed ancestor paths. No listed files were opened or changed; this is documented in the report.

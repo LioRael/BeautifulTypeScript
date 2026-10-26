@@ -1,0 +1,9 @@
+Created [VERIFY.md](VERIFY.md) with commands, results, blockers, coverage gaps and untested hosts.
+
+**Not ready to ship for Node ESM:**
+
+- Built entrypoint fails with `ERR_MODULE_NOT_FOUND`.
+- NodeNext declaration consumer fails with TS2835.
+- Lint inspects zero files; tests execute zero tests.
+
+Typecheck and build passed. Existing project files remain unchanged; temporary verification artifacts were removed.

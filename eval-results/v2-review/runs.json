@@ -1,0 +1,78 @@
+[
+  {
+    "id": "review-with-1",
+    "case": "review",
+    "condition": "with",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 96.728,
+    "usage": {
+      "input_tokens": 89716,
+      "cached_input_tokens": 73856,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2849,
+      "reasoning_output_tokens": 166
+    },
+    "changed_inputs": [],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "review-with-2",
+    "case": "review",
+    "condition": "with",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 102.796,
+    "usage": {
+      "input_tokens": 142637,
+      "cached_input_tokens": 127104,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2655,
+      "reasoning_output_tokens": 124
+    },
+    "changed_inputs": [],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "review-without-1",
+    "case": "review",
+    "condition": "without",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 77.115,
+    "usage": {
+      "input_tokens": 82226,
+      "cached_input_tokens": 73728,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2475,
+      "reasoning_output_tokens": 168
+    },
+    "changed_inputs": [],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "review-without-2",
+    "case": "review",
+    "condition": "without",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 67.534,
+    "usage": {
+      "input_tokens": 79747,
+      "cached_input_tokens": 71040,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2311,
+      "reasoning_output_tokens": 214
+    },
+    "changed_inputs": [],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  }
+]

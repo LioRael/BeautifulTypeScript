@@ -1,0 +1,3 @@
+Created [REVIEW.md](REVIEW.md) with three prioritized findings, concrete triggers, consequences, and minimal remedies.
+
+Typechecking and the existing test passed. Four focused reproductions confirmed the defects. No blockers; source and configuration remain unchanged.

@@ -1,0 +1,8 @@
+Implemented `src/ledger.ts` exporting `summarize`, added 12 target tests and `PORTING.md`. Python source and tests remain unchanged.
+
+Verified:
+- TypeScript typecheck and build passed.
+- All 12 target and 4 Python tests passed.
+- 405 differential cases matched Python.
+
+Documented remaining differences, including JSON `1.0` priority handling. A shell startup failure was bypassed; no outstanding verification blockers.

@@ -5,69 +5,122 @@ description: Port an existing module or service into TypeScript with characteriz
 
 # TypeScript port
 
-The deliverable is a working port with evidence for a defined input domain and runtime.
-No language pair is automatically fully supported. Start with the source available;
-do not promise equivalence when dependencies, platform APIs or tests are missing.
-Read [semantic and host checklist](references/porting.md) for relevant source-language
-hazards and a reusable evidence template.
+Port observable behavior into a defined TypeScript runtime. No language pair is
+universally supported; native APIs, concurrency and numeric/text semantics need explicit
+choices. Keep both implementations available until cutover is authorized.
 
-## 1. Capture the source contract (TS06)
+## 1. Establish the source baseline (TS01, TS06)
 
-Read source, callers, tests and dependency/runtime versions. Run source tests before
-editing. Record public APIs, input domain, outputs and side effects: ordering, mutation,
-serialization, errors, exit codes, resource lifetime, timeouts and cancellation.
-Add characterization cases for uncovered behavior. Keep a source-test → target-test
-mapping; supplement tests with fixed and generated cross-language cases. Tests are
-samples, not a complete specification. If source cannot execute, separate inferred
-behavior from measured behavior and explain the gap.
+Read source, callers, tests, versions and dependencies. Run original tests before editing
+and retain their results. If source execution is unavailable, separate inferred behavior
+from measured behavior; do not call the port equivalent on that basis.
 
-## 2. Choose the target and model (TS01–TS05)
+Make a short contract inventory before implementation:
 
-Name the actual Node/Bun/Deno/browser versions and deployment mode. Inventory native
-extensions, filesystem/process use and framework integrations. Choose a narrow adapter
-or retain an existing native/WASM component when a direct port cannot preserve behavior.
-Map integer ranges/precision, records/maps, missing/null values, byte/text boundaries,
-errors and asynchronous work before implementation. Use the project's error conventions;
-a tagged union, exception or ordinary return value is a choice, not a mandatory rewrite.
-Put runtime validation at foreign/untrusted boundaries; static interfaces are erased.
+| Area | Capture |
+|---|---|
+| API | Inputs, outputs, defaults, mutation and callers |
+| Data | Numeric range, precision, encoding, null/missing and serialization |
+| Collections | Key equality, ordering, ties, duplicates and aliasing |
+| Failure | Error categories/codes, observable messages, partial effects and exit codes |
+| Execution | Sync/async boundary, concurrency, cancellation, timeout and resource lifetime |
+| Environment | Native dependencies, filesystem/process/network use and platform assumptions |
 
-## 3. Port in runnable slices
+Tests are evidence, not the entire specification. Add characterization cases for uncovered
+behavior and ambiguities. Preserve source quirks unless a behavior change is authorized;
+do not quietly “improve” them while translating.
 
-Translate or reproduce tests first, including failures. Port one pure core operation,
-then stateful behavior, then I/O adapters, then integration. Keep source and target
-runnable side by side until comparison passes. For JavaScript migration, consider a
-scoped allowJs/checkJs stage if compatible with the repository, and retire temporary
-unsafe types deliberately. Do not rewrite architecture or optimize during translation.
-Do not silently normalize behavior, fix source bugs, reduce numeric ranges or drop edge
-cases. Record proposed deviations; preserve the contract unless a change is authorized.
-If an ambiguity prevents a slice, continue independent slices and report the blocker.
+## 2. Define the target and migration boundary (TS01, TS05)
 
-## 4. Compare results and failures
+Name the actual host/version, module format, build path and intended consumers. Reuse the
+target project's framework, package manager and error conventions. List dependencies that
+can be reused, replaced, adapted or cannot be ported directly. A native/WASM adapter can
+be a smaller, more faithful boundary than reimplementing an entire subsystem.
 
-Use a common input corpus and a documented wire format. Compare outputs, ordering,
-mutation and error categories; compare messages only when they are part of the contract.
-Normalization must not hide meaningful differences (sorting output would hide an order
-bug). Include boundaries, invalid input, Unicode, numeric limits and deterministic
-random cases. Test async rejection, order, backpressure, cancellation and cleanup when
-the source exposes them. A JSON adapter cannot prove aliasing, threads or all numeric
-semantics: add in-process/integration checks for those. Run each advertised host.
+Use [semantic and host checklist](references/porting.md) for source-specific hazards and
+[type/runtime decisions](references/type-and-runtime-decisions.md) for modeling tradeoffs.
+A pure core is a useful starting point, not evidence of universal host compatibility.
 
-## 5. Benchmark only after equivalence (TS08)
+## 3. Port tests before the implementation
 
-Choose representative workloads, validate equal results, warm up, repeat and alternate
-run order. Record versions, machine, input sizes, raw samples and median/range. Separate
-startup/IPC/parse cost from steady-state computation. Do not call a language faster based
-on an unrepresentative microbenchmark. If no comparable harness is feasible, say so.
+Keep a source-test → target-test mapping. Preserve all source cases and their assertions;
+rename for clarity only if the mapping remains clear. If the original lacks tests, write
+characterization tests against the running source first.
 
-## 6. Deliver evidence (TS09)
+Choose comparison boundaries deliberately. A JSON harness can compare values and error
+codes, but hides object identity, aliasing, nonfinite values and concurrency. Add in-process
+or integration checks for behavior the wire protocol cannot represent.
 
-Provide source/target API and test mappings, supported domain and runtimes, preserved
-quirks, authorized differences, unresolved cases and actual verification commands in
-PORTING.md. Keep the original implementation until cutover is authorized. Do not claim
-full equivalence or a speedup beyond the measured corpus/workload.
+Record the red state of target tests against an unimplemented target when feasible. Do
+not generate expected output by calling the target implementation itself.
 
-Example request: “Port this Python aggregation function to a Node ESM TypeScript library.
-Preserve first-seen order and errors; run both versions on the same boundary cases.”
+## 4. Make type and semantic decisions before each slice (TS02–TS04)
+
+| Source behavior | TypeScript decision |
+|---|---|
+| Unbounded or wide integers | Safe number domain only if the source contract allows it; otherwise bigint/string protocol or a suitable existing numeric library |
+| Decimal quantities | Preserve required precision; do not use binary floating point merely because number is convenient |
+| Missing versus explicit null | Model and validate separately when their meaning differs |
+| Ordered maps | Use a representation that preserves actual key/equality/order semantics |
+| Exception/error-code API | Preserve caller-visible categories and useful context using the target's existing error convention |
+| Sequential work | Preserve when work starts, completes and stops on failure; async syntax alone does not implement a scheduler |
+| Resource lifetime | Provide explicit cleanup where source behavior cannot depend on garbage collection timing |
+
+Validate foreign/untrusted data once at the boundary. A TS interface cannot enforce wire
+input. Add unions, classes, brands or a schema library only where they solve an actual
+contract problem. Do not force Result on exception-based callers.
+
+For parsers, verify full-string acceptance, whitespace, signs, Unicode, trailing line
+terminators and numeric overflow against source behavior. Similar-looking regular
+expressions or standard-library functions can accept different inputs across languages.
+
+## 5. Implement in runnable stages
+
+1. Establish the target project and test command without replacing existing config.
+2. Port a pure operation and compare it with the source on fixed inputs.
+3. Add stateful behavior, checking ordering, mutation and failure effects.
+4. Add I/O/native adapters and cancellation/cleanup behavior.
+5. Integrate public callers and verify built entrypoints/declarations.
+
+At each stage keep a runnable result and record a deliberate difference immediately.
+Avoid optimization and architecture rewrites until behavior agrees. For JavaScript
+migration, a scoped allowJs/checkJs stage can be useful; contain and retire temporary
+unsafe types rather than treating any as the final model.
+
+## 6. Compare independently
+
+Use the same deterministic corpus for source and target: typical, empty, boundary,
+malformed and generated inputs. Fix and record a seed. Compare failures as well as values.
+Normalize only fields whose differences are not contractually meaningful; sorting every
+output can conceal the very order bug the comparison should catch.
+
+For async code, use controlled deferred operations rather than flaky elapsed-time tests:
+prove when later work may start, what happens after rejection, and whether cancellation
+releases resources. Test selected supported hosts. Do not infer browser/Bun/Deno support
+from Node execution or successful compilation.
+
+When comparison fails, minimize the input, classify source quirk versus target defect,
+and fix the smallest responsible slice. Do not delete the case or loosen normalization
+to make the comparison pass. Unknown differences remain explicit gaps.
+
+## 7. Measure only after equivalence (TS08)
+
+Keep the same workload and check results before timing. Separate startup/IPC/parsing from
+steady-state work; record versions, machine, sizes, warmups, repeated raw samples and
+median/range. Alternate order where practical. Explain algorithm changes and regressions.
+Do not claim one language is faster from a synthetic microbenchmark or silently change
+the workload to favor the port. If a fair comparison is unavailable, report that.
+
+## 8. Deliver a usable port (TS09)
+
+Run the target's typecheck, lint, tests, build and appropriate runtime/consumer checks.
+Write PORTING.md with source revision/runtime, target host/toolchain, API mapping,
+source-test mapping, characterized input domain, error/mutation/order semantics,
+preserved quirks, authorized differences, executed commands and unverified cases.
+
+Keep the source and original tests intact. A compile pass is not behavioral equivalence;
+a passing finite corpus is not proof for every possible input. Report the boundary of
+what the evidence supports, along with any blocker to replacing the source in production.
 
 ## Reference selection
 

@@ -130,6 +130,25 @@ The [port example](examples/port/PORTING.md) runs Python and TS on shared bounda
 and a seeded corpus. It preserves safe-integer arithmetic, first-seen key order and error
 categories. It does not claim arbitrary-language, all-input or all-runtime equivalence.
 
+## What the workflows produce
+
+- **Write:** project/API constraints, validated boundary data, explicit async ownership,
+  behavior tests and a check of the emitted package when applicable.
+- **Review:** caller-based findings with triggers, consequences, minimal remedies and
+  executed reproductions; distinguish selection, execution and presentation order.
+- **Port:** source characterization, source-to-target test mapping, runnable stages,
+  differential checks and a PORTING.md that exposes compatibility gaps.
+- **Verify:** evidence for actual file/test coverage, built runtime imports and consumers;
+  distinguish failed, empty and unrun checks before calling a change ready.
+
+The writing skill ships [executable boundary/async patterns](skills/typescript-best-practices/assets/patterns.ts).
+The [BeautifulRust gap analysis](docs/GAP-ANALYSIS.md) explains the changes and intentional
+differences. The [paired agent evaluation](docs/EVALUATION.md) includes tasks, generated
+code, review/port/verification reports and command traces. Its initial 16 runs did **not**
+establish a correctness improvement: both conditions saturated the frozen rubric, which
+also missed an ordering requirement. The report preserves that failure and the targeted
+follow-up rather than claiming a general success rate.
+
 ## Verify this repository
 
 Requires Node 22.13+ (or 24+) and Python 3.9+. Use the committed lockfile.

@@ -1,0 +1,4 @@
+Work only in this workspace. Read PROJECT.md and the task files. Do not inspect parent/home directories, other skills, evaluation rubrics, or other runs. Do not use network, install packages, delegate, publish, or change global settings. node_modules is preinstalled; use it only to run project tooling. You have at most 8 minutes. Complete the requested work and report actual evidence, including blockers.
+Verify whether this library is ready to ship for Node ESM. Read PROJECT.md and package.json.
+Do not repair or change project files. Write VERIFY.md with actual commands/results, a
+release-readiness conclusion, concrete failures or coverage gaps, and any untested hosts.

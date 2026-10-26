@@ -1,0 +1,7 @@
+Implemented `src/ledger.ts`, added target tests, and wrote `PORTING.md` with API mapping and remaining differences. Python source/tests remain unchanged.
+
+Verification passed: typecheck, build, 9 target tests including 788 Python differential cases, and all 4 original Python tests.
+
+Limitation: JavaScript cannot distinguish parsed JSON priorities `1` and `1.0`; Python rejects the latter.
+
+A Git command unexpectedly listed ancestor paths; no listed files were opened. This incident is documented.

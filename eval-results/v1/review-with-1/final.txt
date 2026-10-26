@@ -1,0 +1,7 @@
+Created [REVIEW.md](REVIEW.md) with three reproduced findings:
+
+- P1: discarded save promises cause early completion and lost failures.
+- P1: `'0'` starts saves instead of pausing.
+- P2: sorting mutates the caller-owned array.
+
+Typecheck, build, and the single existing test passed. Runtime probes confirmed all findings. No blockers; source and configuration unchanged.

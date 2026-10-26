@@ -1,0 +1,69 @@
+{
+  "reason": "Incidental ancestor git status filenames and host PATH inventory; commands, statuses and task evidence retained. Raw transport logs stay local.",
+  "counts": {
+    "port-with-1": {
+      "ancestor_git_paths": 295,
+      "environment_path_lines": 0
+    },
+    "port-with-2": {
+      "ancestor_git_paths": 295,
+      "environment_path_lines": 0
+    },
+    "port-without-1": {
+      "ancestor_git_paths": 295,
+      "environment_path_lines": 0
+    },
+    "port-without-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0
+    },
+    "review-with-1": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0
+    },
+    "review-with-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0
+    },
+    "review-without-1": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0
+    },
+    "review-without-2": {
+      "ancestor_git_paths": 295,
+      "environment_path_lines": 0
+    },
+    "verify-with-1": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0
+    },
+    "verify-with-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0
+    },
+    "verify-without-1": {
+      "ancestor_git_paths": 295,
+      "environment_path_lines": 0
+    },
+    "verify-without-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0
+    },
+    "write-with-1": {
+      "ancestor_git_paths": 295,
+      "environment_path_lines": 1
+    },
+    "write-with-2": {
+      "ancestor_git_paths": 295,
+      "environment_path_lines": 0
+    },
+    "write-without-1": {
+      "ancestor_git_paths": 295,
+      "environment_path_lines": 1
+    },
+    "write-without-2": {
+      "ancestor_git_paths": 295,
+      "environment_path_lines": 0
+    }
+  }
+}

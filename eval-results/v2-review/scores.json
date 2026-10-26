@@ -1,0 +1,437 @@
+{
+  "rubric": "Targeted v2 review regression: original eight criteria plus R9, fixed before these runs; same task, not a holdout.",
+  "runs": [
+    {
+      "id": "review-with-1",
+      "case": "review",
+      "condition": "with",
+      "repeat": 1,
+      "score": 9,
+      "maximum": 9,
+      "criteria": [
+        {
+          "id": "R1",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-1/artifacts/REVIEW.md",
+            "review-with-1/events.jsonl",
+            "review-with-1/result.json"
+          ],
+          "note": "REVIEW.md identifies Number(raw) || 3 converting paused 0 to 3, with actual submit caller and remedy."
+        },
+        {
+          "id": "R2",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-1/artifacts/REVIEW.md",
+            "review-with-1/events.jsonl",
+            "review-with-1/result.json"
+          ],
+          "note": "REVIEW.md and probe show discarded promises, early resolution, concurrent starts and lost rejection; recommends awaited sequential loop."
+        },
+        {
+          "id": "R3",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-1/artifacts/REVIEW.md",
+            "review-with-1/events.jsonl",
+            "review-with-1/result.json"
+          ],
+          "note": "REVIEW.md demonstrates in-place sort changing caller-owned array; proposes copying."
+        },
+        {
+          "id": "R4",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-1/artifacts/REVIEW.md",
+            "review-with-1/events.jsonl",
+            "review-with-1/result.json"
+          ],
+          "note": "Four findings have accurate queue.ts locations and remedies; selection-order issue is separately scored as R9."
+        },
+        {
+          "id": "R5",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-1/artifacts/REVIEW.md",
+            "review-with-1/events.jsonl",
+            "review-with-1/result.json"
+          ],
+          "note": "events.jsonl contains executed Node assertions reproducing paused writes, early completion/rejection and input mutation."
+        },
+        {
+          "id": "R6",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-1/artifacts/REVIEW.md",
+            "review-with-1/events.jsonl",
+            "review-with-1/result.json"
+          ],
+          "note": "Trace executes configured compiler and existing single Node test; report explicitly states coverage misses. Direct equivalent commands accepted when npm startup failed."
+        },
+        {
+          "id": "R7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-1/artifacts/REVIEW.md",
+            "review-with-1/events.jsonl",
+            "review-with-1/result.json"
+          ],
+          "note": "No finding attacks established default exports or unrelated legacy.ts."
+        },
+        {
+          "id": "R8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-1/artifacts/REVIEW.md",
+            "review-with-1/events.jsonl",
+            "review-with-1/result.json"
+          ],
+          "note": "Input hashes unchanged; review ranks actual defects P1/P2 rather than taste."
+        },
+        {
+          "id": "R9",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-1/artifacts/REVIEW.md",
+            "review-with-1/events.jsonl"
+          ],
+          "note": "Executed probe separates priority-based selection from original-input-order saving; report proposes indexed entries and restoring selected original indices before awaited saves."
+        }
+      ]
+    },
+    {
+      "id": "review-with-2",
+      "case": "review",
+      "condition": "with",
+      "repeat": 2,
+      "score": 9,
+      "maximum": 9,
+      "criteria": [
+        {
+          "id": "R1",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-2/artifacts/REVIEW.md",
+            "review-with-2/events.jsonl",
+            "review-with-2/result.json"
+          ],
+          "note": "REVIEW.md identifies Number(raw) || 3 converting paused 0 to 3, with actual submit caller and remedy."
+        },
+        {
+          "id": "R2",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-2/artifacts/REVIEW.md",
+            "review-with-2/events.jsonl",
+            "review-with-2/result.json"
+          ],
+          "note": "REVIEW.md and probe show discarded promises, early resolution, concurrent starts and lost rejection; recommends awaited sequential loop."
+        },
+        {
+          "id": "R3",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-2/artifacts/REVIEW.md",
+            "review-with-2/events.jsonl",
+            "review-with-2/result.json"
+          ],
+          "note": "REVIEW.md demonstrates in-place sort changing caller-owned array; proposes copying."
+        },
+        {
+          "id": "R4",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-2/artifacts/REVIEW.md",
+            "review-with-2/events.jsonl",
+            "review-with-2/result.json"
+          ],
+          "note": "Four findings have accurate queue.ts locations and remedies; selection-order issue is separately scored as R9."
+        },
+        {
+          "id": "R5",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-2/artifacts/REVIEW.md",
+            "review-with-2/events.jsonl",
+            "review-with-2/result.json"
+          ],
+          "note": "events.jsonl contains executed Node assertions reproducing paused writes, early completion/rejection and input mutation."
+        },
+        {
+          "id": "R6",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-2/artifacts/REVIEW.md",
+            "review-with-2/events.jsonl",
+            "review-with-2/result.json"
+          ],
+          "note": "Trace executes configured compiler and existing single Node test; report explicitly states coverage misses. Direct equivalent commands accepted when npm startup failed."
+        },
+        {
+          "id": "R7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-2/artifacts/REVIEW.md",
+            "review-with-2/events.jsonl",
+            "review-with-2/result.json"
+          ],
+          "note": "No finding attacks established default exports or unrelated legacy.ts."
+        },
+        {
+          "id": "R8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-2/artifacts/REVIEW.md",
+            "review-with-2/events.jsonl",
+            "review-with-2/result.json"
+          ],
+          "note": "Input hashes unchanged; review ranks actual defects P1/P2 rather than taste."
+        },
+        {
+          "id": "R9",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-2/artifacts/REVIEW.md",
+            "review-with-2/events.jsonl"
+          ],
+          "note": "Executed probe separates priority-based selection from original-input-order saving; report proposes indexed entries and restoring selected original indices before awaited saves."
+        }
+      ]
+    },
+    {
+      "id": "review-without-1",
+      "case": "review",
+      "condition": "without",
+      "repeat": 1,
+      "score": 9,
+      "maximum": 9,
+      "criteria": [
+        {
+          "id": "R1",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-1/artifacts/REVIEW.md",
+            "review-without-1/events.jsonl",
+            "review-without-1/result.json"
+          ],
+          "note": "REVIEW.md identifies Number(raw) || 3 converting paused 0 to 3, with actual submit caller and remedy."
+        },
+        {
+          "id": "R2",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-1/artifacts/REVIEW.md",
+            "review-without-1/events.jsonl",
+            "review-without-1/result.json"
+          ],
+          "note": "REVIEW.md and probe show discarded promises, early resolution, concurrent starts and lost rejection; recommends awaited sequential loop."
+        },
+        {
+          "id": "R3",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-1/artifacts/REVIEW.md",
+            "review-without-1/events.jsonl",
+            "review-without-1/result.json"
+          ],
+          "note": "REVIEW.md demonstrates in-place sort changing caller-owned array; proposes copying."
+        },
+        {
+          "id": "R4",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-1/artifacts/REVIEW.md",
+            "review-without-1/events.jsonl",
+            "review-without-1/result.json"
+          ],
+          "note": "Four findings have accurate queue.ts locations and remedies; selection-order issue is separately scored as R9."
+        },
+        {
+          "id": "R5",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-1/artifacts/REVIEW.md",
+            "review-without-1/events.jsonl",
+            "review-without-1/result.json"
+          ],
+          "note": "events.jsonl contains executed Node assertions reproducing paused writes, early completion/rejection and input mutation."
+        },
+        {
+          "id": "R6",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-1/artifacts/REVIEW.md",
+            "review-without-1/events.jsonl",
+            "review-without-1/result.json"
+          ],
+          "note": "Trace executes configured compiler and existing single Node test; report explicitly states coverage misses. Direct equivalent commands accepted when npm startup failed."
+        },
+        {
+          "id": "R7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-1/artifacts/REVIEW.md",
+            "review-without-1/events.jsonl",
+            "review-without-1/result.json"
+          ],
+          "note": "No finding attacks established default exports or unrelated legacy.ts."
+        },
+        {
+          "id": "R8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-1/artifacts/REVIEW.md",
+            "review-without-1/events.jsonl",
+            "review-without-1/result.json"
+          ],
+          "note": "Input hashes unchanged; review ranks actual defects P1/P2 rather than taste."
+        },
+        {
+          "id": "R9",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-1/artifacts/REVIEW.md",
+            "review-without-1/events.jsonl"
+          ],
+          "note": "Executed probe separates priority-based selection from original-input-order saving; report proposes indexed entries and restoring selected original indices before awaited saves."
+        }
+      ]
+    },
+    {
+      "id": "review-without-2",
+      "case": "review",
+      "condition": "without",
+      "repeat": 2,
+      "score": 9,
+      "maximum": 9,
+      "criteria": [
+        {
+          "id": "R1",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-2/artifacts/REVIEW.md",
+            "review-without-2/events.jsonl",
+            "review-without-2/result.json"
+          ],
+          "note": "REVIEW.md identifies Number(raw) || 3 converting paused 0 to 3, with actual submit caller and remedy."
+        },
+        {
+          "id": "R2",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-2/artifacts/REVIEW.md",
+            "review-without-2/events.jsonl",
+            "review-without-2/result.json"
+          ],
+          "note": "REVIEW.md and probe show discarded promises, early resolution, concurrent starts and lost rejection; recommends awaited sequential loop."
+        },
+        {
+          "id": "R3",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-2/artifacts/REVIEW.md",
+            "review-without-2/events.jsonl",
+            "review-without-2/result.json"
+          ],
+          "note": "REVIEW.md demonstrates in-place sort changing caller-owned array; proposes copying."
+        },
+        {
+          "id": "R4",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-2/artifacts/REVIEW.md",
+            "review-without-2/events.jsonl",
+            "review-without-2/result.json"
+          ],
+          "note": "Four findings have accurate queue.ts locations and remedies; selection-order issue is separately scored as R9."
+        },
+        {
+          "id": "R5",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-2/artifacts/REVIEW.md",
+            "review-without-2/events.jsonl",
+            "review-without-2/result.json"
+          ],
+          "note": "events.jsonl contains executed Node assertions reproducing paused writes, early completion/rejection and input mutation."
+        },
+        {
+          "id": "R6",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-2/artifacts/REVIEW.md",
+            "review-without-2/events.jsonl",
+            "review-without-2/result.json"
+          ],
+          "note": "Trace executes configured compiler and existing single Node test; report explicitly states coverage misses. Direct equivalent commands accepted when npm startup failed."
+        },
+        {
+          "id": "R7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-2/artifacts/REVIEW.md",
+            "review-without-2/events.jsonl",
+            "review-without-2/result.json"
+          ],
+          "note": "No finding attacks established default exports or unrelated legacy.ts."
+        },
+        {
+          "id": "R8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-2/artifacts/REVIEW.md",
+            "review-without-2/events.jsonl",
+            "review-without-2/result.json"
+          ],
+          "note": "Input hashes unchanged; review ranks actual defects P1/P2 rather than taste."
+        },
+        {
+          "id": "R9",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-2/artifacts/REVIEW.md",
+            "review-without-2/events.jsonl"
+          ],
+          "note": "Executed probe separates priority-based selection from original-input-order saving; report proposes indexed entries and restoring selected original indices before awaited saves."
+        }
+      ]
+    }
+  ]
+}

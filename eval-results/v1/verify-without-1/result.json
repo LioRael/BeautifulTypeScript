@@ -1,0 +1,19 @@
+{
+  "id": "verify-without-1",
+  "case": "verify",
+  "condition": "without",
+  "repeat": 1,
+  "exit_code": 0,
+  "error": null,
+  "elapsed_seconds": 104.762,
+  "usage": {
+    "input_tokens": 131934,
+    "cached_input_tokens": 111616,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2808,
+    "reasoning_output_tokens": 331
+  },
+  "changed_inputs": [],
+  "package_unchanged": true,
+  "tsconfig_unchanged": true
+}

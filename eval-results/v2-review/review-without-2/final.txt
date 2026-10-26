@@ -1,0 +1,3 @@
+Wrote [REVIEW.md](REVIEW.md) with four prioritized findings: unawaited saves, broken pause handling, caller-array mutation, and incorrect save order.
+
+Typecheck and the existing test passed. Runtime probes confirmed all four defects. No blockers; source and configuration unchanged.

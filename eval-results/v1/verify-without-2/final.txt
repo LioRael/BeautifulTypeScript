@@ -1,0 +1,5 @@
+Created [VERIFY.md](VERIFY.md) with commands, results, blockers, and untested hosts.
+
+**Not ready to ship:** the compiled public entry fails under Node ESM with `ERR_MODULE_NOT_FOUND` because `./core` lacks `.js`. Package-export loading also fails.
+
+Build and typecheck pass, but test and lint scripts inspect nothing. Existing project files were unchanged; temporary artifacts were removed.

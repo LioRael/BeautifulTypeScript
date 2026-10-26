@@ -1,0 +1,7 @@
+Implemented `src/ledger.ts`, added 13 target tests, and wrote `PORTING.md`. Python files remain unchanged.
+
+Verification passed: TypeScript check/build, 13 target tests, four Python tests, and 505 differential cases.
+
+Documented limitation: JavaScript cannot distinguish decoded priorities `1` and `1.0`. No implementation blockers.
+
+A Git status check unexpectedly listed parent-repository paths; I stopped repository inspection.

@@ -1,0 +1,7 @@
+Created [REVIEW.md](REVIEW.md) with three reproduced findings:
+
+- P1: Saves run concurrently; completion and failures are lost.
+- P1: `'0'` starts saves despite meaning paused.
+- P2: Sorting mutates the caller’s array.
+
+Typecheck and the existing test passed. Runtime probes confirmed all three defects. No blockers; source and configuration unchanged.

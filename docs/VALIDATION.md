@@ -35,8 +35,9 @@ configuration emits an unknown `home` option warning; it did not fail checks and
 - Browser configuration typechecks; no browser execution, Bun or Deno run was performed.
 - The source contract is JSON safe-integer inventory aggregation, not arbitrary Python.
   Async migration is documented but this synchronous fixture does not test async parity.
-- No independent model with/without-skill evaluation was run. Deterministic tests validate
-  artifacts and behavior, not automatic skill routing or improved model quality.
+- A paired model evaluation was added in the workflow-depth revision; see
+  [evaluation](EVALUATION.md). It is author-graded, small and not a blinded independent study.
+  Deterministic tests alone do not establish agent efficacy or automatic skill routing.
 - Distribution is directly from GitHub via npx skills; no marketplace release or npm
   package publication is required or claimed.
 
@@ -85,3 +86,21 @@ quick_validate.py checks passed using an isolated Python environment with PyYAML
 project dependency was added. A skills 1.7.4 local-source install for Codex and Claude Code
 also preserved all 11 reference files byte-for-byte. These checks establish packaging
 integrity, not improved agent performance or parity with another project's evaluations.
+
+## Workflow-depth revision
+
+`npm run check` passed **23/23 tests**, including three new executable skill-example
+checks: strict compilation, boundary defaults/rejections, and controlled sequential async
+completion/failure. Installer tests now also compare bundled assets byte-for-byte. All
+four skill-creator format checks passed. A skills 1.7.4 local-source installation for
+Codex and Claude Code copied all 16 skill files, including assets/patterns.ts, unchanged.
+No user-level installation was modified.
+
+The [paired agent evaluation](EVALUATION.md) records 16 initial with/without-skill runs
+and a separate four-run targeted review regression. Prompts, frozen input/skill hashes,
+outputs, runtime assertions, trace-based scores, usage, timing and unsuccessful probes are
+retained. Initial rubric scores were tied; a missed review contract and a rubric omission
+prevent interpreting the ceiling as complete correctness. The targeted follow-up is
+same-task regression evidence, not an independent holdout or general efficacy claim.
+Public transcripts omit model reasoning and redact incidental host metadata. The original
+Git-isolation flaw and local shell startup failures are explicitly disclosed.

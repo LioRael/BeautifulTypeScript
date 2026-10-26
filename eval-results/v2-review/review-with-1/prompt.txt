@@ -1,0 +1,6 @@
+Work only in this workspace. Read PROJECT.md and the task files. Do not inspect parent/home directories, other skills, evaluation rubrics, or other runs. Do not use network, install packages, delegate, publish, or change global settings. node_modules is preinstalled; use it only to run project tooling. You have at most 8 minutes. Complete the requested work and report actual evidence, including blockers.
+Read and apply supplied-skill/SKILL.md and only its relevant bundled references.
+Review src/queue.ts and its callers against PROJECT.md and API.md. Do not modify source
+or configuration. Write REVIEW.md with prioritized actionable findings, file/line,
+concrete trigger and consequence, a minimal remedy, and checks actually run. Focus on
+this queue module; legacy.ts is context and is not in the review scope.

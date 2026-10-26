@@ -1,0 +1,48 @@
+{
+  "id": "write-with-1",
+  "case": "write",
+  "condition": "with",
+  "repeat": 1,
+  "exit_code": 0,
+  "error": null,
+  "elapsed_seconds": 96.931,
+  "usage": {
+    "input_tokens": 162576,
+    "cached_input_tokens": 136320,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 3672,
+    "reasoning_output_tokens": 331
+  },
+  "changed_inputs": [
+    "tests/settings.test.mjs",
+    "src/settings.ts"
+  ],
+  "package_unchanged": true,
+  "tsconfig_unchanged": true,
+  "runtime_scores": [
+    {
+      "id": "W1",
+      "pass": true
+    },
+    {
+      "id": "W2",
+      "pass": true
+    },
+    {
+      "id": "W3",
+      "pass": true
+    },
+    {
+      "id": "W4",
+      "pass": true
+    },
+    {
+      "id": "W5",
+      "pass": true
+    },
+    {
+      "id": "W6",
+      "pass": true
+    }
+  ]
+}

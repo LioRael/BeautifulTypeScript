@@ -20,3 +20,7 @@ Retain prompts, transcripts, token/time costs, rubric and failures. Do not infer
 success rate from this repository's deterministic tests. Useful tasks: unknown API input
 without a new schema dependency; review a floating rejection without style false positives;
 port a numeric-key Python map; verify a browser app without claiming a Node-only test proves it.
+
+The [paired evaluation harness](evals/README.md) provides frozen task inputs, a rubric
+and fresh-process execution. Use a new output directory for every evaluation; keep failures
+and score evidence. Do not change skills or task inputs midway through a measured run.

@@ -1,0 +1,5 @@
+Implemented settings validation and loading with preserved signatures, defaults, fresh results, and error propagation.
+
+Validation: typecheck and build passed; all 12 tests passed. Details are in `REPORT.md`.
+
+The login-shell blocker was resolved using a non-login shell. A final Git status command accidentally listed paths outside the workspace; no external files were opened or changed. This scope mistake is documented in the report.

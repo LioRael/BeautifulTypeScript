@@ -1,0 +1,5 @@
+Work only in this workspace. Read PROJECT.md and the task files. Do not inspect parent/home directories, other skills, evaluation rubrics, or other runs. Do not use network, install packages, delegate, publish, or change global settings. node_modules is preinstalled; use it only to run project tooling. You have at most 8 minutes. Complete the requested work and report actual evidence, including blockers.
+Port source/ledger.py to src/ledger.ts as a Node ESM TypeScript module exporting summarize.
+Preserve the documented JSON interface and observed behavior, including failures. Read
+PROJECT.md and the source/tests. Add target tests and PORTING.md with the API/test mapping,
+verification and remaining differences. Keep the Python source and tests intact.

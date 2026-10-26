@@ -1,0 +1,15 @@
+{
+  "name": "eval-verify",
+  "private": true,
+  "type": "module",
+  "exports": "./dist/index.js",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "lint": "node scripts/lint.mjs",
+    "test": "node scripts/test.mjs"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  }
+}

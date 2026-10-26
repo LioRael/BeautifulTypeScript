@@ -1,0 +1,538 @@
+[
+  {
+    "id": "port-with-1",
+    "case": "port",
+    "condition": "with",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 175.646,
+    "usage": {
+      "input_tokens": 213814,
+      "cached_input_tokens": 179328,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 6131,
+      "reasoning_output_tokens": 965
+    },
+    "changed_inputs": [
+      "tests/ledger.test.mjs",
+      "src/ledger.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true,
+    "runtime_scores": [
+      {
+        "id": "P1",
+        "pass": true
+      },
+      {
+        "id": "P2",
+        "pass": true
+      },
+      {
+        "id": "P3",
+        "pass": true
+      },
+      {
+        "id": "P4",
+        "pass": true
+      },
+      {
+        "id": "P5",
+        "pass": true
+      },
+      {
+        "id": "P6-runtime",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "id": "port-with-2",
+    "case": "port",
+    "condition": "with",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 137.503,
+    "usage": {
+      "input_tokens": 191166,
+      "cached_input_tokens": 158976,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 5184,
+      "reasoning_output_tokens": 239
+    },
+    "changed_inputs": [
+      "tests/ledger.test.mjs",
+      "src/ledger.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true,
+    "runtime_scores": [
+      {
+        "id": "P1",
+        "pass": true
+      },
+      {
+        "id": "P2",
+        "pass": true
+      },
+      {
+        "id": "P3",
+        "pass": true
+      },
+      {
+        "id": "P4",
+        "pass": true
+      },
+      {
+        "id": "P5",
+        "pass": true
+      },
+      {
+        "id": "P6-runtime",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "id": "port-without-1",
+    "case": "port",
+    "condition": "without",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 112.771,
+    "usage": {
+      "input_tokens": 90057,
+      "cached_input_tokens": 64768,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 4614,
+      "reasoning_output_tokens": 719
+    },
+    "changed_inputs": [
+      "tests/ledger.test.mjs",
+      "src/ledger.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true,
+    "runtime_scores": [
+      {
+        "id": "P1",
+        "pass": true
+      },
+      {
+        "id": "P2",
+        "pass": true
+      },
+      {
+        "id": "P3",
+        "pass": true
+      },
+      {
+        "id": "P4",
+        "pass": true
+      },
+      {
+        "id": "P5",
+        "pass": true
+      },
+      {
+        "id": "P6-runtime",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "id": "port-without-2",
+    "case": "port",
+    "condition": "without",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 130.884,
+    "usage": {
+      "input_tokens": 133246,
+      "cached_input_tokens": 115328,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 4781,
+      "reasoning_output_tokens": 418
+    },
+    "changed_inputs": [
+      "tests/ledger.test.mjs",
+      "src/ledger.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true,
+    "runtime_scores": [
+      {
+        "id": "P1",
+        "pass": true
+      },
+      {
+        "id": "P2",
+        "pass": true
+      },
+      {
+        "id": "P3",
+        "pass": true
+      },
+      {
+        "id": "P4",
+        "pass": true
+      },
+      {
+        "id": "P5",
+        "pass": true
+      },
+      {
+        "id": "P6-runtime",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "id": "review-with-1",
+    "case": "review",
+    "condition": "with",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 80.02,
+    "usage": {
+      "input_tokens": 88909,
+      "cached_input_tokens": 75520,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2432,
+      "reasoning_output_tokens": 73
+    },
+    "changed_inputs": [],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "review-with-2",
+    "case": "review",
+    "condition": "with",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 67.218,
+    "usage": {
+      "input_tokens": 88134,
+      "cached_input_tokens": 73856,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2276,
+      "reasoning_output_tokens": 73
+    },
+    "changed_inputs": [],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "review-without-1",
+    "case": "review",
+    "condition": "without",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 85.159,
+    "usage": {
+      "input_tokens": 79752,
+      "cached_input_tokens": 69760,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2260,
+      "reasoning_output_tokens": 265
+    },
+    "changed_inputs": [],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "review-without-2",
+    "case": "review",
+    "condition": "without",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 85.541,
+    "usage": {
+      "input_tokens": 127838,
+      "cached_input_tokens": 111488,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2462,
+      "reasoning_output_tokens": 247
+    },
+    "changed_inputs": [],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "verify-with-1",
+    "case": "verify",
+    "condition": "with",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 130.109,
+    "usage": {
+      "input_tokens": 177497,
+      "cached_input_tokens": 165888,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 4069,
+      "reasoning_output_tokens": 331
+    },
+    "changed_inputs": [],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "verify-with-2",
+    "case": "verify",
+    "condition": "with",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 101.19,
+    "usage": {
+      "input_tokens": 140314,
+      "cached_input_tokens": 128384,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3316,
+      "reasoning_output_tokens": 274
+    },
+    "changed_inputs": [],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "verify-without-1",
+    "case": "verify",
+    "condition": "without",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 104.762,
+    "usage": {
+      "input_tokens": 131934,
+      "cached_input_tokens": 111616,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2808,
+      "reasoning_output_tokens": 331
+    },
+    "changed_inputs": [],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "verify-without-2",
+    "case": "verify",
+    "condition": "without",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 101.512,
+    "usage": {
+      "input_tokens": 113084,
+      "cached_input_tokens": 102016,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3157,
+      "reasoning_output_tokens": 414
+    },
+    "changed_inputs": [],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "write-with-1",
+    "case": "write",
+    "condition": "with",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 96.931,
+    "usage": {
+      "input_tokens": 162576,
+      "cached_input_tokens": 136320,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3672,
+      "reasoning_output_tokens": 331
+    },
+    "changed_inputs": [
+      "tests/settings.test.mjs",
+      "src/settings.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true,
+    "runtime_scores": [
+      {
+        "id": "W1",
+        "pass": true
+      },
+      {
+        "id": "W2",
+        "pass": true
+      },
+      {
+        "id": "W3",
+        "pass": true
+      },
+      {
+        "id": "W4",
+        "pass": true
+      },
+      {
+        "id": "W5",
+        "pass": true
+      },
+      {
+        "id": "W6",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "id": "write-with-2",
+    "case": "write",
+    "condition": "with",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 93.988,
+    "usage": {
+      "input_tokens": 124237,
+      "cached_input_tokens": 114816,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 4022,
+      "reasoning_output_tokens": 147
+    },
+    "changed_inputs": [
+      "tests/settings.test.mjs",
+      "src/settings.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true,
+    "runtime_scores": [
+      {
+        "id": "W1",
+        "pass": true
+      },
+      {
+        "id": "W2",
+        "pass": true
+      },
+      {
+        "id": "W3",
+        "pass": true
+      },
+      {
+        "id": "W4",
+        "pass": true
+      },
+      {
+        "id": "W5",
+        "pass": true
+      },
+      {
+        "id": "W6",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "id": "write-without-1",
+    "case": "write",
+    "condition": "without",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 93.206,
+    "usage": {
+      "input_tokens": 140973,
+      "cached_input_tokens": 121472,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3484,
+      "reasoning_output_tokens": 201
+    },
+    "changed_inputs": [
+      "tests/settings.test.mjs",
+      "src/settings.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true,
+    "runtime_scores": [
+      {
+        "id": "W1",
+        "pass": true
+      },
+      {
+        "id": "W2",
+        "pass": true
+      },
+      {
+        "id": "W3",
+        "pass": true
+      },
+      {
+        "id": "W4",
+        "pass": true
+      },
+      {
+        "id": "W5",
+        "pass": true
+      },
+      {
+        "id": "W6",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "id": "write-without-2",
+    "case": "write",
+    "condition": "without",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 64.653,
+    "usage": {
+      "input_tokens": 120238,
+      "cached_input_tokens": 103424,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3257,
+      "reasoning_output_tokens": 103
+    },
+    "changed_inputs": [
+      "tests/settings.test.mjs",
+      "src/settings.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true,
+    "runtime_scores": [
+      {
+        "id": "W1",
+        "pass": true
+      },
+      {
+        "id": "W2",
+        "pass": true
+      },
+      {
+        "id": "W3",
+        "pass": true
+      },
+      {
+        "id": "W4",
+        "pass": true
+      },
+      {
+        "id": "W5",
+        "pass": true
+      },
+      {
+        "id": "W6",
+        "pass": true
+      }
+    ]
+  }
+]

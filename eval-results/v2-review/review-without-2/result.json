@@ -1,0 +1,19 @@
+{
+  "id": "review-without-2",
+  "case": "review",
+  "condition": "without",
+  "repeat": 2,
+  "exit_code": 0,
+  "error": null,
+  "elapsed_seconds": 67.534,
+  "usage": {
+    "input_tokens": 79747,
+    "cached_input_tokens": 71040,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2311,
+    "reasoning_output_tokens": 214
+  },
+  "changed_inputs": [],
+  "package_unchanged": true,
+  "tsconfig_unchanged": true
+}

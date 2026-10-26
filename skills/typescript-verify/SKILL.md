@@ -5,31 +5,94 @@ description: Verify a TypeScript change using existing type, lint, test, build a
 
 # TypeScript verify
 
-1. Inspect instructions, package manager/lockfile, scripts, tsconfig references, framework
-   tooling and supported hosts. Choose affected workspace packages and their dependencies
-   (TS01, TS05). Do not substitute a fresh generic tsc command for a framework's check.
-2. Run available format-check (not automatic formatting), typecheck, lint, tests and
-   build commands appropriate to the change. Honor existing flags and CI constraints.
-   Do not install or upgrade a compiler to make checks pass. If dependencies are absent,
-   use the existing lockfile and package manager within the authorized task.
-3. Confirm tests actually execute and lint actually includes changed files. A successful
-   zero-file lint or empty test suite is not coverage. For new lint/config rules, include
-   a failing diagnostic fixture and a passing counterpart. Keep intentional failures
-   outside ordinary build/lint targets (TS09).
-4. Exercise meaningful runtime behavior: bad boundary input, rejection handling, import
-   of built public entrypoints and applicable browser/server integration. Check generated
-   declarations with a consumer when exporting a library. TS config does not polyfill
-   APIs or prove runtime portability (TS02–TS05).
-5. Classify failures as introduced, pre-existing or unknown using a baseline where
-   practical. Fix within the authorized scope; otherwise report exact evidence. Never
-   weaken strictness, disable rules or delete tests solely to obtain success.
-6. Report a table of command, scope, exit/result and limitation. Identify skipped checks
-   and why. If asked to benchmark, require identical results and retain raw timing
-   samples (TS08). Compilation, lint and deterministic fixtures do not establish that
-   an agent skill improves model output; that needs separate controlled agent trials.
+Establish what was actually checked and whether the requested change is ready for its
+stated environment. Never turn a failed or empty check into a pass by weakening it.
 
-Example request: “Verify this TS library change using its locked toolchain. Include
-runtime imports and error tests, and distinguish local results from unrun CI.”
+## 1. Determine scope and execution safety (TS01)
+
+Read instructions, package manager/lockfile, scripts, tsconfig references, supported hosts
+and changed files. Identify affected packages and their consumers. Inspect commands before
+running them: a test or build script may call services, deploy, publish or alter external
+data. Use local checks within the task's authorization; report unavailable integrations.
+
+Respect the repository's toolchain and framework commands. A generic tsc invocation can
+miss framework-generated types or workspace references. Installing this skill does not
+authorize new compiler versions, global config edits or changing package managers.
+
+## 2. Build an evidence plan from the actual change
+
+| Check | What to establish | When relevant |
+|---|---|---|
+| Typecheck | Correct config, packages and input files were checked | Type/API/config changes |
+| Lint/format check | Changed files matched the intended rules | Source/config changes |
+| Tests | Tests were discovered and exercised behavior | Behavior changes and bug fixes |
+| Build | Real production output was emitted | Packages, module/config changes, apps |
+| Runtime smoke | Built entrypoint works on the supported host | Deployment/module/API changes |
+| Consumer check | Public exports/declarations work outside source aliases | Reusable libraries |
+
+Use the [verification matrix](references/verification-matrix.md) for evidence limits and
+source links. A small change need not run every possible integration, but every claimed
+support boundary needs evidence or an explicit gap.
+
+## 3. Run checks and examine their coverage (TS09)
+
+Capture command, working package/config, exit status and useful summary. Do not reduce
+success to exit code alone:
+
+- Read script bodies. A placeholder echo, disabled runner or stale generated artifact can
+  exit zero without validating anything.
+- Check file/test counts, filters and include/exclude settings. Zero tests or zero linted
+  files is a coverage gap unless that empty scope is intentionally unrelated to the task.
+- Separate a parser/configuration crash from the diagnostic a negative fixture intends
+  to exercise. Pair it with a clean fixture to rule out a universally broken setup.
+- Do not allow a previous command's successful output to stand in for the current build.
+  Verify the artifact that will actually be used.
+
+For new lint/compiler policies, test an observable diagnostic, not whether the config
+text contains a rule name. For code changes, use behavior tests that fail on the defect.
+
+## 4. Exercise the shipped boundary (TS02–TS05)
+
+Type checking source files is not runtime testing. With Node ESM output, an illustrative
+smoke command is `node --input-type=module -e "await import('./dist/index.js')"`; adapt
+that path to the real public entrypoint. For a package, also inspect exports and compile
+a consumer against emitted declarations. Do not substitute importing TS source through
+a development loader if consumers import built JS through Node.
+
+For browser apps, use the framework production build and a browser smoke test when
+available. DOM types do not prove a browser run, and Node globals can leak through broad
+ambient typings. Bun and Deno need actual host-specific checks. State which hosts ran.
+
+Exercise bad boundary data, failure and cleanup paths relevant to the change. For async
+code, check observable completion/rejection/order rather than merely awaiting a happy path.
+Do not introduce network-dependent probes when deterministic local substitutes suffice.
+
+## 5. Classify failures without hiding them
+
+Use a baseline where practical to distinguish introduced, pre-existing and unknown
+failures. For a verification-only request, leave source/config untouched and report the
+smallest actionable remedy. When fixes are authorized, fix the cause within scope and
+rerun the checks affected by that fix.
+
+Do not lower strictness, suppress diagnostics, delete test cases, fabricate passing
+output, or change the supported runtime merely to obtain green checks. If a dependency
+or host is unavailable, mark that check unrun and continue independent checks.
+
+## 6. Report a decision with evidence
+
+Provide a table of commands, scope, results and limits, followed by the release/change
+readiness conclusion. A project can have successful scripts and still be not ready
+because the scripts are empty or the emitted runtime entrypoint fails.
+
+Separate:
+
+- **Verified:** concrete checks that executed and what they establish.
+- **Failed:** reproduced issues with locations, consequences and minimal next fixes.
+- **Unverified:** missing hosts, integrations, environments or insufficient coverage.
+
+Do not claim security, correctness, cross-runtime support or agent effectiveness beyond
+these observations. If asked to benchmark, verify equal results, retain raw samples and
+state workload/machine limitations (TS08). Performance timing does not measure skill quality.
 
 ## Reference
 

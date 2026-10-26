@@ -1,0 +1,15 @@
+{
+  "preflight_banner": [
+    "OpenAI Codex v0.164.0",
+    "model: gpt-6.1-sol",
+    "provider: openai",
+    "approval: never",
+    "sandbox: workspace-write [workdir, /tmp, $TMPDIR]",
+    "reasoning effort: none",
+    "reasoning summaries: none"
+  ],
+  "catalog_probe": "NONE",
+  "folder_only_disable_worked": false,
+  "skill_file_disable_worked": true,
+  "note": "Unscored preflight. No model task artifacts were generated."
+}

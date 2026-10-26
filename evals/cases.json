@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "repetitions": 2,
+  "cases": {
+    "write": "typescript-best-practices",
+    "review": "typescript-review",
+    "port": "typescript-port",
+    "verify": "typescript-verify"
+  },
+  "order": [
+    "without",
+    "with"
+  ],
+  "timeout_seconds": 600
+}

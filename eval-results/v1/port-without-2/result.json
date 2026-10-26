@@ -1,0 +1,48 @@
+{
+  "id": "port-without-2",
+  "case": "port",
+  "condition": "without",
+  "repeat": 2,
+  "exit_code": 0,
+  "error": null,
+  "elapsed_seconds": 130.884,
+  "usage": {
+    "input_tokens": 133246,
+    "cached_input_tokens": 115328,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 4781,
+    "reasoning_output_tokens": 418
+  },
+  "changed_inputs": [
+    "tests/ledger.test.mjs",
+    "src/ledger.ts"
+  ],
+  "package_unchanged": true,
+  "tsconfig_unchanged": true,
+  "runtime_scores": [
+    {
+      "id": "P1",
+      "pass": true
+    },
+    {
+      "id": "P2",
+      "pass": true
+    },
+    {
+      "id": "P3",
+      "pass": true
+    },
+    {
+      "id": "P4",
+      "pass": true
+    },
+    {
+      "id": "P5",
+      "pass": true
+    },
+    {
+      "id": "P6-runtime",
+      "pass": true
+    }
+  ]
+}

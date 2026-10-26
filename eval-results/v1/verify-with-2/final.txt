@@ -1,0 +1,9 @@
+Created [VERIFY.md](VERIFY.md) with commands, results, blockers, coverage gaps, and untested hosts.
+
+**Not ready for Node ESM:**
+
+- Built public entrypoint fails with `ERR_MODULE_NOT_FOUND`.
+- Emitted declarations fail NodeNext consumer compilation with TS2835.
+- Lint and test scripts execute zero checks.
+
+Typecheck, build, and direct-core controls passed. Project files were left unchanged; temporary artifacts were removed.

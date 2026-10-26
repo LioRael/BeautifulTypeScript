@@ -1,0 +1,5 @@
+Wrote [REVIEW.md](REVIEW.md) with four actionable findings: discarded save promises, broken pause handling, caller-array mutation, and incorrect execution order.
+
+Typecheck, build, and the existing test passed via direct Node invocation. Runtime probes confirmed all four defects. The report records the npm/mise blocker and test coverage gaps.
+
+Source and configuration remain unchanged.

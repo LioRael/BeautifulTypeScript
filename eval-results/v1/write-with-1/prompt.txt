@@ -1,0 +1,5 @@
+Work only in this workspace. Read PROJECT.md and the task files. Do not inspect parent/home directories, other skills, evaluation rubrics, or other runs. Do not use network, install packages, delegate, publish, or change global settings. node_modules is preinstalled; use it only to run project tooling. You have at most 8 minutes. Complete the requested work and report actual evidence, including blockers.
+Read and apply supplied-skill/SKILL.md and only its relevant bundled references.
+Implement src/settings.ts for the existing Node ESM library. Read PROJECT.md and API.md.
+Keep the existing public signatures. Add tests that give confidence in the implementation,
+run the project's relevant checks, and explain the changes and validation in REPORT.md.

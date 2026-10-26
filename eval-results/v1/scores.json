@@ -1,0 +1,1485 @@
+{
+  "rubric": "Frozen v1, eight binary criteria per case; not exhaustive task correctness. Manual scores entered after reading traces/artifacts.",
+  "runs": [
+    {
+      "id": "port-with-1",
+      "case": "port",
+      "condition": "with",
+      "repeat": 1,
+      "score": 8,
+      "maximum": 8,
+      "criteria": [
+        {
+          "id": "P1",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-with-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P2",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-with-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P3",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-with-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P4",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-with-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P5",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-with-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P6",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "port-with-1/artifacts/PORTING.md",
+            "port-with-1/events.jsonl",
+            "port-with-1/result.json"
+          ],
+          "note": "Runtime mutation assertion passed; source/test hashes and package/tsconfig unchanged; public Group/summarize API retained and compiler passed."
+        },
+        {
+          "id": "P7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "port-with-1/artifacts/PORTING.md",
+            "port-with-1/events.jsonl",
+            "port-with-1/result.json"
+          ],
+          "note": "Trace runs original four Python tests; target tests and PORTING.md map all four and add semantic boundaries."
+        },
+        {
+          "id": "P8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "port-with-1/artifacts/PORTING.md",
+            "port-with-1/events.jsonl",
+            "port-with-1/result.json"
+          ],
+          "note": "Trace executes Python-target differential comparison; PORTING.md documents Node ESM API, test mapping, JSON domain and numeric-token representation gap."
+        }
+      ]
+    },
+    {
+      "id": "port-with-2",
+      "case": "port",
+      "condition": "with",
+      "repeat": 2,
+      "score": 8,
+      "maximum": 8,
+      "criteria": [
+        {
+          "id": "P1",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-with-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P2",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-with-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P3",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-with-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P4",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-with-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P5",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-with-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P6",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "port-with-2/artifacts/PORTING.md",
+            "port-with-2/events.jsonl",
+            "port-with-2/result.json"
+          ],
+          "note": "Runtime mutation assertion passed; source/test hashes and package/tsconfig unchanged; public Group/summarize API retained and compiler passed."
+        },
+        {
+          "id": "P7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "port-with-2/artifacts/PORTING.md",
+            "port-with-2/events.jsonl",
+            "port-with-2/result.json"
+          ],
+          "note": "Trace runs original four Python tests; target tests and PORTING.md map all four and add semantic boundaries."
+        },
+        {
+          "id": "P8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "port-with-2/artifacts/PORTING.md",
+            "port-with-2/events.jsonl",
+            "port-with-2/result.json"
+          ],
+          "note": "Trace executes Python-target differential comparison; PORTING.md documents Node ESM API, test mapping, JSON domain and numeric-token representation gap."
+        }
+      ]
+    },
+    {
+      "id": "port-without-1",
+      "case": "port",
+      "condition": "without",
+      "repeat": 1,
+      "score": 8,
+      "maximum": 8,
+      "criteria": [
+        {
+          "id": "P1",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-without-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P2",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-without-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P3",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-without-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P4",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-without-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P5",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-without-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P6",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "port-without-1/artifacts/PORTING.md",
+            "port-without-1/events.jsonl",
+            "port-without-1/result.json"
+          ],
+          "note": "Runtime mutation assertion passed; source/test hashes and package/tsconfig unchanged; public Group/summarize API retained and compiler passed."
+        },
+        {
+          "id": "P7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "port-without-1/artifacts/PORTING.md",
+            "port-without-1/events.jsonl",
+            "port-without-1/result.json"
+          ],
+          "note": "Trace runs original four Python tests; target tests and PORTING.md map all four and add semantic boundaries."
+        },
+        {
+          "id": "P8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "port-without-1/artifacts/PORTING.md",
+            "port-without-1/events.jsonl",
+            "port-without-1/result.json"
+          ],
+          "note": "Trace executes Python-target differential comparison; PORTING.md documents Node ESM API, test mapping, JSON domain and numeric-token representation gap."
+        }
+      ]
+    },
+    {
+      "id": "port-without-2",
+      "case": "port",
+      "condition": "without",
+      "repeat": 2,
+      "score": 8,
+      "maximum": 8,
+      "criteria": [
+        {
+          "id": "P1",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-without-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P2",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-without-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P3",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-without-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P4",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-without-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P5",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "port-without-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "P6",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "port-without-2/artifacts/PORTING.md",
+            "port-without-2/events.jsonl",
+            "port-without-2/result.json"
+          ],
+          "note": "Runtime mutation assertion passed; source/test hashes and package/tsconfig unchanged; public Group/summarize API retained and compiler passed."
+        },
+        {
+          "id": "P7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "port-without-2/artifacts/PORTING.md",
+            "port-without-2/events.jsonl",
+            "port-without-2/result.json"
+          ],
+          "note": "Trace runs original four Python tests; target tests and PORTING.md map all four and add semantic boundaries."
+        },
+        {
+          "id": "P8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "port-without-2/artifacts/PORTING.md",
+            "port-without-2/events.jsonl",
+            "port-without-2/result.json"
+          ],
+          "note": "Trace executes Python-target differential comparison; PORTING.md documents Node ESM API, test mapping, JSON domain and numeric-token representation gap."
+        }
+      ]
+    },
+    {
+      "id": "review-with-1",
+      "case": "review",
+      "condition": "with",
+      "repeat": 1,
+      "score": 8,
+      "maximum": 8,
+      "criteria": [
+        {
+          "id": "R1",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-1/artifacts/REVIEW.md",
+            "review-with-1/events.jsonl",
+            "review-with-1/result.json"
+          ],
+          "note": "REVIEW.md identifies Number(raw) || 3 converting paused 0 to 3, with actual submit caller and remedy."
+        },
+        {
+          "id": "R2",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-1/artifacts/REVIEW.md",
+            "review-with-1/events.jsonl",
+            "review-with-1/result.json"
+          ],
+          "note": "REVIEW.md and probe show discarded promises, early resolution, concurrent starts and lost rejection; recommends awaited sequential loop."
+        },
+        {
+          "id": "R3",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-1/artifacts/REVIEW.md",
+            "review-with-1/events.jsonl",
+            "review-with-1/result.json"
+          ],
+          "note": "REVIEW.md demonstrates in-place sort changing caller-owned array; proposes copying."
+        },
+        {
+          "id": "R4",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-1/artifacts/REVIEW.md",
+            "review-with-1/events.jsonl",
+            "review-with-1/result.json"
+          ],
+          "note": "The three prespecified findings locate queue.ts lines 3/8/9 and offer defect-specific remedies. Separate selection/execution ordering was NOT in this original criterion; see report limitation."
+        },
+        {
+          "id": "R5",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-1/artifacts/REVIEW.md",
+            "review-with-1/events.jsonl",
+            "review-with-1/result.json"
+          ],
+          "note": "events.jsonl contains executed Node assertions reproducing paused writes, early completion/rejection and input mutation."
+        },
+        {
+          "id": "R6",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-1/artifacts/REVIEW.md",
+            "review-with-1/events.jsonl",
+            "review-with-1/result.json"
+          ],
+          "note": "Trace executes configured compiler and existing single Node test; report explicitly states coverage misses. Direct equivalent commands accepted when npm startup failed."
+        },
+        {
+          "id": "R7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-1/artifacts/REVIEW.md",
+            "review-with-1/events.jsonl",
+            "review-with-1/result.json"
+          ],
+          "note": "No finding attacks established default exports or unrelated legacy.ts."
+        },
+        {
+          "id": "R8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-1/artifacts/REVIEW.md",
+            "review-with-1/events.jsonl",
+            "review-with-1/result.json"
+          ],
+          "note": "Input hashes unchanged; review ranks actual defects P1/P2 rather than taste."
+        }
+      ]
+    },
+    {
+      "id": "review-with-2",
+      "case": "review",
+      "condition": "with",
+      "repeat": 2,
+      "score": 8,
+      "maximum": 8,
+      "criteria": [
+        {
+          "id": "R1",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-2/artifacts/REVIEW.md",
+            "review-with-2/events.jsonl",
+            "review-with-2/result.json"
+          ],
+          "note": "REVIEW.md identifies Number(raw) || 3 converting paused 0 to 3, with actual submit caller and remedy."
+        },
+        {
+          "id": "R2",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-2/artifacts/REVIEW.md",
+            "review-with-2/events.jsonl",
+            "review-with-2/result.json"
+          ],
+          "note": "REVIEW.md and probe show discarded promises, early resolution, concurrent starts and lost rejection; recommends awaited sequential loop."
+        },
+        {
+          "id": "R3",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-2/artifacts/REVIEW.md",
+            "review-with-2/events.jsonl",
+            "review-with-2/result.json"
+          ],
+          "note": "REVIEW.md demonstrates in-place sort changing caller-owned array; proposes copying."
+        },
+        {
+          "id": "R4",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-2/artifacts/REVIEW.md",
+            "review-with-2/events.jsonl",
+            "review-with-2/result.json"
+          ],
+          "note": "The three prespecified findings locate queue.ts lines 3/8/9 and offer defect-specific remedies. Separate selection/execution ordering was NOT in this original criterion; see report limitation."
+        },
+        {
+          "id": "R5",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-2/artifacts/REVIEW.md",
+            "review-with-2/events.jsonl",
+            "review-with-2/result.json"
+          ],
+          "note": "events.jsonl contains executed Node assertions reproducing paused writes, early completion/rejection and input mutation."
+        },
+        {
+          "id": "R6",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-2/artifacts/REVIEW.md",
+            "review-with-2/events.jsonl",
+            "review-with-2/result.json"
+          ],
+          "note": "Trace executes configured compiler and existing single Node test; report explicitly states coverage misses. Direct equivalent commands accepted when npm startup failed."
+        },
+        {
+          "id": "R7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-2/artifacts/REVIEW.md",
+            "review-with-2/events.jsonl",
+            "review-with-2/result.json"
+          ],
+          "note": "No finding attacks established default exports or unrelated legacy.ts."
+        },
+        {
+          "id": "R8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-with-2/artifacts/REVIEW.md",
+            "review-with-2/events.jsonl",
+            "review-with-2/result.json"
+          ],
+          "note": "Input hashes unchanged; review ranks actual defects P1/P2 rather than taste."
+        }
+      ]
+    },
+    {
+      "id": "review-without-1",
+      "case": "review",
+      "condition": "without",
+      "repeat": 1,
+      "score": 8,
+      "maximum": 8,
+      "criteria": [
+        {
+          "id": "R1",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-1/artifacts/REVIEW.md",
+            "review-without-1/events.jsonl",
+            "review-without-1/result.json"
+          ],
+          "note": "REVIEW.md identifies Number(raw) || 3 converting paused 0 to 3, with actual submit caller and remedy."
+        },
+        {
+          "id": "R2",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-1/artifacts/REVIEW.md",
+            "review-without-1/events.jsonl",
+            "review-without-1/result.json"
+          ],
+          "note": "REVIEW.md and probe show discarded promises, early resolution, concurrent starts and lost rejection; recommends awaited sequential loop."
+        },
+        {
+          "id": "R3",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-1/artifacts/REVIEW.md",
+            "review-without-1/events.jsonl",
+            "review-without-1/result.json"
+          ],
+          "note": "REVIEW.md demonstrates in-place sort changing caller-owned array; proposes copying."
+        },
+        {
+          "id": "R4",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-1/artifacts/REVIEW.md",
+            "review-without-1/events.jsonl",
+            "review-without-1/result.json"
+          ],
+          "note": "The three prespecified findings locate queue.ts lines 3/8/9 and offer defect-specific remedies. Separate selection/execution ordering was NOT in this original criterion; see report limitation."
+        },
+        {
+          "id": "R5",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-1/artifacts/REVIEW.md",
+            "review-without-1/events.jsonl",
+            "review-without-1/result.json"
+          ],
+          "note": "events.jsonl contains executed Node assertions reproducing paused writes, early completion/rejection and input mutation."
+        },
+        {
+          "id": "R6",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-1/artifacts/REVIEW.md",
+            "review-without-1/events.jsonl",
+            "review-without-1/result.json"
+          ],
+          "note": "Trace executes configured compiler and existing single Node test; report explicitly states coverage misses. Direct equivalent commands accepted when npm startup failed."
+        },
+        {
+          "id": "R7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-1/artifacts/REVIEW.md",
+            "review-without-1/events.jsonl",
+            "review-without-1/result.json"
+          ],
+          "note": "No finding attacks established default exports or unrelated legacy.ts."
+        },
+        {
+          "id": "R8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-1/artifacts/REVIEW.md",
+            "review-without-1/events.jsonl",
+            "review-without-1/result.json"
+          ],
+          "note": "Input hashes unchanged; review ranks actual defects P1/P2 rather than taste."
+        }
+      ]
+    },
+    {
+      "id": "review-without-2",
+      "case": "review",
+      "condition": "without",
+      "repeat": 2,
+      "score": 8,
+      "maximum": 8,
+      "criteria": [
+        {
+          "id": "R1",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-2/artifacts/REVIEW.md",
+            "review-without-2/events.jsonl",
+            "review-without-2/result.json"
+          ],
+          "note": "REVIEW.md identifies Number(raw) || 3 converting paused 0 to 3, with actual submit caller and remedy."
+        },
+        {
+          "id": "R2",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-2/artifacts/REVIEW.md",
+            "review-without-2/events.jsonl",
+            "review-without-2/result.json"
+          ],
+          "note": "REVIEW.md and probe show discarded promises, early resolution, concurrent starts and lost rejection; recommends awaited sequential loop."
+        },
+        {
+          "id": "R3",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-2/artifacts/REVIEW.md",
+            "review-without-2/events.jsonl",
+            "review-without-2/result.json"
+          ],
+          "note": "REVIEW.md demonstrates in-place sort changing caller-owned array; proposes copying."
+        },
+        {
+          "id": "R4",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-2/artifacts/REVIEW.md",
+            "review-without-2/events.jsonl",
+            "review-without-2/result.json"
+          ],
+          "note": "The three prespecified findings locate queue.ts lines 3/8/9 and offer defect-specific remedies. Separate selection/execution ordering was NOT in this original criterion; see report limitation."
+        },
+        {
+          "id": "R5",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-2/artifacts/REVIEW.md",
+            "review-without-2/events.jsonl",
+            "review-without-2/result.json"
+          ],
+          "note": "events.jsonl contains executed Node assertions reproducing paused writes, early completion/rejection and input mutation."
+        },
+        {
+          "id": "R6",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-2/artifacts/REVIEW.md",
+            "review-without-2/events.jsonl",
+            "review-without-2/result.json"
+          ],
+          "note": "Trace executes configured compiler and existing single Node test; report explicitly states coverage misses. Direct equivalent commands accepted when npm startup failed."
+        },
+        {
+          "id": "R7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-2/artifacts/REVIEW.md",
+            "review-without-2/events.jsonl",
+            "review-without-2/result.json"
+          ],
+          "note": "No finding attacks established default exports or unrelated legacy.ts."
+        },
+        {
+          "id": "R8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "review-without-2/artifacts/REVIEW.md",
+            "review-without-2/events.jsonl",
+            "review-without-2/result.json"
+          ],
+          "note": "Input hashes unchanged; review ranks actual defects P1/P2 rather than taste."
+        }
+      ]
+    },
+    {
+      "id": "verify-with-1",
+      "case": "verify",
+      "condition": "with",
+      "repeat": 1,
+      "score": 8,
+      "maximum": 8,
+      "criteria": [
+        {
+          "id": "V1",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-with-1/artifacts/VERIFY.md",
+            "verify-with-1/events.jsonl",
+            "verify-with-1/result.json"
+          ],
+          "note": "Actual typecheck command executed successfully; VERIFY.md states Bundler-resolution scope."
+        },
+        {
+          "id": "V2",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-with-1/artifacts/VERIFY.md",
+            "verify-with-1/events.jsonl",
+            "verify-with-1/result.json"
+          ],
+          "note": "Actual lint command executed; report recognizes 0 files means no lint coverage."
+        },
+        {
+          "id": "V3",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-with-1/artifacts/VERIFY.md",
+            "verify-with-1/events.jsonl",
+            "verify-with-1/result.json"
+          ],
+          "note": "Actual test command executed; report recognizes 0 tests means no test coverage."
+        },
+        {
+          "id": "V4",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-with-1/artifacts/VERIFY.md",
+            "verify-with-1/events.jsonl",
+            "verify-with-1/result.json"
+          ],
+          "note": "Build script emitted fresh output and Node imported the emitted public index; staging outDir override preserves module semantics."
+        },
+        {
+          "id": "V5",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-with-1/artifacts/VERIFY.md",
+            "verify-with-1/events.jsonl",
+            "verify-with-1/result.json"
+          ],
+          "note": "Trace shows ERR_MODULE_NOT_FOUND and report identifies extensionless ./core re-export."
+        },
+        {
+          "id": "V6",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-with-1/artifacts/VERIFY.md",
+            "verify-with-1/events.jsonl",
+            "verify-with-1/result.json"
+          ],
+          "note": "VERIFY.md concludes not ready despite successful script exit statuses."
+        },
+        {
+          "id": "V7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-with-1/artifacts/VERIFY.md",
+            "verify-with-1/events.jsonl",
+            "verify-with-1/result.json"
+          ],
+          "note": "Report lists browser/Bun/Deno and other Node hosts as untested."
+        },
+        {
+          "id": "V8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-with-1/artifacts/VERIFY.md",
+            "verify-with-1/events.jsonl",
+            "verify-with-1/result.json"
+          ],
+          "note": "All original input hashes unchanged; no suppression or source/config fix."
+        }
+      ]
+    },
+    {
+      "id": "verify-with-2",
+      "case": "verify",
+      "condition": "with",
+      "repeat": 2,
+      "score": 8,
+      "maximum": 8,
+      "criteria": [
+        {
+          "id": "V1",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-with-2/artifacts/VERIFY.md",
+            "verify-with-2/events.jsonl",
+            "verify-with-2/result.json"
+          ],
+          "note": "Actual typecheck command executed successfully; VERIFY.md states Bundler-resolution scope."
+        },
+        {
+          "id": "V2",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-with-2/artifacts/VERIFY.md",
+            "verify-with-2/events.jsonl",
+            "verify-with-2/result.json"
+          ],
+          "note": "Actual lint command executed; report recognizes 0 files means no lint coverage."
+        },
+        {
+          "id": "V3",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-with-2/artifacts/VERIFY.md",
+            "verify-with-2/events.jsonl",
+            "verify-with-2/result.json"
+          ],
+          "note": "Actual test command executed; report recognizes 0 tests means no test coverage."
+        },
+        {
+          "id": "V4",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-with-2/artifacts/VERIFY.md",
+            "verify-with-2/events.jsonl",
+            "verify-with-2/result.json"
+          ],
+          "note": "Build script emitted fresh output and Node imported the emitted public index; staging outDir override preserves module semantics."
+        },
+        {
+          "id": "V5",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-with-2/artifacts/VERIFY.md",
+            "verify-with-2/events.jsonl",
+            "verify-with-2/result.json"
+          ],
+          "note": "Trace shows ERR_MODULE_NOT_FOUND and report identifies extensionless ./core re-export."
+        },
+        {
+          "id": "V6",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-with-2/artifacts/VERIFY.md",
+            "verify-with-2/events.jsonl",
+            "verify-with-2/result.json"
+          ],
+          "note": "VERIFY.md concludes not ready despite successful script exit statuses."
+        },
+        {
+          "id": "V7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-with-2/artifacts/VERIFY.md",
+            "verify-with-2/events.jsonl",
+            "verify-with-2/result.json"
+          ],
+          "note": "Report lists browser/Bun/Deno and other Node hosts as untested."
+        },
+        {
+          "id": "V8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-with-2/artifacts/VERIFY.md",
+            "verify-with-2/events.jsonl",
+            "verify-with-2/result.json"
+          ],
+          "note": "All original input hashes unchanged; no suppression or source/config fix."
+        }
+      ]
+    },
+    {
+      "id": "verify-without-1",
+      "case": "verify",
+      "condition": "without",
+      "repeat": 1,
+      "score": 8,
+      "maximum": 8,
+      "criteria": [
+        {
+          "id": "V1",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-without-1/artifacts/VERIFY.md",
+            "verify-without-1/events.jsonl",
+            "verify-without-1/result.json"
+          ],
+          "note": "Actual typecheck command executed successfully; VERIFY.md states Bundler-resolution scope."
+        },
+        {
+          "id": "V2",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-without-1/artifacts/VERIFY.md",
+            "verify-without-1/events.jsonl",
+            "verify-without-1/result.json"
+          ],
+          "note": "Actual lint command executed; report recognizes 0 files means no lint coverage."
+        },
+        {
+          "id": "V3",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-without-1/artifacts/VERIFY.md",
+            "verify-without-1/events.jsonl",
+            "verify-without-1/result.json"
+          ],
+          "note": "Actual test command executed; report recognizes 0 tests means no test coverage."
+        },
+        {
+          "id": "V4",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-without-1/artifacts/VERIFY.md",
+            "verify-without-1/events.jsonl",
+            "verify-without-1/result.json"
+          ],
+          "note": "Build script emitted fresh output and Node imported the emitted public index; staging outDir override preserves module semantics."
+        },
+        {
+          "id": "V5",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-without-1/artifacts/VERIFY.md",
+            "verify-without-1/events.jsonl",
+            "verify-without-1/result.json"
+          ],
+          "note": "Trace shows ERR_MODULE_NOT_FOUND and report identifies extensionless ./core re-export."
+        },
+        {
+          "id": "V6",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-without-1/artifacts/VERIFY.md",
+            "verify-without-1/events.jsonl",
+            "verify-without-1/result.json"
+          ],
+          "note": "VERIFY.md concludes not ready despite successful script exit statuses."
+        },
+        {
+          "id": "V7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-without-1/artifacts/VERIFY.md",
+            "verify-without-1/events.jsonl",
+            "verify-without-1/result.json"
+          ],
+          "note": "Report lists browser/Bun/Deno and other Node hosts as untested."
+        },
+        {
+          "id": "V8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-without-1/artifacts/VERIFY.md",
+            "verify-without-1/events.jsonl",
+            "verify-without-1/result.json"
+          ],
+          "note": "All original input hashes unchanged; no suppression or source/config fix."
+        }
+      ]
+    },
+    {
+      "id": "verify-without-2",
+      "case": "verify",
+      "condition": "without",
+      "repeat": 2,
+      "score": 8,
+      "maximum": 8,
+      "criteria": [
+        {
+          "id": "V1",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-without-2/artifacts/VERIFY.md",
+            "verify-without-2/events.jsonl",
+            "verify-without-2/result.json"
+          ],
+          "note": "Actual typecheck command executed successfully; VERIFY.md states Bundler-resolution scope."
+        },
+        {
+          "id": "V2",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-without-2/artifacts/VERIFY.md",
+            "verify-without-2/events.jsonl",
+            "verify-without-2/result.json"
+          ],
+          "note": "Actual lint command executed; report recognizes 0 files means no lint coverage."
+        },
+        {
+          "id": "V3",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-without-2/artifacts/VERIFY.md",
+            "verify-without-2/events.jsonl",
+            "verify-without-2/result.json"
+          ],
+          "note": "Actual test command executed; report recognizes 0 tests means no test coverage."
+        },
+        {
+          "id": "V4",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-without-2/artifacts/VERIFY.md",
+            "verify-without-2/events.jsonl",
+            "verify-without-2/result.json"
+          ],
+          "note": "Build script emitted fresh output and Node imported the emitted public index; staging outDir override preserves module semantics."
+        },
+        {
+          "id": "V5",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-without-2/artifacts/VERIFY.md",
+            "verify-without-2/events.jsonl",
+            "verify-without-2/result.json"
+          ],
+          "note": "Trace shows ERR_MODULE_NOT_FOUND and report identifies extensionless ./core re-export."
+        },
+        {
+          "id": "V6",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-without-2/artifacts/VERIFY.md",
+            "verify-without-2/events.jsonl",
+            "verify-without-2/result.json"
+          ],
+          "note": "VERIFY.md concludes not ready despite successful script exit statuses."
+        },
+        {
+          "id": "V7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-without-2/artifacts/VERIFY.md",
+            "verify-without-2/events.jsonl",
+            "verify-without-2/result.json"
+          ],
+          "note": "Report lists browser/Bun/Deno and other Node hosts as untested."
+        },
+        {
+          "id": "V8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "verify-without-2/artifacts/VERIFY.md",
+            "verify-without-2/events.jsonl",
+            "verify-without-2/result.json"
+          ],
+          "note": "All original input hashes unchanged; no suppression or source/config fix."
+        }
+      ]
+    },
+    {
+      "id": "write-with-1",
+      "case": "write",
+      "condition": "with",
+      "repeat": 1,
+      "score": 8,
+      "maximum": 8,
+      "criteria": [
+        {
+          "id": "W1",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-with-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W2",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-with-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W3",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-with-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W4",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-with-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W5",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-with-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W6",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-with-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "write-with-1/artifacts/REPORT.md",
+            "write-with-1/events.jsonl",
+            "write-with-1/result.json"
+          ],
+          "note": "Public Settings/parseSettings/loadSettings signatures retained; package and tsconfig hashes unchanged; compiler/runtime grader succeeded."
+        },
+        {
+          "id": "W8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "write-with-1/artifacts/REPORT.md",
+            "write-with-1/events.jsonl",
+            "write-with-1/result.json"
+          ],
+          "note": "Added boundary/default/error and reader propagation tests; command trace records passing typecheck and Node tests; REPORT.md distinguishes startup failures from completed checks."
+        }
+      ]
+    },
+    {
+      "id": "write-with-2",
+      "case": "write",
+      "condition": "with",
+      "repeat": 2,
+      "score": 8,
+      "maximum": 8,
+      "criteria": [
+        {
+          "id": "W1",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-with-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W2",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-with-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W3",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-with-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W4",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-with-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W5",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-with-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W6",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-with-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "write-with-2/artifacts/REPORT.md",
+            "write-with-2/events.jsonl",
+            "write-with-2/result.json"
+          ],
+          "note": "Public Settings/parseSettings/loadSettings signatures retained; package and tsconfig hashes unchanged; compiler/runtime grader succeeded."
+        },
+        {
+          "id": "W8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "write-with-2/artifacts/REPORT.md",
+            "write-with-2/events.jsonl",
+            "write-with-2/result.json"
+          ],
+          "note": "Added boundary/default/error and reader propagation tests; command trace records passing typecheck and Node tests; REPORT.md distinguishes startup failures from completed checks."
+        }
+      ]
+    },
+    {
+      "id": "write-without-1",
+      "case": "write",
+      "condition": "without",
+      "repeat": 1,
+      "score": 8,
+      "maximum": 8,
+      "criteria": [
+        {
+          "id": "W1",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-without-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W2",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-without-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W3",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-without-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W4",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-without-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W5",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-without-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W6",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-without-1/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "write-without-1/artifacts/REPORT.md",
+            "write-without-1/events.jsonl",
+            "write-without-1/result.json"
+          ],
+          "note": "Public Settings/parseSettings/loadSettings signatures retained; package and tsconfig hashes unchanged; compiler/runtime grader succeeded."
+        },
+        {
+          "id": "W8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "write-without-1/artifacts/REPORT.md",
+            "write-without-1/events.jsonl",
+            "write-without-1/result.json"
+          ],
+          "note": "Added boundary/default/error and reader propagation tests; command trace records passing typecheck and Node tests; REPORT.md distinguishes startup failures from completed checks."
+        }
+      ]
+    },
+    {
+      "id": "write-without-2",
+      "case": "write",
+      "condition": "without",
+      "repeat": 2,
+      "score": 8,
+      "maximum": 8,
+      "criteria": [
+        {
+          "id": "W1",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-without-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W2",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-without-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W3",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-without-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W4",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-without-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W5",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-without-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W6",
+          "pass": true,
+          "method": "runtime assertion",
+          "evidence": [
+            "write-without-2/result.json"
+          ],
+          "note": "Hidden assertion passed; see evals/grade-runtime.mjs for exact boundary inputs."
+        },
+        {
+          "id": "W7",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "write-without-2/artifacts/REPORT.md",
+            "write-without-2/events.jsonl",
+            "write-without-2/result.json"
+          ],
+          "note": "Public Settings/parseSettings/loadSettings signatures retained; package and tsconfig hashes unchanged; compiler/runtime grader succeeded."
+        },
+        {
+          "id": "W8",
+          "pass": true,
+          "method": "author trace/artifact assessment",
+          "evidence": [
+            "write-without-2/artifacts/REPORT.md",
+            "write-without-2/events.jsonl",
+            "write-without-2/result.json"
+          ],
+          "note": "Added boundary/default/error and reader propagation tests; command trace records passing typecheck and Node tests; REPORT.md distinguishes startup failures from completed checks."
+        }
+      ]
+    }
+  ]
+}
