@@ -1,0 +1,9 @@
+Created all three task packages:
+
+- `effect-internal`: rehearsal-room workload feature.
+- `effect-async`: preview-cache concurrency bug fix.
+- `effect-boundary`: sensor-batch input validation.
+
+All starting projects compile and pass visible tests. Hidden graders detect missing behavior in each. Baseline results and commands are in `AUTHOR.md`.
+
+Temporary symlinks and build outputs were removed. No solutions were created.

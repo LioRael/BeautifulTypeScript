@@ -1,0 +1,48 @@
+{
+  "compiler": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "hidden_process": {
+    "exit_code": 0,
+    "stdout": "[{\"id\":\"dedup-and-independent-keys\",\"pass\":true},{\"id\":\"forgotten-success-does-not-repopulate\",\"pass\":true},{\"id\":\"forgotten-rejection-does-not-remove-new-work\",\"pass\":true},{\"id\":\"clear-isolates-all-generations\",\"pass\":true},{\"id\":\"sync-throw-is-promise-rejection-and-retry\",\"pass\":true},{\"id\":\"ordinary-rejection-and-invalidate-scope\",\"pass\":true}]\n",
+    "stderr": ""
+  },
+  "contract_groups": [
+    {
+      "id": "dedup-and-independent-keys",
+      "pass": true
+    },
+    {
+      "id": "forgotten-success-does-not-repopulate",
+      "pass": true
+    },
+    {
+      "id": "forgotten-rejection-does-not-remove-new-work",
+      "pass": true
+    },
+    {
+      "id": "clear-isolates-all-generations",
+      "pass": true
+    },
+    {
+      "id": "sync-throw-is-promise-rejection-and-retry",
+      "pass": true
+    },
+    {
+      "id": "ordinary-rejection-and-invalidate-scope",
+      "pass": true
+    }
+  ],
+  "visible_tests": {
+    "exit_code": 0,
+    "stdout": "\u2714 successful loads are reused until invalidated (0.930584ms)\n\u2714 rejected loads can be retried (0.292625ms)\n\u2714 concurrent callers share a load while different keys load independently (0.137916ms)\n\u2714 synchronous throws become promise rejections with the exact reason and allow retry (0.191875ms)\n\u2714 invalidate: forgotten resolve (old-first) cannot affect replacement (0.154792ms)\n\u2714 invalidate: forgotten resolve (new-first) cannot affect replacement (0.078917ms)\n\u2714 invalidate: forgotten reject (old-first) cannot affect replacement (0.085ms)\n\u2714 invalidate: forgotten reject (new-first) cannot affect replacement (0.080791ms)\n\u2714 clear: forgotten resolve (old-first) cannot affect replacement (0.105375ms)\n\u2714 clear: forgotten resolve (new-first) cannot affect replacement (0.123625ms)\n\u2714 clear: forgotten reject (old-first) cannot affect replacement (0.088834ms)\n\u2714 clear: forgotten reject (new-first) cannot affect replacement (0.054708ms)\n\u2714 clear forgets cached values and in-flight work across all keys (0.425042ms)\n\u2139 tests 13\n\u2139 suites 0\n\u2139 pass 13\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 49.07725\n",
+    "stderr": "npm warn Unknown user config \"home\". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.\nnpm warn Unknown user config \"home\". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.\nnpm notice run test\nnpm notice run npm run build && node --test tests/*.test.mjs\nnpm warn Unknown env config \"home\". This will error in a future major version of npm. See `npm help npmrc` for supported config options.\nnpm warn Unknown user config \"home\". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.\nnpm notice run build\nnpm notice run tsc\n"
+  },
+  "source_metrics": {
+    "files": 1,
+    "nonempty_lines": 57,
+    "note": "Descriptive only; not a beauty score."
+  }
+}

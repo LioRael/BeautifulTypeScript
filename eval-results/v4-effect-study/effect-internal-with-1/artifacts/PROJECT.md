@@ -1,0 +1,3 @@
+This is an internal rehearsal planning module, compiled with TypeScript 5.9.3 for Node 22 ESM. Run npm run typecheck and npm test. Source imports use .js extensions; exported functions have declared return types. Keep business calculations in src/plan.ts.
+
+DayPlan comes from our typed scheduling service, not external input. Room IDs are unique, every booking references a configured room, durations are positive finite minutes, and turnaroundMinutes is a nonnegative finite number. Bookings do not overlap; the planner already reserves turnaround gaps. Booking order is not significant for aggregate reports. Callers retain ownership of all plan objects and arrays and expect reports not to mutate them. Status is the closed union in the module. Room order is display order.

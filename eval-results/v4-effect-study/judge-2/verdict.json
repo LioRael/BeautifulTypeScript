@@ -1,0 +1,78 @@
+[
+  {
+    "pair": "pair-1",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: both preserve the requested exports, readonly inputs, existing helpers and ownership, emit every room in order, and calculate confirmed-only totals with exactly max(count - 1, 0) turnarounds. Supplied compiler, contract and visible-test checks all pass. Maintainability: A uses a linear Map aggregation; B reuses confirmedBookings with per-room filter/reduce. Both are direct, local approaches permitted by the rubric; no workload requirement establishes a material advantage for either.",
+    "evidence": [
+      "pair-1/A/src/plan.ts:30-59 (RoomWorkload and roomWorkloads)",
+      "pair-1/B/src/plan.ts:30-38,54-71 (API, helper reuse and aggregation)",
+      "pair-1/original/PROJECT.md:3 (trusted plan and ownership contract)",
+      "pair-1/A/tests/plan.test.mjs:13-52; pair-1/B/tests/plan.test.mjs:13-48 (statuses, rooms, fractional minutes, turnaround and ownership)",
+      "pair-1/A-checks.json:2-22; pair-1/B-checks.json:2-22 (all supplied checks pass)"
+    ]
+  },
+  {
+    "pair": "pair-2",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: both satisfy ordered room coverage, confirmed-only aggregation, fractional minutes, empty-room behavior and turnaround accounting without mutating the plan or changing existing helpers. Supplied checks all pass. Maintainability: A preinitializes per-room totals and uses non-null assertions justified by the explicit configured-room contract; B uses the existing confirmedBookings helper and per-room filtering. These are acceptable aggregation choices; neither unsupported validation nor meaningful extra architecture is present.",
+    "evidence": [
+      "pair-2/A/src/plan.ts:30-63 (typed API and initialized aggregation)",
+      "pair-2/B/src/plan.ts:30-58 (typed API and filter/reduce aggregation)",
+      "pair-2/original/PROJECT.md:3 (unique rooms and configured booking references justify A assertions)",
+      "pair-2/A/tests/plan.test.mjs:13-52; pair-2/B/tests/plan.test.mjs:13-56 (observable contract and ownership)",
+      "pair-2/A-checks.json:2-22; pair-2/B-checks.json:2-22 (all supplied checks pass)"
+    ]
+  },
+  {
+    "pair": "pair-3",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: the implementations have the same executable cache logic. Both defer loader invocation into a promise, preserve exact rejection reasons, retry failures and use pending-promise identity to prevent forgotten success or failure from affecting newer work after invalidate or clear. Public APIs and shared preview objects are preserved; supplied checks all pass. Maintainability: the extra explanatory comment and differently organized deterministic tests do not establish a material preference. Both test the required race orderings and failures.",
+    "evidence": [
+      "pair-3/A/src/preview-cache.ts:19-57; pair-3/B/src/preview-cache.ts:19-58 (get, identity guards, invalidate and clear)",
+      "pair-3/original/PROJECT.md:3-5 (promise, failure and generation contract)",
+      "pair-3/A/tests/cache.test.mjs:19-118; pair-3/B/tests/cache.test.mjs:5-130 (deferred races, retries and independent keys)",
+      "pair-3/A-checks.json:2-30; pair-3/B-checks.json:2-30 (all supplied checks pass)"
+    ]
+  },
+  {
+    "pair": "pair-4",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: both use identical executable logic to deduplicate current loads, cache successes, reject synchronous throws through promises and isolate forgotten generations on both success and failure. Invalidation, clearing, exact errors, retry behavior and public signatures are preserved; supplied checks all pass. Maintainability: comments and test formatting differ, but both keep the fix local and use deterministic deferred promises for the necessary race orderings. There is no substantive implementation advantage.",
+    "evidence": [
+      "pair-4/A/src/preview-cache.ts:19-58; pair-4/B/src/preview-cache.ts:19-58 (equivalent cache implementation)",
+      "pair-4/original/PROJECT.md:3-5 (failure and invalidation requirements)",
+      "pair-4/A/tests/cache.test.mjs:19-143; pair-4/B/tests/cache.test.mjs:19-129 (deduplication, synchronous errors, stale settlement and clear)",
+      "pair-4/A-checks.json:2-30; pair-4/B-checks.json:2-30 (all supplied checks pass)"
+    ]
+  },
+  {
+    "pair": "pair-5",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: both soundly narrow unknown input, validate the complete documented JSON wire format, reject the whole invalid batch, preserve exact conversion precision and return fresh normalized objects with unknown fields omitted. APIs and temperatureRange are preserved; supplied checks all pass. Maintainability: a local failure value versus repeated failure literals, and an explicit unknown-array view versus guarding each element, are equivalent small local choices. Both retain all required semantic validation without speculative defenses or added dependencies.",
+    "evidence": [
+      "pair-5/A/src/sensor.ts:15-59; pair-5/B/src/sensor.ts:15-64 (guards, complete validation and fresh normalization)",
+      "pair-5/A/src/sensor.ts:61-74; pair-5/B/src/sensor.ts:66-79 (unchanged range helper)",
+      "pair-5/original/PROJECT.md:1-5 (JSON boundary, complete wire contract and ownership)",
+      "pair-5/A/tests/sensor.test.mjs:14-72; pair-5/B/tests/sensor.test.mjs:18-82 (malformed data, limits, conversion and ownership)",
+      "pair-5/A-checks.json:2-26; pair-5/B-checks.json:2-26 (all supplied checks pass)"
+    ]
+  },
+  {
+    "pair": "pair-6",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: both validate structure, trimmed ID length, exact units, reading count, safe nonnegative strictly increasing timestamps and finite unit-specific temperature bounds. Both normalize without rounding or retaining input references and preserve the exported API and trusted range helper; supplied checks all pass. Maintainability: B trims once and reuses a local failure object; A uses explicit unknown elements and repeated failure literals, with a few repeated trim calls. These are minor stylistic/local efficiency differences, with no material contract or maintenance disadvantage warranting a preference.",
+    "evidence": [
+      "pair-6/A/src/sensor.ts:15-69; pair-6/B/src/sensor.ts:15-59 (boundary checks and normalization)",
+      "pair-6/A/src/sensor.ts:71-84; pair-6/B/src/sensor.ts:61-74 (preserved range helper)",
+      "pair-6/original/PROJECT.md:1-5 (required checks and ownership)",
+      "pair-6/A/tests/sensor.test.mjs:18-86; pair-6/B/tests/sensor.test.mjs:14-69 (boundary, numeric, normalization and ownership evidence)",
+      "pair-6/A-checks.json:2-26; pair-6/B-checks.json:2-26 (all supplied checks pass)"
+    ]
+  }
+]

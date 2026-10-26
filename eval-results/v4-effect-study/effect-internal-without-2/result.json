@@ -1,0 +1,22 @@
+{
+  "id": "effect-internal-without-2",
+  "case": "effect-internal",
+  "condition": "without",
+  "repeat": 2,
+  "exit_code": 0,
+  "error": null,
+  "elapsed_seconds": 42.862,
+  "usage": {
+    "input_tokens": 65481,
+    "cached_input_tokens": 60800,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1668,
+    "reasoning_output_tokens": 93
+  },
+  "changed_inputs": [
+    "tests/plan.test.mjs",
+    "src/plan.ts"
+  ],
+  "package_unchanged": true,
+  "tsconfig_unchanged": true
+}

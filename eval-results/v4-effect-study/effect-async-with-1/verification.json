@@ -1,0 +1,48 @@
+{
+  "compiler": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "hidden_process": {
+    "exit_code": 0,
+    "stdout": "[{\"id\":\"dedup-and-independent-keys\",\"pass\":true},{\"id\":\"forgotten-success-does-not-repopulate\",\"pass\":true},{\"id\":\"forgotten-rejection-does-not-remove-new-work\",\"pass\":true},{\"id\":\"clear-isolates-all-generations\",\"pass\":true},{\"id\":\"sync-throw-is-promise-rejection-and-retry\",\"pass\":true},{\"id\":\"ordinary-rejection-and-invalidate-scope\",\"pass\":true}]\n",
+    "stderr": ""
+  },
+  "contract_groups": [
+    {
+      "id": "dedup-and-independent-keys",
+      "pass": true
+    },
+    {
+      "id": "forgotten-success-does-not-repopulate",
+      "pass": true
+    },
+    {
+      "id": "forgotten-rejection-does-not-remove-new-work",
+      "pass": true
+    },
+    {
+      "id": "clear-isolates-all-generations",
+      "pass": true
+    },
+    {
+      "id": "sync-throw-is-promise-rejection-and-retry",
+      "pass": true
+    },
+    {
+      "id": "ordinary-rejection-and-invalidate-scope",
+      "pass": true
+    }
+  ],
+  "visible_tests": {
+    "exit_code": 0,
+    "stdout": "\u2714 concurrent callers share loads while different keys load independently (1.300875ms)\n\u2714 promise rejections preserve reasons and permit retries (0.348416ms)\n\u2714 synchronous throws preserve reasons and permit retries (0.093958ms)\n\u2714 invalidate: forgotten success settles after replacement (0.221792ms)\n\u2714 invalidate: forgotten success settles before replacement (0.0935ms)\n\u2714 invalidate: forgotten failure settles after replacement (0.079125ms)\n\u2714 invalidate: forgotten failure settles before replacement (0.1015ms)\n\u2714 clear: forgotten success settles after replacement (0.080709ms)\n\u2714 clear: forgotten success settles before replacement (0.092333ms)\n\u2714 clear: forgotten failure settles after replacement (0.110208ms)\n\u2714 clear: forgotten failure settles before replacement (0.079958ms)\n\u2714 invalidate is per key and clear forgets all cached and pending keys (0.650833ms)\n\u2714 successful loads are reused until invalidated (0.08275ms)\n\u2714 rejected loads can be retried (0.114625ms)\n\u2139 tests 14\n\u2139 suites 0\n\u2139 pass 14\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 59.300667\n",
+    "stderr": "npm warn Unknown user config \"home\". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.\nnpm warn Unknown user config \"home\". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.\nnpm notice run test\nnpm notice run npm run build && node --test tests/*.test.mjs\nnpm warn Unknown env config \"home\". This will error in a future major version of npm. See `npm help npmrc` for supported config options.\nnpm warn Unknown user config \"home\". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.\nnpm notice run build\nnpm notice run tsc\n"
+  },
+  "source_metrics": {
+    "files": 1,
+    "nonempty_lines": 57,
+    "note": "Descriptive only; not a beauty score."
+  }
+}

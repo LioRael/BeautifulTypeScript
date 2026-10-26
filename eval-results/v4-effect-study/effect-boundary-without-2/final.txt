@@ -1,0 +1,7 @@
+Implemented `decodeBatch` validation and normalization while preserving the exported API and `temperatureRange`.
+
+Malformed batches return `{ok:false,error:"invalid-batch"}`. Successful outputs use fresh arrays and objects, ignore unknown properties, and preserve unrounded conversion.
+
+Validation: `npm run typecheck` passed; `npm test` passed all 5 tests covering malformed inputs, limits, ordering, conversion, and ownership.
+
+No blockers. npm emitted a nonblocking configuration warning.

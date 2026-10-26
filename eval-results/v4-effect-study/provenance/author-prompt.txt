@@ -1,0 +1,21 @@
+Design three small, realistic TypeScript coding tasks for a controlled coding-assistant comparison.
+You are the task author, not a solver. You have not been given either experimental condition.
+Work only in this directory. Do not inspect parent/home directories or other skills, use network, install packages, delegate, or modify global settings.
+Use preinstalled node_modules only to execute TypeScript tooling.
+Create exactly three directories: effect-internal, effect-async, effect-boundary.
+Task mix: (1) a feature/change to established typed internal application data, (2) a bug fix in an asynchronous component with an existing caller contract, (3) a real external input boundary where some validation is necessary.
+Choose original domains and requirements. Avoid first-active-member searches, settings parsers, save-in-order loops, ledger summaries, toy semver or generic TODO placeholders.
+Each should be about 50-140 lines of initial production TypeScript, at most 3 source modules, and solvable within eight minutes.
+For each create:
+- case.json with id matching directory, skill "typescript-best-practices", prompt "prompt.md", files "files", rubric "graders/rubric.md", criteria 6.
+- prompt.md: neutral realistic user task, self-contained, preserve contracts; do not instruct a particular implementation or emphasize defensive coding/simplicity.
+- files/PROJECT.md: runtime, actual project conventions and relevant trust/ownership contracts; no evaluation hints.
+- files/package.json: scripts typecheck "tsc --noEmit", build "tsc", test "npm run build && node --test tests/*.test.mjs"; private, type module, TS 5.9.3 only.
+- files/tsconfig.json: strict, noUncheckedIndexedAccess, exactOptionalPropertyTypes, target ES2022, NodeNext, rootDir src, outDir dist, lib ES2022,DOM, types []; include src/**/*.ts.
+- files/src/: compilable starting implementation and relevant caller/domain types.
+- files/tests/: 1-3 meaningful visible baseline tests (may expose the requested bug).
+- graders/runtime.mjs: hidden independent Node test script receiving the workspace path as argv[2]; imports built dist via file URLs. Emit a JSON array of {id,pass,evidence?} groups on stdout. Catch each group independently. Cover omitted/edge/failure behavior without specifying implementation. Avoid timing sleeps: deferred promises instead. Do not put hidden files under files/.
+- graders/rubric.md: freeze six review criteria: contract correctness, type/API accuracy, local convention/scope, unnecessary complexity/abstractions, failure semantics, evidence. Explain concrete task-specific good/bad tradeoffs while accepting multiple implementations. Do not prescribe code shape, syntax or line counts.
+Do not create a reference solution. All requirements hidden tests assert must be in task/project contracts.
+Validate that all initial projects compile, using a temporary node_modules symlink inside files/; REMOVE these symlinks and dist before finishing. Execute hidden tests against initial code to confirm they can detect missing behavior, and retain a short AUTHOR.md with commands and observed baseline status per task.
+Stop after delivering these task files. Do not solve the tasks.

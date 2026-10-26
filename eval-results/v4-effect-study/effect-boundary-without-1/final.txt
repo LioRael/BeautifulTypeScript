@@ -1,0 +1,5 @@
+Implemented `decodeBatch` validation, normalization, and independent output ownership. Malformed batches return `{ok:false,error:"invalid-batch"}`. Exported APIs and `temperatureRange` remain unchanged.
+
+Validation passed: TypeScript typecheck and all 5 tests, covering invalid inputs, limits, ordering, conversion, and ownership.
+
+The initial `mise` execution failure was bypassed using installed Homebrew Node with a command-local PATH change. No remaining blockers.

@@ -1,0 +1,5 @@
+Fixed `PreviewCache` so forgotten loads cannot overwrite cached previews or remove newer in-flight requests. Synchronous loader throws now become promise rejections with the exact original reason. Public APIs remain unchanged.
+
+Validation: `npm run typecheck` passed; `npm test` passed all 13 tests, including overlapping invalidation, clear, and failures.
+
+No blockers. npm emitted an existing configuration warning about `home`.

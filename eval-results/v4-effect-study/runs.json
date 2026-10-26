@@ -1,0 +1,266 @@
+[
+  {
+    "id": "effect-async-with-1",
+    "case": "effect-async",
+    "condition": "with",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 54.653,
+    "usage": {
+      "input_tokens": 90592,
+      "cached_input_tokens": 80384,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2262,
+      "reasoning_output_tokens": 96
+    },
+    "changed_inputs": [
+      "tests/cache.test.mjs",
+      "src/preview-cache.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "effect-async-with-2",
+    "case": "effect-async",
+    "condition": "with",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 68.83,
+    "usage": {
+      "input_tokens": 132020,
+      "cached_input_tokens": 123008,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2628,
+      "reasoning_output_tokens": 367
+    },
+    "changed_inputs": [
+      "tests/cache.test.mjs",
+      "src/preview-cache.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "effect-async-without-1",
+    "case": "effect-async",
+    "condition": "without",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 61.037,
+    "usage": {
+      "input_tokens": 129013,
+      "cached_input_tokens": 117248,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2152,
+      "reasoning_output_tokens": 113
+    },
+    "changed_inputs": [
+      "tests/cache.test.mjs",
+      "src/preview-cache.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "effect-async-without-2",
+    "case": "effect-async",
+    "condition": "without",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 44.015,
+    "usage": {
+      "input_tokens": 66387,
+      "cached_input_tokens": 57728,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1893,
+      "reasoning_output_tokens": 103
+    },
+    "changed_inputs": [
+      "tests/cache.test.mjs",
+      "src/preview-cache.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "effect-boundary-with-1",
+    "case": "effect-boundary",
+    "condition": "with",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 53.452,
+    "usage": {
+      "input_tokens": 117970,
+      "cached_input_tokens": 107904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2485,
+      "reasoning_output_tokens": 51
+    },
+    "changed_inputs": [
+      "tests/sensor.test.mjs",
+      "src/sensor.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "effect-boundary-with-2",
+    "case": "effect-boundary",
+    "condition": "with",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 61.335,
+    "usage": {
+      "input_tokens": 139461,
+      "cached_input_tokens": 118400,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2682,
+      "reasoning_output_tokens": 102
+    },
+    "changed_inputs": [
+      "tests/sensor.test.mjs",
+      "src/sensor.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "effect-boundary-without-1",
+    "case": "effect-boundary",
+    "condition": "without",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 56.675,
+    "usage": {
+      "input_tokens": 127211,
+      "cached_input_tokens": 113664,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2323,
+      "reasoning_output_tokens": 64
+    },
+    "changed_inputs": [
+      "tests/sensor.test.mjs",
+      "src/sensor.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "effect-boundary-without-2",
+    "case": "effect-boundary",
+    "condition": "without",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 42.85,
+    "usage": {
+      "input_tokens": 66581,
+      "cached_input_tokens": 57728,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2064,
+      "reasoning_output_tokens": 10
+    },
+    "changed_inputs": [
+      "tests/sensor.test.mjs",
+      "src/sensor.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "effect-internal-with-1",
+    "case": "effect-internal",
+    "condition": "with",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 43.03,
+    "usage": {
+      "input_tokens": 91948,
+      "cached_input_tokens": 84480,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1640,
+      "reasoning_output_tokens": 38
+    },
+    "changed_inputs": [
+      "tests/plan.test.mjs",
+      "src/plan.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "effect-internal-with-2",
+    "case": "effect-internal",
+    "condition": "with",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 36.557,
+    "usage": {
+      "input_tokens": 56953,
+      "cached_input_tokens": 47744,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1579,
+      "reasoning_output_tokens": 25
+    },
+    "changed_inputs": [
+      "tests/plan.test.mjs",
+      "src/plan.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "effect-internal-without-1",
+    "case": "effect-internal",
+    "condition": "without",
+    "repeat": 1,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 39.701,
+    "usage": {
+      "input_tokens": 52017,
+      "cached_input_tokens": 42880,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1608,
+      "reasoning_output_tokens": 68
+    },
+    "changed_inputs": [
+      "tests/plan.test.mjs",
+      "src/plan.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  },
+  {
+    "id": "effect-internal-without-2",
+    "case": "effect-internal",
+    "condition": "without",
+    "repeat": 2,
+    "exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 42.862,
+    "usage": {
+      "input_tokens": 65481,
+      "cached_input_tokens": 60800,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1668,
+      "reasoning_output_tokens": 93
+    },
+    "changed_inputs": [
+      "tests/plan.test.mjs",
+      "src/plan.ts"
+    ],
+    "package_unchanged": true,
+    "tsconfig_unchanged": true
+  }
+]

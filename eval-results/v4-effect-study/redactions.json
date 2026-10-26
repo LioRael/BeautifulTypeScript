@@ -1,0 +1,75 @@
+{
+  "reason": "Incidental ancestor git status filenames and host PATH inventory; commands, statuses and task evidence retained. Raw transport logs stay local.",
+  "counts": {
+    "effect-async-with-1": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "effect-async-with-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 1,
+      "escaped_home_paths": 6
+    },
+    "effect-async-without-1": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "effect-async-without-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "effect-boundary-with-1": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "effect-boundary-with-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "effect-boundary-without-1": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "effect-boundary-without-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "effect-internal-with-1": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "effect-internal-with-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "effect-internal-without-1": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "effect-internal-without-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "judge-1": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    },
+    "judge-2": {
+      "ancestor_git_paths": 0,
+      "environment_path_lines": 0,
+      "escaped_home_paths": 0
+    }
+  }
+}

@@ -13,6 +13,9 @@ Task definitions live with the skill they evaluate:
 
 | Case ID | Skill-local task |
 |---|---|
+| effect-internal | [room workload feature](../skills/typescript-best-practices/evals/effect-internal/case.json) |
+| effect-async | [preview cache race](../skills/typescript-best-practices/evals/effect-async/case.json) |
+| effect-boundary | [sensor ingestion](../skills/typescript-best-practices/evals/effect-boundary/case.json) |
 | simplify | [trusted-refactor](../skills/typescript-best-practices/evals/trusted-refactor/case.json) |
 | write | [settings-boundary](../skills/typescript-best-practices/evals/settings-boundary/case.json) |
 | review | [queue-contract](../skills/typescript-review/evals/queue-contract/case.json) |
@@ -116,3 +119,6 @@ python3 evals/redact-results.py eval-results/new
 This removes incidental host metadata and records counts. It is a
 publication step, not a change to task outputs or scores. It does not guarantee that a
 trace contains no sensitive material; review the public copy before sharing.
+
+For the new-task writing study, see the [frozen protocol](effect-study-protocol.md).
+The runner accepts --model, --effort and --repetitions to record an explicit setup.

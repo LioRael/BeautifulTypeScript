@@ -1,0 +1,5 @@
+Fixed `PreviewCache` so forgotten loads cannot overwrite cached previews or remove newer in-flight work. Synchronous loader throws now reject the returned promise with the exact reason. Public APIs remain unchanged.
+
+Validation: `npm run typecheck` passed; all 13 tests passed, covering concurrency, retries, invalidation, and clear races.
+
+Limitation: checks ran on available Node v26.12.1; the specified Node 22 runtime was not validated. The initial login-shell attempt was blocked by `mise`.

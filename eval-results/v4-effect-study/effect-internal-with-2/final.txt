@@ -1,0 +1,5 @@
+Added exported `RoomWorkload` and `roomWorkloads` in `src/plan.ts`.
+
+Returns every room in configured order, counts confirmed bookings only, and adds turnaround between bookings. Input and existing helpers remain unchanged.
+
+Validation: `npm run typecheck` passed; `npm test` built successfully and passed all 3 tests, including input preservation and empty plans. No blockers.

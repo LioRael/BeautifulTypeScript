@@ -1,0 +1,5 @@
+Fixed `PreviewCache` so forgotten loads cannot overwrite cached results or remove newer work. Synchronous throws now become promise rejections, preserving the exact reason. Public APIs remain unchanged.
+
+Validation passed: `npm run typecheck` and `npm test` (13 tests covering concurrency, invalidation, clear, failures, and retries).
+
+The runtime wrapper failed with a permissions error; an invocation-local bypass enabled validation on Node 26.12.1. Node 22 remains unverified.

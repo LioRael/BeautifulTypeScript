@@ -9,7 +9,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('results')
 args = parser.parse_args()
 root = Path(args.results)
-counts = {}
+counts = json.loads((root/'redactions.json').read_text()).get('counts', {}) if (root/'redactions.json').exists() else {}
 
 def scrub(value, run):
     if isinstance(value, dict):
@@ -18,6 +18,10 @@ def scrub(value, run):
         return [scrub(v, run) for v in value]
     if not isinstance(value, str):
         return value
+    for depth in [2, 1]:
+        escaped_home = str(Path.home()).replace('/', '\\' * depth + '/')
+        counts[run]['escaped_home_paths'] += value.count(escaped_home)
+        value = value.replace(escaped_home, '<home>')
     lines = []
     for line in value.splitlines(keepends=True):
         if re.match(r'^.{2} (?:\.\./)+', line):
@@ -33,7 +37,9 @@ def scrub(value, run):
 
 for trace in sorted(root.glob('*/events.jsonl')):
     run = trace.parent.name
-    counts[run] = {'ancestor_git_paths': 0, 'environment_path_lines': 0}
+    counts.setdefault(run, {})
+    for key in ['ancestor_git_paths', 'environment_path_lines', 'escaped_home_paths']:
+        counts[run].setdefault(key, 0)
     events = [scrub(json.loads(line), run) for line in trace.read_text().splitlines()]
     trace.write_text(''.join(json.dumps(event, ensure_ascii=False) + '\n' for event in events))
 (root/'redactions.json').write_text(json.dumps({

@@ -29,8 +29,12 @@ def disabled_skills():
             paths.update([str(f), str(f.resolve()), str(f.parent), str(f.parent.resolve())])
     return 'skills.config=[' + ','.join('{path='+json.dumps(x)+',enabled=false}' for x in sorted(paths)) + ']'
 
-def command(workspace, final, disable_config):
-    return ['codex','exec','--ignore-user-config','--ephemeral','--skip-git-repo-check',
+def command(workspace, final, disable_config, settings=None):
+    selection = []
+    if settings:
+        if settings.get('model'): selection += ['-m', settings['model']]
+        if settings.get('effort'): selection += ['-c', 'model_reasoning_effort='+json.dumps(settings['effort'])]
+    return ['codex','exec',*selection,'--ignore-user-config','--ephemeral','--skip-git-repo-check',
             '--disable','plugins','--disable','skill_search','-c','project_doc_max_bytes=0',
             '-c',disable_config,'-c','web_search="disabled"','-s','workspace-write',
             '--json','-C',str(workspace),'-o',str(final),'-']
@@ -71,7 +75,7 @@ def prepare_workspace(case, condition, repeat, manifest, work):
                         ignore=shutil.ignore_patterns('evals', '__pycache__'))
     return folder, workspace
 
-def run_one(case, condition, repeat, manifest, work, public, disable_config):
+def run_one(case, condition, repeat, manifest, work, public, disable_config, settings=None):
     run_id = f'{case}-{condition}-{repeat}'
     folder, workspace = prepare_workspace(case, condition, repeat, manifest, work)
     common=('Work only in this workspace. Read PROJECT.md and the task files. Do not inspect parent/home directories, other skills, evaluation rubrics, or other runs. '
@@ -83,7 +87,8 @@ def run_one(case, condition, repeat, manifest, work, public, disable_config):
     started=time.time(); error=None
     with (folder/'raw-events.jsonl').open('w') as out,(folder/'stderr.txt').open('w') as err:
         try:
-            result=subprocess.run(command(workspace,folder/'final.txt',disable_config),input=prompt,text=True,stdout=out,stderr=err,timeout=manifest['timeout_seconds'])
+            invocation = command(workspace,folder/'final.txt',disable_config,settings) if settings else command(workspace,folder/'final.txt',disable_config)
+            result=subprocess.run(invocation,input=prompt,text=True,stdout=out,stderr=err,timeout=manifest['timeout_seconds'])
             exit_code=result.returncode
         except subprocess.TimeoutExpired:
             exit_code=None;error='timeout'
@@ -123,12 +128,19 @@ def run_one(case, condition, repeat, manifest, work, public, disable_config):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--work',required=True);parser.add_argument('--output',required=True);parser.add_argument('--workers',type=int,default=2);parser.add_argument('--cases',nargs='*');parser.add_argument('--rubric',default=None)
+    parser.add_argument('--model');parser.add_argument('--effort');parser.add_argument('--repetitions',type=int)
     args=parser.parse_args();work=Path(args.work).resolve();public=Path(args.output).resolve()
     if work.exists() or public.exists(): raise SystemExit('Refusing to overwrite an evaluation. Choose fresh directories.')
     if not (ROOT/'node_modules/typescript').exists(): raise SystemExit('Run npm ci first.')
     work.mkdir(parents=True);public.mkdir(parents=True)
     manifest=json.loads((ROOT/'evals/cases.json').read_text());manifest['tool_version']=subprocess.check_output(['codex','--version'],text=True).strip()
-    manifest['model_selection']='CLI default with --ignore-user-config; capture the current banner before interpreting results'
+    settings={'model':args.model,'effort':args.effort}
+    manifest['model_selection']=settings if any(settings.values()) else 'CLI default with --ignore-user-config; capture the current banner before interpreting results'
+    if args.repetitions is not None:
+        if args.repetitions < 1: raise SystemExit('Repetitions must be positive')
+        manifest['repetitions']=args.repetitions
+    manifest['selected_cases']=args.cases or list(manifest['cases'])
+    for case in manifest['selected_cases']: case_directory(case, manifest)
     manifest['skill_hashes']=skill_snapshot();manifest['case_hashes']=case_snapshot(manifest)
     manifest['rubric_hashes']={case: sha(ROOT/args.rubric if args.rubric else case_directory(case, manifest)/'graders/rubric.md') for case in manifest['cases']}
     manifest['runner_sha256']=sha(Path(__file__));manifest['grader_sha256']=sha(ROOT/'evals/grade-runtime.mjs')
@@ -141,7 +153,7 @@ def main():
             for condition in (manifest['order'] if repeat%2 else list(reversed(manifest['order']))): jobs.append((case,condition,repeat))
     config=disabled_skills()
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as pool:
-        futures=[pool.submit(run_one,*job,manifest,work,public,config) for job in jobs]
+        futures=[pool.submit(run_one,*job,manifest,work,public,config,settings) for job in jobs]
         records=[future.result() for future in concurrent.futures.as_completed(futures)]
     (public/'runs.json').write_text(json.dumps(sorted(records,key=lambda r:r['id']),indent=2)+'\n')
     assert skill_snapshot()==manifest['skill_hashes'],'Skills changed during evaluation'

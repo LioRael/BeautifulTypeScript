@@ -1,0 +1,3 @@
+The rehearsal desk needs a room workload report for its existing day plan. Add an exported `roomWorkloads(plan: DayPlan): RoomWorkload[]` alongside the current helpers, and export the `RoomWorkload` type with `roomId`, `bookingCount`, `rehearsalMinutes`, and `occupiedMinutes` fields.
+
+Return one row for every configured room, in room order, including unused rooms. Count confirmed bookings only. Rehearsal minutes are the sum of their durations; occupied minutes additionally include that room's turnaround between consecutive confirmed bookings (not after the last one). Keep the plan and existing helper behavior unchanged. The project's trusted plan contract applies.

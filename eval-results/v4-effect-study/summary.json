@@ -1,0 +1,104 @@
+{
+  "scope": "typescript-best-practices; three new tasks; two repetitions per condition",
+  "model": "gpt-6.1-sol",
+  "effort": "low",
+  "independent_checks": {
+    "without": {
+      "runs": 6,
+      "compiler_pass": 6,
+      "visible_tests_pass": 6,
+      "contract_pass": 30,
+      "contract_total": 30
+    },
+    "with": {
+      "runs": 6,
+      "compiler_pass": 6,
+      "visible_tests_pass": 6,
+      "contract_pass": 30,
+      "contract_total": 30
+    }
+  },
+  "blind_comparisons": [
+    {
+      "pair": "pair-1",
+      "runs": [
+        "effect-internal-with-1",
+        "effect-internal-without-1"
+      ],
+      "pass_preferences": [
+        "tie",
+        "tie"
+      ],
+      "combined": "tie"
+    },
+    {
+      "pair": "pair-2",
+      "runs": [
+        "effect-internal-with-2",
+        "effect-internal-without-2"
+      ],
+      "pass_preferences": [
+        "tie",
+        "tie"
+      ],
+      "combined": "tie"
+    },
+    {
+      "pair": "pair-3",
+      "runs": [
+        "effect-async-with-1",
+        "effect-async-without-1"
+      ],
+      "pass_preferences": [
+        "tie",
+        "tie"
+      ],
+      "combined": "tie"
+    },
+    {
+      "pair": "pair-4",
+      "runs": [
+        "effect-async-with-2",
+        "effect-async-without-2"
+      ],
+      "pass_preferences": [
+        "tie",
+        "tie"
+      ],
+      "combined": "tie"
+    },
+    {
+      "pair": "pair-5",
+      "runs": [
+        "effect-boundary-with-1",
+        "effect-boundary-without-1"
+      ],
+      "pass_preferences": [
+        "tie",
+        "tie"
+      ],
+      "combined": "tie"
+    },
+    {
+      "pair": "pair-6",
+      "runs": [
+        "effect-boundary-without-2",
+        "effect-boundary-with-2"
+      ],
+      "pass_preferences": [
+        "tie",
+        "tie"
+      ],
+      "combined": "tie"
+    }
+  ],
+  "judge_inputs_unchanged": true,
+  "limits": [
+    "Three authored tasks; no human judge or independent model family.",
+    "Mutable model alias. Same model family authored tasks, solved and judged them.",
+    "Explicit invocation only; framework and automatic activation not tested.",
+    "Local Node 26; task Node 22 target not independently executed in this experiment.",
+    "Host runtime shim failed in four solution runs; successful retries retained.",
+    "Workspace read isolation partly relies on instructions; traces include tool-path discovery."
+  ]
+}

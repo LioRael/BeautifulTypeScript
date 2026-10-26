@@ -1,5 +1,9 @@
 # Paired agent evaluation
 
+Latest: [new-task comparison](EFFECT-STUDY.md), 12 fresh writing runs with frozen tasks
+and reversed-label anonymous review. It found no stable advantage. Earlier studies
+below remain historical and are not pooled with it.
+
 Version scope: these runs evaluated the skills recorded at
 [commit b13a7aa](https://github.com/LioRael/BeautifulTypeScript/tree/b13a7aa/skills),
 including the separately retained v1 review snapshot. Later reference/example expansions

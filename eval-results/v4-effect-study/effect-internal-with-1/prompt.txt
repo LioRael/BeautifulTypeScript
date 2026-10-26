@@ -1,0 +1,5 @@
+Work only in this workspace. Read PROJECT.md and the task files. Do not inspect parent/home directories, other skills, evaluation rubrics, or other runs. Do not use network, install packages, delegate, publish, or change global settings. node_modules is preinstalled; use it only to run project tooling. You have at most 8 minutes. Complete the requested work and report actual evidence, including blockers.
+Read and apply supplied-skill/SKILL.md and only its relevant bundled references.
+The rehearsal desk needs a room workload report for its existing day plan. Add an exported `roomWorkloads(plan: DayPlan): RoomWorkload[]` alongside the current helpers, and export the `RoomWorkload` type with `roomId`, `bookingCount`, `rehearsalMinutes`, and `occupiedMinutes` fields.
+
+Return one row for every configured room, in room order, including unused rooms. Count confirmed bookings only. Rehearsal minutes are the sum of their durations; occupied minutes additionally include that room's turnaround between consecutive confirmed bookings (not after the last one). Keep the plan and existing helper behavior unchanged. The project's trusted plan contract applies.

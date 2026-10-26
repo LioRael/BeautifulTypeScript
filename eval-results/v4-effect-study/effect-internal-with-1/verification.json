@@ -1,0 +1,40 @@
+{
+  "compiler": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "hidden_process": {
+    "exit_code": 0,
+    "stdout": "[{\"id\":\"room-order-and-unused\",\"pass\":true},{\"id\":\"status-and-turnaround\",\"pass\":true},{\"id\":\"single-and-unconfirmed-rooms\",\"pass\":true},{\"id\":\"ownership-and-existing-helpers\",\"pass\":true}]\n",
+    "stderr": ""
+  },
+  "contract_groups": [
+    {
+      "id": "room-order-and-unused",
+      "pass": true
+    },
+    {
+      "id": "status-and-turnaround",
+      "pass": true
+    },
+    {
+      "id": "single-and-unconfirmed-rooms",
+      "pass": true
+    },
+    {
+      "id": "ownership-and-existing-helpers",
+      "pass": true
+    }
+  ],
+  "visible_tests": {
+    "exit_code": 0,
+    "stdout": "\u2714 desk summary counts only confirmed rehearsal minutes (0.73625ms)\n\u2714 room workloads count confirmed bookings in room display order without mutating the plan (0.255083ms)\n\u2714 room workloads include empty rooms and handle an empty plan (0.161125ms)\n\u2139 tests 3\n\u2139 suites 0\n\u2139 pass 3\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 48.718833\n",
+    "stderr": "npm warn Unknown user config \"home\". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.\nnpm warn Unknown user config \"home\". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.\nnpm notice run test\nnpm notice run npm run build && node --test tests/*.test.mjs\nnpm warn Unknown env config \"home\". This will error in a future major version of npm. See `npm help npmrc` for supported config options.\nnpm warn Unknown user config \"home\". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.\nnpm notice run build\nnpm notice run tsc\n"
+  },
+  "source_metrics": {
+    "files": 1,
+    "nonempty_lines": 72,
+    "note": "Descriptive only; not a beauty score."
+  }
+}

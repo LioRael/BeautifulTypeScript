@@ -1,0 +1,8 @@
+Fixed `PreviewCache` so forgotten loads cannot overwrite cached results or remove newer pending work. Existing callers still receive their original results or errors. Synchronous loader throws now reject the returned promise with the exact reason.
+
+Validation passed:
+
+- `npm run typecheck`
+- `npm test`: 14 tests covering concurrency, retries, invalidation, clear, and completion ordering.
+
+No blockers. npm emitted an existing `home` configuration warning.

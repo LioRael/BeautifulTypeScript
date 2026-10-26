@@ -1,0 +1,22 @@
+{
+  "id": "effect-boundary-with-2",
+  "case": "effect-boundary",
+  "condition": "with",
+  "repeat": 2,
+  "exit_code": 0,
+  "error": null,
+  "elapsed_seconds": 61.335,
+  "usage": {
+    "input_tokens": 139461,
+    "cached_input_tokens": 118400,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2682,
+    "reasoning_output_tokens": 102
+  },
+  "changed_inputs": [
+    "tests/sensor.test.mjs",
+    "src/sensor.ts"
+  ],
+  "package_unchanged": true,
+  "tsconfig_unchanged": true
+}

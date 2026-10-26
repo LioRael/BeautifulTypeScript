@@ -1,0 +1,13 @@
+{
+  "cli": "0.164.0",
+  "model_alias": "gpt-6.1-sol",
+  "reasoning_effort": "low",
+  "skills_probe": "NONE",
+  "scope": "Fresh CLI probe; no tools requested",
+  "note": "Mutable model alias; workspace sandbox is not a hermetic read boundary.",
+  "protocol_sha256": "a98913aeb88533f59379ef64e311e743734291e1f5bb0f78449291dfb137bdfc",
+  "author_context": "Fresh CLI process; no target skill or README supplied. Same model family, not a human-independent design.",
+  "setup_failure": "Explicit effort none rejected before task authoring; no solution produced; retried author with low before freezing cases.",
+  "independent_checker_runtime": "Node v26.10.0; Python 3.14.8, macOS arm64",
+  "solver_runtime_note": "Some solver checks retried with preinstalled Node 26.12.1 after mise errors; Node 22 target remains unverified."
+}

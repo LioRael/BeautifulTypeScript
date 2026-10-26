@@ -1,0 +1,5 @@
+Implemented `decodeBatch` validation and normalization while preserving the exported API and `temperatureRange`.
+
+Malformed batches return `{ok:false,error:"invalid-batch"}`. Successful results contain fresh objects, enforce all documented limits, and convert Fahrenheit without rounding.
+
+Validation: `npm run typecheck` passed; `npm test` built successfully and passed all 5 tests. No blockers.

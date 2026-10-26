@@ -1,0 +1,8 @@
+{
+  "id": "effect-boundary",
+  "skill": "typescript-best-practices",
+  "prompt": "prompt.md",
+  "files": "files",
+  "rubric": "graders/rubric.md",
+  "criteria": 6
+}

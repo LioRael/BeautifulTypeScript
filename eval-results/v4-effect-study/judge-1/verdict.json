@@ -1,0 +1,80 @@
+[
+  {
+    "pair": "pair-1",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: both preserve the API and caller ownership, emit rooms in order, and correctly aggregate confirmed durations and count-minus-one turnarounds, including zero bookings. Supplied compiler, visible-test and contract checks all pass. Maintainability/style: A reuses confirmedBookings and filters per room; B uses a local single-pass Map aggregation. Both are direct, convention-compatible approaches; no workload scale requirement makes the algorithmic tradeoff decisive.",
+    "evidence": [
+      "pair-1/A/src/plan.ts:30-35 RoomWorkload; :54-71 roomWorkloads",
+      "pair-1/B/src/plan.ts:30-59 RoomWorkload and roomWorkloads",
+      "pair-1/original/PROJECT.md:3 trusted plan and ownership contract",
+      "pair-1/A/tests/plan.test.mjs:13-48; pair-1/B/tests/plan.test.mjs:13-52",
+      "pair-1/A-checks.json:2-21; pair-1/B-checks.json:2-21"
+    ]
+  },
+  {
+    "pair": "pair-2",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: both implement the requested report without altering existing helpers or domain types; all supplied checks pass. B's non-null Map lookups are supported by initialization from every room and the explicit guarantee that every booking references a configured room. Maintainability/style: A's filtering/reduction and B's initialized accumulators are both local, readable implementations. Neither extra runtime validation nor removing the required empty-room turnaround clamp would improve contract adherence.",
+    "evidence": [
+      "pair-2/A/src/plan.ts:30-58 RoomWorkload and roomWorkloads",
+      "pair-2/B/src/plan.ts:37-63 roomWorkloads, especially :47 and :53",
+      "pair-2/original/PROJECT.md:3 configured-room reference guarantee",
+      "pair-2/A/tests/plan.test.mjs:13-56; pair-2/B/tests/plan.test.mjs:13-52",
+      "pair-2/A-checks.json:2-21; pair-2/B-checks.json:2-21"
+    ]
+  },
+  {
+    "pair": "pair-3",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: production logic is identical apart from a comment. Both register pending work before invoking the loader, convert synchronous throws into exact promise rejections, and use request identity on success and failure to isolate invalidated or cleared generations. All supplied checks pass. Maintainability/style: test layout and explanatory-comment differences do not establish a material advantage; both use deterministic deferred promises and cover both settlement orders and failure retry.",
+    "evidence": [
+      "pair-3/A/src/preview-cache.ts:19-58 get/invalidate/clear",
+      "pair-3/B/src/preview-cache.ts:19-57 get/invalidate/clear",
+      "pair-3/original/PROJECT.md:3-5 concurrency and failure contract",
+      "pair-3/A/tests/cache.test.mjs:42-130; pair-3/B/tests/cache.test.mjs:48-118",
+      "pair-3/A-checks.json:2-29; pair-3/B-checks.json:2-29"
+    ]
+  },
+  {
+    "pair": "pair-4",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: both have the same executable cache implementation, preserve shared Preview objects and public signatures, and protect newer work from both stale success and stale rejection after invalidate or clear. All supplied checks pass. Maintainability/style: comments explain different useful aspects of the same mechanism; differences in deferred-test formatting and orchestration are equivalent evidence, not a reason to rank either candidate.",
+    "evidence": [
+      "pair-4/A/src/preview-cache.ts:19-58 get/invalidate/clear",
+      "pair-4/B/src/preview-cache.ts:19-58 get/invalidate/clear",
+      "pair-4/A/tests/cache.test.mjs:54-129; pair-4/B/tests/cache.test.mjs:56-143",
+      "pair-4/original/PROJECT.md:3-5",
+      "pair-4/A-checks.json:2-29; pair-4/B-checks.json:2-29"
+    ]
+  },
+  {
+    "pair": "pair-5",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: both soundly validate the documented JSON boundary, including full-batch rejection, safe increasing timestamps, unit-specific inclusive bounds and count limits; both trim IDs, convert without rounding, and allocate fresh domain objects while preserving temperatureRange. All supplied checks pass. Maintainability/style: A explicitly views array elements as unknown and repeats the small failure literal; B shares a per-call failure value and aliases wireReadings. Both narrow each reading through the same local record guard, with no material correctness or maintenance difference.",
+    "evidence": [
+      "pair-5/A/src/sensor.ts:15-64 isRecord/toCelsius/decodeBatch; :71-79 temperatureRange",
+      "pair-5/B/src/sensor.ts:15-59 isRecord/toCelsius/decodeBatch; :66-74 temperatureRange",
+      "pair-5/original/PROJECT.md:1-5 JSON input, validation and ownership contract",
+      "pair-5/A/tests/sensor.test.mjs:18-82; pair-5/B/tests/sensor.test.mjs:14-72",
+      "pair-5/A-checks.json:2-25; pair-5/B-checks.json:2-25"
+    ]
+  },
+  {
+    "pair": "pair-6",
+    "preference": "tie",
+    "confidence": "high",
+    "reason": "Functional: both enforce every documented boundary check and produce independent normalized output with unchanged APIs and temperatureRange behavior; all supplied checks pass. Maintainability/style: A computes the trimmed ID once and shares a failure literal, while B explicitly keeps array elements unknown and repeats trimming and failure literals. These are small local presentation choices, with no substantial maintenance cost or unsupported abstraction. Both retain the necessary numeric and chronological checks.",
+    "evidence": [
+      "pair-6/A/src/sensor.ts:15-59 isObject/toCelsius/decodeBatch; :66-74 temperatureRange",
+      "pair-6/B/src/sensor.ts:15-69 isRecord/toCelsius/decodeBatch; :76-84 temperatureRange",
+      "pair-6/original/PROJECT.md:1-5",
+      "pair-6/A/tests/sensor.test.mjs:14-69; pair-6/B/tests/sensor.test.mjs:18-86",
+      "pair-6/A-checks.json:2-25; pair-6/B-checks.json:2-25"
+    ]
+  }
+]

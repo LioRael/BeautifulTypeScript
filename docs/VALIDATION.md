@@ -165,3 +165,13 @@ tests exercise the README search/async examples. Four skill frontmatter validati
 The new skill-local trusted-refactor case was evaluated in four fresh processes;
 both conditions passed all five criteria per run. This records a narrow regression
 without a claim of superiority. See EVALUATION.md for artifacts and model/isolation limits.
+
+## New-task effect study (2026-10-27)
+
+The frozen writing skill was tested on three new task packages in 12 fresh solution
+processes. All projects compiled and passed visible tests and hidden contract groups:
+30/30 per condition. Both anonymous judging orders rated all six pairs as ties.
+See EFFECT-STUDY.md for original artifacts, actual code differences, setup/runtime
+incidents and limits. No skill instruction was tuned from these results.
+Repository checks pass: 29 tests, 51 compiled documentation blocks and 18 marked
+executions. README examples are separated from measured evidence.

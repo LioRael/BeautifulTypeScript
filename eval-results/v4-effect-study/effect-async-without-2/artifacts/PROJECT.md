@@ -1,0 +1,5 @@
+Node 22 ESM, TypeScript 5.9.3. Use npm run typecheck and npm test. Source imports use .js extensions and exported methods declare return types. This component is owned by the document editor; keys are trusted document IDs. The loader returns immutable Preview objects; callers may share the same object.
+
+Within a cache generation, concurrent get calls for a key share one loader invocation, and successful results remain cached. Different keys load independently. A loader may throw synchronously or return a rejecting promise. get must always return a promise and preserve the exact rejection reason. Failures are not cached: after rejection, a new get retries.
+
+invalidate(key) forgets both cached and in-flight work for that key; clear() does so for all keys. Neither cancels promises already returned: existing callers still receive their own load's result or error. Later calls start fresh loads, and completion of forgotten work must not populate the cache or remove/replace newer work. Cache hits do not call the loader. The editor awaits get; promise identity is not part of the API.

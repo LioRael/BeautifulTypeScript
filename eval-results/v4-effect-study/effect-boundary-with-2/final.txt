@@ -1,0 +1,5 @@
+Implemented `decodeBatch` validation, normalization, and independent output ownership. Malformed batches return `{ok:false,error:"invalid-batch"}`. Exported API and `temperatureRange` remain unchanged.
+
+Validation passed: typecheck, build, and all 5 tests.
+
+Environment limitation: the `mise` shim failed. Checks passed using installed Node 26.12.1; the documented Node 22 runtime remains unverified.

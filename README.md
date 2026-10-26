@@ -18,7 +18,18 @@ written for TypeScript. MIT licensed. Install directly from GitHub; no npm packa
 Each skill bundles the references its workflow needs. No companion skill is required.
 No forced Result type, schema package, framework, architecture or formatting style.
 
-## What it changes
+## Measured effect
+
+A [new-task comparison](docs/EFFECT-STUDY.md) tested the writing skill on three tasks,
+with two runs per condition (12 runs total). Both conditions passed 30/30 independent
+contract-check groups. Anonymous review, repeated with A/B reversed, rated all six pairs
+as ties. The code included useful differences and some extra repetition with the skill;
+this study did **not** demonstrate a stable quality advantage.
+
+The report links every original implementation and judgment. These are measured results;
+the examples below explain the intended practices.
+
+## Illustrative patterns
 
 Beautiful means the smallest clear implementation of the actual contract: useful types,
 direct control flow, and no speculative machinery. Validate external data once; let

@@ -6,7 +6,10 @@
     "review": "typescript-review",
     "port": "typescript-port",
     "verify": "typescript-verify",
-    "simplify": "typescript-best-practices"
+    "simplify": "typescript-best-practices",
+    "effect-internal": "typescript-best-practices",
+    "effect-async": "typescript-best-practices",
+    "effect-boundary": "typescript-best-practices"
   },
   "order": [
     "without",
@@ -18,6 +21,9 @@
     "review": "skills/typescript-review/evals/queue-contract",
     "port": "skills/typescript-port/evals/python-ledger",
     "verify": "skills/typescript-verify/evals/node-esm-release",
-    "simplify": "skills/typescript-best-practices/evals/trusted-refactor"
+    "simplify": "skills/typescript-best-practices/evals/trusted-refactor",
+    "effect-internal": "skills/typescript-best-practices/evals/effect-internal",
+    "effect-async": "skills/typescript-best-practices/evals/effect-async",
+    "effect-boundary": "skills/typescript-best-practices/evals/effect-boundary"
   }
 }

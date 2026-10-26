@@ -1,0 +1,22 @@
+{
+  "id": "effect-async-without-1",
+  "case": "effect-async",
+  "condition": "without",
+  "repeat": 1,
+  "exit_code": 0,
+  "error": null,
+  "elapsed_seconds": 61.037,
+  "usage": {
+    "input_tokens": 129013,
+    "cached_input_tokens": 117248,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2152,
+    "reasoning_output_tokens": 113
+  },
+  "changed_inputs": [
+    "tests/cache.test.mjs",
+    "src/preview-cache.ts"
+  ],
+  "package_unchanged": true,
+  "tsconfig_unchanged": true
+}
